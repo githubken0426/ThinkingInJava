@@ -3,13 +3,14 @@ package th.part_16_Array._04_multidimensional;
 import java.util.Arrays;
 
 /**
- * ÈıÎ¬Êı×é
+ * ä¸‰ç»´æ•°ç»„
  * @author Administrator
- * 2015Äê11ÔÂ2ÈÕ
+ * 2015å¹´11æœˆ2æ—¥
  */
 public class ThreeDWith {
 	public static void main(String[] args) {
-		int [][][]a=new int[2][2][3];
+		int [][][]a=new int[3][2][3];
+		//deepToString()å¯ä»¥å°†å¤šç»´æ•°ç»„è½¬æ¢ä¸ºå¤šä¸ªStringè¾“å‡º
 		System.out.println(Arrays.deepToString(a));
 	}
 }
