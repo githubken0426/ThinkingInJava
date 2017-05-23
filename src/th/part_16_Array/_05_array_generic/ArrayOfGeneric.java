@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import th.part_16_Array._01.BeryliumSphere;
+import th.part_16_Array._01.BerylliumSphere;
 
 public class ArrayOfGeneric {
 	public static void main(String[] args) {
@@ -15,9 +15,9 @@ public class ArrayOfGeneric {
 //		ls[1]=new ArrayList<Integer>();//±‡“Î¥ÌŒÛ
 		Object[] obj=ls;
 		obj[1]=new ArrayList<Integer>();
-		List<BeryliumSphere> []sphere=new List[10];
+		List<BerylliumSphere> []sphere=new List[10];
 		for(int i =0;i<sphere.length;i++){
-			sphere[i]=new ArrayList<BeryliumSphere>();
+			sphere[i]=new ArrayList<BerylliumSphere>();
 		}
 		System.out.println(Arrays.toString(sphere));
 	}

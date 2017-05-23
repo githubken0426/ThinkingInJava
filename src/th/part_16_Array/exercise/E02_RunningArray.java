@@ -2,7 +2,7 @@ package th.part_16_Array.exercise;
 
 import java.util.Arrays;
 
-import th.part_16_Array._01.BeryliumSphere;
+import th.part_16_Array._01.BerylliumSphere;
 
 /**
  * Á·Ï°2
@@ -11,10 +11,10 @@ import th.part_16_Array._01.BeryliumSphere;
  */
 
 public class E02_RunningArray {
-	public static BeryliumSphere[] crateArray(int l){
-		BeryliumSphere[] b=new BeryliumSphere[l];
+	public static BerylliumSphere[] crateArray(int l){
+		BerylliumSphere[] b=new BerylliumSphere[l];
 		for(int i=0;i<l;i++){
-			b[i]=new BeryliumSphere();
+			b[i]=new BerylliumSphere();
 		}
 		return b;
 	}
