@@ -14,6 +14,8 @@ public class ContainerComparison {
 		System.out.println(spherew.length);
 		spherew=sphere;
 		System.out.println(Arrays.toString(spherew));
+		//deepToString用户多维数组才显示出其意义
+		System.out.println(Arrays.deepToString(spherew));
 	}
 	
 }

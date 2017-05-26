@@ -12,5 +12,6 @@ public class ThreeDWith {
 		int [][][]a=new int[3][2][3];
 		//deepToString()可以将多维数组转换为多个String输出
 		System.out.println(Arrays.deepToString(a));
+		System.out.println(Arrays.toString(a));
 	}
 }
