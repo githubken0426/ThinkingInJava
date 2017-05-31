@@ -2,7 +2,12 @@ package th.part_16_Array._07_Arrays;
 
 import java.util.Arrays;
 
-
+/**
+ * 复制数组
+ * 
+ * @author ken
+ * 2017-5-31 下午02:29:28
+ */
 public class CopyingArrays {
 	
 	public static void main(String[] args) {
