@@ -4,11 +4,11 @@ import java.util.Random;
 
 import TIJ4_code.net.mindview.util.Generator;
 
-public class ComType implements Comparable<ComType> {
+public class CompType implements Comparable<CompType> {
 	int i,j;
 	private static int count=1;
 	
-	public ComType(int n1,int n2){
+	public CompType(int n1,int n2){
 		i=n1;
 		j=n2;
 	}
@@ -22,16 +22,16 @@ public class ComType implements Comparable<ComType> {
 	}
 	
 	@Override
-	public int compareTo(ComType o) {
+	public int compareTo(CompType o) {
 		return (i<o.i ? -1:(i==o.i? 0: 1));
 	}
 	
 	private static Random random=new Random(47);
-	public static Generator<ComType> generator(){
-		return new Generator<ComType>(){
+	public static Generator<CompType> generator(){
+		return new Generator<CompType>(){
 			@Override
-			public ComType next() {
-				return new ComType(random.nextInt(100),random.nextInt(100));
+			public CompType next() {
+				return new CompType(random.nextInt(100),random.nextInt(100));
 			}
 		};
 	}
