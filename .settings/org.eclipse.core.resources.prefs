@@ -1,9 +1,10 @@
-#Fri May 26 11:32:13 CST 2017
+#Wed May 31 08:53:35 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/TransDemo.java=UTF-8
 encoding//src/concurrent/share/_04executor/MyThreadPoolExecutorTest.java=UTF-8
+encoding//src/jvm/signature/MethodSignature.java=UTF-8
 encoding//src/log4j.properties=GBK
 encoding//src/resourceCode/util/CollectionMe.java=UTF-8
 encoding//src/th/part_14_TypeInfo/ArrayTest.java=UTF-8
