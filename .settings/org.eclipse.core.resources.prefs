@@ -1,4 +1,4 @@
-#Wed May 31 16:23:52 CST 2017
+#Thu Jun 01 09:18:05 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
@@ -26,6 +26,7 @@ encoding//src/th/part_16_Array/_07_Arrays/CopyingArrays.java=UTF-8
 encoding//src/th/part_16_Array/_07_Arrays/_03/CompType.java=UTF-8
 encoding//src/th/part_16_Array/_07_Arrays/_03/Reverse.java=UTF-8
 encoding//src/th/part_16_Array/_07_Arrays/_04/StringSorting.java=UTF-8
+encoding//src/th/part_16_Array/_07_Arrays/_05BinarySearch/AlphabeticSearch.java=UTF-8
 encoding//src/th/part_16_Array/_07_Arrays/_05BinarySearch/BinarySearch.java=UTF-8
 encoding//src/th/part_16_Array/_07_Arrays/_05BinarySearch/SearchingArrays.java=UTF-8
 encoding//src/th/part_18_IO/chapter_01_File/_01/DirFilter.java=UTF-8
