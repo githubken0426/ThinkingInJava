@@ -31,10 +31,10 @@ public class Displacement {
 		System.out.println(Integer.parseInt(String.valueOf(number))+"\n");
 		
 		// 无符号右移2位。负二进制(原码取反=反码，反码+1=补码)
-		number = -5;
-		System.out.println("有符号二进制:" + printInfo(number));
-		number = number >> 1;
-		System.out.println("右移1位:" + printInfo(number));
+		number = 5;
+		System.out.println("原始数二进制:" + printInfo(number));
+		number = number >>> 1;
+		System.out.println("无符号右移1位:" + printInfo(number));
 		System.out.println(Integer.parseInt(String.valueOf(number)));
 	}
 

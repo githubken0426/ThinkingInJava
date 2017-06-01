@@ -4,6 +4,15 @@ import java.util.Random;
 
 import TIJ4_code.net.mindview.util.Generator;
 
+/**
+ * 基本类型的数组可以直接排序,
+ * 但是引用类型的数组不能直接排序,需要实现Comparable接口
+ * 
+ * 如果不实现java.lang.Comparable，调用Arrays.sort(CompType[])，
+ * 会出现cannot be cast to java.lang.Comparable
+ * @author ken
+ * 2017-6-1 上午09:06:26
+ */
 public class CompType implements Comparable<CompType> {
 	int i,j;
 	private static int count=1;
@@ -34,9 +43,5 @@ public class CompType implements Comparable<CompType> {
 				return new CompType(random.nextInt(100),random.nextInt(100));
 			}
 		};
-	}
-	
-	public static void main(String[] args) {
-		
 	}
 }
