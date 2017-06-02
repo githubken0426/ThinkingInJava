@@ -12,11 +12,9 @@ import java.util.Set;
 
 public class ArraysMe {
 	// Suppresses default constructor, ensuring non-instantiability.
-	private ArraysMe() {
-	}
+	private ArraysMe() {}
 
 	// Sorting
-
 	/**
 	 * Sorts the specified array of longs into ascending numerical order. The
 	 * sorting algorithm is a tuned quicksort, adapted from Jon L. Bentley and
@@ -2897,9 +2895,10 @@ public class ArraysMe {
 	 */
 	public static <T, U> T[] copyOf(U[] original, int newLength,
 			Class<? extends T[]> newType) {
-		T[] copy = ((Object) newType == (Object) Object[].class) ? (T[]) new Object[newLength]
-				: (T[]) Array
-						.newInstance(newType.getComponentType(), newLength);
+		T[] copy = ((Object) newType == (Object) Object[].class) ? 
+				(T[]) new Object[newLength]: 
+				//getComponentType()取得一个数组的Class对象
+				(T[]) Array.newInstance(newType.getComponentType(), newLength);
 		System.arraycopy(original, 0, copy, 0, Math.min(original.length,
 				newLength));
 		return copy;

@@ -18,7 +18,7 @@ public class Test {
 		ListIterator<?> listI= list.listIterator();
 		
 		Map<String,Object> map=new HashMap<String, Object>();
-		
+		ArrayList array=new ArrayList();
 	}
 	public Set<MyMap.Entry<String, Object>> entrySet() {
 		return null;

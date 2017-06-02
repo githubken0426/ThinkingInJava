@@ -1,4 +1,4 @@
-#Thu Jun 01 09:18:05 CST 2017
+#Thu Jun 01 10:06:30 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
@@ -7,6 +7,7 @@ encoding//src/com/displacement/Displacement.java=UTF-8
 encoding//src/concurrent/share/_04executor/MyThreadPoolExecutorTest.java=UTF-8
 encoding//src/jvm/signature/MethodSignature.java=UTF-8
 encoding//src/log4j.properties=GBK
+encoding//src/resourceCode/util/AbstractCollectionMe.java=UTF-8
 encoding//src/resourceCode/util/CollectionMe.java=UTF-8
 encoding//src/th/part_14_TypeInfo/ArrayTest.java=UTF-8
 encoding//src/th/part_14_TypeInfo/chapter_02/_02/ClassInitialization.java=UTF-8

@@ -132,8 +132,8 @@ public abstract class AbstractCollectionMe<E> implements CollectionMe<E> {
 		int size = size();
 		T[] r = a.length >= size ? a : (T[]) java.lang.reflect.Array
 				.newInstance(a.getClass().getComponentType(), size);
+		
 		IteratorMe<E> it = iterator();
-
 		for (int i = 0; i < r.length; i++) {
 			if (!it.hasNext()) { // fewer elements than expected
 				if (a != r)

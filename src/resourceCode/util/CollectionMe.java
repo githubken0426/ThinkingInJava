@@ -174,6 +174,8 @@ public interface CollectionMe<E> extends IterableMe<E> {
     // Bulk[bʌlk]大块，大量 Operations
 
     /**
+     * 判断列表中是否包含指定collection的所有元素
+     * 
      * Returns true if this collection contains all of the elements
      * in the specified collection.
      *
@@ -239,11 +241,13 @@ public interface CollectionMe<E> extends IterableMe<E> {
     boolean removeAll(CollectionMe<?> c);
 
     /**
+     * (取两个list的交集)
+     * 
      * Retains only the elements in this collection that are contained in the
      * specified collection (optional operation).  In other words, removes from
      * this collection all of its elements that are not contained in the
      * specified collection.
-     *
+     * 
      * @param c collection containing elements to be retained in this collection
      * @return true if this collection changed as a result of the call
      * @throws UnsupportedOperationException if the retainAll operation
