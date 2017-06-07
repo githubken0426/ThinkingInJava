@@ -33,9 +33,9 @@ public class TaskWithResult2<V> implements Callable<V> {
 		return (V) (Thread.currentThread() + ":" + id);
 	}
 	/**
-	 *  
-	 * 可以用isDone()方法检查Future是否已经完成; 
-	 * 也可直接调用get()，get()会被阻塞直到任务返回结果
+	 *  FutureTask提供了2个构造器：
+	 *  public FutureTask(Callable<V> callable) {}
+	 *  public FutureTask(Runnable runnable, V result) {}
 	 * 
 	 * @param exe
 	 * @throws InterruptedException
@@ -62,10 +62,33 @@ public class TaskWithResult2<V> implements Callable<V> {
 			exe.shutdown();
 		}
 	}
-	
+
+	static void futureTask2(ExecutorService exe) {
+		try {
+			FutureTask<String> future = new FutureTask<String>(new Runnable() {
+				@Override
+				public void run() {
+					System.out.println("tet");
+				}
+			}, "我是返回值");
+			exe.submit(future);
+			TimeUnit.SECONDS.sleep(4);
+			System.out.println("future.isDone()=" + future.isDone());
+			if (future.isDone())
+				System.out.println("future.get():" + future.get());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		} finally {
+			exe.shutdown();
+		}
+	}
 	
 	public static void main(String[] args) {
 		ExecutorService exe = Executors.newCachedThreadPool();
-		futureTask(exe);
+//		futureTask(exe);
+		
+		futureTask2(exe);
 	}
 }

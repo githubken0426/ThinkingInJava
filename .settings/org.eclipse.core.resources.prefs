@@ -1,4 +1,4 @@
-#Thu Jun 01 10:06:30 CST 2017
+#Wed Jun 07 08:47:56 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
@@ -34,6 +34,7 @@ encoding//src/th/part_18_IO/chapter_01_File/_01/DirFilter.java=UTF-8
 encoding//src/th/part_18_IO/chapter_01_File/_01/DirList.java=UTF-8
 encoding//src/th/part_18_IO/chapter_01_File/_01/DirList2.java=UTF-8
 encoding//src/th/util/Constant.java=UTF-8
+encoding//src/web/MQ/ThreadPoolManager.java=UTF-8
 encoding//src/web/excel/ExcelStyle.java=UTF-8
 encoding//src/web/excel/ExcleDataVo.java=UTF-8
 encoding//src/web/excel/ReadExcle.java=UTF-8

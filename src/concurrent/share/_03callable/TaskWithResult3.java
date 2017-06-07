@@ -31,11 +31,15 @@ public class TaskWithResult3<V> implements Callable<V> {
 		return (V) (Thread.currentThread() + ":" + id);
 	}
 	/**
-	 * CompletionService本身自带一个线程安全的线性表，无需用户额外创建。
-	 * 它提供了2种方法从线性表中取出结果，
-	 * poll()是非阻塞的，若目前无结果，返回一个null，线程继续运行不阻塞。
-	 * take()是阻塞的，若当前无结果，则线程阻塞，直到产生一个结果，
-	 * 被取出后返回，线程才继续运行。
+	 * CompletionService接口本身自带一个线程安全的线性表，无需用户额外创建。
+	 * Future<V> submit(Callable<V> task);
+	 * Future<V> submit(Runnable task, V result); 
+	 * Future<V> take() throws InterruptedException;
+	 * 			阻塞的，若当前无结果，则线程阻塞，直到产生一个结果，被取出后返回，线程才继续运行。
+	 * Future<V> poll();
+	 * 			非阻塞的，若目前无结果，返回一个null，线程继续运行不阻塞。
+	 * Future<V> poll(long timeout, TimeUnit unit) throws InterruptedException;
+	 * 
 	 * @param exe
 	 * 2017-3-21 下午03:35:41
 	 */
