@@ -1,4 +1,4 @@
-package resourceCode.list.test;
+package resourceCode.test.arrayList;
 
 import java.io.Serializable;
 import java.util.ArrayList;

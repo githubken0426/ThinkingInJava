@@ -1,9 +1,9 @@
-package resourceCode.list.test;
+package resourceCode.test.arrayList;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import resourceCode.list.arrayList.ArrayListMe;
+import resourceCode.util.ArrayListMe;
 import resourceCode.util.CollectionMe;
 import resourceCode.util.ListMe;
 

@@ -1,13 +1,10 @@
-package resourceCode.list.arrayList;
+package resourceCode.util;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.ConcurrentModificationException;
 import java.util.RandomAccess;
 
-import resourceCode.util.AbstractListMe;
-import resourceCode.util.CollectionMe;
-import resourceCode.util.ListMe;
 import resourceCode.util.tool.ArraysMe;
 
 /**
