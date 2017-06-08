@@ -11,6 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 使用Future
+ * 线程是属于异步计算模型，所以你不可能直接从别的线程中得到函数返回值。
+ * 这时候，Future就出场了。Futrue可以监视目标线程调用call的情况，
+ * 当你调用Future的get()方法以获得结果时，当前线程就开始阻塞，直接call方法结束返回结果
  * 
  * Future接口中声明了5个方法： 
  * cancel(boolean mayInterruptIfRunning)方法用来取消任务.
@@ -50,11 +53,12 @@ public class TaskWithResult<V> implements Callable<V> {
 		try {
 			List<Future<?>> list = new ArrayList<Future<?>>();
 			for (int i = 0; i < 5; i++) {
+				TimeUnit.SECONDS.sleep(2);// 模拟执行其他的任务
 				list.add(exe.submit(new TaskWithResult<String>(i)));
 			}
-			TimeUnit.SECONDS.sleep(2);// 可以执行其他的任务
 			for (Future<?> fs : list) {
-				System.out.println(fs.get());
+				if(fs.isDone())
+					System.out.println(fs.get());
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -64,7 +68,6 @@ public class TaskWithResult<V> implements Callable<V> {
 			exe.shutdown();
 		}
 	}
-
 	/**
 	 * submit()方法产生Future对象
 	 * 
