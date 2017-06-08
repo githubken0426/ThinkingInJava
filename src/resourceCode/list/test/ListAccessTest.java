@@ -1,4 +1,4 @@
-package resourceCode.list;
+package resourceCode.list.test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
