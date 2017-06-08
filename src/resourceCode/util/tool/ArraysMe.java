@@ -2893,16 +2893,22 @@ public class ArraysMe {
 	 *             <tt>newType</tt>
 	 * @since 1.6
 	 */
+	@SuppressWarnings("unchecked")
 	public static <T, U> T[] copyOf(U[] original, int newLength,
 			Class<? extends T[]> newType) {
-		T[] copy = ((Object) newType == (Object) Object[].class) ? 
-				(T[]) new Object[newLength]: 
-				//getComponentType()取得一个数组的Class对象
-				(T[]) Array.newInstance(newType.getComponentType(), newLength);
+		/**
+		 *  getComponentType()取得一个数组的Class对象
+		 *  所有的JAVA类都继承自object,那数组也不例外。
+		 *  就是说一个数组本身就是一个class,你得到这个数组的CLASS对象后，可以把它转型为数组
+		 */
+		System.out.println((Object)newType == (Object) Object[].class);
+		T[] copy = ((Object) newType == (Object) Object[].class) ? (T[]) new Object[newLength]
+				: (T[]) Array.newInstance(newType.getComponentType(), newLength);
 		System.arraycopy(original, 0, copy, 0, Math.min(original.length,
 				newLength));
 		return copy;
 	}
+	
 
 	/**
 	 * Copies the specified array, truncating or padding with zeros (if

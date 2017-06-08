@@ -8,6 +8,7 @@ import java.util.RandomAccess;
 import resourceCode.util.AbstractListMe;
 import resourceCode.util.CollectionMe;
 import resourceCode.util.ListMe;
+import resourceCode.util.tool.ArraysMe;
 
 /**
  * ArrayList源码
@@ -17,7 +18,7 @@ import resourceCode.util.ListMe;
  * @param <E>
  *            2016-9-9 下午03:55:12
  */
-public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
+public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 		RandomAccess, Cloneable, java.io.Serializable {
 
 	private static final long serialVersionUID = 8683452581122892189L;
@@ -38,7 +39,7 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 	/**
 	 * Constructs an empty list with an initial capacity of ten.
 	 */
-	public MyArrayList() {
+	public ArrayListMe() {
 		this(10);
 	}
 
@@ -50,7 +51,7 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 	 * @exception IllegalArgumentException
 	 *                if the specified initial capacity is negative
 	 */
-	public MyArrayList(int initialCapacity) {
+	public ArrayListMe(int initialCapacity) {
 		super();
 		if (initialCapacity < 0)
 			throw new IllegalArgumentException("Illegal Capacity: "
@@ -67,12 +68,12 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 	 * @throws NullPointerException
 	 *             if the specified collection is null
 	 */
-	public MyArrayList(Collection<? extends E> c) {
+	public ArrayListMe(Collection<? extends E> c) {
 		elementData = c.toArray();
 		size = elementData.length;
 		// c.toArray might (incorrectly) not return Object[] (see 6260652)
 		if (elementData.getClass() != Object[].class)
-			elementData = Arrays.copyOf(elementData, size, Object[].class);
+			elementData = ArraysMe.copyOf(elementData, size, Object[].class);
 	}
 
 	/**
@@ -84,11 +85,13 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 		modCount++;
 		int oldCapacity = elementData.length;
 		if (size < oldCapacity) {
-			elementData = Arrays.copyOf(elementData, size);
+			elementData = ArraysMe.copyOf(elementData, size);
 		}
 	}
 
 	/**
+	 * 数组长度很大的时候，显式调用ensureCapacity(size)方法可大大提高初始化list效率
+	 * 
 	 * Increases the capacity of this <tt>ArrayList</tt> instance, if necessary,
 	 * to ensure that it can hold at least the number of elements specified by
 	 * the minimum capacity argument.
@@ -106,7 +109,7 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 			if (newCapacity < minCapacity)
 				newCapacity = minCapacity;
 			// minCapacity is usually close to size, so this is a win:
-			elementData = Arrays.copyOf(elementData, newCapacity);
+			elementData = ArraysMe.copyOf(elementData, newCapacity);
 		}
 	}
 
@@ -190,7 +193,7 @@ public class MyArrayList<E> extends AbstractListMe<E> implements ListMe<E>,
 	@SuppressWarnings("unchecked")
 	public Object clone() {
 		try {
-			MyArrayList<E> v = (MyArrayList<E>) super.clone();
+			ArrayListMe<E> v = (ArrayListMe<E>) super.clone();
 			v.elementData = Arrays.copyOf(elementData, size);
 			v.modCount = 0;
 			return v;

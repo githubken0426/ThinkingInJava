@@ -1,9 +1,10 @@
 package resourceCode.list.test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
 
-import resourceCode.list.arrayList.MyArrayList;
+import resourceCode.list.arrayList.ArrayListMe;
+import resourceCode.util.CollectionMe;
 import resourceCode.util.ListMe;
 
 
@@ -15,23 +16,16 @@ import resourceCode.util.ListMe;
  */
 public class MyListMain {
 	public static void main(String[] args) {
-		List<String> li=new ArrayList<String>();
-		ListMe<String> list=new MyArrayList<String>();
-		list.add(String.valueOf(Integer.MAX_VALUE));
-		for(int i=0;i<=12;i++){
-			list.add("a"+i);
+		ArrayListMe<String> arrayList=new ArrayListMe<String>();
+		for(int i=0;i<11;i++){
+			arrayList.add(String.valueOf(i));
 		}
-//		System.out.println(list.size());
-//		System.out.println(list.isEmpty());
-//		System.out.println(list.contains("a10"));
+		arrayList.add(10," element");
 		
-		System.out.println(list.indexOf("a1"));
-		System.out.println(list.lastIndexOf("a1"));
-		
-		MyArrayList<String> arrayList=new MyArrayList<String>();
-		for(int i=0;i<=12;i++){
-			arrayList.add("a"+i);
-		}
-		arrayList.trimToSize();
+		CollectionMe<String> cl=new ArrayListMe<String>(Arrays.asList("e","f","g")); 
+		arrayList.addAll(cl);
+//		arrayList.addAll(2,cl);
+//		arrayList.trimToSize();
+		System.out.println(arrayList.toString());
 	}
 }
