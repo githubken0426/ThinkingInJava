@@ -14,7 +14,7 @@ import resourceCode.util.ListMe;
  *
  * 2016-9-9 обнГ04:06:07
  */
-public class MyListMain {
+public class ListMeTest {
 	public static void main(String[] args) {
 		ArrayListMe<String> arrayList=new ArrayListMe<String>();
 		for(int i=0;i<11;i++){
