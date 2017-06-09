@@ -1,6 +1,5 @@
 package resourceCode.util;
 
-import resourceCode.util.tool.ArraysMe;
 
 public abstract class AbstractCollectionMe<E> implements CollectionMe<E> {
 	/**

@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.ConcurrentModificationException;
 import java.util.RandomAccess;
 
-import resourceCode.util.tool.ArraysMe;
 
 /**
  * ArrayListÔ´Âë
@@ -216,7 +215,7 @@ public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 	 *         sequence
 	 */
 	public Object[] toArray() {
-		return Arrays.copyOf(elementData, size);
+		return ArraysMe.copyOf(elementData, size);
 	}
 
 	/**
@@ -248,7 +247,7 @@ public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 	public <T> T[] toArray(T[] a) {
 		if (a.length < size)
 			// Make a new array of a's runtime type, but my contents:
-			return (T[]) Arrays.copyOf(elementData, size, a.getClass());
+			return (T[]) ArraysMe.copyOf(elementData, size, a.getClass());
 		System.arraycopy(elementData, 0, a, 0, size);
 		if (a.length > size)
 			a[size] = null;

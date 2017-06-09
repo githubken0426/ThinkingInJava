@@ -1,4 +1,4 @@
-package resourceCode.util.tool;
+package resourceCode.util;
 
 import java.lang.reflect.Array;
 import java.util.AbstractList;
