@@ -18,7 +18,10 @@ public class CopyingArrays {
 		System.out.println("i="+Arrays.toString(i));
 		System.out.println("j="+Arrays.toString(j));
 		/**
-		 * shallow copy 潜复制，如果复制对象数组只是复制了引用--而不是对象本身的copy
+		 * shallow copy 
+		 * 潜复制，如果复制非基本类型数组(即对象数组)
+		 * 		   只是复制了引用--而不是对象本身的copy
+		 * 
 		 * java.lang.System.arraycopy(Object src, int srcPos, 
 		 * 							  Object dest,int destPos, int length)
 		 * src:源数组

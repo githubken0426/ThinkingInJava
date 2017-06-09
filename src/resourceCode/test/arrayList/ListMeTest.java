@@ -23,9 +23,15 @@ public class ListMeTest {
 		arrayList.add(10," element");
 		
 		CollectionMe<String> cl=new ArrayListMe<String>(Arrays.asList("e","f","g")); 
-		arrayList.addAll(cl);
-//		arrayList.addAll(2,cl);
-//		arrayList.trimToSize();
+//		arrayList.addAll(cl);
+		arrayList.addAll(10,cl);
+//		arrayList.clear();
+		arrayList.remove(10+cl.size());
 		System.out.println(arrayList.toString());
+		
+		Object obj=arrayList.clone();
+		System.out.println(obj);
+//		arrayList.trimToSize();
+		
 	}
 }

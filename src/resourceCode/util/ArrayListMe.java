@@ -338,18 +338,16 @@ public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 	 * @throws IndexOutOfBoundsException
 	 *             {@inheritDoc}
 	 */
+	@SuppressWarnings("unchecked")
 	public E remove(int index) {
 		RangeCheck(index);
-
 		modCount++;
 		E oldValue = (E) elementData[index];
-
 		int numMoved = size - index - 1;
 		if (numMoved > 0)
 			System.arraycopy(elementData, index + 1, elementData, index,
 					numMoved);
 		elementData[--size] = null; // Let gc do its work
-
 		return oldValue;
 	}
 
@@ -403,11 +401,9 @@ public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 	 */
 	public void clear() {
 		modCount++;
-
 		// Let gc do its work
 		for (int i = 0; i < size; i++)
 			elementData[i] = null;
-
 		size = 0;
 	}
 
@@ -456,16 +452,13 @@ public class ArrayListMe<E> extends AbstractListMe<E> implements ListMe<E>,
 		if (index > size || index < 0)
 			throw new IndexOutOfBoundsException("Index: " + index + ", Size: "
 					+ size);
-
 		Object[] a = c.toArray();
 		int numNew = a.length;
 		ensureCapacity(size + numNew); // Increments modCount
-
 		int numMoved = size - index;
 		if (numMoved > 0)
 			System.arraycopy(elementData, index, elementData, index + numNew,
 					numMoved);
-
 		System.arraycopy(a, 0, elementData, index, numNew);
 		size += numNew;
 		return numNew != 0;
