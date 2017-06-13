@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_02Observer.theanswer;
+package designPattern.headfirst.chapter_02Observer.theAnswer;
 
 public class WeatherStation {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_01Strategy.theanswer;
+package designPattern.headfirst.chapter_01Strategy.theAnswer;
 
 
 public class Duck {

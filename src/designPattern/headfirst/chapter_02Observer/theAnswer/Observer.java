@@ -1,7 +1,7 @@
-package designPattern.headfirst.chapter_02Observer.theanswer;
+package designPattern.headfirst.chapter_02Observer.theAnswer;
 
 /**
- * 观察者接口
+ * 观察者接�?
  * 
  * @author ken
  * 2017-6-13 上午11:33:38

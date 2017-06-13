@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_02Observer.theanswer;
+package designPattern.headfirst.chapter_02Observer.theAnswer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class WeatherData implements Subject{
 			observers.remove(ob);
 	}
 	/**
-	 * 当从气象站观测到新的信息通知观察者
+	 * 当从气象站观测到新的信息通知观察�?
 	 * @param temprature
 	 * @param humidity
 	 * @param pressure
