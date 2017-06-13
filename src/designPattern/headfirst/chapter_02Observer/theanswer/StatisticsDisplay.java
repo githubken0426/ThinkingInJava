@@ -9,7 +9,7 @@ public class StatisticsDisplay implements DisplayElement, Observer {
 	
 	StatisticsDisplay(Subject subject){
 		this.subject=subject;
-		subject.registerObserver(this);
+		this.subject.registerObserver(this);
 	}
 	
 	@Override
