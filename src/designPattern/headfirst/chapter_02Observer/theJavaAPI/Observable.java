@@ -101,6 +101,10 @@ public class Observable {
 			arrLocal = obs.toArray();
 			clearChanged();
 		}
+		/**
+		 * 采用倒序遍历集合
+		 * 所以输出为倒序
+		 */
 		for (int i = arrLocal.length - 1; i >= 0; i--)
 			((Observer) arrLocal[i]).update(this, arg);
 	}

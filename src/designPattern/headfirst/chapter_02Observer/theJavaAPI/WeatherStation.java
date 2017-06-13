@@ -7,6 +7,6 @@ public class WeatherStation {
 		DisplayElement currentDisplay=new CurrentConditionsDisplay(observable);
 		DisplayElement statisticDisplay=new StatisticsDisplay(observable);
 		
-		observable.setMeasurements("20бу", "20", "50hPa","test");
+		observable.setMeasurements("20бу", "20", "50hPa");
 	}
 }
