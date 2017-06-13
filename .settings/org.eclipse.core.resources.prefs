@@ -1,4 +1,4 @@
-#Fri Jun 09 14:41:59 CST 2017
+#Tue Jun 13 11:40:48 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
@@ -17,6 +17,11 @@ encoding//src/designPattern/headfirst/chapter_01Strategy/change01/Flyable.java=U
 encoding//src/designPattern/headfirst/chapter_01Strategy/change01/Quackable.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_01Strategy/me/AbstractDuck.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_01Strategy/theanswer/Duck.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_02Observer/anexample/WeatherData.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_02Observer/theanswer/DisplayElement.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_02Observer/theanswer/Observer.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_02Observer/theanswer/Subject.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_02Observer/theanswer/WeatherData.java=UTF-8
 encoding//src/jvm/signature/MethodSignature.java=UTF-8
 encoding//src/log4j.properties=GBK
 encoding//src/resourceCode/map/test/SortMap.java=UTF-8
