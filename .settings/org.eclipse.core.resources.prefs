@@ -1,4 +1,4 @@
-#Thu Jun 15 09:27:17 CST 2017
+#Thu Jun 15 16:19:32 CST 2017
 eclipse.preferences.version=1
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
@@ -28,6 +28,14 @@ encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/DisplayEleme
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/Observable.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/Observer.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/WeatherData.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/Beverage.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/CondimentDecorator.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/HouseBlend.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/Mocha.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/me/Beverage.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/me/CondimentDecorator.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/me/HouseBlend.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/me/Mocha.java=UTF-8
 encoding//src/jvm/signature/MethodSignature.java=UTF-8
 encoding//src/log4j.properties=GBK
 encoding//src/resourceCode/map/test/SortMap.java=UTF-8
