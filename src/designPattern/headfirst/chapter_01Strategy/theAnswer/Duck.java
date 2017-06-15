@@ -1,12 +1,29 @@
 package designPattern.headfirst.chapter_01Strategy.theAnswer;
 
 
-public class Duck {
+public abstract class Duck {
+	FlyBehavior fly;
+	QuackBehavior quack;
+	
 	public void swim() {
 		System.out.println("会游");
 	}
 
-	public void display() {
-		System.out.println("羽毛颜色");
+	public abstract void display();
+	
+	
+	public void setFly(FlyBehavior fly) {
+		this.fly = fly;
+	}
+
+	public void setQuack(QuackBehavior quack) {
+		this.quack = quack;
+	}
+
+	void performQuack(){
+		quack.quack();
+	}
+	void performFly(){
+		fly.fly();
 	}
 }
