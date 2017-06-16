@@ -1,5 +1,6 @@
-#Thu Jun 15 16:19:32 CST 2017
+#Fri Jun 16 14:22:38 CST 2017
 eclipse.preferences.version=1
+encoding//src/applicationConfig.properties=UTF-8
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/TransDemo.java=UTF-8
