@@ -14,7 +14,7 @@ public abstract class Beverage {
 		return description;
 	}
 	
-	int size=1;
+	int size=0;
 	public void setSize(int size) {
 		this.size = size;
 	}
