@@ -1,4 +1,3 @@
-#Fri Jun 16 14:22:38 CST 2017
 eclipse.preferences.version=1
 encoding//src/applicationConfig.properties=UTF-8
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
@@ -37,6 +36,7 @@ encoding//src/designPattern/headfirst/chapter_03Decorator/me/Beverage.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/CondimentDecorator.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/HouseBlend.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/Mocha.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_04Factory/anExample/Test.java=UTF-8
 encoding//src/jvm/signature/MethodSignature.java=UTF-8
 encoding//src/log4j.properties=GBK
 encoding//src/resourceCode/map/test/SortMap.java=UTF-8
