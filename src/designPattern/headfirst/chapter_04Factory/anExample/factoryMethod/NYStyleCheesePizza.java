@@ -4,7 +4,7 @@ public class NYStyleCheesePizza implements Pizza {
 
 	@Override
 	public void prepare() {
-		System.out.println("New York CheesePizza prpare");
+		System.out.println("New York CheesePizza prepare");
 	}
 
 	@Override

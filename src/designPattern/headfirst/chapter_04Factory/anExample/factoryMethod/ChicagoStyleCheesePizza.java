@@ -3,7 +3,7 @@ package designPattern.headfirst.chapter_04Factory.anExample.factoryMethod;
 public class ChicagoStyleCheesePizza implements Pizza {
 	@Override
 	public void prepare() {
-		System.out.println("Chicago CheesePizza prpare");
+		System.out.println("Chicago CheesePizza prepare");
 	}
 
 	@Override
