@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_04Factory.anExample;
+package designPattern.headfirst.chapter_04Factory.anExample.factoryMethod;
 
 public interface Pizza {
 	void prepare();

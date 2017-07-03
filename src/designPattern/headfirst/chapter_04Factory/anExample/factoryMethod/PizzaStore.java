@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_04Factory.anExample;
+package designPattern.headfirst.chapter_04Factory.anExample.factoryMethod;
 /**
  * PizzaStore为一个超类型
  * 让子类来实现具体的Pizza制作方法

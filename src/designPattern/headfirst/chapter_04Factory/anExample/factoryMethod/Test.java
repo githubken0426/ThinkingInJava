@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_04Factory.anExample;
+package designPattern.headfirst.chapter_04Factory.anExample.factoryMethod;
 
 /**
  * 工厂方法模式
