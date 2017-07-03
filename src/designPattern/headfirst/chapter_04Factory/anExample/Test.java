@@ -1,7 +1,7 @@
 package designPattern.headfirst.chapter_04Factory.anExample;
 
 /**
- * 简单工厂
+ * 工厂方法模式
  * @author ken
  * 
  * @date 2017年6月27日 下午3:32:38

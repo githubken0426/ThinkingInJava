@@ -3,6 +3,7 @@ package cn;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.nio.ByteBuffer;
+import java.util.UUID;
 
 import cn.serializable.externlizable.Users;
 import th.about.cast.Student;
@@ -74,7 +75,7 @@ public class Test {
 	 * byte[]×ªLong
 	 * @param b
 	 * @return
-	 * 2017-5-12 ÏÂÎç01:26:28
+	 * 2017-5-12 ï¿½ï¿½ï¿½ï¿½01:26:28
 	 */
 	private static ByteBuffer buffer = ByteBuffer.allocate(8); 
 	public static Long bytesToLong(byte[] b){
@@ -90,11 +91,10 @@ public class Test {
 	 * byte[]×ªString
 	 * @param b
 	 * @return
-	 * 2017-5-12 ÏÂÎç01:26:28
+	 * 2017-5-12 ï¿½ï¿½ï¿½ï¿½01:26:28
 	 */
 	public static String test2(byte[] b){
 		return new String(b);
 	}
 	
-
 }
