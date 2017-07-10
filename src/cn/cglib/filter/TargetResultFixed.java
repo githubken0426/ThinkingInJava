@@ -9,10 +9,7 @@ import net.sf.cglib.proxy.FixedValue;
  * 2016-12-7 上午09:50:13
  */
 public class TargetResultFixed implements FixedValue {
-	/**
-	 * MyProxyFilter中定义的使用FixedValue回调的方法为getConcreteMethodFixedValue
-	 * 该方法返回值为整型
-	 */
+	
 	@Override
 	public Object loadObject() throws Exception {
 		System.out.print("锁定结果:");

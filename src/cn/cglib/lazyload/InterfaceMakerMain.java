@@ -11,21 +11,21 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * ½Ó¿ÚÉú³ÉÆ÷InterfaceMaker InterfaceMaker»á¶¯Ì¬Éú³ÉÒ»¸ö½Ó¿Ú£¬¸Ã½Ó¿Ú°üº¬Ö¸¶¨Àà¶¨ÒåµÄËùÓĞ·½·¨
+ * æ¥å£ç”Ÿæˆå™¨InterfaceMaker InterfaceMakerä¼šåŠ¨æ€ç”Ÿæˆä¸€ä¸ªæ¥å£ï¼Œè¯¥æ¥å£åŒ…å«æŒ‡å®šç±»å®šä¹‰çš„æ‰€æœ‰æ–¹æ³•
  * 
- * @author ken 2016-12-8 ÏÂÎç05:09:48
+ * @author ken 2016-12-8 ä¸‹åˆ05:09:48
  */
 public class InterfaceMakerMain {
 	public static Object getInstance() {
 		InterfaceMaker interfaceMaker = new InterfaceMaker();
-		// ³éÈ¡Ä³¸öÀàµÄ·½·¨Éú³É½Ó¿Ú·½·¨
+		// æŠ½å–æŸä¸ªç±»çš„æ–¹æ³•ç”Ÿæˆæ¥å£æ–¹æ³•
 		interfaceMaker.add(Book.class);
 		Class<?> targetInterface = interfaceMaker.create();
-		//Êä³öBookµÄËùÓĞ·½·¨Ãû
+		//è¾“å‡ºBookçš„æ‰€æœ‰æ–¹æ³•å
 		for (Method method : targetInterface.getDeclaredMethods()) {
-			System.out.println("ÒªÖ´ĞĞµÄ·½·¨:"+method.getName());
+			System.out.println("è¦æ‰§è¡Œçš„æ–¹æ³•:"+method.getName());
 		}
-		// ½Ó¿Ú´úÀí²¢ÉèÖÃ´úÀí½Ó¿Ú·½·¨À¹½Ø
+		// æ¥å£ä»£ç†å¹¶è®¾ç½®ä»£ç†æ¥å£æ–¹æ³•æ‹¦æˆª
 		Object object = Enhancer.create(Object.class,new Class[] { targetInterface }, 
 				new MethodInterceptor() {
 					@Override
@@ -38,7 +38,7 @@ public class InterfaceMakerMain {
 						}
 						if (method.getName().equals("delete")) {
 							System.out.println("filter delete ");
-							return "ÎÒÊÇdelete·µ»Ø·µ»ØÖµ";
+							return "æˆ‘æ˜¯deleteè¿”å›è¿”å›å€¼";
 						}
 						return 0;
 					}
@@ -52,7 +52,7 @@ public class InterfaceMakerMain {
 		Object object = getInstance();
 		Method targetMethod1 = object.getClass().getMethod("update",
 				new Class[] { int.class });
-		System.out.println("update·µ»ØÖµ£º"+targetMethod1.invoke(object, new Object[] { 33 }));
+		System.out.println("updateè¿”å›å€¼:"+targetMethod1.invoke(object, new Object[] { 33 }));
 		Method targetMethod = object.getClass().getMethod("delete",
 				new Class[] {});
 		System.out.println(targetMethod.invoke(object, new Object[] {}));

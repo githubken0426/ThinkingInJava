@@ -17,7 +17,7 @@ public class BookFactory {
 		en.setSuperclass(Book.class);
 		en.setCallback(proxy);
 		Book book=(Book) en.create();
-		System.out.println(book);
+		//System.out.println("BookFactory:"+book);//隐式调用book的toString方法
 		return book;
 	}
 }

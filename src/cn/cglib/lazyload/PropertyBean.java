@@ -1,10 +1,10 @@
 package cn.cglib.lazyload;
 
 /**
- * 简单的属性Bean
+ * 瀹炰綋绫籅ean
  * 
  * @author ken
- * 2016-12-9 上午08:52:50
+ * 2016-12-9 涓婂崍08:52:50
  */
 public class PropertyBean {
 	private String key;  

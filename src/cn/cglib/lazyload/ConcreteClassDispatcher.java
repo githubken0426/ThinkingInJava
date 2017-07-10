@@ -4,9 +4,9 @@ import cn.cglib.Book;
 import net.sf.cglib.proxy.Dispatcher;
 
 /**
- * DispatcherÔÚÃ¿´Î·ÃÎÊÑÓ³Ù¼ÓÔØÊôĞÔÊ±¶¼»á´¥·¢´úÀíÀà»Øµ÷·½·¨
+ * Dispatcheråœ¨æ¯æ¬¡è®¿é—®å»¶è¿ŸåŠ è½½å±æ€§æ—¶éƒ½ä¼šè§¦å‘ä»£ç†ç±»å›è°ƒæ–¹æ³•
  * 
- * @author ken 2016-12-8 ÏÂÎç03:26:49
+ * @author ken 2016-12-8 ä¸‹åˆ03:26:49
  */
 public class ConcreteClassDispatcher implements Dispatcher {
 

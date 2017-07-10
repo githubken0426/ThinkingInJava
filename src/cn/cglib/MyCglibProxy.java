@@ -28,13 +28,16 @@ public class MyCglibProxy implements MethodInterceptor {
 	@Override
 	public Object intercept(Object obj, Method method, Object[] arg2,
 			MethodProxy methodProxy) throws Throwable {
-		logger.info("MethodInterceptor����ǰ��"+ method.getName());
+		logger.info("MethodInterceptor 调用前:"+ method.getName());
+		for (Object arg : arg2) {
+			System.out.print("参数:"+arg+",");
+		}
 		if(! "boss".equals(name)){//只有boss才能调用delete方法
 			System.out.println("你没有权限！");
 			return null;
 		}
-		Object result=methodProxy.invokeSuper(obj, arg2);
-		System.out.println("MethodInterceptor调用后:"+result);
+		Object result=methodProxy.invokeSuper(obj, arg2);//回调目标方法
+		System.out.println("MethodInterceptor 调用后:"+result);
 		return result;
 	}
 }	

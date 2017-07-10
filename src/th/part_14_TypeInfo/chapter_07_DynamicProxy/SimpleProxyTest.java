@@ -1,16 +1,16 @@
 package th.part_14_TypeInfo.chapter_07_DynamicProxy;
 /**
- * 14.7 ¼òµ¥´úÀí
+ * 14.7 ç®€å•ä»£ç†
  * @author Administrator
- * 2015Äê9ÔÂ11ÈÕ
+ * 2015-9-11:ä¸Šåˆ
  */
 public class SimpleProxyTest {
-	//Ä¿±êÀàµÄÍ³Ò»µÄ½Ó¿Ú
+	//Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Í³Ò»ï¿½Ä½Ó¿ï¿½
 	public interface InterfaceProxy {
 		void doSomething();
 		void somethingElse(String str);
 	}
-	//¼òµ¥µÄ½Ó¿ÚÊµÏÖ
+	//ï¿½òµ¥µÄ½Ó¿ï¿½Êµï¿½ï¿½
 	public class RealObject implements InterfaceProxy {
 		@Override public void doSomething() {
 			System.out.println("doSomething...");
@@ -19,7 +19,7 @@ public class SimpleProxyTest {
 			System.out.println("somethingElse:"+str);
 		}
 	}
-	//´úÀí½Ó¿ÚÊµÏÖ
+	//ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Êµï¿½ï¿½
 	public class SimpleProxy implements InterfaceProxy {
 		private InterfaceProxy proxied;
 		public SimpleProxy(InterfaceProxy proxied){
@@ -39,10 +39,10 @@ public class SimpleProxyTest {
 	}
 	
 	/**
-	 * ÒòÎªconsumer()·½·¨½ÓÊÕInterfaceProxy½Ó¿Ú£¬
-	 * simpleProxyºÍRealObject()¾ùÊµÏÖÁËInterfaceProxy½Ó¿Ú£¬ËùÒÔ»áÖ´ĞĞ´Ë²Ù×÷¡£
+	 * ï¿½ï¿½Îªconsumer()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½InterfaceProxyï¿½Ó¿Ú£ï¿½
+	 * simpleProxyï¿½ï¿½RealObject()ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½InterfaceProxyï¿½Ó¿Ú£ï¿½ï¿½ï¿½ï¿½Ô»ï¿½Ö´ï¿½Ğ´Ë²ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param args
-	 * 2016-12-6 ÉÏÎç11:29:32
+	 * 2016-12-6 ï¿½ï¿½ï¿½ï¿½11:29:32
 	 */
 	public static void main(String[] args) {
 		SimpleProxyTest test=new SimpleProxyTest();

@@ -19,7 +19,7 @@ public class Book {
 		return count;
 	}
 	public String delete() {
-		System.out.println("����delete();");
+		System.out.println("调用delete();");
 		return "返回delete";
 	}
 	public String toString() {

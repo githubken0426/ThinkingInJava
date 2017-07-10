@@ -2,18 +2,18 @@ package cn.cglib.lazyload;
 
 public class LazyMain {
 	public static void main(String[] args) {
-		//ÎŞÂÛµ÷ÓÃ¶à´ÎÊôĞÔ£¬LazyBeanÖ»¼ÓÔØÒ»´Î
+		//æ— è®ºè°ƒç”¨å¤šæ¬¡å±æ€§ï¼ŒLazyBeanåªåŠ è½½ä¸€æ¬¡
 		LazyBean bean = new LazyBean("lisi", 23);
 		PropertyBean property=bean.getPropertyBean();
-		System.out.println("³õ´Îµ÷ÓÃ£º"+property.getKey());
+		System.out.println("åˆæ¬¡è°ƒç”¨"+property.getKey());
 		System.out.println(property.getValue());
-		System.out.println("ÔÙ´Îµ÷ÓÃ£º"+property.getKey());
+		System.out.println("å†æ¬¡è°ƒç”¨"+property.getKey());
 		
 		System.out.println("-----------------------------------------");
-		//µ÷ÓÃ¶àÉÙ´ÎÊôĞÔ£¬LazyBean¼ÓÔØ¶àÉÙ´Î
+		//è°ƒç”¨å¤šå°‘æ¬¡å±æ€§ï¼ŒLazyBeanåŠ è½½å¤šå°‘æ¬¡
 		PropertyBean dispatcher=bean.getPropertyBeanDispatcher();
-		System.out.println("³õ´Îµ÷ÓÃ£º"+dispatcher.getKey());
+		System.out.println("åˆæ¬¡è°ƒç”¨"+dispatcher.getKey());
 		System.out.println(property.getValue());
-		System.out.println("ÔÙ´Îµ÷ÓÃ£º"+dispatcher.getKey());
+		System.out.println("å†æ¬¡è°ƒç”¨"+dispatcher.getKey());
 	}
 }

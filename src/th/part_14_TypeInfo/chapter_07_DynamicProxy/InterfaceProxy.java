@@ -1,9 +1,9 @@
 package th.part_14_TypeInfo.chapter_07_DynamicProxy;
 
 /**
- * 14.7 ¼òµ¥´úÀí
+ * 14.7 ç®€å•ä»£ç†
  * @author Administrator
- * 2015Äê9ÔÂ11ÈÕ
+ * 2015-9-11:ä¸Šåˆ
  */
 public interface InterfaceProxy {
 	void doSomething();
