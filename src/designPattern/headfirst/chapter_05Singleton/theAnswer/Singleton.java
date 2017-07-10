@@ -1,9 +1,7 @@
-package cn.singleton;
+package designPattern.headfirst.chapter_05Singleton.theAnswer;
 
 public class Singleton {
-
 	private static Singleton instance;
-
 	private Singleton() {
 	}
 
@@ -67,19 +65,22 @@ public class Singleton {
 		};
 		public abstract Singleton getInstance();
 	}
+
 	/**
 	 * 6.双重校验锁
-	 * @return
-	 * 2017-5-12 下午12:00:23
+	 * 1.4之前的版本会导致voldatile失效
+	 * @return 2017-5-12 下午12:00:23
 	 */
+	private static volatile Singleton instance2;
 	public static Singleton singleInstance5() {
-		if (instance == null) {
+		//只有第一次创建时才会进入此代码块
+		if (instance2 == null) {
 			synchronized (Singleton.class) {
-				if (instance == null)
-					instance = new Singleton();
+				if (instance2 == null)
+					instance2 = new Singleton();
 			}
 		}
-		return instance;
+		return instance2;
 	}
 
 	public static void main(String[] args) {
