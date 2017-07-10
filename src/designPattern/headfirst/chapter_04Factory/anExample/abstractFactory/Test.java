@@ -5,8 +5,8 @@ import designPattern.headfirst.chapter_04Factory.anExample.abstractFactory.store
 import designPattern.headfirst.chapter_04Factory.anExample.abstractFactory.store.PizzaStore;
 
 /**
- * 工厂方法使用的是类(继承工厂类ChicagoStyleCheesePizzamarker#1)
- * 抽象工厂使用的是对象(组合CheesePizzamarker#2)
+ * 工厂方法使用的是类(继承)
+ * 抽象工厂使用的是对象(组合)
  * @author ken
  * 
  * @date 2017年7月10日 下午4:21:21

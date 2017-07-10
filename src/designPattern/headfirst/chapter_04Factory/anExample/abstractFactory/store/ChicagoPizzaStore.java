@@ -14,9 +14,7 @@ import designPattern.headfirst.chapter_04Factory.anExample.abstractFactory.ingre
  */
 public class ChicagoPizzaStore extends PizzaStore{
 
-	/**
-	 * 此方法使用了工厂方法
-	 */
+	
 	@Override
 	public Pizza createPizza(String type) {
 		Pizza pizza=null;
