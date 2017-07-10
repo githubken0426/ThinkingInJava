@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/applicationConfig.properties=UTF-8
+encoding//src/cn/cglib/Book.java=utf-8
+encoding//src/cn/cglib/MyCglibProxy.java=utf-8
 encoding//src/cn/encrypt/Encrypt.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/ClassLib.java=UTF-8
 encoding//src/cn/serializable/transientDemo1/TransDemo.java=UTF-8

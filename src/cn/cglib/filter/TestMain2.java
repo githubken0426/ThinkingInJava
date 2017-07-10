@@ -9,7 +9,7 @@ public class TestMain2 {
 		book1.create(); 
 		book1.query();
 		book1.delete();
-		//update的返回值锁定为888
+		//update鐨勮繑鍥炲�奸攣瀹氫负888
 		System.out.println(book1.update(100));
 		System.out.println("------------------------------------------------");
 		
@@ -17,7 +17,7 @@ public class TestMain2 {
 		book2.create(); 
 		book2.delete();
 		book2.query(); 
-		//update的返回值锁定为888
+		//update鐨勮繑鍥炲�奸攣瀹氫负888
 		System.out.println(book2.update(200));
 	}
 }

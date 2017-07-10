@@ -10,14 +10,14 @@ public class BookFilterFactory {
 	private static Enhancer en = null;
 
 	/**
-	 * @param proxy ·½·¨À¹½ØÆ÷
-	 * @return 2016-12-7 ÉÏÎç11:08:33
+	 * @param proxy æ–¹æ³•æ‹¦æˆªå™¨
+	 * @return 2016-12-7 ä¸Šåˆ11:08:33
 	 */
 	public static Book getInstanceByFilter(MyCglibProxy proxy) {
-//		//Ô­´úÂë£ºÎÊÌâ³öÏÖµã
+//		//åŸä»£ç ï¼šé—®é¢˜å‡ºç°ç‚¹
 //		 if(en==null)
 //			 en=new Enhancer();
-		Enhancer en = new Enhancer();//ĞŞ¸Äºó
+		Enhancer en = new Enhancer();//ä¿®æ”¹å
 		en.setSuperclass(Book.class);
 		// Callback noopCb=NoOp.INSTANCE;
 		// Callback callback=proxy;
@@ -26,10 +26,10 @@ public class BookFilterFactory {
 		// en.setCallbacks(callbacks);
 		
 		/**
-		 * setCallbacksÖĞ¶¨ÒåÁËËùÊ¹ÓÃµÄÀ¹½ØÆ÷£¬
-		 * ÆäÖĞNoOp.INSTANCEÊÇCGlibËùÌá¹©µÄÊµ¼ÊÊÇÒ»¸öÃ»ÓĞÈÎºÎ²Ù×÷µÄÀ¹½ØÆ÷£¬
-		 * ËûÃÇÊÇÓĞĞòµÄ,Ò»¶¨ÒªºÍCallbackFilter(¼´MyProxyFilter)ÀïÃæµÄË³ĞòÒ»ÖÂ¡£
-		 * MyProxyFilterÖĞreturn·µ»Ø(0/1/2)µÄ¾ÍÊÇ·µ»ØµÄË³Ğò
+		 * setCallbacksä¸­å®šä¹‰äº†æ‰€ä½¿ç”¨çš„æ‹¦æˆªå™¨ï¼Œ
+		 * å…¶ä¸­NoOp.INSTANCEæ˜¯CGlibæ‰€æä¾›çš„å®é™…æ˜¯ä¸€ä¸ªæ²¡æœ‰ä»»ä½•æ“ä½œçš„æ‹¦æˆªå™¨ï¼Œ
+		 * ä»–ä»¬æ˜¯æœ‰åºçš„,ä¸€å®šè¦å’ŒCallbackFilter(å³MyProxyFilter)é‡Œé¢çš„é¡ºåºä¸€è‡´ã€‚
+		 * MyProxyFilterä¸­returnè¿”å›(0/1/2)çš„å°±æ˜¯è¿”å›çš„é¡ºåº
 		 */
 		en.setCallbacks(new Callback[] { proxy, NoOp.INSTANCE,new TargetResultFixed() });
 		en.setCallbackFilter(new MyProxyFilter());

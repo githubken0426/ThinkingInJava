@@ -1,26 +1,26 @@
 package cn.cglib;
 
 /**
- * ÊµÌåÀà Ã»ÓĞÊµÏÖÈÎºÎ½Ó¿Ú
- * @author ken 2016-12-7 ÉÏÎç09:37:52
+ * å®ä½“ç±» æ²¡æœ‰å®ç°ä»»ä½•æ¥å£
+ * @author ken 2016-12-7 ä¸Šåˆ09:37:52
  */
 public class Book {
 	public String create() {
-		System.out.println("µ÷ÓÃcreate();");
-		return "·µ»Øcreate";
+		System.out.println("è°ƒç”¨create();");
+		return "è¿”å›create";
 	}
 	public String query() {
-		System.out.println("µ÷ÓÃquery();");
-		return "·µ»Øquery";
+		System.out.println("è°ƒç”¨query();");
+		return "è¿”å›query";
 	}
-	//´Ë·½·¨ÎªÁËËø¶¨·½·¨·µ»ØÖµ£¬FixedValue½Ó¿Ú²âÊÔ¡£
+	//æ­¤æ–¹æ³•ä¸ºäº†é”å®šæ–¹æ³•è¿”å›å€¼ï¼ŒFixedValueæ¥å£æµ‹è¯•ã€‚
 	public Integer update(int count) {
-		System.out.println("µ÷ÓÃupdate();");
+		System.out.println("è°ƒç”¨update();");
 		return count;
 	}
 	public String delete() {
-		System.out.println("µ÷ÓÃdelete();");
-		return "·µ»Ødelete";
+		System.out.println("ï¿½ï¿½ï¿½ï¿½delete();");
+		return "è¿”å›delete";
 	}
 	public String toString() {
 		return "Book " + getClass();

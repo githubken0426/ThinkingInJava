@@ -5,17 +5,17 @@ import java.lang.reflect.Method;
 import net.sf.cglib.proxy.CallbackFilter;
 
 /**
- * cglib¹ıÂËÆ÷
+ * cglibè¿‡æ»¤å™¨
  * @author Administrator
- * 2016-1-5 ÏÂÎç01:29:10
+ * 2016-1-5 ä¸‹åˆ01:29:10
  *
  */
 public class MyProxyFilter implements CallbackFilter {
 	/**
-	 * »Øµ÷¹ıÂË·½·¨
-	 * ·µ»ØµÄÖµÎªÊı×Ö£¬´ú±íÁËCallbackÊı×éÖĞµÄË÷ÒıÎ»ÖÃ
-	 * ·µ»ØµÄÖµ±»´úÀíÀàµÄ¸÷¸ö·½·¨ÔÚ»Øµ÷Êı×éCallback[]ÖĞµÄÎ»ÖÃË÷Òı
-	 * 0[¶ÔÓ¦proxy]/1[¶ÔÓ¦NoOp.INSTANCE]/2[¶ÔÓ¦new TargetResultFixed()]
+	 * å›è°ƒè¿‡æ»¤æ–¹æ³•
+	 * è¿”å›çš„å€¼ä¸ºæ•°å­—ï¼Œä»£è¡¨äº†Callbackæ•°ç»„ä¸­çš„ç´¢å¼•ä½ç½®
+	 * è¿”å›çš„å€¼è¢«ä»£ç†ç±»çš„å„ä¸ªæ–¹æ³•åœ¨å›è°ƒæ•°ç»„Callback[]ä¸­çš„ä½ç½®ç´¢å¼•
+	 * 0[å¯¹åº”proxy]/1[å¯¹åº”NoOp.INSTANCE]/2[å¯¹åº”new TargetResultFixed()]
 	 */
 	@Override
 	public int accept(Method arg0) {

@@ -3,19 +3,19 @@ package cn.cglib.filter;
 import net.sf.cglib.proxy.FixedValue;
 
 /**
- * Ëø¶¨·½·¨·µ»ØÖµ£¬ÎŞÂÛ±»´úÀíÀàµÄ·½·¨·µ»ØÊ²Ã´Öµ£¬»Øµ÷·½·¨¶¼·µ»Ø¹Ì¶¨Öµ
+ * é”å®šæ–¹æ³•è¿”å›å€¼ï¼Œæ— è®ºè¢«ä»£ç†ç±»çš„æ–¹æ³•è¿”å›ä»€ä¹ˆå€¼ï¼Œå›è°ƒæ–¹æ³•éƒ½è¿”å›å›ºå®šå€¼
  * 
  * @author ken
- * 2016-12-7 ÉÏÎç09:50:13
+ * 2016-12-7 ä¸Šåˆ09:50:13
  */
 public class TargetResultFixed implements FixedValue {
 	/**
-	 * MyProxyFilterÖĞ¶¨ÒåµÄÊ¹ÓÃFixedValue»Øµ÷µÄ·½·¨ÎªgetConcreteMethodFixedValue
-	 * ¸Ã·½·¨·µ»ØÖµÎªÕûĞÍ
+	 * MyProxyFilterä¸­å®šä¹‰çš„ä½¿ç”¨FixedValueå›è°ƒçš„æ–¹æ³•ä¸ºgetConcreteMethodFixedValue
+	 * è¯¥æ–¹æ³•è¿”å›å€¼ä¸ºæ•´å‹
 	 */
 	@Override
 	public Object loadObject() throws Exception {
-		System.out.print("Ëø¶¨½á¹û:");
+		System.out.print("é”å®šç»“æœ:");
 		Object obj = 888;
 		return obj;
 	}

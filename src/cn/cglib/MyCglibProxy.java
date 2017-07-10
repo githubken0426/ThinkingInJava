@@ -7,9 +7,9 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import org.apache.log4j.Logger;
 /**
- * ¶¯Ì¬´úÀí£ºÈ¨ÏŞÏŞÖÆ
+ * åŠ¨æ€ä»£ç†ï¼šæƒé™é™åˆ¶
  * @author Administrator
- * 2016-1-5 ÉÏÎç11:54:09
+ * 2016-1-5 ä¸Šåˆ11:54:09
  */
 public class MyCglibProxy implements MethodInterceptor {
 	private Logger logger=Logger.getLogger(MyCglibProxy.class);
@@ -18,23 +18,23 @@ public class MyCglibProxy implements MethodInterceptor {
 		this.name=name;
 	}
 	/**
-	 * ²ÎÊı£ºObjectÎªÓÉCGLib¶¯Ì¬Éú³ÉµÄ´úÀíÀàÊµÀı£¬
-	 * MethodÎªÉÏÎÄÖĞÊµÌåÀàËùµ÷ÓÃµÄ±»´úÀíµÄ·½·¨ÒıÓÃ£¬
-	 * Object[]Îª²ÎÊıÖµÁĞ±í£¬MethodProxyÎªÉú³ÉµÄ´úÀíÀà¶Ô·½·¨µÄ´úÀíÒıÓÃ¡£
-	 * ·µ»Ø£º´Ó´úÀíÊµÀıµÄ·½·¨µ÷ÓÃ·µ»ØµÄÖµ¡£
-	 * ÆäÖĞ£¬methodProxy.invokeSuper(obj,arg)£º
- 	 * µ÷ÓÃ´úÀíÀàÊµÀıÉÏµÄproxy·½·¨µÄ¸¸Àà·½·¨£¨¼´ÊµÌåÀàBookÖĞ¶ÔÓ¦µÄ·½·¨£©
+	 * å‚æ•°ï¼šObjectä¸ºç”±CGLibåŠ¨æ€ç”Ÿæˆçš„ä»£ç†ç±»å®ä¾‹ï¼Œ
+	 * Methodä¸ºä¸Šæ–‡ä¸­å®ä½“ç±»æ‰€è°ƒç”¨çš„è¢«ä»£ç†çš„æ–¹æ³•å¼•ç”¨ï¼Œ
+	 * Object[]ä¸ºå‚æ•°å€¼åˆ—è¡¨ï¼ŒMethodProxyä¸ºç”Ÿæˆçš„ä»£ç†ç±»å¯¹æ–¹æ³•çš„ä»£ç†å¼•ç”¨ã€‚
+	 * è¿”å›ï¼šä»ä»£ç†å®ä¾‹çš„æ–¹æ³•è°ƒç”¨è¿”å›çš„å€¼ã€‚
+	 * å…¶ä¸­ï¼ŒmethodProxy.invokeSuper(obj,arg)ï¼š
+ 	 * è°ƒç”¨ä»£ç†ç±»å®ä¾‹ä¸Šçš„proxyæ–¹æ³•çš„çˆ¶ç±»æ–¹æ³•ï¼ˆå³å®ä½“ç±»Bookä¸­å¯¹åº”çš„æ–¹æ³•ï¼‰
 	 */
 	@Override
 	public Object intercept(Object obj, Method method, Object[] arg2,
 			MethodProxy methodProxy) throws Throwable {
-		logger.info("MethodInterceptorµ÷ÓÃÇ°£º"+ method.getName());
-		if(! "boss".equals(name)){//Ö»ÓĞboss²ÅÄÜµ÷ÓÃdelete·½·¨
-			System.out.println("ÄãÃ»ÓĞÈ¨ÏŞ£¡");
+		logger.info("MethodInterceptorï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½"+ method.getName());
+		if(! "boss".equals(name)){//åªæœ‰bossæ‰èƒ½è°ƒç”¨deleteæ–¹æ³•
+			System.out.println("ä½ æ²¡æœ‰æƒé™ï¼");
 			return null;
 		}
 		Object result=methodProxy.invokeSuper(obj, arg2);
-		System.out.println("MethodInterceptorµ÷ÓÃºó:"+result);
+		System.out.println("MethodInterceptorè°ƒç”¨å:"+result);
 		return result;
 	}
 }	

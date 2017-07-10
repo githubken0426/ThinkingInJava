@@ -3,11 +3,11 @@ package cn.cglib;
 import net.sf.cglib.proxy.Enhancer;
 
 /**
- * Enhancer类是CGLib中的一个字节码增强器，
- * 它可以方便的对你想要处理的类进行扩展
+ * Enhancer绫绘槸CGLib涓殑涓�涓瓧鑺傜爜澧炲己鍣紝
+ * 瀹冨彲浠ユ柟渚跨殑瀵逛綘鎯宠澶勭悊鐨勭被杩涜鎵╁睍
  * 
  * @author ken
- * 2016-12-7 上午09:42:40
+ * 2016-12-7 涓婂崍09:42:40
  */
 public class BookFactory {
 	private static Enhancer en=null;
