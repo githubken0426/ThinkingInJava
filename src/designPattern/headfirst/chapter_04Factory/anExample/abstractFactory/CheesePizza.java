@@ -3,6 +3,7 @@ package designPattern.headfirst.chapter_04Factory.anExample.abstractFactory;
 import designPattern.headfirst.chapter_04Factory.anExample.abstractFactory.ingredentFactory.PizzaIngredientFactory;
 /**
  * 奶酪披萨
+ * marker#2抽象工厂使用的是对象(组合)PizzaIngredientFactory
  * @author ken
  * 
  * @date 2017年7月10日 下午3:37:04
