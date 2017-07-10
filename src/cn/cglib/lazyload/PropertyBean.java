@@ -1,7 +1,7 @@
 package cn.cglib.lazyload;
 
 /**
- * 实体类Bean
+ * 属性Bean
  * 
  * @author ken
  * 2016-12-9 上午08:52:50

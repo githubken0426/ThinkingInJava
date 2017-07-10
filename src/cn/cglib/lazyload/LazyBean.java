@@ -11,7 +11,6 @@ public class LazyBean {
 	public LazyBean(String name, int age) {
 		this.name = name;
 		this.age = age;
-		System.out.println("lazy bean init");
 		this.propertyBean = createPropertyBean();
 		this.propertyBeanDispatcher = createPropertyBeanDispatcher();
 	}

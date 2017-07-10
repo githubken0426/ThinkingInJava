@@ -1,10 +1,11 @@
-package cn.cglib.lazyload;
+package cn.cglib.interfaceMaker;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import cn.cglib.Book;
-
+import org.objectweb.asm.Type;
+import net.sf.cglib.core.Signature;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.InterfaceMaker;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -34,27 +35,30 @@ public class InterfaceMakerMain {
 							throws Throwable {
 						if (method.getName().equals("update")) {
 							System.out.println("filter update ");
-							return 1;
+							return args[0];
 						}
-						if (method.getName().equals("delete")) {
+						if (method.getName().equals("del")) {
 							System.out.println("filter delete ");
-							return "我是delete返回返回值";
+							return args[0];
 						}
 						return 0;
 					}
 				});
 		return object;
 	}
-
+	
 	public static void main(String[] args) throws SecurityException,
 			NoSuchMethodException, IllegalArgumentException,
 			IllegalAccessException, InvocationTargetException {
 		Object object = getInstance();
 		Method targetMethod1 = object.getClass().getMethod("update",
 				new Class[] { int.class });
-		System.out.println("update返回值:"+targetMethod1.invoke(object, new Object[] { 33 }));
-		Method targetMethod = object.getClass().getMethod("delete",
-				new Class[] {});
-		System.out.println(targetMethod.invoke(object, new Object[] {}));
+		Object obj =targetMethod1.invoke(object, new Object[] { 100 });
+		System.out.println("update返回值:"+obj);
+		
+		Method targetMethod = object.getClass().getMethod("del",
+				new Class[] {String.class});
+		System.out.println(targetMethod.invoke(object, new Object[] {"我是delete返回值！"}));
+		
 	}
 }

@@ -22,6 +22,11 @@ public class Book {
 		System.out.println("调用delete();");
 		return "返回delete";
 	}
+	
+	public String del(String value) {
+		return value;
+	}
+	
 	public String toString() {
 		return "Book " + getClass();
 	}
