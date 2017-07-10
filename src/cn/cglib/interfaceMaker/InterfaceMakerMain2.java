@@ -3,8 +3,9 @@ package cn.cglib.interfaceMaker;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import cn.cglib.Book;
 import org.objectweb.asm.Type;
+
+import cn.cglib.Book;
 import net.sf.cglib.core.Signature;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.InterfaceMaker;
@@ -26,6 +27,8 @@ public class InterfaceMakerMain2 {
 	 *            返回值类型
 	 * @param argumentTypes
 	 *            参数类型
+	 * @param exceptions
+	 *            异常类型
 	 * @date 2017年7月10日 下午1:23:22
 	 */
 	public static Class<?> getInstance(String name, Type returnType, Type[] argumentTypes, Type[] exceptions) {
@@ -38,24 +41,24 @@ public class InterfaceMakerMain2 {
 
 	public static void main(String[] args) throws SecurityException, NoSuchMethodException, IllegalArgumentException,
 			IllegalAccessException, InvocationTargetException {
-		Class<?> cla = getInstance("insert", Type.INT_TYPE, new Type[] { Type.INT_TYPE, Type.FLOAT_TYPE }, new Type[0]);
-		
+		Class<?> cla = getInstance("insert", Type.INT_TYPE, new Type[] { Type.INT_TYPE,Type.FLOAT_TYPE }, new Type[0]);
 		for (Method method : cla.getDeclaredMethods()) {
 			System.out.println("新创建的方法:" + method.getName());
 		}
-		Object object = Enhancer.create(Object.class, new Class[] { cla }, new MethodInterceptor() {
+
+		Object object = Enhancer.create(Book.class, new Class[] { cla }, new MethodInterceptor() {
 			@Override
-			public Object intercept(Object object, Method method, Object[] arg, MethodProxy proxy) throws Throwable {
+			public Object intercept(Object obj, Method method, Object[] arg, MethodProxy proxy) throws Throwable {
 				if (method.getName().equals("insert")) {
-					System.out.println("filter insert ");
-					return 100;
+					return arg[0];
 				}
 				return null;
 			}
 		});
-
-		Method targetMethod = object.getClass().getMethod("insert", new Class[] { int.class });
-		Object obj = targetMethod.invoke(object, new Object[] { 100 });
-		System.out.println("insert返回值:" + obj);
+		//必须指定参数类型(顺序和数量)
+		Method targetMethod = object.getClass().getMethod("insert", new Class[] { int.class,Float.TYPE });
+		//必须指定参数(顺序、数量、类型要对应上)
+		Object result = targetMethod.invoke(object, new Object[] { 100,200.1f });
+		System.out.println("insert返回值:" + result);
 	}
 }
