@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_06Command.anExample;
+package designPattern.headfirst.chapter_06Command.anExample.client;
 
 public class Light {
 	public void on(){

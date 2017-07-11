@@ -1,4 +1,6 @@
-package designPattern.headfirst.chapter_06Command.anExample;
+package designPattern.headfirst.chapter_06Command.anExample.command;
+
+import designPattern.headfirst.chapter_06Command.anExample.client.Light;
 
 public class LightOnCommand implements Command {
 	Light light;
