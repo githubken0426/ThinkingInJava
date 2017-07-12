@@ -37,18 +37,5 @@ public class RemoteLoader {
 		
 		control.onButtonWasPushed(1);
 		control.offButtonWasPushed(1);
-		
-		CeilingFan fan=new CeilingFan("天花板风扇");
-		Command fanCommand=new CeilingFanHighCommand(fan);
-		control.setCommand(2, fanCommand, fanCommand);
-		
-		control.onButtonWasPushed(2);
-		control.offButtonWasPushed(2);
-		control.undoButtonWasPushed();
-		
-		control.onButtonWasPushed(2);
-		control.onButtonWasPushed(2);
-		control.undoButtonWasPushed();
-		
 	}
 }
