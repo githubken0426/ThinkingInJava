@@ -1,5 +1,10 @@
-package designPattern.headfirst.chapter_06Command.anExample.client;
-
+package designPattern.headfirst.chapter_06Command.anExample.receiver;
+/**
+ * 接收者
+ * @author ken
+ * 
+ * @date 2017年7月12日 上午9:41:37
+ */
 public class ChargeDoor {
 	Light light;
 	
