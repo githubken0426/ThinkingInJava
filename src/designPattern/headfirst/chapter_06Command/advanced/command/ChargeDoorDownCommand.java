@@ -11,4 +11,8 @@ public class ChargeDoorDownCommand implements Command {
 	public void execute() {
 		door.down();
 	}
+	@Override
+	public void undo() {
+		door.up();
+	}
 }

@@ -5,6 +5,9 @@ import designPattern.headfirst.chapter_06Command.advanced.command.ChargeDoorOpen
 import designPattern.headfirst.chapter_06Command.advanced.command.Command;
 import designPattern.headfirst.chapter_06Command.advanced.command.LightOffCommand;
 import designPattern.headfirst.chapter_06Command.advanced.command.LightOnCommand;
+import designPattern.headfirst.chapter_06Command.advanced.command.NoCommand;
+import designPattern.headfirst.chapter_06Command.advanced.command.status.CeilingFanHighCommand;
+import designPattern.headfirst.chapter_06Command.advanced.receiver.CeilingFan;
 import designPattern.headfirst.chapter_06Command.advanced.receiver.ChargeDoor;
 import designPattern.headfirst.chapter_06Command.advanced.receiver.Light;
 
@@ -29,7 +32,23 @@ public class RemoteLoader {
 		
 		control.onButtonWasPushed(0);
 		control.offButtonWasPushed(0);
+		//调用undo,关闭的Ligth会再次被打开
+		control.undoButtonWasPushed();
+		
 		control.onButtonWasPushed(1);
 		control.offButtonWasPushed(1);
+		
+		CeilingFan fan=new CeilingFan("天花板风扇");
+		Command fanCommand=new CeilingFanHighCommand(fan);
+		control.setCommand(2, fanCommand, fanCommand);
+		
+		control.onButtonWasPushed(2);
+		control.offButtonWasPushed(2);
+		control.undoButtonWasPushed();
+		
+		control.onButtonWasPushed(2);
+		control.onButtonWasPushed(2);
+		control.undoButtonWasPushed();
+		
 	}
 }

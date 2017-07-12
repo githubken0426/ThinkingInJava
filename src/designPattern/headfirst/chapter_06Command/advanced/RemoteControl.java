@@ -13,6 +13,7 @@ import designPattern.headfirst.chapter_06Command.advanced.command.NoCommand;
 public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;
+	Command unCommand;
 
 	public RemoteControl(int num) {
 		onCommands = new Command[num];
@@ -22,6 +23,7 @@ public class RemoteControl {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
 		}
+		unCommand=noCommand;
 	}
 	/**
 	 * 
@@ -37,12 +39,16 @@ public class RemoteControl {
 
 	public void onButtonWasPushed(int slot) {
 		onCommands[slot].execute();
+		unCommand=onCommands[slot];
 	}
 
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
+		unCommand=offCommands[slot];
 	}
-	
+	public void undoButtonWasPushed(){
+		unCommand.undo();
+	}
 	public String toString(){
 		StringBuffer sb=new StringBuffer();
 		sb.append("____RemoteControl__\n");

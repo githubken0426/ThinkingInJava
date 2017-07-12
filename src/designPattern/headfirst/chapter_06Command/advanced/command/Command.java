@@ -7,4 +7,10 @@ package designPattern.headfirst.chapter_06Command.advanced.command;
  */
 public interface Command {
 	public void execute();
+	/**
+	 * 撤销命令
+	 * 
+	 * @date 2017年7月12日 上午10:41:34
+	 */
+	public void undo();
 }
