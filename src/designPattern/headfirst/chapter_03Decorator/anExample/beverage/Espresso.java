@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_03Decorator.anExample;
+package designPattern.headfirst.chapter_03Decorator.anExample.beverage;
 
 public class Espresso extends Beverage {
 	public Espresso() {

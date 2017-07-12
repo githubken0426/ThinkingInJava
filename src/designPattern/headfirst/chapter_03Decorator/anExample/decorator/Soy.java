@@ -1,4 +1,6 @@
-package designPattern.headfirst.chapter_03Decorator.anExample;
+package designPattern.headfirst.chapter_03Decorator.anExample.decorator;
+
+import designPattern.headfirst.chapter_03Decorator.anExample.beverage.Beverage;
 
 public class Soy extends CondimentDecorator {
 	Beverage beverage;

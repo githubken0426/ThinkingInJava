@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_03Decorator.anExample;
+package designPattern.headfirst.chapter_03Decorator.anExample.beverage;
 
 /**
  * 抽象组件
@@ -7,7 +7,7 @@ package designPattern.headfirst.chapter_03Decorator.anExample;
  * 2017-6-15 下午02:55:56
  */
 public abstract class Beverage {
-	String description="unkone beverage";
+	public String description="unkone beverage";
 	public abstract double cost();
 	
 	public String getDescription() {

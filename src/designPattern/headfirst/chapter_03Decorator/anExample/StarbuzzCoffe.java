@@ -1,5 +1,12 @@
 package designPattern.headfirst.chapter_03Decorator.anExample;
 
+import designPattern.headfirst.chapter_03Decorator.anExample.beverage.Beverage;
+import designPattern.headfirst.chapter_03Decorator.anExample.beverage.Espresso;
+import designPattern.headfirst.chapter_03Decorator.anExample.beverage.HouseBlend;
+import designPattern.headfirst.chapter_03Decorator.anExample.decorator.Mocha;
+import designPattern.headfirst.chapter_03Decorator.anExample.decorator.Soy;
+import designPattern.headfirst.chapter_03Decorator.anExample.decorator.Whip;
+
 public class StarbuzzCoffe {
 	public static void main(String[] args) {
 //		Beverage beverage=new Espresso();

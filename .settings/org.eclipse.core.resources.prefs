@@ -30,10 +30,10 @@ encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/DisplayEleme
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/Observable.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/Observer.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_02Observer/theJavaAPI/WeatherData.java=UTF-8
-encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/Beverage.java=UTF-8
-encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/CondimentDecorator.java=UTF-8
-encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/HouseBlend.java=UTF-8
-encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/Mocha.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/beverage/Beverage.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/beverage/HouseBlend.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/decorator/CondimentDecorator.java=UTF-8
+encoding//src/designPattern/headfirst/chapter_03Decorator/anExample/decorator/Mocha.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/Beverage.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/CondimentDecorator.java=UTF-8
 encoding//src/designPattern/headfirst/chapter_03Decorator/me/HouseBlend.java=UTF-8
