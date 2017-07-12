@@ -5,9 +5,6 @@ import designPattern.headfirst.chapter_06Command.advanced.command.ChargeDoorOpen
 import designPattern.headfirst.chapter_06Command.advanced.command.Command;
 import designPattern.headfirst.chapter_06Command.advanced.command.LightOffCommand;
 import designPattern.headfirst.chapter_06Command.advanced.command.LightOnCommand;
-import designPattern.headfirst.chapter_06Command.advanced.command.NoCommand;
-import designPattern.headfirst.chapter_06Command.advanced.command.status.CeilingFanHighCommand;
-import designPattern.headfirst.chapter_06Command.advanced.receiver.CeilingFan;
 import designPattern.headfirst.chapter_06Command.advanced.receiver.ChargeDoor;
 import designPattern.headfirst.chapter_06Command.advanced.receiver.Light;
 
