@@ -18,9 +18,11 @@ public class ProcessFiles {
 		this.ext=ext;
 	}
 	/**
-	 * getAbsoluteFile()返回抽象绝对路径名字符串
+	 * 使用了getAbsoluteFile()和getCanonicalFile()方法
 	 * @param file
 	 * @throws Exception
+	 * @throws 
+	 * @date 2017年7月18日 下午5:30:14
 	 */
 	public void processDirectoryThree(File file)throws Exception{
 		for(File f:Directory.walk(file.getAbsoluteFile(), ".*\\."+ext)){
@@ -28,19 +30,19 @@ public class ProcessFiles {
 		}
 	}
 	
-	public void start(String [] args){
+	public void start(String[] args) {
 		try {
-			if(args.length==0){
-				processDirectoryThree(new File(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
-			}else{
+			if (args.length == 0) {
+				processDirectoryThree(new File(
+						Constant.IO_ROOT_PATH_18 + "ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
+			} else {
 				for (String arg : args) {
-					File fileArg=new File(arg);
-					if(fileArg.isDirectory())
+					File fileArg = new File(arg);
+					if (fileArg.isDirectory())
 						processDirectoryThree(fileArg);
-					else
-						if(!arg.endsWith("."+ext))
-							arg+="."+ext;
-						strategy.process(new File(arg).getCanonicalFile());
+					else if (!arg.endsWith("." + ext))
+						arg += "." + ext;
+					strategy.process(new File(arg).getCanonicalFile());
 				}
 			}
 		} catch (Exception e) {
