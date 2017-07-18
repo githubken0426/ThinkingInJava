@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import th.util.Constant;
-import th.util.DateUtil;
 
 /**
  * 目录
@@ -55,8 +54,16 @@ public class Directory {
 			files.addAll(other.files);
 			dirs.addAll(other.dirs);
 		}
-
+		
 		public String toString() {
+			System.out.println("*********************文件路径：*********************");
+			for (File file : files) {
+				System.out.println(file);
+			}
+			System.out.println("^^^^^^^^^^^^^^^^^^^^^文件夹路径：*********************");
+			for (File dir : dirs) {
+				System.out.println(dir);
+			}
 			return "dirs:" + dirs + ",files" + files;
 		}
 
@@ -71,8 +78,9 @@ public class Directory {
 	 */
 	public static ThreeInfo recurseDirs(File startDir, String regex) {
 		ThreeInfo result = new ThreeInfo();
-		for (File item : startDir.listFiles()) {// 能够获取当前文件夹下的所有文件和文件夹
-			if (item.isDirectory()) { 			// 如果path表示的是一个目录则返回true
+		File[] fileList=startDir.listFiles();
+		for (File item : fileList) {// 能够获取当前文件夹下的所有文件和文件夹
+			if (item.isDirectory()) { // 如果path表示的是一个目录则返回true
 				result.dirs.add(item);
 				result.addAll(recurseDirs(item, regex));
 			} else if (item.getName().matches(regex))
@@ -94,7 +102,7 @@ public class Directory {
 	}
 
 	public static ThreeInfo walk(String start) {
-		return recurseDirs(new File(start), ".");
+		return recurseDirs(new File(start), ".*");
 	}
 
 	/**
@@ -103,10 +111,8 @@ public class Directory {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-		DateUtil.sdf1.format("");
 		if (args.length == 0) {
-			System.out.print(walk(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO."));
+			System.out.print(walk(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO"));
 		} else {
 			for (String str : args) {
 				System.out.println(walk(str));
