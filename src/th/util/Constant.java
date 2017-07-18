@@ -9,6 +9,6 @@ package th.util;
 public final class Constant {
 	public static final String PATH = "E:\\Eclipse_WS\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_00.";
 	
-	public static final String PATH_SECOND = "C:\\Users\\Administrator\\git\\My_Git_Version201759\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01";
+	public static final String PATH_SECOND = "F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01";
 
 }

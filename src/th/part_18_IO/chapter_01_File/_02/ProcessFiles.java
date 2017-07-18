@@ -16,7 +16,7 @@ public class ProcessFiles {
 		this.ext=ext;
 	}
 	/**
-	 * getAbsoluteFile()·µ»Ø³éÏó¾ø¶ÔÂ·¾¶Ãû×Ö·û´®
+	 * getAbsoluteFile()è¿”å›æŠ½è±¡ç»å¯¹è·¯å¾„åå­—ç¬¦ä¸²
 	 * @param file
 	 * @throws Exception
 	 */
@@ -29,7 +29,7 @@ public class ProcessFiles {
 	public void start(String [] args){
 		try {
 			if(args.length==0){
-				processDirectoryThree(new File("E:\\Eclipse_WS\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
+				processDirectoryThree(new File("F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
 			}else{
 				for (String arg : args) {
 					File fileArg=new File(arg);
@@ -48,17 +48,15 @@ public class ProcessFiles {
 	
 	public static void main(String[] args) throws IOException {
 		 File f = new File("..\\src\\file");
-		 //   getPath()·µ»ØµÄÊÇ¹¹Ôì·½·¨ÀïµÄÂ·¾¶£¬²»×öÈÎºÎ´¦Àí
+		 //   getPath()è¿”å›çš„æ˜¯æ„é€ æ–¹æ³•é‡Œçš„è·¯å¾„ï¼Œä¸åšä»»ä½•å¤„ç†
 	     System.out.println(f.getPath());
-	     //   getAbsolutePath()·µ»ØµÄÊÇ user.dir+getPath()£¬Ò²¾ÍÊÇÖ´ĞĞÂ·¾¶¼ÓÉÏ¹¹Ôì·½·¨ÖĞµÄÂ·¾¶
+	     //   getAbsolutePath()è¿”å›çš„æ˜¯ user.dir+getPath()ï¼Œä¹Ÿå°±æ˜¯æ‰§è¡Œè·¯å¾„åŠ ä¸Šæ„é€ æ–¹æ³•ä¸­çš„è·¯å¾„
 	     System.out.println(f.getAbsolutePath());
-	 	 //   getCanonicalPath()·µ»ØµÄÊÇ½«·ûºÅÍêÈ«½âÎöµÄÂ·¾¶£¬Ò²¾ÍÊÇÈ«Â·¾¶
+	 	 //   getCanonicalPath()è¿”å›çš„æ˜¯å°†ç¬¦å·å®Œå…¨è§£æçš„è·¯å¾„ï¼Œä¹Ÿå°±æ˜¯å…¨è·¯å¾„
 	     System.out.println(f.getCanonicalPath());
 	     
 	     System.out.println("================================");
-	     
 	     new ProcessFiles(new ProcessFiles.Strategy() {
-			
 			@Override
 			public void process(File file) {
 				System.out.println(file);

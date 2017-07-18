@@ -11,9 +11,9 @@ import th.util.DateUtil;
 
 
 /**
- * 目录
+ * 鐩綍
  * @author Administrator
- * 2015-11-23 上午08:40:03
+ * 2015-11-23 涓婂崍08:40:03
  *
  */
 public class Directory {
@@ -50,15 +50,15 @@ public class Directory {
 		}
 	}
 		/**
-		 * recurse 递归
+		 * recurse 锟捷癸拷
 		 * @param startDir
 		 * @param regex
 		 * @return
 		 */
 		public static ThreeInfo recurseDirs(File startDir,String regex){
 			ThreeInfo result =new ThreeInfo();
-			for(File item:startDir.listFiles()){//能够获取当前文件夹下的所有文件和文件夹
-				if(item.isDirectory()){			//如果path表示的是一个目录则返回true
+			for(File item:startDir.listFiles()){//锟杰癸拷锟斤拷取锟斤拷前锟侥硷拷锟斤拷锟铰碉拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟侥硷拷锟斤拷
+				if(item.isDirectory()){			//锟斤拷锟絧ath锟斤拷示锟斤拷锟斤拷一锟斤拷目录锟津返伙拷true
 					result.dirs.add(item);
 					result.addAll(recurseDirs(item,regex));
 				}else
@@ -82,7 +82,7 @@ public class Directory {
 		}
 		
 		/**
-		 * 测试
+		 * 锟斤拷锟斤拷
 		 * @param args
 		 */
 		public static void main(String[] args) {
