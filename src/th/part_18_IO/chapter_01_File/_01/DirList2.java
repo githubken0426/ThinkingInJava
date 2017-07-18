@@ -39,7 +39,7 @@ public class DirList2 {
 	}
 
 	public static void main(String[] args) {
-		File path = new File(Constant.PATH_SECOND);
+		File path = new File(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\\\src\\\\th\\\\part_18_IO\\\\chapter_01_File\\\\_01");
 		String[] list = path.list(filter("DirFilter.java"));
 		/*
 		 * if(args.length==0){ 

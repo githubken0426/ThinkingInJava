@@ -10,10 +10,10 @@ public class ToMd5 {
 
 	public static String EncoderByMd5(String str) throws NoSuchAlgorithmException,
 			UnsupportedEncodingException {
-		// È·¶¨¼ÆËã·½·¨
+		// ç¡®å®šè®¡ç®—æ–¹æ³•
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		BASE64Encoder base64en = new BASE64Encoder();
-		// ¼ÓÃÜºóµÄ×Ö·û´®
+		// åŠ å¯†åçš„å­—ç¬¦ä¸²
 		String newstr = base64en.encode(md5.digest(str.getBytes("utf-8")));
 		return newstr;
 	}

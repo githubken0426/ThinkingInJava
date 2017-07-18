@@ -5,6 +5,8 @@ import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+import th.util.Constant;
+
 /**
  * 匿名内部类实现3
  * @ClassName: DirList3 
@@ -14,7 +16,6 @@ import java.util.regex.Pattern;
  *
  */
 public class DirList3 {
-	public static final String PATH_SECOND = "F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01";
 	/**
 	 * 
 	 * @param args
@@ -23,7 +24,7 @@ public class DirList3 {
 	 * @date 2017年7月18日 下午4:30:23
 	 */
 	public static void main(String[] args){
-		File file = new File(PATH_SECOND);
+		File file = new File(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01");
 		String[] str=file.list(new FilenameFilter() {
 			String regex="DirFilter.java";
 			Pattern pattern=Pattern.compile(regex);

@@ -3,6 +3,8 @@ package th.part_18_IO.chapter_01_File._02;
 import java.io.File;
 import java.io.IOException;
 
+import th.util.Constant;
+
 public class ProcessFiles {
 	public interface Strategy{
 		void process(File file);
@@ -29,7 +31,7 @@ public class ProcessFiles {
 	public void start(String [] args){
 		try {
 			if(args.length==0){
-				processDirectoryThree(new File("F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
+				processDirectoryThree(new File(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01."));
 			}else{
 				for (String arg : args) {
 					File fileArg=new File(arg);

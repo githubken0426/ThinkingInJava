@@ -5,51 +5,53 @@ import java.util.Set;
 
 public class CommonSets {
 	/**
-	 * ½«Á½¸ö²ÎÊıºÏ²¢
+	 * å°†ä¸¤ä¸ªå‚æ•°åˆå¹¶
+	 * 
 	 * @param a
 	 * @param b
-	 * @return
-	 *	2015Äê9ÔÂ25ÈÕ
+	 * @return 2015å¹´9æœˆ25æ—¥
 	 */
-	public static <T> Set<T> union(Set<T> a,Set<T> b){
-		Set<T> result=new HashSet<T>(a);
+	public static <T> Set<T> union(Set<T> a, Set<T> b) {
+		Set<T> result = new HashSet<T>(a);
 		result.addAll(b);
 		return result;
 	}
+
 	/**
-	 * ·µ»ØÁ½¸ö²ÎÊı¹²ÓĞµÄ²¿·Ö
+	 * è¿”å›ä¸¤ä¸ªå‚æ•°å…±æœ‰çš„éƒ¨åˆ†
+	 * 
 	 * @param a
 	 * @param b
-	 * @return
-	 *	2015Äê9ÔÂ25ÈÕ
+	 * @return 2015å¹´9æœˆ25æ—¥
 	 */
-	public static <T> Set<T> interSelection(Set<T> a,Set<T> b){
-		Set<T> result=new HashSet<T>(a);
+	public static <T> Set<T> interSelection(Set<T> a, Set<T> b) {
+		Set<T> result = new HashSet<T>(a);
 		result.retainAll(b);
 		return result;
 	}
+
 	/**
-	 * ·µ»ØÁ½¸ö²ÎÊı²»ÏàÍ¬²¿·Ö
+	 * è¿”å›ä¸¤ä¸ªå‚æ•°ä¸ç›¸åŒéƒ¨åˆ†
+	 * 
 	 * @param superSet
 	 * @param subSet
-	 * @return
-	 *	2015Äê9ÔÂ25ÈÕ
+	 * @return 2015å¹´9æœˆ25æ—¥
 	 */
-	public static <T> Set<T> dfference(Set<T> superSet,Set<T> subSet){
-		Set<T> result=new HashSet<T>(superSet);
+	public static <T> Set<T> dfference(Set<T> superSet, Set<T> subSet) {
+		Set<T> result = new HashSet<T>(superSet);
 		result.removeAll(subSet);
 		return result;
 	}
-	
+
 	/**
-	 * ·µ»ØÁ½¸ö²ÎÊı½»¼¯Ö®ÍâµÄÔªËØ
+	 * è¿”å›ä¸¤ä¸ªå‚æ•°äº¤é›†ä¹‹å¤–çš„å…ƒç´ 
+	 * 
 	 * @param a
 	 * @param b
-	 * @return
-	 *	2015Äê9ÔÂ25ÈÕ
+	 * @return 2015å¹´9æœˆ25æ—¥
 	 */
-	
-	public static <T> Set<T> complement(Set<T> a,Set<T> b){
-		return dfference(union(a,b),interSelection(a,b));
+
+	public static <T> Set<T> complement(Set<T> a, Set<T> b) {
+		return dfference(union(a, b), interSelection(a, b));
 	}
 }

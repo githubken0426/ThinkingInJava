@@ -3,6 +3,8 @@ package th.part_18_IO.chapter_01_File._01;
 import java.io.File;
 import java.util.Arrays;
 
+import th.util.Constant;
+
 /**
  * File对象:File并不是指代文件，他代表一个特定文件的名称或某个目录下一组文件的名称
  * 
@@ -11,7 +13,7 @@ import java.util.Arrays;
 public class DirList {
 	public static void main(String[] args) {
 		File path = new File(
-				"F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01");
+				Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01");
 		String[] list;
 		if (args.length == 0) {
 			list = path.list();
