@@ -73,7 +73,7 @@ public class ProcessFiles {
 	 	 // Canonical能解析路径中的“." 和 ".."
 	     System.out.println("getCanonicalPath():"+f.getCanonicalPath());
 	     System.out.println("getCanonicalFile():"+f.getCanonicalFile());
-	     
+	    
 	     System.out.println("================================");
 	     new ProcessFiles(new ProcessFiles.Strategy() {
 			@Override
