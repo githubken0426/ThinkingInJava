@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.PipedInputStream;
 import java.io.SequenceInputStream;
+import java.io.StringBufferInputStream;
 /**
  * 
  * @ClassName: InputStreamTest 
@@ -22,9 +23,9 @@ public class InputStreamTest {
 			InputStream stream=new FileInputStream("F:\\stream.xml");
 			String str="test";
 			//处理文件，从文件中读取信息。
-			stream=new ByteArrayInputStream(str.getBytes());
-			//将String转换为InputStream.使用StringBuffer作为数据源。
-			stream=new BufferedInputStream(stream);
+			stream=new ByteArrayInputStream(str.getBytes("UTF-8"));
+			//将String转换为InputStream.使用StringBuffer作为数据源。(ByteArrayInputStream替代)
+			stream=new StringBufferInputStream(str);
 			//处理被序列化的对象
 			stream=new ObjectInputStream(stream);
 			//处理线程间的输入流
