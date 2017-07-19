@@ -33,7 +33,7 @@ public class MakeDirectories {
 			fillData(f);
 		}
 	}
-	
+
 	public static void test(String[] args) {
 		if (args.length < 1)
 			usage();
