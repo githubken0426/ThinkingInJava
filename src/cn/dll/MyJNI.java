@@ -1,24 +1,27 @@
 package cn.dll;
+
 /**
- * java native interface
- * dynamic link library
- * javaµ÷ÓÃ¶¯Ì¬¿â
- * @author Administrator
- * 2016-1-13 ÉÏÎç10:01:45
+ * java native interface dynamic link library javaè°ƒç”¨åŠ¨æ€åº“
+ * 
+ * @author Administrator 2016-1-13 ä¸Šåˆ10:01:45
  *
  */
 public class MyJNI {
-	static{
-		//¿âµÄÀ©Õ¹Ãû×Ö¿ÉÒÔ²»ÓÃĞ´³öÀ´£¬¾¿¾¹ÊÇDLL»¹ÊÇSO£¬ÓÉÏµÍ³×Ô¼ºÅĞ¶¨¡£Ç°Ìá£º½«dll¿½±´µ½´ËÀà°üÏÂ
+	static {
+//		System.out.println(System.getProperty("java.library.path"));
+		// åº“çš„æ‰©å±•åå­—å¯ä»¥ä¸ç”¨å†™å‡ºæ¥ï¼Œç©¶ç«Ÿæ˜¯DLLè¿˜æ˜¯SOï¼Œç”±ç³»ç»Ÿè‡ªå·±åˆ¤å®šã€‚å‰æï¼šå°†dllæ‹·è´åˆ°æ­¤ç±»åŒ…ä¸‹
 		System.loadLibrary("user32");
 	}
-	//»¹Ğè¶Ô½«Òªµ÷ÓÃµÄ·½·¨×ö±¾µØÉùÃ÷,²»ĞèÒª¾ßÌåÊµÏÖ
+
+	// è¿˜éœ€å¯¹å°†è¦è°ƒç”¨çš„æ–¹æ³•åšæœ¬åœ°å£°æ˜,ä¸éœ€è¦å…·ä½“å®ç°
 	public native static void MessageBoxA();
+
 	public native static int getAge();
-	
+
 	/**
 	 * java.lang.UnsatisfiedLinkError: cn.dll.MyJNI.MessageBoxA()V
-	 * user32ÒÑ¾­¹Ì¶¨ÁË°üÃû£¬ËùÒÔĞèÒªÔÚÓ¦ÓÃÖĞµ÷ÓÃÊ±£¬ĞèÒª´´½¨Õâ¸ö°ü
+	 * user32å·²ç»å›ºå®šäº†åŒ…åï¼Œæ‰€ä»¥éœ€è¦åœ¨åº”ç”¨ä¸­è°ƒç”¨æ—¶ï¼Œéœ€è¦åˆ›å»ºè¿™ä¸ªåŒ…
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

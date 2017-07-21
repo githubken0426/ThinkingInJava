@@ -2,8 +2,10 @@ package th.part_18_IO.chapter_02_IN_OUT;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -21,6 +23,8 @@ public class FilterInputStreamTest {
 	public static void main(String[] args) {
 		try {
 			InputStream stream=new FileInputStream("F:\\stream.xml");
+			FilterInputStream filterStream=new DataInputStream(stream);
+			
 			String str="test";
 			//处理文件，从文件中读取信息。
 			stream=new ByteArrayInputStream(str.getBytes("UTF-8"));
