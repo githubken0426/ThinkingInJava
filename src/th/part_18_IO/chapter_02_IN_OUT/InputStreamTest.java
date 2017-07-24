@@ -1,6 +1,5 @@
 package th.part_18_IO.chapter_02_IN_OUT;
 
-import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
