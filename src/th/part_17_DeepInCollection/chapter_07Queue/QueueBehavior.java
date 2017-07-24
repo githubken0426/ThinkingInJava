@@ -33,6 +33,11 @@ public class QueueBehavior {
 	 * 它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作
 	 * 队列空的条件：front=rear
 	 * 队列满的条件： rear = MAXSIZE
+	 * 
+	 * interface Deque extends Queue
+	 * Queue仅有两个实现：
+	 * class LinkedList extends AbstractSequentialList implements List, Deque, Cloneable, Serializable
+	 * class PriorityQueue extends AbstractQueue implements Serializable
 	 * @param args
 	 * @throws 
 	 * @date 2017年7月24日 上午8:44:05
