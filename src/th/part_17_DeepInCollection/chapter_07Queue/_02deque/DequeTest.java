@@ -1,4 +1,4 @@
-package th.part_17_DeepInCollection.chapter_07Queue.deque_02;
+package th.part_17_DeepInCollection.chapter_07Queue._02deque;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -3,7 +3,7 @@ package cn.encrypt;
 public class TokenUtil {
 
 	/**
-	 * ½âÎötoken
+	 * è§£æå‡ºtoken
 	 */
 	public static String userid(String token) {
 		if (null == token || token.isEmpty()) {
@@ -24,7 +24,7 @@ public class TokenUtil {
 	}
 
 	/**
-	 * µÇÂ¼ÑéÖ¤
+	 * 
 	 */
 	public static boolean loginCheck(String token1, String token2) {
 		if (null == token1 || token1.isEmpty() || null == token2

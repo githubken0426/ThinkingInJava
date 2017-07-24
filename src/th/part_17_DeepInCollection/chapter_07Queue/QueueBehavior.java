@@ -28,7 +28,15 @@ public class QueueBehavior {
 			return str[i++];
 		}
 	}
-	
+	/**
+	 * 队列是一种特殊的线性表，是一种先进先出（FIFO）的数据结构。
+	 * 它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作
+	 * 队列空的条件：front=rear
+	 * 队列满的条件： rear = MAXSIZE
+	 * @param args
+	 * @throws 
+	 * @date 2017年7月24日 上午8:44:05
+	 */
 	public static void main(String[] args) {
 		System.out.println("LinkedList:");
 		test(new LinkedList<String>(),new Gen());

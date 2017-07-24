@@ -21,10 +21,10 @@ public class MyProxyFilter implements CallbackFilter {
 	public int accept(Method arg0) {
 		if("delete".equalsIgnoreCase(arg0.getName()))
 			return 0;
-		if("update".equalsIgnoreCase(arg0.getName())){  
+		if("update".equalsIgnoreCase(arg0.getName())){ 
             System.out.println("Filter update ==2");  
             return 2;  
-        } 
+        }
 		return 1;
 	}
 

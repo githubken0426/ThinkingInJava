@@ -1,14 +1,14 @@
-package th.part_17_DeepInCollection.chapter_07Queue.deque_02;
+package th.part_17_DeepInCollection.chapter_07Queue._02deque;
 
 import java.util.LinkedList;
 
 /**
  * 17.7.2
- * 双向队列
+ * 鍙屽悜Queue
  * 
  * @author ken
  * @param <T>
- * 2017-1-6 上午09:17:48
+ * 2017-1-6 涓婂崍 09:17:48
  */
 public class MyDeque<T> {
 	

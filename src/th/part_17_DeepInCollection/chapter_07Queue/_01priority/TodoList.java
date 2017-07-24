@@ -1,4 +1,4 @@
-package th.part_17_DeepInCollection.chapter_07Queue.priority_01;
+package th.part_17_DeepInCollection.chapter_07Queue._01priority;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
