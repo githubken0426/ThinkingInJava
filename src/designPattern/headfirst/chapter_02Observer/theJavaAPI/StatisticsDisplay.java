@@ -13,7 +13,7 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 	
 	@Override
 	public void display() {
-		System.out.println("StatisticsDisplay,avg/max/min£º" + temprature + "/"
+		System.out.println("StatisticsDisplay,avg/max/min" + temprature + "/"
 				+ temprature + "/" + temprature);
 	}
 

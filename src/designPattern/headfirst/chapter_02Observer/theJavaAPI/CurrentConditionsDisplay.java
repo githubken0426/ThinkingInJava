@@ -16,14 +16,17 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 		System.out.println("CurentConditionsDisplay,温度：" + temprature + ",湿度："
 				+ humidity + "，气压：" + pressure);
 	}
-
+	/**
+	 * push 使用参数Object，Object封装了参数
+	 * pull 拉取Observable字段的值
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println(arg);
+		System.out.println(arg.getClass().getCanonicalName());
 		if(o instanceof WeatherData){
-			this.temprature=((WeatherData)o).getTemprature();
-			this.humidity=((WeatherData)o).getHumidity();
-			this.pressure=((WeatherData)o).getPressure();
+			this.temprature=((WeatherData)arg).getTemprature();
+			this.humidity=((WeatherData)arg).getHumidity();
+			this.pressure=((WeatherData)arg).getPressure();
 			display();
 		}
 	}
