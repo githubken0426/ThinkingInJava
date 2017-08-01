@@ -2,11 +2,11 @@ package designPattern.headfirst.chapter_02Observer.theJavaAPI;
 
 public class WeatherStation {
 	public static void main(String[] args) {
-		WeatherData observable=new WeatherData();//Ö÷Ìâ
-		//¹Û²ìÕß
+		WeatherData observable=new WeatherData();//ï¿½ï¿½ï¿½ï¿½
+		//ï¿½Û²ï¿½ï¿½ï¿½
 		DisplayElement currentDisplay=new CurrentConditionsDisplay(observable);
 		DisplayElement statisticDisplay=new StatisticsDisplay(observable);
 		
-		observable.setMeasurements("20¡ã", "20", "50hPa");
+		observable.setMeasurements("20Â°", "20", "50hPa");
 	}
 }
