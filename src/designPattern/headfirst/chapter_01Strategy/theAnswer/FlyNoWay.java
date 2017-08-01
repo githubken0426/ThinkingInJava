@@ -1,8 +1,6 @@
 package designPattern.headfirst.chapter_01Strategy.theAnswer;
 
-import designPattern.headfirst.chapter_01Strategy.change01.Flyable;
-
-public class FlyNoWay implements Flyable {
+public class FlyNoWay implements FlyBehavior {
 
 	@Override
 	public void fly() {
