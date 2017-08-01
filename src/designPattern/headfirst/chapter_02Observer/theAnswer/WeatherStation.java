@@ -2,11 +2,11 @@ package designPattern.headfirst.chapter_02Observer.theAnswer;
 
 public class WeatherStation {
 	public static void main(String[] args) {
-		Subject data=new WeatherData();//Ö÷Ìâ(±»¹Û²ìÕß)
-		//¹Û²ìÕß
+		Subject data=new WeatherData();//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Û²ï¿½ï¿½ï¿½)
+		//ï¿½Û²ï¿½ï¿½ï¿½
 		DisplayElement currentDisplay=new CurrentConditionsDisplay(data);
 		DisplayElement statisticDisplay=new StatisticsDisplay(data);
-		data.setMeasurements("20¡ã", "20", "50hPa");
+		data.setMeasurements("20Â°", "20", "50hPa");
 		
 	}
 }

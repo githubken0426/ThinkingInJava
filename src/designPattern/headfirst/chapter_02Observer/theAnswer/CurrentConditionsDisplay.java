@@ -1,10 +1,10 @@
 package designPattern.headfirst.chapter_02Observer.theAnswer;
 
 /**
- * ²¼¸æ°å--ÊµÏÖ
+ * å¸ƒå‘Šæ¿--å®ç°
  * 
  * @author ken
- * 2017-6-13 ÉÏÎç11:58:04
+ * 2017-6-13 ä¸Šåˆ11:58:04
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	String temprature;
@@ -27,8 +27,8 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
 	@Override
 	public void display() {
-		System.out.println("CurentConditionsDisplay,ÎÂ¶È£º" + temprature + ",Êª¶È£º"
-				+ humidity + "£¬ÆøÑ¹£º" + pressure);
+		System.out.println("CurentConditionsDisplay,æ¸©åº¦ï¼š" + temprature + ",æ¹¿åº¦ï¼š"
+				+ humidity + "ï¼Œæ°”å‹ï¼š" + pressure);
 	}
 
 }
