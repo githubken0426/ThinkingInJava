@@ -2,7 +2,7 @@ package designPattern.headfirst.chapter_07Adapter.advanced;
 
 import designPattern.headfirst.chapter_07Adapter.advanced.adapter.IteratorAdapter;
 
-public class Ttest {
+public class Test {
 	public static void main(String[] args) {
 		Iterator<String> it = new IteratorAdapter<String>(new Enumeration<String>() {
 			@Override
