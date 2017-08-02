@@ -12,7 +12,7 @@ public class DirFilter implements  FilenameFilter {
 		pattern=Pattern.compile(regex);
 	}
 	/**
-	 * accept()方法可以回调给list(FilenameFilter filter)使用
+	 * accept()方法可以回调给File的list(FilenameFilter filter)方法使用
 	 */
 	@Override
 	public boolean accept(File dir, String mame) {
