@@ -1,4 +1,4 @@
-package th.part_18_IO.chapter_02_IN_OUT;
+package th.part_18_IO.chapter_02_IN_OUT.in;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
@@ -21,18 +21,20 @@ import javax.sound.sampled.AudioInputStream;
 public class InputStreamTest {
 	public static void main(String[] args) {
 		try {
+			//1.处理文件，从文件中读取信息。
 			InputStream stream=new FileInputStream("F:\\stream.xml");
 			String str="test";
-			//处理文件，从文件中读取信息。
-			stream=new ByteArrayInputStream(str.getBytes("UTF-8"));
-			//将String转换为InputStream.使用StringBuffer作为数据源。(ByteArrayInputStream替代)
+			//2.将String转换为InputStream.使用StringBuffer作为数据源。(ByteArrayInputStream替代)
 			stream=new StringBufferInputStream(str);
-			//处理被序列化的对象
+			//3.处理字节数组
+			stream=new ByteArrayInputStream(str.getBytes("UTF-8"));
+			//4.处理被序列化的对象
 			stream=new ObjectInputStream(stream);
-			//处理线程间的输入流
+			//5.处理线程间的输入流
 			stream=new PipedInputStream();
-			//处理多种数据来源(将一个或多个InputStream转换为一个)s
+			//6.处理多种数据来源(将一个或多个InputStream转换为一个)s
 			stream=new SequenceInputStream(stream, stream);
+			//7.处理音频
 			stream=new AudioInputStream(null);
 			
 		} catch (FileNotFoundException e) {

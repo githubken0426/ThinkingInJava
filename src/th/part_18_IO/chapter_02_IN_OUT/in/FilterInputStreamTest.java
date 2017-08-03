@@ -1,4 +1,4 @@
-package th.part_18_IO.chapter_02_IN_OUT;
+package th.part_18_IO.chapter_02_IN_OUT.in;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
