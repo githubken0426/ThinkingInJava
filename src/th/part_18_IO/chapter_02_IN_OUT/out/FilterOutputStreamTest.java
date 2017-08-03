@@ -12,6 +12,7 @@ public class FilterOutputStreamTest {
 	public static void main(String[] args) {
 		try {
 			OutputStream out=new FileOutputStream("path");
+			
 			//1.从stream中读取基本类型（int、char等）数据
 			FilterOutputStream filter=new DataOutputStream(out);
 			//2.缓冲输出流,作用是为另一个输出流提供“缓冲功能”。
