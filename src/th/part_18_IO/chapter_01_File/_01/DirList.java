@@ -3,7 +3,7 @@ package th.part_18_IO.chapter_01_File._01;
 import java.io.File;
 import java.util.Arrays;
 
-import th.util.Constant;
+import th.part_18_IO.Constant;
 
 /**
  * File对象:File并不是指代文件，他代表一个特定文件的名称或某个目录下一组文件的名称

@@ -9,6 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.PipedInputStream;
 import java.io.SequenceInputStream;
 import java.io.StringBufferInputStream;
+
+import javax.sound.sampled.AudioInputStream;
 /**
  * 
  * @ClassName: InputStreamTest 
@@ -31,6 +33,8 @@ public class InputStreamTest {
 			stream=new PipedInputStream();
 			//处理多种数据来源(将一个或多个InputStream转换为一个)s
 			stream=new SequenceInputStream(stream, stream);
+			stream=new AudioInputStream(null);
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

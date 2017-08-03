@@ -3,7 +3,7 @@ package th.part_18_IO.chapter_01_File._02;
 import java.io.File;
 import java.io.IOException;
 
-import th.util.Constant;
+import th.part_18_IO.Constant;
 
 public class ProcessFiles {
 	public interface Strategy{
