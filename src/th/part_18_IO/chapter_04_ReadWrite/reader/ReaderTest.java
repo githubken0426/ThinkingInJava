@@ -12,7 +12,14 @@ import java.io.PipedReader;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
-
+/**
+ * Reader 用于读入16位字符，也就是Unicode 编码的字符；
+ * 而 InputStream 用于读入 ASCII 字符和二进制数据。
+ * @ClassName: ReaderTest 
+ * @Description: 
+ * @author ken 
+ * @date 2017年8月4日 上午9:49:10
+ */
 public class ReaderTest {
 	public static void main(String[] args) {
 		try {

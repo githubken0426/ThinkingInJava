@@ -12,7 +12,8 @@ import java.io.StringBufferInputStream;
 
 import javax.sound.sampled.AudioInputStream;
 /**
- * 
+ * Reader 用于读入16位字符，也就是Unicode 编码的字符；
+ * 而 InputStream 用于读入 ASCII 字符和二进制数据。
  * @ClassName: InputStreamTest 
  * @Description: 
  * @author ken 
@@ -32,7 +33,7 @@ public class InputStreamTest {
 			stream=new ObjectInputStream(stream);
 			//5.处理线程间的输入流
 			stream=new PipedInputStream();
-			//6.处理多种数据来源(将一个或多个InputStream转换为一个)s
+			//6.处理多种数据来源(将一个或多个InputStream转换为一个)
 			stream=new SequenceInputStream(stream, stream);
 			//7.处理音频
 			stream=new AudioInputStream(null);

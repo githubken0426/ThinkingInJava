@@ -26,7 +26,7 @@ public class WriterTest {
 			writer = new BufferedWriter(writer);
 			// 4.将字节流转换为字符流
 			writer = new OutputStreamWriter(new ByteArrayOutputStream());
-			// 4.1.读取文件中的数据,继承InputStreamwrite
+			// 4.1.读取文件中的数据,继承OutputStreamwrite
 			writer = new FileWriter(new File("path"));
 			// 5.管道输入流,可用于线程间管道通信
 			writer = new PipedWriter();
