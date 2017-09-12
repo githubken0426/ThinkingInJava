@@ -1,53 +1,55 @@
 package th.part_21_Concurrence.chapter_02._01Runnable;
 
 /**
- * ½ø³ÌÖĞËù°üº¬µÄÒ»¸ö»ò¶à¸öÖ´ĞĞµ¥Ôª³ÆÎªÏß³Ì£¨thread£©¡£
- * ½ø³Ì»¹ÓµÓĞÒ»¸öË½ÓĞµÄĞéÄâµØÖ·¿Õ¼ä£¬¸Ã¿Õ¼ä½öÄÜ±»ËüËù°üº¬µÄÏß³Ì·ÃÎÊ
+ * è¿›ç¨‹ä¸­æ‰€åŒ…å«çš„ä¸€ä¸ªæˆ–å¤šä¸ªæ‰§è¡Œå•å…ƒç§°ä¸ºçº¿ç¨‹ï¼ˆthreadï¼‰ã€‚
+ * è¿›ç¨‹è¿˜æ‹¥æœ‰ä¸€ä¸ªç§æœ‰çš„è™šæ‹Ÿåœ°å€ç©ºé—´ï¼Œè¯¥ç©ºé—´ä»…èƒ½è¢«å®ƒæ‰€åŒ…å«çš„çº¿ç¨‹è®¿é—®
  */
 /**
- * Êµ¼ÊÖĞÍùÍù²ÉÓÃÊµÏÖRunable½Ó¿Ú£¬Ò»·½ÃæÒòÎªjavaÖ»Ö§³Öµ¥¼Ì³Ğ£¬¼Ì³ĞÁËThreadÀà¾ÍÎŞ·¨ÔÙ¼ÌĞø¼Ì³ĞÆäËüÀà£¬
- * ¶øÇÒRunable½Ó¿ÚĞèÒªÊµÏÖrun·½·¨£»ÁíÒ»·½ÃæÍ¨¹ı½á¹û¿ÉÒÔ¿´³öÊµÏÖRunable½Ó¿Ú²ÅÊÇÕæÕıµÄ¶àÏß³Ì
- * @author Administrator
- * 2016-1-18 ÏÂÎç01:48:03
- * ¾ßÓĞ¿ÉÂÛÖ¤µÄÈ·¶¨ĞÔ£¬Êµ¼ÊÉÏ¾ßÓĞ²»¿ÉÈ·¶¨ĞÔ
+ * å®é™…ä¸­å¾€å¾€é‡‡ç”¨å®ç°Runableæ¥å£ï¼Œä¸€æ–¹é¢å› ä¸ºjavaåªæ”¯æŒå•ç»§æ‰¿ï¼Œç»§æ‰¿äº†Threadç±»å°±æ— æ³•å†ç»§ç»­ç»§æ‰¿å…¶å®ƒç±»ï¼Œ
+ * è€Œä¸”Runableæ¥å£éœ€è¦å®ç°runæ–¹æ³•ï¼›å¦ä¸€æ–¹é¢é€šè¿‡ç»“æœå¯ä»¥çœ‹å‡ºå®ç°Runableæ¥å£æ‰æ˜¯çœŸæ­£çš„å¤šçº¿ç¨‹
+ * 
+ * @author Administrator 2016-1-18 ä¸‹åˆ01:48:03 å…·æœ‰å¯è®ºè¯çš„ç¡®å®šæ€§ï¼Œå®é™…ä¸Šå…·æœ‰ä¸å¯ç¡®å®šæ€§
  */
 
 public class LiftOff implements Runnable {
-	protected int countDown=10;
-	private static int taskCount=0;
-	private final int id=taskCount++;
-	
-	public LiftOff(){}
-	public LiftOff(int countDown){
-		this.countDown=countDown;
+	protected int countDown = 10;
+	private static int taskCount = 0;
+	private final int id = taskCount++;
+
+	public LiftOff() {
 	}
-	public String status(){
-		return Thread.currentThread()+":#id="+ id+",("+(countDown>0?countDown:"LiftOff")+"),";
+
+	public LiftOff(int countDown) {
+		this.countDown = countDown;
 	}
+
+	public String status() {
+		return Thread.currentThread() + ":#id=" + id + ",(" + (countDown > 0 ? countDown : "LiftOff") + "),";
+	}
+
 	@Override
 	public void run() {
-		while (countDown-->0) {
+		while (countDown-- > 0) {
 			System.out.println(status());
 			/**
-			 * yield():¶ÔÏß³Ìµ÷¶ÈÆ÷µÄÒ»ÖÖ½¨Òé:Ñ¡ÔñĞÔµÄ£¬
-			 * ÔİÍ£µ±Ç°Ïß³Ì£¬ÓÉcpu¾ö¶¨Ö´ĞĞÆäËûÏß³Ì(°üÀ¨×ÔÉíÏß³Ì)£¬
-			 * ËüÖ»ÄÜÈÃÍ¬ÓÅÏÈ¼¶µÄÏß³ÌÓĞÖ´ĞĞµÄ»ú»á
+			 * yield():å¯¹çº¿ç¨‹è°ƒåº¦å™¨çš„ä¸€ç§å»ºè®®:é€‰æ‹©æ€§çš„ï¼Œ æš‚åœå½“å‰çº¿ç¨‹ï¼Œ
+			 * ç”±cpuå†³å®šæ‰§è¡Œå…¶ä»–çº¿ç¨‹(åŒ…æ‹¬è‡ªèº«çº¿ç¨‹)ï¼Œ å®ƒåªèƒ½è®©åŒä¼˜å…ˆçº§çš„çº¿ç¨‹æœ‰æ‰§è¡Œçš„æœºä¼š
 			 */
 			Thread.yield();
 		}
 	}
+
 	public static void main(String[] args) {
-		LiftOff lift=new LiftOff();
+		LiftOff lift = new LiftOff();
 		/**
-		 * Ö±½Óµ÷ÓÃrun()ÆäÊµÊÇµ¥Ïß³ÌµÄÒ»ÖÖÔËÓÃ
-		 * ´Ë´¦Îª"main"Ïß³Ì
+		 * ç›´æ¥è°ƒç”¨run()å…¶å®æ˜¯å•çº¿ç¨‹çš„ä¸€ç§è¿ç”¨ æ­¤å¤„ä¸º"main"çº¿ç¨‹
 		 */
 		lift.run();
 		System.out.println("________________________________");
-		for(int i =0;i<3;i++){
-			Thread t=new Thread(new LiftOff());
+		for (int i = 0; i < 3; i++) {
+			Thread t = new Thread(new LiftOff());
 			t.start();
 		}
-		
+
 	}
 }
