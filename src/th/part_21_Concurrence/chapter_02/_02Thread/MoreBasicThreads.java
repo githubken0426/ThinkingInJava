@@ -3,9 +3,9 @@ package th.part_21_Concurrence.chapter_02._02Thread;
 import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
 
 /**
- * 无规律输出，有线程调度器自动控制
+ * 鏃犺寰嬭緭鍑猴紝鏈夌嚎绋嬭皟搴﹀櫒鑷姩鎺у埗
  * @author Administrator
- * 2016-1-18 上午10:51:00
+ * 2016-1-18 涓婂崍10:51:00
  *
  */
 public class MoreBasicThreads {
