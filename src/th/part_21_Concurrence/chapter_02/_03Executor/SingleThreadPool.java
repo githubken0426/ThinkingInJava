@@ -4,13 +4,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
+
 /**
- * newSingleThreadExecutor()ÀàËÆnewFixedThreadPool(1)
- * Èç¹ûÏònewSingleThreadExecutor()Ìá½»¶à¸öÈÎÎñ£¬¶à¸öÈÎÎñ½«»áÅÅ¶Ó£¬Ã¿¸öÈÎÎñ½«»áÔÚÏÂÒ»¸öÈÎÎñ¿ªÊ¼Ö®Ç°½áÊø
- * ¸Ğ¾õÓĞµãÀàËÆÖ±½Óµ÷ÓÃrun()·½·¨
- * ÔÚËùÓĞÏß³Ì³ØÖĞ£¬ÏÖÓĞÏß³ÌÓĞ¿ÉÄÜµÄÇé¿öÏÂ£¬¶¼»á±»¸´ÓÃ
+ * newSingleThreadExecutor()ç±»ä¼¼newFixedThreadPool(1)
+ * å¦‚æœå‘newSingleThreadExecutor()æäº¤å¤šä¸ªä»»åŠ¡ï¼Œå¤šä¸ªä»»åŠ¡å°†ä¼šæ’é˜Ÿï¼Œæ¯ä¸ªä»»åŠ¡å°†ä¼šåœ¨ä¸‹ä¸€ä¸ªä»»åŠ¡å¼€å§‹ä¹‹å‰ç»“æŸ
+ * æ„Ÿè§‰æœ‰ç‚¹ç±»ä¼¼ç›´æ¥è°ƒç”¨run()æ–¹æ³•
+ * åœ¨æ‰€æœ‰çº¿ç¨‹æ± ä¸­ï¼Œç°æœ‰çº¿ç¨‹æœ‰å¯èƒ½çš„æƒ…å†µä¸‹ï¼Œéƒ½ä¼šè¢«å¤ç”¨
  * @author Administrator
- * 2016-1-18 ÏÂÎç04:17:42
+ * 2016-1-18 ä¸‹åˆ04:17:42
  *
  */
 public class SingleThreadPool {

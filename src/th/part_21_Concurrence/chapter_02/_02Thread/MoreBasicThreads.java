@@ -4,6 +4,7 @@ import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
 
 /**
  * 无规律输出，有线程调度器自动控制
+ * 不同版本的jdk输出有很大的差异
  * @author Administrator
  * 2016-1-18 上午10:51:00
  *
