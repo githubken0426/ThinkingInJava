@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 
 /**
  * 尽管AtomicReference是线程安全的，
- * 单UnsafeCachingFactorizer本身存在竞争条件
+ * 但是UnsafeCachingFactorizer本身存在竞争条件
  * 导致产生错误的答案
  * 
  * @author ken
