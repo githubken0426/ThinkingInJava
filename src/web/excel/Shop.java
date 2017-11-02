@@ -2,11 +2,11 @@ package web.excel;
 
 public class Shop {
 	private String id;
-	private int rescueService;//¾ÈÔ®
-	private int repairService;//ĞŞ³µ
-	private int cleanService;//Ï´³µ
-	private int maintainService;//±£Ñø
-	private int tyreService;//ÂÖÌ¥
+	private int rescueService;//æ•‘æ´
+	private int repairService;//ä¿®è½¦
+	private int cleanService;//æ´—è½¦
+	private int maintainService;//ä¿å…»
+	private int tyreService;//è½®èƒ
 	private String shopPicUrl;
 	private String shopName;
 	private String shopScore;
@@ -15,7 +15,7 @@ public class Shop {
 	private String latitude;
 	private String province;
 	private String city;
-	private String district;//Çø
+	private String district;//åŒº
 	private String detailAddress;
 	private String telNumberList;
 	private String displayPicUrlList;
@@ -24,7 +24,7 @@ public class Shop {
 	private int deleteFlag;
 	private String inserTime;
 	private String updateTime;
-	private String manageProject;//¾­ÓªÏîÄ¿
+	private String manageProject;//ç»è¥é¡¹ç›®
 	
 	public String getId() {
 		return id;

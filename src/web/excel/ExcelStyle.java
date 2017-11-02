@@ -20,12 +20,12 @@ public class ExcelStyle {
         style.setBorderTop(HSSFCellStyle.BORDER_THIN);  
         style.setAlignment(HSSFCellStyle.ALIGN_CENTER); 
         
-        // 生成�?��字体  
+        // 生成�?��字体  
         HSSFFont font = workbook.createFont();  
         font.setFontHeightInPoints((short) 13);  
         font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);  
         
-        // 把字体应用到当前的样�? 
+        // 把字体应用到当前的样�? 
         style.setFont(font);  
         return style;
 	}
@@ -43,7 +43,7 @@ public class ExcelStyle {
         style.setBorderRight(HSSFCellStyle.BORDER_THIN);  
         style.setBorderTop(HSSFCellStyle.BORDER_THIN);  
         style.setAlignment(HSSFCellStyle.ALIGN_CENTER); 
-        // 生成�?��字体  
+        // 生成一个字体  
         HSSFFont font = workbook.createFont();  
         font.setFontHeightInPoints((short) 10); 
         if(color==0){//gray
@@ -56,7 +56,7 @@ public class ExcelStyle {
         	font.setColor(HSSFColor.GREEN.index);
         }
         font.setBoldweight(HSSFFont.BOLDWEIGHT_NORMAL);  
-        // 把字体应用到当前的样�? 
+        // 把字体应用到当前的样式
         style.setFont(font);  
         return style;
 	}

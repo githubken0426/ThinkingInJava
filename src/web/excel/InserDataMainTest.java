@@ -42,11 +42,11 @@ public class InserDataMainTest {
 	}
 
 	/**
-	 * ²åÈëÊı¾İ¿â
+	 * æ’å…¥æ•°æ®åº“
 	 * 
 	 * @param shopList
 	 * @throws SQLException
-	 *             2017-2-7 ÏÂÎç04:52:10
+	 *             2017-2-7 ä¸‹åˆ04:52:10
 	 */
 	public static void insertBean(List<Shop> shopList,Connection conn) throws SQLException {
 		int i = 1;
@@ -63,32 +63,32 @@ public class InserDataMainTest {
 			state.setInt(4, shop.getCleanService());
 			state.setInt(5, shop.getMaintainService());
 			state.setInt(6, shop.getTyreService());
-			state.setString(7, shop.getShopPicUrl());// ËõÂÔÍ¼
+			state.setString(7, shop.getShopPicUrl());// ï¿½ï¿½ï¿½ï¿½Í¼
 			state.setString(8, shop.getShopName());
 			state.setString(9, "0");
 			state.setString(10, shop.getShopDescription());
 			state.setString(11, shop.getLongtitude());
 			state.setString(12, shop.getLatitude());
 
-			state.setString(13, "ÁÉÄşÊ¡");
-			state.setString(14, "¸·ĞÂÊĞ");
+			state.setString(13, "ï¿½ï¿½ï¿½ï¿½Ê¡");
+			state.setString(14, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			state.setString(15, shop.getDistrict());
 
 			state.setString(16, shop.getDetailAddress());
 			state.setString(17, shop.getTelNumberList());
-			state.setString(18, shop.getDisplayPicUrlList());// ´óÍ¼
+			state.setString(18, shop.getDisplayPicUrlList());// ï¿½ï¿½Í¼
 			state.executeUpdate();
-			//²åÈë·şÎñ±í
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			inserService(shop,conn);
-			//²åÈë¾ÈÔ®±í
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ô®ï¿½ï¿½
 			if (shop.getRescueService() != 0){
 				inserSecue(shop,conn);
 			}
-			System.out.println("²åÈëshop£º"+shop.getShopName()+"--" + i);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½shopï¿½ï¿½"+shop.getShopName()+"--" + i);
 			i++;
 		}
 	}
-	//²åÈë¾ÈÔ®±í
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô®ï¿½ï¿½
 	public static void inserSecue(Shop shop,Connection conn) throws SQLException{
 		String tcRescue = "insert into tb_rescue "
 			+ "(id,shop_id,type_value,experience,head_portrait_url,product_description,"
@@ -102,7 +102,7 @@ public class InserDataMainTest {
 		state3.setString(6, shop.getManageProject());
 		state3.executeUpdate();
 	}
-	//²åÈë·şÎñ±í
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static void inserService(Shop shop,Connection conn) throws SQLException{
 		int a=1;
 		List<Integer> serviceList = new ArrayList<Integer>();
@@ -114,7 +114,7 @@ public class InserDataMainTest {
 			serviceList.add(6100);
 		if (shop.getTyreService() != 0)
 			serviceList.add(7100);
-		for (Integer ser : serviceList) {//²åÈë·şÎñ±í
+		for (Integer ser : serviceList) {//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			String tcService = "insert into tc_service "
 					+ "(id,shop_id,service_type,service_brands_url,delete_flag,update_time,insert_time) "
 					+ "values (?,?,?,?,0,now(),now())";
@@ -124,7 +124,7 @@ public class InserDataMainTest {
 			state2.setInt(3, ser);
 			state2.setString(4, null);
 			state2.executeUpdate();
-			System.out.println("²åÈëtc_service:"+a);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½tc_service:"+a);
 			a++;
 		}
 	}

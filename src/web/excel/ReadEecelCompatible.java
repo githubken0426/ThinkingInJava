@@ -16,61 +16,61 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ReadEecelCompatible {
 	/**
-	 * ¶ÁÈ¡Excel£¬¼æÈİExcel 2003/2007/2010 °´ÕÕÃ¿¸ñÀàĞÍ¶ÁÈ¡
+	 * è¯»å–Excelï¼Œå…¼å®¹Excel 2003/2007/2010 æŒ‰ç…§æ¯æ ¼ç±»å‹è¯»å–
 	 * 
 	 * @param is
-	 *            ÎÄ¼şÁ÷
+	 *            æ–‡ä»¶æµ
 	 * @throws Exception
 	 * @throws IOException
-	 *             2017-1-17 ÏÂÎç05:24:17
+	 *             2017-1-17 ä¸‹åˆ05:24:17
 	 */
 	public static void readExcelPerType(InputStream is) throws Exception,
 			IOException {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 		/**
-		 * ÕâÖÖ·½Ê½ Excel 2003/2007/2010 ¶¼ÊÇ¿ÉÒÔ´¦ÀíµÄ
+		 * è¿™ç§æ–¹å¼ Excel 2003/2007/2010 éƒ½æ˜¯å¯ä»¥å¤„ç†çš„
 		 */
 		Workbook workbook = WorkbookFactory.create(is);
-		int sheetCount = workbook.getNumberOfSheets(); // SheetµÄÊıÁ¿
-		// ±éÀúÃ¿¸öSheet
+		int sheetCount = workbook.getNumberOfSheets(); // Sheetçš„æ•°é‡
+		// éå†æ¯ä¸ªSheet
 		for (int s = 0; s < sheetCount; s++) {
 			Sheet sheet = workbook.getSheetAt(s);
-			int rowCount = sheet.getPhysicalNumberOfRows(); // »ñÈ¡×ÜĞĞÊı
-			// ±éÀúÃ¿Ò»ĞĞ
+			int rowCount = sheet.getPhysicalNumberOfRows(); // è·å–æ€»è¡Œæ•°
+			// éå†æ¯ä¸€è¡Œ
 			for (int r = 0; r < rowCount; r++) {
 				Row row = sheet.getRow(r);
-				int cellCount = row.getPhysicalNumberOfCells(); // »ñÈ¡×ÜÁĞÊı
-				// ±éÀúÃ¿Ò»ÁĞ
+				int cellCount = row.getPhysicalNumberOfCells(); // è·å–æ€»åˆ—æ•°
+				// éå†æ¯ä¸€åˆ—
 				for (int c = 0; c < cellCount; c++) {
 					Cell cell = row.getCell(c);
 					int cellType = cell.getCellType();
 					String cellValue = null;
 					switch (cellType) {
-					case Cell.CELL_TYPE_STRING: // ÎÄ±¾
+					case Cell.CELL_TYPE_STRING: // æ–‡æœ¬
 						cellValue = cell.getStringCellValue();
 						break;
-					case Cell.CELL_TYPE_NUMERIC: // Êı×Ö¡¢ÈÕÆÚ
+					case Cell.CELL_TYPE_NUMERIC: // æ•°å­—ã€æ—¥æœŸ
 						if (DateUtil.isCellDateFormatted(cell)) {
-							cellValue = fmt.format(cell.getDateCellValue()); // ÈÕÆÚĞÍ
+							cellValue = fmt.format(cell.getDateCellValue()); // æ—¥æœŸå‹
 						} else {
 							cellValue = String.valueOf(cell
-									.getNumericCellValue()); // Êı×Ö
+									.getNumericCellValue()); // æ•°å­—
 						}
 						break;
-					case Cell.CELL_TYPE_BOOLEAN: // ²¼¶ûĞÍ
+					case Cell.CELL_TYPE_BOOLEAN: // å¸ƒå°”å‹
 						cellValue = String.valueOf(cell.getBooleanCellValue());
 						break;
-					case Cell.CELL_TYPE_BLANK: // ¿Õ°×
+					case Cell.CELL_TYPE_BLANK: // ç©ºç™½
 						cellValue = cell.getStringCellValue();
 						break;
-					case Cell.CELL_TYPE_ERROR: // ´íÎó
-						cellValue = "´íÎó";
+					case Cell.CELL_TYPE_ERROR: // é”™è¯¯
+						cellValue = "é”™è¯¯";
 						break;
-					case Cell.CELL_TYPE_FORMULA: // ¹«Ê½
-						cellValue = "´íÎó";
+					case Cell.CELL_TYPE_FORMULA: // å…¬å¼
+						cellValue = "é”™è¯¯";
 						break;
 					default:
-						cellValue = "´íÎó";
+						cellValue = "é”™è¯¯";
 					}
 				}
 			}
@@ -78,33 +78,33 @@ public class ReadEecelCompatible {
 	}
 
 	/**
-	 * ´¿ÎÄ±¾¸ñÊ½
+	 * çº¯æ–‡æœ¬æ ¼å¼
 	 * 
 	 * @param is
 	 * @throws Exception
 	 * @throws IOException
-	 *             2017-1-18 ÉÏÎç09:00:17
+	 *             2017-1-18 ä¸Šåˆ09:00:17
 	 */
 	public static List<Shop> readExcelPureText(InputStream is)
 			throws Exception, IOException {
 		List<Shop> result = new ArrayList<Shop>();
 		Workbook workbook = WorkbookFactory.create(is);
-//		int sheetCount = workbook.getNumberOfSheets(); // SheetµÄÊıÁ¿
-		// for (int s = 0; s < sheetCount; s++) { // ±éÀúÃ¿¸öSheet
-		Sheet sheet = workbook.getSheetAt(0);//Ö»ĞèÒª±ãÀûµÚÒ»¸ösheet
-		int rowCount = sheet.getPhysicalNumberOfRows(); // »ñÈ¡×ÜĞĞÊı
-		for (int r = 1; r < rowCount; r++) {// ±éÀúÃ¿Ò»ĞĞ
+//		int sheetCount = workbook.getNumberOfSheets(); // Sheetçš„æ•°é‡
+		// for (int s = 0; s < sheetCount; s++) { // éå†æ¯ä¸ªSheet
+		Sheet sheet = workbook.getSheetAt(0);//åªéœ€è¦ä¾¿åˆ©ç¬¬ä¸€ä¸ªsheet
+		int rowCount = sheet.getPhysicalNumberOfRows(); // è·å–æ€»è¡Œæ•°
+		for (int r = 1; r < rowCount; r++) {// éå†æ¯ä¸€è¡Œ
 			Shop shop = new Shop();
 			shop.setId(getUUID());
-			shop.setProvince("ÁÉÄşÊ¡");
-			shop.setCity("¸·ĞÂÊĞ");
+			shop.setProvince("è¾½å®çœ");
+			shop.setCity("é˜œæ–°å¸‚");
 			Row row = sheet.getRow(r);
-			int cellCount = row.getLastCellNum(); //getPhysicalNumberOfCells() »ñÈ¡×ÜÁĞÊı
-			for (int c = 0; c < cellCount; c++) {// ±éÀúÃ¿Ò»ÁĞ
+			int cellCount = row.getLastCellNum(); //getPhysicalNumberOfCells() è·å–æ€»åˆ—æ•°
+			for (int c = 0; c < cellCount; c++) {// éå†æ¯ä¸€åˆ—
 				String value="";
 				Cell cell = row.getCell(c);
 				if(cell!=null){
-					cell.setCellType(Cell.CELL_TYPE_STRING);//Í³Ò»ÉèÖÃÎªÎÄ±¾ÀàĞÍ
+					cell.setCellType(Cell.CELL_TYPE_STRING);//ç»Ÿä¸€è®¾ç½®ä¸ºæ–‡æœ¬ç±»å‹
 					value = cell.getStringCellValue();
 				}
 				switch (c) {
@@ -127,31 +127,31 @@ public class ReadEecelCompatible {
 				case 5:
 					shop.setDistrict(value);
 					break;
-				case 6://ÏêÏ¸µØÖ·
+				case 6://è¯¦ç»†åœ°å€
 					shop.setDetailAddress(value);
 					break;
-				case 7://¾­ÓªÏîÄ¿
+				case 7://ç»è¥é¡¹ç›®
 					shop.setManageProject(value);
 					break;
-				case 8://µêÆÌ¼ò½é
+				case 8://åº—é“ºç®€ä»‹
 					shop.setShopDescription(value);
 					break;
-				case 9://ĞŞ³µ
+				case 9://ä¿®è½¦
 					if (value != null && value != "") {
 						shop.setRepairService(5100);
 					}
 					break;
-				case 10://Ï´³µ
+				case 10://æ´—è½¦
 					if (value != null && value != "") {
 						shop.setCleanService(4100);
 					}
 					break;
-				case 11://±£Ñø
+				case 11://ä¿å…»
 					if (value != null && value != "") {
 						shop.setMaintainService(6100);
 					}
 					break;
-				case 12://ÂÖÌ¥
+				case 12://è½®èƒ
 					if (value != null && value != "") {
 						shop.setTyreService(7100);
 					}
