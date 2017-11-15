@@ -3,57 +3,56 @@ package th.part_14_TypeInfo.chapter_02._01;
 import java.lang.reflect.Type;
 
 public class GetClassTest {
-	
-	private static void printInfo(Class<?> c){
-		//·µ»ØÈ«ÏŞ¶¨ÀàÃû
-		System.out.println("CalssName:"+c.getName());
-		//·µ»Ø²»°üº¬°üµÄÀàÃû
-		System.out.println("SimpleName:"+c.getSimpleName());
+
+	private static void printInfo(Class<?> c) {
+		// è¿”å›å…¨é™å®šç±»å
+		System.out.println("CalssName:" + c.getName());
+		// è¿”å›ä¸åŒ…å«åŒ…çš„ç±»å
+		System.out.println("SimpleName:" + c.getSimpleName());
 		/**
-		 * getName¡¢getCanonicalNamÕâÁ½¸ö·½·¨¶ÔÓÚ´ó²¿·ÖclassÀ´ËµÃ»ÓĞÊ²Ã´²»Í¬µÄ£¬
-		 * µ«ÊÇ¶ÔÓÚarray»òÄÚ²¿ÀàµÈ¾ÍÏÔÊ¾³öÀ´ÁË
-		 * ÁíÍâÔÚ¸ù¾İÀàÃû×Ö´´½¨ÎÄ¼şµÄÊ±ºò×îºÃÊ¹ÓÃgetCanonicalName()
+		 * getNameã€getCanonicalNamè¿™ä¸¤ä¸ªæ–¹æ³•å¯¹äºå¤§éƒ¨åˆ†classæ¥è¯´æ²¡æœ‰ä»€ä¹ˆä¸åŒçš„ï¼Œ ä½†æ˜¯å¯¹äºarrayæˆ–å†…éƒ¨ç±»ç­‰å°±æ˜¾ç¤ºå‡ºæ¥äº†
+		 * å¦å¤–åœ¨æ ¹æ®ç±»åå­—åˆ›å»ºæ–‡ä»¶çš„æ—¶å€™æœ€å¥½ä½¿ç”¨getCanonicalName()
 		 */
-		System.out.println("CanonicalName:"+c.getCanonicalName());
+		System.out.println("CanonicalName:" + c.getCanonicalName());
 	}
-	
+
 	public static void main(String[] args) {
-		Class<?> c=null;
+		Class<?> c = null;
 		/**
-		 * forName²ÎÊı±ØĞëÊÇÈ«ÏŞ¶¨ÀàÃû
+		 * forNameå‚æ•°å¿…é¡»æ˜¯å…¨é™å®šç±»å
 		 */
 		try {
-			c=Class.forName("th.part_14_TypeInfo.chapter_02._01.FancyToy");
+			c = Class.forName("th.part_14_TypeInfo.chapter_02._01.FancyToy");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.out.println("Ã»ÓĞÕÒµ½");
+			System.out.println("æ²¡æœ‰æ‰¾åˆ°");
 		}
-//		printInfo(c);
-		//Class<?>[] getInterfaces()È·¶¨´Ë¶ÔÏóËù±íÊ¾µÄÀà»ò½Ó¿ÚÊµÏÖµÄ½Ó¿Ú
-		System.out.println("getInterfaces():·µ»ØÊµÏÖµÄ½Ó¿Ú¼¯ºÏ¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		for(Class<?> cla:c.getInterfaces()){
+		// printInfo(c);
+		// Class<?>[] getInterfaces()ç¡®å®šæ­¤å¯¹è±¡æ‰€è¡¨ç¤ºçš„ç±»æˆ–æ¥å£å®ç°çš„æ¥å£
+		System.out.println("getInterfaces():è¿”å›å®ç°çš„æ¥å£é›†åˆâ€”â€”â€”â€”â€”â€”â€”");
+		for (Class<?> cla : c.getInterfaces()) {
 			printInfo(cla);
 		}
-		// Type[] getGenericInterfaces()·µ»Ø±íÊ¾Ä³Ğ©½Ó¿ÚµÄ Type
-		System.out.println("getGenericInterfaces():·µ»ØÊµÏÖµÄ½Ó¿Ú¼¯ºÏ¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		for(Type cla:c.getGenericInterfaces()){
+		// Type[] getGenericInterfaces()è¿”å›è¡¨ç¤ºæŸäº›æ¥å£çš„ Type
+		System.out.println("getGenericInterfaces():è¿”å›å®ç°çš„æ¥å£é›†åˆâ€”â€”â€”â€”â€”â€”â€”");
+		for (Type cla : c.getGenericInterfaces()) {
 			System.out.println(cla);
 		}
-		System.out.println("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		Class<?> up=c.getSuperclass();//·µ»Ø»ùÀà
-		Object obj=null;
+		System.out.println("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
+		Class<?> up = c.getSuperclass();// è¿”å›åŸºç±»
+		Object obj = null;
 		try {
 			/**
-			 * ×¢ÊÍµôToyµÄÎŞ²Î¹¹Ôì£¬java.lang.InstantiationExceptionÒì³£
-			 * newInstance(): ÈõÀàĞÍ,µÍĞ§ÂÊ,Ö»ÄÜµ÷ÓÃÎŞ²Î¹¹Ôì
+			 * æ³¨é‡Šæ‰Toyçš„æ— å‚æ„é€ ï¼Œjava.lang.InstantiationExceptionå¼‚å¸¸ newInstance():
+			 * å¼±ç±»å‹,ä½æ•ˆç‡,åªèƒ½è°ƒç”¨æ— å‚æ„é€ 
 			 */
-			obj=up.newInstance();
+			obj = up.newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
 		printInfo(obj.getClass());
-//		System.out.println(obj.getClass());
+		// System.out.println(obj.getClass());
 	}
 }

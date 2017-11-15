@@ -16,9 +16,9 @@ import th.part_14_TypeInfo.chapter_03._01.Rodent.Rodent;
 
 public class LiteralPetCreator extends PetCreator {
 	/**
-	 * ? extends T ´Ë´¦µÄ¼Ì³ĞÓĞÒ»¶¨µÄ´«µİĞÔ
-	 * Pets extends Individual(³¬Àà) >> Dog extends Pets >> MuttDog extends Dog
-	 * Ôò£¿Í¨Åä·û¾Í¿ÉÒÔ´«ÈëIndividual Pet Dog MuttDogÕâÈıÖÖÀàĞÍ¾ù¿É
+	 * ? extends T æ­¤å¤„çš„ç»§æ‰¿æœ‰ä¸€å®šçš„ä¼ é€’æ€§
+	 * Pets extends Individual(è¶…ç±») >> Dog extends Pets >> MuttDog extends Dog
+	 * åˆ™ï¼Ÿé€šé…ç¬¦å°±å¯ä»¥ä¼ å…¥Individual Pet Dog MuttDogè¿™ä¸‰ç§ç±»å‹å‡å¯
 	 * 
 	 */
 	static List<? extends Individual> l=Arrays.asList(new Individual(),new Pet(),new Dog(),new MuttDog());

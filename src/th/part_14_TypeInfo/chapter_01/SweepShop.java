@@ -2,7 +2,7 @@ package th.part_14_TypeInfo.chapter_01;
 
 public class SweepShop {
 	/**
-	 * 测试用的，这种写法
+	 * 
 	 * @param name
 	 * @return
 	 */

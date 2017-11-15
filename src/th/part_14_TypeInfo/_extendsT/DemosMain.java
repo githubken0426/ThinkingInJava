@@ -4,8 +4,8 @@ import java.util.*;
 
 public class DemosMain {
 	/**
-	 * µ«ÎÒÃÇ²»ÖªµÀÕâ¸ö×ÓÀàĞÍ¾¿¾¹ÊÇÊ²Ã´¡£ÒòÎªÃ»·¨È·¶¨£¬
-	 * ÎªÁË±£Ö¤ÀàĞÍ°²È«£¬ÎÒÃÇ¾Í²»ÔÊĞíÍùÀïÃæ¼ÓÈëÈÎºÎÕâÖÖÀàĞÍµÄÊı¾İ
+	 * ä½†æˆ‘ä»¬ä¸çŸ¥é“è¿™ä¸ªå­ç±»å‹ç©¶ç«Ÿæ˜¯ä»€ä¹ˆã€‚å› ä¸ºæ²¡æ³•ç¡®å®šï¼Œ
+	 * ä¸ºäº†ä¿è¯ç±»å‹å®‰å…¨ï¼Œæˆ‘ä»¬å°±ä¸å…è®¸å¾€é‡Œé¢åŠ å…¥ä»»ä½•è¿™ç§ç±»å‹çš„æ•°æ®
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -16,9 +16,9 @@ public class DemosMain {
 		fruit.add(null);
 		
 		List<Apple> apples = new ArrayList<Apple>();
-		//±àÒëÍ¨¹ı
+		//ç¼–è¯‘é€šè¿‡
 		List<? extends Fruit> app=apples;
-		//²»ÄÜadd,¿ÉÒÔÍ¨¹ı·´Éä¸øËû×¢ÈëÖµ
+		//ä¸èƒ½add,å¯ä»¥é€šè¿‡åå°„ç»™ä»–æ³¨å…¥å€¼
 		//app.add(new RedApple());
 		List<Class<? extends Fruit>> reflact=Collections.unmodifiableList(
 				Arrays.asList(Fruit.class,Apple.class,RedApple.class));

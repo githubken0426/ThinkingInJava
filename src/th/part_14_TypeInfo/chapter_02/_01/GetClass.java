@@ -5,9 +5,9 @@ public class GetClass {
 	public interface Waterproof{}
 	public interface Shoots{}
 	/**
-	 * 默认构造器必须有
+	 * 
 	 * You must define the required default constructor for up.newInstance( ); the
-	   compiler can’t create it because a non-default constructor already exists.
+	   compiler can not create it because a non-default constructor already exists.
 	 * @author Administrator
 	 *
 	 */
