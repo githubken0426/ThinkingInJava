@@ -1,11 +1,11 @@
 /**   
- * <b>package-info²»ÊÇÆ½³£Àà£¬Æä×÷ÓÃÓÐÈý¸ö:</b><br>   
- * 1¡¢Îª±ê×¢ÔÚ°üÉÏAnnotationÌá¹©±ãÀû£»<br>   
- * 2¡¢ÉùÃ÷°üµÄË½ÓÐÀàºÍ³£Á¿£»<br>   
- * 3¡¢Ìá¹©°üµÄÕûÌå×¢ÊÍËµÃ÷¡£<br>   
+ * <b>package-infoä¸æ˜¯å¹³å¸¸ç±»ï¼Œå…¶ä½œç”¨æœ‰ä¸‰ä¸ª:</b><br>   
+ * 1ã€ä¸ºæ ‡æ³¨åœ¨åŒ…ä¸ŠAnnotationæä¾›ä¾¿åˆ©ï¼›<br>   
+ * 2ã€å£°æ˜ŽåŒ…çš„ç§æœ‰ç±»å’Œå¸¸é‡ï¼›<br>   
+ * 3ã€æä¾›åŒ…çš„æ•´ä½“æ³¨é‡Šè¯´æ˜Žã€‚<br>   
  *  
  * @author   
-*/   
+*/  
 
 package th.part_20_Annotation;
   
