@@ -8,7 +8,10 @@ public class FruitInfoUtil {
 		String strFruitColor = " 水果颜色：";
 		String strFruitProvicer = "供应商信息：";
 		Field[] fields = clazz.getDeclaredFields();
+		
 		for (Field field : fields) {
+			//isAnnotationPresent(Class<? extends Annotation>)
+			//如果指定类型的注释存在于此元素上,返回true,否则返回false
 			if (field.isAnnotationPresent(FruitName.class)) {
 				FruitName fruitName = (FruitName) field.getAnnotation(FruitName.class);
 				strFruitName += fruitName.value();
