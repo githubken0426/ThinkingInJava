@@ -15,7 +15,7 @@ public class ExternalMain {
 		String path="C:\\Users\\Administrator\\Desktop\\external.txt";
 		Users user=new Users();
 		user.setId(10);
-		user.setName("ÕÅÈı");
+		user.setName("test");
 		user.setPassword("admin");
 		Students stu=new Students();
 		stu.setName("student");

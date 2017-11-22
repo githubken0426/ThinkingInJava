@@ -14,8 +14,8 @@ public class Person implements Externalizable {
 	private String name;
 	private int age;
 	/**
-	 * Èç¹û¶¨ÒåÁË¹¹Ôìº¯Êı£¬±ØĞë¶¨ÒåÎŞ²Î¹¹Ôìº¯Êı
-	 * ·ñÔò»áÓĞ¸öÒì³££º
+	 * å¦‚æœå®šä¹‰äº†æ„é€ å‡½æ•°ï¼Œå¿…é¡»å®šä¹‰æ— å‚æ„é€ å‡½æ•°
+	 * å¦åˆ™ä¼šæœ‰ä¸ªå¼‚å¸¸ï¼š
 	 * java.io.InvalidClassException:  no valid constructor
 	 * @param id
 	 * @param name
@@ -55,7 +55,7 @@ public class Person implements Externalizable {
 	@Override
 	public void readExternal(ObjectInput in) throws IOException,
 			ClassNotFoundException {
-		System.out.println("¿ªÊ¼¶ÁÈ¡£¡");
+		System.out.println("å¼€å§‹è¯»å–ï¼");
 		this.name=(String) in.readObject();
 		this.id=(Integer) in.readObject();
 		this.age=(Integer) in.readObject();
@@ -65,7 +65,7 @@ public class Person implements Externalizable {
 
 	@Override
 	public void writeExternal(ObjectOutput out) throws IOException {
-		System.out.println("¿ªÊ¼ĞòÁĞ»¯Ğ´Èë£¡");
+		System.out.println("å¼€å§‹åºåˆ—åŒ–å†™å…¥ï¼");
 		out.writeObject(name);
 		out.writeObject(id);
 		out.writeObject(age);
@@ -75,7 +75,7 @@ public class Person implements Externalizable {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		String path="C:\\Users\\Administrator\\Desktop\\external.txt";
-		Person p=new Person(1,"ÀîËÄ",23);
+		Person p=new Person(1,"æå››",23);
 		ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(path));
 		out.writeObject(p);
 		

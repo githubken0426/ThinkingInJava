@@ -10,15 +10,15 @@ import cn.serializable.transientDemo2.Students;
 
 public class Users implements Externalizable{
 	/**
-	 * °æ±¾ºÅ
+	 * ç‰ˆæœ¬å·
 	 */
 	private static final long serialVersionUID = -4207483236608327184L;
 	
 	private int id;
 	private String name;
 	/**
-	 * ÊµÏÖÁËExeternalizble±äÁ¿ÎŞÂÛÊÇ·ñ±»transientĞŞÊÎ£¬
-	 * Èç¹ûwriteExternal()·½·¨³åĞòÁĞ»¯ÁË´Ë±äÁ¿£¬±äÁ¿»¹ÊÇ»á±»ĞòÁĞ»¯
+	 * å®ç°äº†Exeternalizbleå˜é‡æ— è®ºæ˜¯å¦è¢«transientä¿®é¥°ï¼Œ
+	 * å¦‚æœwriteExternal()æ–¹æ³•å†²åºåˆ—åŒ–äº†æ­¤å˜é‡ï¼Œå˜é‡è¿˜æ˜¯ä¼šè¢«åºåˆ—åŒ–
 	 */
 	private transient String password;
 	private Students student;
@@ -48,11 +48,11 @@ public class Users implements Externalizable{
 		this.student = student;
 	}
 	
-	//µ±ĞòÁĞ»¯¶ÔÏóÊ±,¸Ã·½·¨×Ô¶¯µ÷ÓÃ
+	//å½“åºåˆ—åŒ–å¯¹è±¡æ—¶,è¯¥æ–¹æ³•è‡ªåŠ¨è°ƒç”¨
 	@Override
 	public void writeExternal(ObjectOutput out) throws IOException {
-		System.out.println("ÏÖÔÚÖ´ĞĞĞòÁĞ»¯·½·¨");   
-        //¿ÉÒÔÔÚĞòÁĞ»¯Ê±Ğ´·Ç×ÔÉíµÄ±äÁ¿   
+		System.out.println("ç°åœ¨æ‰§è¡Œåºåˆ—åŒ–æ–¹æ³•");   
+        //å¯ä»¥åœ¨åºåˆ—åŒ–æ—¶å†™éè‡ªèº«çš„å˜é‡   
 		Date d=new Date();
         out.writeObject(d);
         out.writeObject(id);
@@ -62,12 +62,12 @@ public class Users implements Externalizable{
 	}
 	
 	 /**
-	  * µ±·´ĞòÁĞ»¯¶ÔÏóÊ±,¸Ã·½·¨×Ô¶¯µ÷ÓÃ
-	  * ·´ĞòÁĞ»¯·½·¨ÖĞµÄÊôĞÔ±ØĞëºÍĞòÁĞ»¯ÖĞµÄÊôĞÔÏÈºóË³ĞòÒ»Ö±
+	  * å½“ååºåˆ—åŒ–å¯¹è±¡æ—¶,è¯¥æ–¹æ³•è‡ªåŠ¨è°ƒç”¨
+	  * ååºåˆ—åŒ–æ–¹æ³•ä¸­çš„å±æ€§å¿…é¡»å’Œåºåˆ—åŒ–ä¸­çš„å±æ€§å…ˆåé¡ºåºä¸€ç›´
 	  */
 	@Override
 	public void readExternal(ObjectInput in) throws IOException,ClassNotFoundException {
-		 System.out.println("Ö´ĞĞ·´ĞòÁĞ»¯·½·¨");  
+		 System.out.println("æ‰§è¡Œååºåˆ—åŒ–æ–¹æ³•");  
 		 Date d=(Date)in.readObject();   
 	     System.out.println(d); 
 	     
@@ -78,7 +78,6 @@ public class Users implements Externalizable{
 	}
 	
 	public String toString(){   
-        return "ÓÃ»§Ãû: "+this.name+";Ñ§ÉúĞÕÃû£º"+this.student.getName()+",ÃÜÂë:"+this.password; 
+        return "ç”¨æˆ·å: "+this.name+";å­¦ç”Ÿå§“åï¼š"+this.student.getName()+",å¯†ç :"+this.password; 
     }   
-	
 }
