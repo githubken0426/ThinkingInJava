@@ -9,36 +9,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * listµÄĞòÁĞ»¯
+ * listçš„åºåˆ—åŒ–
  * @author Administrator
  *
  */
 public class ListSerializable {
 
 	/**
-	 * ÔÚĞòÁĞ»¯¹ı³ÌÖĞ£¬Èç¹û±»ĞòÁĞ»¯µÄÀàÖĞ¶¨ÒåÁËwriteObject ºÍ readObject ·½·¨£¬
-	 * ĞéÄâ»ú»áÊÔÍ¼µ÷ÓÃ¶ÔÏóÀàÀïµÄ writeObject ºÍ readObject ·½·¨£¬½øĞĞÓÃ»§×Ô¶¨ÒåµÄĞòÁĞ»¯ºÍ·´ĞòÁĞ»¯¡£
+	 * åœ¨åºåˆ—åŒ–è¿‡ç¨‹ä¸­ï¼Œå¦‚æœè¢«åºåˆ—åŒ–çš„ç±»ä¸­å®šä¹‰äº†writeObject å’Œ readObject æ–¹æ³•ï¼Œ
+	 * è™šæ‹Ÿæœºä¼šè¯•å›¾è°ƒç”¨å¯¹è±¡ç±»é‡Œçš„ writeObject å’Œ readObject æ–¹æ³•ï¼Œè¿›è¡Œç”¨æˆ·è‡ªå®šä¹‰çš„åºåˆ—åŒ–å’Œååºåˆ—åŒ–ã€‚
 	   
-	 * Èç¹ûÃ»ÓĞÕâÑùµÄ·½·¨£¬ÔòÄ¬ÈÏµ÷ÓÃÊÇ ObjectOutputStream µÄ defaultWriteObject ·½·¨
-	 * ÒÔ¼° ObjectInputStream µÄ defaultReadObject ·½·¨¡£
-	 * ÓÃ»§×Ô¶¨ÒåµÄ writeObject ºÍ readObject ·½·¨¿ÉÒÔÔÊĞíÓÃ»§¿ØÖÆĞòÁĞ»¯µÄ¹ı³Ì£¬
-	 * ±ÈÈç¿ÉÒÔÔÚĞòÁĞ»¯µÄ¹ı³ÌÖĞ¶¯Ì¬¸Ä±äĞòÁĞ»¯µÄÊıÖµ¡£
+	 * å¦‚æœæ²¡æœ‰è¿™æ ·çš„æ–¹æ³•ï¼Œåˆ™é»˜è®¤è°ƒç”¨æ˜¯ ObjectOutputStream çš„ defaultWriteObject æ–¹æ³•
+	 * ä»¥åŠ ObjectInputStream çš„ defaultReadObject æ–¹æ³•ã€‚
+	 * ç”¨æˆ·è‡ªå®šä¹‰çš„ writeObject å’Œ readObject æ–¹æ³•å¯ä»¥å…è®¸ç”¨æˆ·æ§åˆ¶åºåˆ—åŒ–çš„è¿‡ç¨‹ï¼Œ
+	 * æ¯”å¦‚å¯ä»¥åœ¨åºåˆ—åŒ–çš„è¿‡ç¨‹ä¸­åŠ¨æ€æ”¹å˜åºåˆ—åŒ–çš„æ•°å€¼ã€‚
 	 * @param args
 	 */
 	
 	/**
 	 * why transient 
-	 * ArrayListÊµ¼ÊÉÏÊÇ¶¯Ì¬Êı×é£¬Ã¿´ÎÔÚ·ÅÂúÒÔºó×Ô¶¯Ôö³¤Éè¶¨µÄ³¤¶ÈÖµ£¬
-	 * Èç¹ûÊı×é×Ô¶¯Ôö³¤³¤¶ÈÉèÎª100£¬¶øÊµ¼ÊÖ»·ÅÁËÒ»¸öÔªËØ£¬ÄÇ¾Í»áĞòÁĞ»¯99¸önullÔªËØ¡£
-	 * ÎªÁË±£Ö¤ÔÚĞòÁĞ»¯µÄÊ±ºò²»»á½«ÕâÃ´¶ànullÍ¬Ê±½øĞĞĞòÁĞ»¯£¬ArrayList°ÑÔªËØÊı×éÉèÖÃÎªtransient¡£
+	 * ArrayListå®é™…ä¸Šæ˜¯åŠ¨æ€æ•°ç»„ï¼Œæ¯æ¬¡åœ¨æ”¾æ»¡ä»¥åè‡ªåŠ¨å¢é•¿è®¾å®šçš„é•¿åº¦å€¼ï¼Œ
+	 * å¦‚æœæ•°ç»„è‡ªåŠ¨å¢é•¿é•¿åº¦è®¾ä¸º100ï¼Œè€Œå®é™…åªæ”¾äº†ä¸€ä¸ªå…ƒç´ ï¼Œé‚£å°±ä¼šåºåˆ—åŒ–99ä¸ªnullå…ƒç´ ã€‚
+	 * ä¸ºäº†ä¿è¯åœ¨åºåˆ—åŒ–çš„æ—¶å€™ä¸ä¼šå°†è¿™ä¹ˆå¤šnullåŒæ—¶è¿›è¡Œåºåˆ—åŒ–ï¼ŒArrayListæŠŠå…ƒç´ æ•°ç»„è®¾ç½®ä¸ºtransientã€‚
 	 * 
 	 * why writeObject and readObject
-	 * Ç°ÃæËµ¹ı£¬ÎªÁË·ÀÖ¹Ò»¸ö°üº¬´óÁ¿¿Õ¶ÔÏóµÄÊı×é±»ĞòÁĞ»¯£¬ÎªÁËÓÅ»¯´æ´¢£¬
-	 * ËùÒÔ£¬ArrayListÊ¹ÓÃtransientÀ´ÉùÃ÷elementData¡£
-	 * µ«ÊÇ£¬×÷ÎªÒ»¸ö¼¯ºÏ£¬ÔÚĞòÁĞ»¯¹ı³ÌÖĞ»¹±ØĞë±£Ö¤ÆäÖĞµÄÔªËØ¿ÉÒÔ±»³Ö¾Ã»¯ÏÂÀ´£¬
-	 * ËùÒÔ£¬Í¨¹ıÖØĞ´writeObject ºÍ readObject·½·¨µÄ·½Ê½°ÑÆäÖĞµÄÔªËØ±£ÁôÏÂÀ´¡£
-	 * writeObject·½·¨°ÑelementDataÊı×éÖĞµÄÔªËØ±éÀúµÄ±£´æµ½Êä³öÁ÷£¨ObjectOutputStream£©ÖĞ¡£
-	 * readObject·½·¨´ÓÊäÈëÁ÷£¨ObjectInputStream£©ÖĞ¶Á³ö¶ÔÏó²¢±£´æ¸³Öµµ½elementDataÊı×éÖĞ
+	 * å‰é¢è¯´è¿‡ï¼Œä¸ºäº†é˜²æ­¢ä¸€ä¸ªåŒ…å«å¤§é‡ç©ºå¯¹è±¡çš„æ•°ç»„è¢«åºåˆ—åŒ–ï¼Œä¸ºäº†ä¼˜åŒ–å­˜å‚¨ï¼Œ
+	 * æ‰€ä»¥ï¼ŒArrayListä½¿ç”¨transientæ¥å£°æ˜elementDataã€‚
+	 * ä½†æ˜¯ï¼Œä½œä¸ºä¸€ä¸ªé›†åˆï¼Œåœ¨åºåˆ—åŒ–è¿‡ç¨‹ä¸­è¿˜å¿…é¡»ä¿è¯å…¶ä¸­çš„å…ƒç´ å¯ä»¥è¢«æŒä¹…åŒ–ä¸‹æ¥ï¼Œ
+	 * æ‰€ä»¥ï¼Œé€šè¿‡é‡å†™writeObject å’Œ readObjectæ–¹æ³•çš„æ–¹å¼æŠŠå…¶ä¸­çš„å…ƒç´ ä¿ç•™ä¸‹æ¥ã€‚
+	 * writeObjectæ–¹æ³•æŠŠelementDataæ•°ç»„ä¸­çš„å…ƒç´ éå†çš„ä¿å­˜åˆ°è¾“å‡ºæµï¼ˆObjectOutputStreamï¼‰ä¸­ã€‚
+	 * readObjectæ–¹æ³•ä»è¾“å…¥æµï¼ˆObjectInputStreamï¼‰ä¸­è¯»å‡ºå¯¹è±¡å¹¶ä¿å­˜èµ‹å€¼åˆ°elementDataæ•°ç»„ä¸­
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -48,17 +48,17 @@ public class ListSerializable {
 		list.add("World!");
 		System.out.println("List:"+list.toString());
 		try {
-			//Ğ´Èë
+			//å†™å…¥
 			ObjectOutputStream output=new ObjectOutputStream(new FileOutputStream(path));
 			output.writeObject(list);
 			output.close();
-			//¶ÁÈ¡
+			//è¯»å–
 			ObjectInputStream input =new ObjectInputStream(new FileInputStream(path));
 		    @SuppressWarnings("unchecked")
 			List<String> str=(List<String>) input.readObject();
 			input.close();
 			for (String s : str) {
-				System.out.println("¶ÁÈ¡ĞÅÏ¢:"+s);
+				System.out.println("è¯»å–ä¿¡æ¯:"+s);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -66,5 +66,4 @@ public class ListSerializable {
 			e.printStackTrace();
 		}
 	}
-
 }
