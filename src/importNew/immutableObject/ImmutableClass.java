@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * ´´½¨Ò»¸ö²»¿É±ä¶ÔÏó ½«ÀàÉùÃ÷Îªfinal£¬ËùÒÔËü²»ÄÜ±»¼Ì³Ğ ½«ËùÓĞµÄ³ÉÔ±ÉùÃ÷ÎªË½ÓĞµÄ£¬
- * ÕâÑù¾Í²»ÔÊĞíÖ±½Ó·ÃÎÊÕâĞ©³ÉÔ± ¶Ô±äÁ¿²»ÒªÌá¹©setter·½·¨
- * ½«ËùÓĞ¿É±äµÄ³ÉÔ±ÉùÃ÷Îªfinal£¬ÕâÑùÖ»ÄÜ¶ÔËüÃÇ¸³ÖµÒ»´Î Í¨¹ı¹¹ÔìÆ÷³õÊ¼»¯ËùÓĞ³ÉÔ±£¬½øĞĞÉî¿½±´(deep copy)
- * ÔÚgetter·½·¨ÖĞ£¬²»ÒªÖ±½Ó·µ»Ø¶ÔÏó±¾Éí£¬¶øÊÇ¿ËÂ¡¶ÔÏó£¬²¢·µ»Ø¶ÔÏóµÄ¿½±´
+ * åˆ›å»ºä¸€ä¸ªä¸å¯å˜å¯¹è±¡ å°†ç±»å£°æ˜ä¸ºfinalï¼Œæ‰€ä»¥å®ƒä¸èƒ½è¢«ç»§æ‰¿ å°†æ‰€æœ‰çš„æˆå‘˜å£°æ˜ä¸ºç§æœ‰çš„ï¼Œ
+ * è¿™æ ·å°±ä¸å…è®¸ç›´æ¥è®¿é—®è¿™äº›æˆå‘˜ å¯¹å˜é‡ä¸è¦æä¾›setteræ–¹æ³•
+ * å°†æ‰€æœ‰å¯å˜çš„æˆå‘˜å£°æ˜ä¸ºfinalï¼Œè¿™æ ·åªèƒ½å¯¹å®ƒä»¬èµ‹å€¼ä¸€æ¬¡ é€šè¿‡æ„é€ å™¨åˆå§‹åŒ–æ‰€æœ‰æˆå‘˜ï¼Œè¿›è¡Œæ·±æ‹·è´(deep copy)
+ * åœ¨getteræ–¹æ³•ä¸­ï¼Œä¸è¦ç›´æ¥è¿”å›å¯¹è±¡æœ¬èº«ï¼Œè€Œæ˜¯å…‹éš†å¯¹è±¡ï¼Œå¹¶è¿”å›å¯¹è±¡çš„æ‹·è´
  * 
- * @author Administrator 2016-3-17 ÏÂÎç02:39:25
+ * @author Administrator 2016-3-17 ä¸‹åˆ02:39:25
  * 
  */
 public final class ImmutableClass {
@@ -26,17 +26,17 @@ public final class ImmutableClass {
 	}
 
 	/**
-	 * ¿É±ä¶ÔÏóµÄ·ÃÎÊ·½·¨
+	 * å¯å˜å¯¹è±¡çš„è®¿é—®æ–¹æ³•
 	 * 
 	 * @return
 	 */
 	public HashMap<Object, Object> getMap() {
-		// cloneÒ»¸ö¶ÔÏó£¬²»ÊÇµ±Ç°¶ÔÏóµÄÒıÓÃ
+		// cloneä¸€ä¸ªå¯¹è±¡ï¼Œä¸æ˜¯å½“å‰å¯¹è±¡çš„å¼•ç”¨
 		return (HashMap<Object, Object>) map.clone();
 	}
 
 	/**
-	 * Éî¿½±´µÄ¹¹Ôì
+	 * æ·±æ‹·è´çš„æ„é€ 
 	 * 
 	 * @param id
 	 * @param name
@@ -58,7 +58,7 @@ public final class ImmutableClass {
 	}
 
 	/**
-	 * ÊµÏÖÇ³¿½±´(shallow copy)µÄ¹¹ÔìÆ÷
+	 * å®ç°æµ…æ‹·è´(shallow copy)çš„æ„é€ å™¨
 	 * 
 	 * @param i
 	 * @param n
@@ -81,7 +81,7 @@ public final class ImmutableClass {
 		ImmutableClass immutable = new ImmutableClass(i, str, map);
 
 		System.out.println(str == immutable.getName());
-		System.out.println("HashMapµÄ¿ËÂ¡¶ÔÏó£º" + (map == immutable.getMap()));
+		System.out.println("HashMapçš„å…‹éš†å¯¹è±¡ï¼š" + (map == immutable.getMap()));
 
 		i = 20;
 		str = "change";
