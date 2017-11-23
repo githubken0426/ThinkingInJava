@@ -6,10 +6,11 @@ import java.util.Arrays;
 /**
  * instanceof isInstance() isAssignableFrom()方法对比
  * 
- * 1:instanceof 针对实例 适合直接类型的检查，常与普通的Class对象出现
+ * 1:instanceof 针对实例 适合直接类型的检查，常与普通的Class对象出现。
+ * 
  * 2:Class1.isAssignableFrom(Class2<?> cls)： 判断Class1和Class2是否相同
- * 即判断Class1是否是Class2的超类或接口 
- * 调用者和参数都是java.lang.Class类型
+ * 即判断Class1是否是Class2的超类或接口，调用者和参数都是java.lang.Class类型。
+ * 
  * 3:Class.isInstance(Object obj) obj是被测试的对象，如果obj是调用这个方法的class或接口的实例，则返回true
  * 适合泛类型的检测（如代理，接口，抽象类等规则），常与泛化Class对象出现
  * @author ken 
