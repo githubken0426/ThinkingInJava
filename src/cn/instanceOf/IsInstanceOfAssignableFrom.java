@@ -4,68 +4,68 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * instanceof isInstance() isAssignableFrom()·½·¨¶Ô±È
+ * instanceof isInstance() isAssignableFrom()æ–¹æ³•å¯¹æ¯”
  * 
- * 1:instanceof Õë¶ÔÊµÀı ÊÊºÏÖ±½ÓÀàĞÍµÄ¼ì²é£¬³£ÓëÆÕÍ¨µÄClass¶ÔÏó³öÏÖ
- * 2:Class1.isAssignableFrom(Class2<?> cls)£º ÅĞ¶ÏClass1ºÍClass2ÊÇ·ñÏàÍ¬
- * ¼´ÅĞ¶ÏClass1ºÍÊÇ·ñÊÇClass2µÄ³¬Àà»ò½Ó¿Ú 
- * µ÷ÓÃÕßºÍ²ÎÊı¶¼ÊÇjava.lang.ClassÀàĞÍ
- * 3:Class.isInstance(Object obj) objÊÇ±»²âÊÔµÄ¶ÔÏó£¬Èç¹ûobjÊÇµ÷ÓÃÕâ¸ö·½·¨µÄclass»ò½Ó¿ÚµÄÊµÀı£¬Ôò·µ»Øtrue
- * ÊÊºÏ·ºÀàĞÍµÄ¼ì²â£¨Èç´úÀí£¬½Ó¿Ú£¬³éÏóÀàµÈ¹æÔò£©£¬³£Óë·º»¯Class¶ÔÏó³öÏÖ
+ * 1:instanceof é’ˆå¯¹å®ä¾‹ é€‚åˆç›´æ¥ç±»å‹çš„æ£€æŸ¥ï¼Œå¸¸ä¸æ™®é€šçš„Classå¯¹è±¡å‡ºç°
+ * 2:Class1.isAssignableFrom(Class2<?> cls)ï¼š åˆ¤æ–­Class1å’ŒClass2æ˜¯å¦ç›¸åŒ
+ * å³åˆ¤æ–­Class1æ˜¯å¦æ˜¯Class2çš„è¶…ç±»æˆ–æ¥å£ 
+ * è°ƒç”¨è€…å’Œå‚æ•°éƒ½æ˜¯java.lang.Classç±»å‹
+ * 3:Class.isInstance(Object obj) objæ˜¯è¢«æµ‹è¯•çš„å¯¹è±¡ï¼Œå¦‚æœobjæ˜¯è°ƒç”¨è¿™ä¸ªæ–¹æ³•çš„classæˆ–æ¥å£çš„å®ä¾‹ï¼Œåˆ™è¿”å›true
+ * é€‚åˆæ³›ç±»å‹çš„æ£€æµ‹ï¼ˆå¦‚ä»£ç†ï¼Œæ¥å£ï¼ŒæŠ½è±¡ç±»ç­‰è§„åˆ™ï¼‰ï¼Œå¸¸ä¸æ³›åŒ–Classå¯¹è±¡å‡ºç°
  * @author ken 
- * 2016-3-25 ÏÂÎç04:13:48
+ * 2016-3-25 ä¸‹åˆ04:13:48
  */
 public class IsInstanceOfAssignableFrom {
 	public static void main(String[] args) {
 		String str = "str";
 		System.out.println("instanceof:" + (str instanceof String));
 		/**
-		 * Í¨¹ıÄ£ÄâÔ´Âë¿´µ½£¬Èç¹û´«Èë²ÎÊıÊÇxxx.class
-		 * Ô´Âë»áµ÷ÓÃxxx.class.getClass()·½·¨
-		 * ×îÖÕ·µ»Øclass java.lang.Class
-		 * ¶ø²»ÊÇÄãÒª·µ»ØµÄÄÇ¸öxxx¶ÔÏó
-		 * ËùÒÔ´«Èë²ÎÊı×îºÃÊÇÊµÀı£¬¶ø²»ÊÇclass¶ÔÏó
+		 * é€šè¿‡æ¨¡æ‹Ÿæºç çœ‹åˆ°ï¼Œå¦‚æœä¼ å…¥å‚æ•°æ˜¯xxx.class
+		 * æºç ä¼šè°ƒç”¨xxx.class.getClass()æ–¹æ³•
+		 * æœ€ç»ˆè¿”å›class java.lang.Class
+		 * è€Œä¸æ˜¯ä½ è¦è¿”å›çš„é‚£ä¸ªxxxå¯¹è±¡
+		 * æ‰€ä»¥ä¼ å…¥å‚æ•°æœ€å¥½æ˜¯å®ä¾‹ï¼Œè€Œä¸æ˜¯classå¯¹è±¡
 		 */
 		Class<? extends Object> s =String.class.getClass();
-		System.out.println(s);//Êä³ö class java.lang.Class
-		System.out.println("isInstance()1:"+str.getClass().isInstance(String.class));	//Êä³öfalse
-		System.out.println("isInstance()2:"+String.class.isInstance(str.getClass()));	//Í¬ÉÏ£¬Êä³öfalse
-		System.out.println("isInstance()3:"+String.class.isInstance(str));				//Êä³ötrue
-		System.out.println("×Ô¶¨ÒåisInstance():"+ IsInstanceOfAssignableFrom.isInstance(str,String.class));//Êä³ötrue
+		System.out.println(s);//è¾“å‡º class java.lang.Class
+		System.out.println("isInstance()1:"+str.getClass().isInstance(String.class));	//è¾“å‡ºfalse
+		System.out.println("isInstance()2:"+String.class.isInstance(str.getClass()));	//åŒä¸Šï¼Œè¾“å‡ºfalse
+		System.out.println("isInstance()3:"+String.class.isInstance(str));				//è¾“å‡ºtrue
+		System.out.println("è‡ªå®šä¹‰isInstance():"+ IsInstanceOfAssignableFrom.isInstance(str,String.class));//è¾“å‡ºtrue
 		/**
-		 * ´Ë´¦name·µ»ØµÄÎªStringÀàĞÍ(ÓëgetSimpleName()¼´ÆäÀàÃûÎŞ¹Ø), Ò²¾ÍÊÇname¶¨ÒåÎªStringÀàĞÍ
-		 * Óëbn2Ğ§¹ûÏàÍ¬
+		 * æ­¤å¤„nameè¿”å›çš„ä¸ºStringç±»å‹(ä¸getSimpleName()å³å…¶ç±»åæ— å…³), ä¹Ÿå°±æ˜¯nameå®šä¹‰ä¸ºStringç±»å‹
+		 * ä¸bn2æ•ˆæœç›¸åŒ
 		 */
 		String name = str.getClass().getSimpleName();
 		System.out.println("\nbn:" + String.class.isInstance(name));
 		System.out.println("bn2:" + String.class.isInstance(str));
-		// ObjectÊÇËùÓĞÀàµÄ³¬Àà
-		System.out.println("\nisAssginableFrom():"+ Object.class.isAssignableFrom(ArrayList.class));//Êä³ötrue
-		System.out.println("isAssginableFrom():"+ ArrayList.class.isAssignableFrom(Object.class));  //Êä³öfalse
+		// Objectæ˜¯æ‰€æœ‰ç±»çš„è¶…ç±»
+		System.out.println("\nisAssginableFrom():"+ Object.class.isAssignableFrom(ArrayList.class));//è¾“å‡ºtrue
+		System.out.println("isAssginableFrom():"+ ArrayList.class.isAssignableFrom(Object.class));  //è¾“å‡ºfalse
 	}
 	
 	/**
-	 * Ä£ÄâisInstance()Ô´ÂëÊµÏÖ
-	 * @param obj Ä£Äâ´«ÈëµÄ²ÎÊı
-	 * @param cls Ä£Äâclass¶ÔÏó
+	 * æ¨¡æ‹ŸisInstance()æºç å®ç°
+	 * @param obj æ¨¡æ‹Ÿä¼ å…¥çš„å‚æ•°
+	 * @param cls æ¨¡æ‹Ÿclasså¯¹è±¡
 	 * @return
-	 * 2016-12-13 ÉÏÎç10:09:35
+	 * 2016-12-13 ä¸Šåˆ10:09:35
 	 */
 	public static boolean isInstance(Object obj,Class<?> cls) {
 		if (obj == null) {
 			return false;
 		}
 		Class<? extends Object> cl= obj.getClass();
-		if (cl == cls) {// ¼ì²éµ±Ç°ÀàµÄÊµÏÖ
+		if (cl == cls) {// æ£€æŸ¥å½“å‰ç±»çš„å®ç°
 			return true;
 		}
-		if (Arrays.asList(obj.getClass().getInterfaces()).contains(cls)) {// ¼ì²é½Ó¿ÚµÄÊµÏÖ
+		if (Arrays.asList(obj.getClass().getInterfaces()).contains(cls)) {// æ£€æŸ¥æ¥å£çš„å®ç°
 			return true;
 		}
 		/**
-		 * Èç¹û²éÑ¯µÃµ½µÄ»°·µ»Ø true;
-		 * ·ñÔòÔÚjava.lang.Object.class´¦ÖÕÖ¹,ÕâÀïĞèÒª×¢Òâ£¬
-		 * a.getClass().getInterfaces()ÊÇ»ñÈ¡µ½ÁËËùÓĞµÄ½Ó¿Ú£¬ËùÒÔ½ÓÏÂÀ´²»¸ø½Ó¿Ú×ö¼ì²é
+		 * å¦‚æœæŸ¥è¯¢å¾—åˆ°çš„è¯è¿”å› true;
+		 * å¦åˆ™åœ¨java.lang.Object.classå¤„ç»ˆæ­¢,è¿™é‡Œéœ€è¦æ³¨æ„ï¼Œ
+		 * a.getClass().getInterfaces()æ˜¯è·å–åˆ°äº†æ‰€æœ‰çš„æ¥å£ï¼Œæ‰€ä»¥æ¥ä¸‹æ¥ä¸ç»™æ¥å£åšæ£€æŸ¥
 		 */
 		Class<? extends Object> superClass = obj.getClass().getSuperclass();
 		while (superClass != Object.class) {
