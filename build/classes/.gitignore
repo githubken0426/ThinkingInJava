@@ -1,13 +1,13 @@
 /TIJ4_code/
 /applicationConfig.properties
 /cn/
-/designPattern/
-/log4j.properties
-/th/
 /com/
 /concurrent/
+/designPattern/
 /importNew/
 /jvm/
+/log4j.properties
 /protocol/
 /resourceCode/
+/th/
 /web/
