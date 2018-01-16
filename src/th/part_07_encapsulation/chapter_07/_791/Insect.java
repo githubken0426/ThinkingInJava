@@ -8,7 +8,6 @@ public class Insect {
 		j=39;
 	}
 	private static int x1=print("static Insect.x1 initialized!");
-			
 	static int print(String str) {
 		System.out.println(str);
 		return 47;
