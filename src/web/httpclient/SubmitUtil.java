@@ -14,15 +14,15 @@ public class SubmitUtil {
 		HttpClient httpClient = new HttpClient();
 		String url = "http://193.167.13.21/setup.cgi";
 		PostMethod postMethod = new PostMethod(url);
-		// ÌîÈë¸÷¸ö±íµ¥ÓòµÄÖµ
+		// å¡«å…¥å„ä¸ªè¡¨å•åŸŸçš„å€¼
 		NameValuePair[] data = { new NameValuePair("ID", "11"),
 				new NameValuePair("mtg", "0"),
 				new NameValuePair("haveCookie", "0"),
 				new NameValuePair("backID", "30"),
 				new NameValuePair("psw", "password") };
-		// ½«±íµ¥µÄÖµ·ÅÈëpostMethodÖĞ
+		// å°†è¡¨å•çš„å€¼æ”¾å…¥postMethodä¸­
 		postMethod.setRequestBody(data);
-		// Ö´ĞĞpostMethod
+		// æ‰§è¡ŒpostMethod
 		int statusCode = 0;
 		try {
 			statusCode = httpClient.executeMethod(postMethod);
@@ -31,11 +31,11 @@ public class SubmitUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// HttpClient¶ÔÓÚÒªÇó½ÓÊÜºó¼Ì·şÎñµÄÇëÇó£¬ÏóPOSTºÍPUTµÈ²»ÄÜ×Ô¶¯´¦Àí×ª·¢
-		// 301»òÕß302
+		// HttpClientå¯¹äºè¦æ±‚æ¥å—åç»§æœåŠ¡çš„è¯·æ±‚ï¼Œè±¡POSTå’ŒPUTç­‰ä¸èƒ½è‡ªåŠ¨å¤„ç†è½¬å‘
+		// 301æˆ–è€…302
 		if (statusCode == HttpStatus.SC_MOVED_PERMANENTLY
 				|| statusCode == HttpStatus.SC_MOVED_TEMPORARILY) {
-			// ´ÓÍ·ÖĞÈ¡³ö×ªÏòµÄµØÖ·
+			// ä»å¤´ä¸­å–å‡ºè½¬å‘çš„åœ°å€
 			Header locationHeader = postMethod.getResponseHeader("location");
 			String location = null;
 			if (locationHeader != null) {
