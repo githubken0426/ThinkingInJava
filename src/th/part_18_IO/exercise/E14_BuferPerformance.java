@@ -12,7 +12,7 @@ public class E14_BuferPerformance {
 	public static void main(String[] args) {
 		try {
 			List<String> list=E10_FindWord.read(fileName);
-			//使用缓冲
+			
 			PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter(file)));
 			int lineCount=1;
 			long t1=System.currentTimeMillis();
@@ -24,7 +24,7 @@ public class E14_BuferPerformance {
 			long t2=System.currentTimeMillis();
 			System.out.println("Buiffered:"+(t2-t1));
 			out.close();
-			//不用缓冲
+			
 			out=new PrintWriter(new FileWriter(file));
 			t1=System.currentTimeMillis();
 			for(String s:list){

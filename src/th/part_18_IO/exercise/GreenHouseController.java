@@ -15,12 +15,13 @@ import th.util.Event;
 public class GreenHouseController extends Controller {
 	/**
 	 * ReStart
-	 * @author Administrator
-	 * 2015-11-25 ÏÂÎç04:22:23
+	 * 
+	 * @author Administrator 2015-11-25 04:22:23
 	 *
 	 */
-	class ReStart extends Event{
-		private Event [] eventList;
+	class ReStart extends Event {
+		private Event[] eventList;
+
 		public ReStart(long delayTime) {
 			super(delayTime);
 		}
@@ -34,7 +35,8 @@ public class GreenHouseController extends Controller {
 			start();
 			addEvent(this);
 		}
-		public String toString(){
+
+		public String toString() {
 			return "ReStart System";
 		}
 
@@ -42,28 +44,29 @@ public class GreenHouseController extends Controller {
 			this.eventList = eventList;
 		}
 	}
+
 	/**
 	 * GHEventFactory
-	 * @author Administrator
-	 * 2015-11-25 ÏÂÎç04:22:32
+	 * 
+	 * @author Administrator 2015-11-25 04:22:32
 	 *
 	 */
-	class GHEventFactory{
-		LinkedList<EventCreator> events=new LinkedList<EventCreator>();
-		
-		public GHEventFactory(String eventFile){
+	class GHEventFactory {
+		LinkedList<EventCreator> events = new LinkedList<EventCreator>();
+
+		public GHEventFactory(String eventFile) {
 			try {
-				BufferedReader read=new BufferedReader(new FileReader(eventFile));
+				BufferedReader read = new BufferedReader(new FileReader(eventFile));
 				String str;
-				while((str=read.readLine())!=null){
-					int colon=str.indexOf(":");
-					String className=str.substring(0,colon).trim();
-					Class<?> outer= className.equals("ReStart")?GreenHouseController.class:Controller.class;
-					String type=outer.getName()+"$"+className;
-					long offset=Long.parseLong(str.substring(1+colon).trim());
-					Class<Event> eventClasses=(Class<Event>) Class.forName(type);
-					Constructor<Event> ctor=eventClasses.getConstructor(new Class[]{outer,Long.class});
-					events.add(new EventCreator(ctor,offset));
+				while ((str = read.readLine()) != null) {
+					int colon = str.indexOf(":");
+					String className = str.substring(0, colon).trim();
+					Class<?> outer = className.equals("ReStart") ? GreenHouseController.class : Controller.class;
+					String type = outer.getName() + "$" + className;
+					long offset = Long.parseLong(str.substring(1 + colon).trim());
+					Class<Event> eventClasses = (Class<Event>) Class.forName(type);
+					Constructor<Event> ctor = eventClasses.getConstructor(new Class[] { outer, Long.class });
+					events.add(new EventCreator(ctor, offset));
 				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -77,20 +80,22 @@ public class GreenHouseController extends Controller {
 				e.printStackTrace();
 			}
 		}
-		
-		//EventCreator
-		class EventCreator{
+
+		// EventCreator
+		class EventCreator {
 			Constructor<Event> ctor;
 			long offset;
-			public EventCreator(Constructor<Event> ctor,long offset){
-				this.ctor=ctor;
-				this.offset=offset;
+
+			public EventCreator(Constructor<Event> ctor, long offset) {
+				this.ctor = ctor;
+				this.offset = offset;
 			}
 		}
-		
-		Iterator<Event> iterator(){
-			return new Iterator<Event>(){
-				Iterator<EventCreator> it=events.iterator();
+
+		Iterator<Event> iterator() {
+			return new Iterator<Event>() {
+				Iterator<EventCreator> it = events.iterator();
+
 				@Override
 				public boolean hasNext() {
 					return it.hasNext();
@@ -98,11 +103,11 @@ public class GreenHouseController extends Controller {
 
 				@Override
 				public Event next() {
-					EventCreator ec=it.next();
-					Event returnVal=null;
+					EventCreator ec = it.next();
+					Event returnVal = null;
 					try {
-						returnVal=ec.ctor.newInstance(new Object[]{GreenHouseController.this,ec.offset});
-						
+						returnVal = ec.ctor.newInstance(new Object[] { GreenHouseController.this, ec.offset });
+
 					} catch (InstantiationException e) {
 						e.printStackTrace();
 					} catch (IllegalAccessException e) {
@@ -122,24 +127,25 @@ public class GreenHouseController extends Controller {
 			};
 		}
 	}
-	
+
 	GHEventFactory factory;
-	public GreenHouseController(String initFile){
-		factory=new GHEventFactory(initFile);
-		LinkedList<Event> restartableEvent=new LinkedList<Event>();
-		Iterator<Event> it=factory.iterator();
-		while(it.hasNext()){
-			Event e=it.next();
-			if( e instanceof ReStart){
+
+	public GreenHouseController(String initFile) {
+		factory = new GHEventFactory(initFile);
+		LinkedList<Event> restartableEvent = new LinkedList<Event>();
+		Iterator<Event> it = factory.iterator();
+		while (it.hasNext()) {
+			Event e = it.next();
+			if (e instanceof ReStart) {
 				continue;
 			}
 			restartableEvent.add(e);
 		}
-		it=factory.iterator();
-		while(it.hasNext()){
-			Event e=it.next();
+		it = factory.iterator();
+		while (it.hasNext()) {
+			Event e = it.next();
 			addEvent(e);
-			if( e instanceof ReStart){
+			if (e instanceof ReStart) {
 				((ReStart) e).setEventList(restartableEvent.toArray(new Event[0]));
 			}
 		}

@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
- * Á·Ï°7
+ * ç»ƒä¹ 7
  * @author Administrator
- * 2015-11-24 ÏÂÎç04:41:10
+ * 2015-11-24 ä¸‹åˆ04:41:10
  *
  */
 public class E07_FileIntoList {
@@ -25,15 +25,16 @@ public class E07_FileIntoList {
 		for (String s : link) {
 			System.out.println(s);
 		}
+		reader.close();
 	}
 	/**
-	 * Á·Ï°8ÓÃargs´«²ÎÊı(ÃüÁî²ÎÊı)Ê¡ÂÔ
-	 * Á·Ï°9Ê¡ÂÔ
+	 * ç»ƒä¹ 8ç”¨argsä¼ å‚æ•°(å‘½ä»¤å‚æ•°)çœç•¥
+	 * ç»ƒä¹ 9çœç•¥
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		try {
-			read("E:\\Eclipse_WS\\ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E07_FileIntoList.java");
+			read("F:\\My_git\\ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E07_FileIntoList.java");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

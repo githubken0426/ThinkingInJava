@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
- * Á·Ï°3
+ * ç»ƒä¹ 3
  * 
  * @author Administrator
- * 2015Äê10ÔÂ30ÈÕ
+ * 2015å¹´10æœˆ30æ—¥
  */
 public class E03_DirSize {
 	public static void main(final String[] args) {
@@ -20,7 +20,7 @@ public class E03_DirSize {
 			list=path.list();
 		else
 			list=path.list(new FilenameFilter() {
-				//args±ØĞëĞŞ¸Ä³Éfinal£¬´Ë´¦main·½·¨ÖĞÒ»¸öÄÚ²¿Àà
+				//argså¿…é¡»ä¿®æ”¹æˆfinalï¼Œæ­¤å¤„mainæ–¹æ³•ä¸­ä¸€ä¸ªå†…éƒ¨ç±»
 				private Pattern pattern=Pattern.compile(args[0]);
 				
 				@Override

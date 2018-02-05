@@ -1,9 +1,9 @@
 package th.part_18_IO.exercise;
 
 /**
- * Á·Ï°11
+ * ç»ƒä¹ 11
  * @author Administrator
- * 2015-11-25 ÏÂÎç05:09:38
+ * 2015-11-25 05:09:38
  *
  */
 public class E11_GreenHouseController {

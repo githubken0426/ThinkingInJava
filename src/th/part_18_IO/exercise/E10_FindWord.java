@@ -10,9 +10,9 @@ import java.util.ListIterator;
 import java.util.Set;
 
 /**
- * Á·Ï°10£¬²éÕÒµ¥´ÊËùÔÚĞĞÊı
+ * ç»ƒä¹ 10ï¼ŒæŸ¥æ‰¾å•è¯æ‰€åœ¨è¡Œæ•°
  * @author Administrator
- * 2015-11-25 ÉÏÎç11:58:55
+ * 2015-11-25 ä¸Šåˆ11:58:55
  *
  */
 public class E10_FindWord {
@@ -24,6 +24,7 @@ public class E10_FindWord {
 		while((str=read.readLine())!=null){
 			list.add(str);
 		}
+		read.close();
 		return list;
 	}
 	
