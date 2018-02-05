@@ -20,11 +20,13 @@ public class TestEOF {
 	
 	public static void main(String[] args) {
 		try {
-			DataInputStream in =new DataInputStream(new BufferedInputStream(new FileInputStream(fileName)));
-			while((in.available())!=0){
-				System.out.print((char)in.readByte());
+			DataInputStream input =new DataInputStream(new BufferedInputStream(new FileInputStream(fileName)));
+			int len = 0;
+			byte[] buffer = new byte[4096];
+			while ((len = input.read(buffer)) != -1) {
+				System.out.println(new String(buffer, 0, len, "UTF-8"));
 			}
-			in.close();
+			input.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
