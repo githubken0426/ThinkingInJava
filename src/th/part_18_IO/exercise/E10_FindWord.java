@@ -37,6 +37,7 @@ public class E10_FindWord {
 			List<String> list=read("E:\\Eclipse_WS\\ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E10_FindWord.java");
 			for(ListIterator<String> it =list.listIterator(list.size());it.hasPrevious();){
 				String s=it.previous();
+				//获取行数
 				int line= it.nextIndex()+1;
 				for (String word : wordSet) {
 					if(s.indexOf(word)!=-1){
