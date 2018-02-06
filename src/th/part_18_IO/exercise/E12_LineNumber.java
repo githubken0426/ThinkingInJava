@@ -10,9 +10,9 @@ import java.util.LinkedList;
 
 import th.part_18_IO.Constant;
 
-public class E12_ {
-	static String fileName = Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E12_.java";
-	static String writeFile ="C:\\Users\\Administrator\\Desktop\\E12_.txt";
+public class E12_LineNumber {
+	static String fileName = Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E12_LineNumber.java";
+	static String writeFile ="C:\\Users\\Administrator\\Desktop\\E12_LineNumber.txt";
 	
 	public static void main(String[] args) throws IOException {
 		readWriteFile(fileName,writeFile);
