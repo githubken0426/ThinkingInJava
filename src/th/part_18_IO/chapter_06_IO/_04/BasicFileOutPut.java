@@ -11,7 +11,13 @@ import java.io.PrintWriter;
 import th.part_18_IO.Constant;
 import th.part_18_IO.chapter_06_IO._01.BufferedInputFile;
 
-
+/**
+ * 18.6.4Reader和Writer
+ * @ClassName: BasicFileOutPut 
+ * @Description: 
+ * @author ken 
+ * @date 2018年2月6日 下午6:03:42
+ */
 public class BasicFileOutPut {
 	static String fileName = Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_06_IO\\_04\\BasicFileOutPut.java";
 	static String writeFile ="C:\\Users\\Administrator\\Desktop\\fl.txt";
