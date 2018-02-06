@@ -1,37 +1,36 @@
-package th.part_18_IO.chapter_06_IO._04;
+package th.part_18_IO.exercise;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.LineNumberReader;
 import java.io.PrintWriter;
 
 import th.part_18_IO.Constant;
 import th.part_18_IO.chapter_06_IO._01.BufferedInputFile;
 
-
-public class BasicFileOutPut {
-	static String fileName = Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\chapter_06_IO\\_04\\BasicFileOutPut.java";
-	static String writeFile ="C:\\Users\\Administrator\\Desktop\\fl.txt";
+/**
+ * 使用LineNumberReader记录行号
+ * @ClassName: E13_BasicFileOutPut 
+ * @Description: 
+ * @author ken 
+ * @date 2018年2月6日 下午5:10:36
+ */
+public class E13_BasicFileOutPut {
+	static String fileName = Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO\\exercise\\E13_BasicFileOutPut.java";
+	static String writeFile ="C:\\Users\\Administrator\\Desktop\\E13_BasicFileOutPut.txt";
 	public static void main(String[] args) {
 		try {
-			BufferedReader in =new BufferedReader(new FileReader(fileName));
+			LineNumberReader in =new LineNumberReader(new FileReader(fileName));
 			PrintWriter out =new PrintWriter(new BufferedWriter(new FileWriter(writeFile)));
-			/**
-			 * PrintWriter提供了辅助的构造器,不用每次都调用装饰类
-			 */
-			PrintWriter out2 =new PrintWriter(writeFile);
-			int lineCount=1;
 			String s;
 			while((s=in.readLine())!=null){
-				out.println(s+":"+lineCount);
-				lineCount++;
+				out.println(in.getLineNumber()+s);
 			}
 			//如果不显示调用close,缓冲区内容不会刷新,无法写入文件
 			out.close();
-			out2.close();
 			in.close();
 			System.out.println(BufferedInputFile.read(fileName));
 		} catch (FileNotFoundException e) {
