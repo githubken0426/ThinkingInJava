@@ -11,7 +11,6 @@ import java.io.IOException;
 
 public class StoringAndRecoveringData {
 	static String file = "C:\\Users\\Administrator\\Desktop\\StoringAndRecoveringData.txt";
-	
 
 	public static void main(String[] args) {
 		try {
@@ -26,6 +25,7 @@ public class StoringAndRecoveringData {
 			System.out.println(in.readUTF());
 			System.out.println(in.readDouble());
 			System.out.println(in.readUTF());
+			in.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
