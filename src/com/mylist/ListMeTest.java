@@ -1,11 +1,9 @@
 package com.mylist;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 import resourceCode.util.ArrayListMe;
 import resourceCode.util.CollectionMe;
-import resourceCode.util.ListMe;
 
 
 /**
