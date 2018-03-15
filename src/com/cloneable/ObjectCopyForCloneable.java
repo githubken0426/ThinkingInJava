@@ -1,15 +1,15 @@
 package com.cloneable;
 
-class Students implements Cloneable{
+class Students implements Cloneable {
 	String name;
-    int age;
- 
-    Students(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-    
-    @Override
+	int age;
+
+	Students(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
@@ -17,43 +17,42 @@ class Students implements Cloneable{
 
 class Teacher implements Cloneable {
 	String name;
-    int age;
-    Students student;
- 
-    Teacher(String name, int age,Students student) {
-        this.name = name;
-        this.age = age;
-        this.student=student;
-    }
+	int age;
+	Students student;
+
+	Teacher(String name, int age, Students student) {
+		this.name = name;
+		this.age = age;
+		this.student = student;
+	}
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		Teacher t=null;
-		t=(Teacher) super.clone();
+		Teacher t = null;
+		t = (Teacher) super.clone();
 		/**
-		 * ´Ë´¦Èç¹û²»×öclone()´¦Àí£¬student½«Ö¸ÏòÍ¬Ò»¸öÒıÓÃ
-		 * (»ñÈ¡TeacherµÄclone¶ÔÏóºó£¬¶ÔTeacher.student.age×Ö¶Î¸ü¸Ä£¬
-		 * student²»»á·¢Éú±ä»¯£¬Ò²¼´ÊÇshallow copy)
+		 * æ­¤å¤„å¦‚æœä¸åšclone()å¤„ç†ï¼Œstudentå°†æŒ‡å‘åŒä¸€ä¸ªå¼•ç”¨ (è·å–Teacherçš„cloneå¯¹è±¡åï¼Œå¯¹Teacher.student.ageå­—æ®µæ›´æ”¹ï¼Œ
+		 * studentä¸ä¼šå‘ç”Ÿå˜åŒ–ï¼Œä¹Ÿå³æ˜¯shallow copy)
 		 */
-//		t.student=(Students) student.clone();
+		// t.student=(Students) student.clone();
 		return t;
 	}
-    
+
 }
 
 public class ObjectCopyForCloneable {
 	public static void main(String[] args) {
-		Students student =new Students("Ğ¡Ã÷",10);
-		Teacher t=new Teacher("ÕÅÀÏÊ¦",30,student);
+		Students student = new Students("å°æ˜", 10);
+		Teacher t = new Teacher("å¼ è€å¸ˆ", 30, student);
 		try {
-			Teacher t2 =(Teacher) t.clone();
-			t2.student.age=21;
-			t2.student.name="test";
-			
-			t2.age=32;
-			t2.name="ÀîÀÏÊ¦";
-			
-			System.out.println("Ñ§ÉúÃû³Æ:"+t.student.name+"£¬ÄêÁä"+t.student.age);
+			Teacher t2 = (Teacher) t.clone();
+			t2.student.age = 21;
+			t2.student.name = "test";
+
+			t2.age = 32;
+			t2.name = "æè€å¸ˆ";
+
+			System.out.println("å­¦ç”Ÿåç§°:" + t.student.name + "ï¼Œå¹´é¾„" + t.student.age);
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}

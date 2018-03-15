@@ -9,10 +9,10 @@ import java.io.OptionalDataException;
 import java.io.Serializable;
 
 /**
- * ĞòÁĞ»¯ÊµÏÖÉî¶Ècopy Ò²¿ÉÒÔÊ¹ÓÃĞòÁĞ»¯£¬µ¥ĞòÁĞ»¯ºÜºÄÊ±£¬ÔÚÒ»Ğ©¿ò¼ÜÖĞ£¬
- * ÎÒÃÇ±ã¿ÉÒÔ¸ĞÊÜµ½£¬ËüÃÇÍùÍù½«¶ÔÏó½øĞĞ´®ĞĞ»¯ºó½øĞĞ´«µİ£¬ºÄÊ±½Ï¶à¡£
+ * åºåˆ—åŒ–å®ç°æ·±åº¦copy ä¹Ÿå¯ä»¥ä½¿ç”¨åºåˆ—åŒ–ï¼Œå•åºåˆ—åŒ–å¾ˆè€—æ—¶ï¼Œåœ¨ä¸€äº›æ¡†æ¶ä¸­ï¼Œ
+ * æˆ‘ä»¬ä¾¿å¯ä»¥æ„Ÿå—åˆ°ï¼Œå®ƒä»¬å¾€å¾€å°†å¯¹è±¡è¿›è¡Œä¸²è¡ŒåŒ–åè¿›è¡Œä¼ é€’ï¼Œè€—æ—¶è¾ƒå¤šã€‚
  * 
- * @author ken 2017-5-31 ÉÏÎç11:49:27
+ * @author ken 2017-5-31 ä¸Šåˆ11:49:27
  */
 class StudentD implements Serializable {
 
@@ -41,11 +41,11 @@ class TeacherD implements Serializable {
 
 	public Object deepClone() throws IOException, OptionalDataException,
 			ClassNotFoundException {
-		// ½«¶ÔÏóĞ´µ½Á÷Àï
+		// å°†å¯¹è±¡å†™åˆ°æµé‡Œ
 		ByteArrayOutputStream bo = new ByteArrayOutputStream();
 		ObjectOutputStream oo = new ObjectOutputStream(bo);
 		oo.writeObject(this);
-		// ´ÓÁ÷Àï¶Á³öÀ´
+		// ä»æµé‡Œè¯»å‡ºæ¥
 		ByteArrayInputStream bi = new ByteArrayInputStream(bo.toByteArray());
 		ObjectInputStream oi = new ObjectInputStream(bi);
 		return (oi.readObject());
@@ -54,17 +54,17 @@ class TeacherD implements Serializable {
 
 public class DeepCopyForSerializable {
 	public static void main(String[] args) {
-		StudentD student =new StudentD("Ğ¡Ã÷",10);
-		TeacherD t=new TeacherD("ÕÅÀÏÊ¦",30,student);
+		StudentD student =new StudentD("å°æ˜",10);
+		TeacherD t=new TeacherD("å¼ è€å¸ˆ",30,student);
 		try {
 			TeacherD t2 =(TeacherD) t.deepClone();
 			t2.student.age=21;
 			t2.student.name="test";
 			
 			t2.age=32;
-			t2.name="ÀîÀÏÊ¦";
+			t2.name="æè€å¸ˆ";
 			
-			System.out.println("Ñ§ÉúÃû³Æ:"+t.student.name+"£¬ÄêÁä"+t.student.age);
+			System.out.println("å­¦ç”Ÿåç§°:"+t.student.name+"ï¼Œå¹´é¾„"+t.student.age);
 		}catch(Exception e){
 			for (StackTraceElement ele : e.getStackTrace()) {
 				System.out.println(ele);
