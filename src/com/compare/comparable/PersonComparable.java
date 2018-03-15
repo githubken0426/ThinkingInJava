@@ -1,7 +1,6 @@
 package com.compare.comparable;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -31,18 +30,18 @@ public class PersonComparable implements Comparable<PersonComparable> {
 	}
 
 	/**
-	 * ±È½Ïµ±Ç°ÊµÀı¶ÔÏóÓë¶ÔÏó o £¬
-	 * Èç¹ûÎ»ÓÚ¶ÔÏó o Ö®Ç°£¬·µ»Ø¸ºÖµ£¬
-	 * Èç¹ûÁ½¸ö¶ÔÏóÔÚÅÅĞòÖĞÎ»ÖÃÏàÍ¬£¬Ôò·µ»Ø 0 £¬
-	 * Èç¹ûÎ»ÓÚ¶ÔÏó o ºóÃæ£¬Ôò·µ»ØÕıÖµ
+	 * æ¯”è¾ƒå½“å‰å®ä¾‹å¯¹è±¡ä¸å¯¹è±¡obj
+	 * å¦‚æœä½äºå¯¹è±¡objä¹‹å‰ï¼Œè¿”å›è´Ÿå€¼ï¼Œ 
+	 * å¦‚æœä¸¤ä¸ªå¯¹è±¡åœ¨æ’åºä¸­ä½ç½®ç›¸åŒï¼Œåˆ™è¿”å› 0 ï¼Œ 
+	 * å¦‚æœä½äºå¯¹è±¡objåé¢ï¼Œåˆ™è¿”å›æ­£å€¼
 	 */
 	@Override
-	public int compareTo(PersonComparable o) {
-//		int temp = age - o.getAge();
-//		return temp == 0 ? ten : temp;
-		System.out.println("name:"+name+",o.getName:"+o.getName());
-		//´Ë´¦ÊÇµ÷ÓÃStringÀàµÄcompareTo·½·¨
-		int ten = name.compareTo(o.getName());
+	public int compareTo(PersonComparable obj) {
+		// int temp = age - o.getAge();
+		// return temp == 0 ? ten : temp;
+		System.out.println("name:" + name + ",o.getName:" + obj.getName());
+		// æ­¤å¤„æ˜¯è°ƒç”¨Stringç±»çš„compareToæ–¹æ³•
+		int ten = name.compareTo(obj.getName());
 		System.out.println(ten);
 		return ten;
 	}
@@ -52,22 +51,18 @@ public class PersonComparable implements Comparable<PersonComparable> {
 	}
 
 	/**
-	 * Ê¹ÓÃArrays¶ÔÊı×é½øĞĞÅÅĞò£¬Ê¹ÓÃCollections¶Ô½áºÏ¿ò¼ÜÈİÆ÷½øĞĞÅÅĞò£¬ÈçArraysList,LinkedListµÈ
+	 * ä½¿ç”¨Arrayså¯¹æ•°ç»„è¿›è¡Œæ’åºï¼Œä½¿ç”¨Collectionså¯¹ç»“åˆæ¡†æ¶å®¹å™¨è¿›è¡Œæ’åºï¼Œå¦‚ArraysList,LinkedListç­‰
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		PersonComparable[] person = { new PersonComparable(20, "Tom"),
-				new PersonComparable(20, "Jeff"),
-				new PersonComparable(30, "Mary"),
-				new PersonComparable(20, "Ada"),
-				new PersonComparable(40, "Walton"),
-				new PersonComparable(61, "Peter"),
-				new PersonComparable(20, "Bush") };
-		System.out.println("ÅÅĞòÇ°£º"+Arrays.toString(person));
+		PersonComparable[] person = { new PersonComparable(20, "Tom"), new PersonComparable(20, "Jeff"),
+				new PersonComparable(30, "Mary"), new PersonComparable(20, "Ada"), new PersonComparable(40, "Walton"),
+				new PersonComparable(61, "Peter"), new PersonComparable(20, "Bush") };
+		System.out.println("æ’åºå‰ï¼š" + Arrays.toString(person));
 		Arrays.sort(person);
-//		Collections.sort(list);
-		System.out.println("ÅÅĞòºó£º"+Arrays.toString(person));
+		// Collections.sort(list);
+		System.out.println("æ’åºåï¼š" + Arrays.toString(person));
 
 		System.out.println("TreeSet:");
 		TreeSet<PersonComparable> set = new TreeSet<PersonComparable>();
