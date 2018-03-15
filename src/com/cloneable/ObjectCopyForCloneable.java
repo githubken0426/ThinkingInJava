@@ -29,6 +29,8 @@ class Teacher implements Cloneable {
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		Teacher teacher = (Teacher) super.clone();
+		System.out.println("teacher.getClass() ==this.getClass():" + (teacher.getClass() == this.getClass()));
+		System.out.println("teacher.equals(this):" + teacher.equals(this));
 		/**
 		 * 此处如果不做clone()处理，student将指向同一个引用 
 		 * (获取Teacher的clone对象后，对Teacher.student.age字段更改，student不会发生变化，也即是shallow copy)
@@ -43,7 +45,7 @@ class Teacher implements Cloneable {
  * 假设x是一个非空对象,应该有:
  * 1)x.clone()!=x 为true,就是说他们不是同一个对象.
  * 2)x.clone().getClass()==x.getClass() 为true,他们是同一个类型Class.
- * 3)x.equals(x.clone()) 为true,逻辑上应该相当.（有争议）
+ * 3)x.equals(x.clone()) 应该为false,两个对象.
  * clone方法是在Object种定义的,而且是protected型的,只有实现了这个接口,才可以在该类的实例上调用clone方法,否则会抛出CloneNotSupportException.
  * Object中默认的实现是一个浅拷贝,也就是表面拷贝,如果需要实现深层次拷贝的话,必须对类中可变域生成新的实例
  * @ClassName: ObjectCopyForCloneable 
