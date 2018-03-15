@@ -37,9 +37,9 @@ public class PersonComparable implements Comparable<PersonComparable> {
 	 */
 	@Override
 	public int compareTo(PersonComparable obj) {
-		// int temp = age - o.getAge();
+		// int temp = age - obj.getAge();
 		// return temp == 0 ? ten : temp;
-		System.out.println("name:" + name + ",o.getName:" + obj.getName());
+		System.out.println("name:" + name + ",obj.getName:" + obj.getName());
 		// 此处是调用String类的compareTo方法
 		int ten = name.compareTo(obj.getName());
 		System.out.println(ten);
