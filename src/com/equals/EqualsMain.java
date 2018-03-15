@@ -1,10 +1,8 @@
-package com.main;
+package com.equals;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
-
-import com.equals.Students;
 
 public class EqualsMain {
 
@@ -14,8 +12,8 @@ public class EqualsMain {
 		LinkedList<Students> list = new LinkedList<Students>();  
 	    Set<Students> set = new HashSet<Students>();
 	    
-		Students stu1=new Students(23,"ÕÅÈı");
-		Students stu2=new Students(23,"ÕÅÈı");
+		Students stu1=new Students(23,"å¼ ä¸‰");
+		Students stu2=new Students(23,"å¼ ä¸‰");
 		list.add(stu1);
 		list.add(stu2);
 		
@@ -28,11 +26,11 @@ public class EqualsMain {
 		System.out.println("list.size():"+list.size());
 		System.out.println("set.size():"+set.size());
 		/**
-		 * &°´Î»ÔËËã·û
-		 * Èç¹ûÁ½Õß¶¼ÊÇintÀàĞÍ£¬Ôò×ª»»³É2½øÖÆ£¬½øĞĞÔËËã
-		 * ³£ÓÃÓÚintºÍboolean±È½Ï
-		 * &Á½Õß±í´ïÊ½¶¼Òª±È½Ï£¬if(10!=10&&10/0==0)
-		 * &&Èç¹ûµÚÒ»¸ö±í´ïÊ½Âú×ãÌõ¼ş£¨10!=10£©£¬ÔòÏÂÒ»¸ö±í´ïÊ½±È×÷±È½ÏÈëif(10!=10&&10/0==0)
+		 * &æŒ‰ä½è¿ç®—ç¬¦
+		 * å¦‚æœä¸¤è€…éƒ½æ˜¯intç±»å‹ï¼Œåˆ™è½¬æ¢æˆ2è¿›åˆ¶ï¼Œè¿›è¡Œè¿ç®—
+		 * å¸¸ç”¨äºintå’Œbooleanæ¯”è¾ƒ
+		 * &ä¸¤è€…è¡¨è¾¾å¼éƒ½è¦æ¯”è¾ƒï¼Œif(10!=10&&10/0==0)
+		 * &&å¦‚æœç¬¬ä¸€ä¸ªè¡¨è¾¾å¼æ»¡è¶³æ¡ä»¶ï¼ˆ10!=10ï¼‰ï¼Œåˆ™ä¸‹ä¸€ä¸ªè¡¨è¾¾å¼æ¯”ä½œæ¯”è¾ƒå…¥if(10!=10&&10/0==0)
 		 */
 		System.out.println("1&1:"+(2&1));
 		System.out.println("1&-1:"+(1&-1));
