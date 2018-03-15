@@ -16,7 +16,7 @@ public class MyArrayList<E> extends ArrayList<E> {
 
 	@Override
 	public String toString() {
-		StringBuffer sb = new StringBuffer();
+		StringBuffer sb = new StringBuffer();//线程安全
 		Iterator<E> it = iterator();
 		boolean hasNext = it.hasNext();
 		while (hasNext) {

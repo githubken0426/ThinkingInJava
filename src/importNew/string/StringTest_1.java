@@ -1,9 +1,9 @@
 package importNew.string;
 
 /**
- * Í¨¹ı·´±àÒëÀí½âString
+ * String
  * 
- * @author ken 2017-4-28 ÉÏÎç09:13:32
+ * @author ken 2017-4-28 å¹´09:13:32
  */
 public class StringTest_1 {
 	public static void main(String[] args) {

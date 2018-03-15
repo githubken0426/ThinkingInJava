@@ -1,49 +1,44 @@
 package importNew.interview;
 
 import java.math.BigDecimal;
-import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-
-
 /**
- * Ò»Ğ©Interview
+ * é¢è¯•é¢˜
  * 
- * @author ken 2017-5-12 ÏÂÎç01:35:39
+ * @author ken 2017-5-12 ä¸‹åˆ01:35:39
  */
 class B extends Interview {}
-
 class C extends B {}
-
 public class Interview {
 	/**
-	 * question 1:¸¸ÀàÄÜ×ª»»³É×ÓÀàÂğ£¿
+	 * question 1:çˆ¶ç±»èƒ½è½¬æ¢æˆå­ç±»å—ï¼Ÿ
 	 * 
-	 * 2017-5-12 ÏÂÎç01:48:57
+	 * 2017-5-12 ä¸‹åˆ01:48:57
 	 */
-	public static void translate(){
-		Interview in=new B();
+	public static void translate() {
+		Interview in = new B();
 		System.out.println(in);
-		//¸¸ÀàÎŞ·¨×ª»»Îª×ÓÀà
-//		C c=(C) new B();
-//		System.out.println(c);
+		// çˆ¶ç±»æ— æ³•è½¬æ¢ä¸ºå­ç±»
+		// C c=(C) new B();
+		// System.out.println(c);
 	}
+
 	/**
-	 * question 2:3*0.1 == 0.3½á¹û£¿
-	 * ½¨ÒéÊ¹ÓÃBigDecimal
+	 * question 2:3*0.1 == 0.3ç»“æœï¼Ÿ å»ºè®®ä½¿ç”¨BigDecimal
 	 * 
-	 * 2017-5-12 ÏÂÎç01:50:54
+	 * 2017-5-12 ä¸‹åˆ01:50:54
 	 */
-	public static void test(){
-		System.out.println(3*0.1);
-		System.out.println(3*0.1==0.3);
+	public static void test() {
+		System.out.println("3*0.1:" + 3 * 0.1);
+		System.out.println("3*0.1==0.3:" + (3 * 0.1 == 0.3));
 		System.out.println(new BigDecimal(123456789.02).toString());
-	    System.out.println(new BigDecimal("123456789.02").toString());
+		System.out.println(new BigDecimal("123456789.02").toString());
 	}
+
 	public static void main(String[] args) {
 		test();
-		Queue<Integer> q=new PriorityQueue<Integer>();
+		Queue<Integer> q = new PriorityQueue<Integer>();
 	}
 }
-
