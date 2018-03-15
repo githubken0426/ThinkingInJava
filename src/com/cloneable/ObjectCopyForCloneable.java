@@ -28,31 +28,45 @@ class Teacher implements Cloneable {
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		Teacher t = null;
-		t = (Teacher) super.clone();
+		Teacher teacher = (Teacher) super.clone();
 		/**
-		 * 此处如果不做clone()处理，student将指向同一个引用 (获取Teacher的clone对象后，对Teacher.student.age字段更改，
-		 * student不会发生变化，也即是shallow copy)
+		 * 此处如果不做clone()处理，student将指向同一个引用 
+		 * (获取Teacher的clone对象后，对Teacher.student.age字段更改，student不会发生变化，也即是shallow copy)
 		 */
-		// t.student=(Students) student.clone();
-		return t;
+		//teacher.student=(Students) student.clone();
+		return teacher;
 	}
 
 }
-
+/**
+ * java中clone的含义：
+ * 假设x是一个非空对象,应该有:
+ * 1)x.clone()!=x 为true,就是说他们不是同一个对象.
+ * 2)x.clone().getClass()==x.getClass() 为true,他们是同一个类型Class.
+ * 3)x.equals(x.clone()) 为true,逻辑上应该相当.（有争议）
+ * clone方法是在Object种定义的,而且是protected型的,只有实现了这个接口,才可以在该类的实例上调用clone方法,否则会抛出CloneNotSupportException.
+ * Object中默认的实现是一个浅拷贝,也就是表面拷贝,如果需要实现深层次拷贝的话,必须对类中可变域生成新的实例
+ * @ClassName: ObjectCopyForCloneable 
+ * @Description: 
+ * @author ken 
+ * @date 2018年3月15日 下午5:25:32
+ */
 public class ObjectCopyForCloneable {
 	public static void main(String[] args) {
-		Students student = new Students("小明", 10);
-		Teacher t = new Teacher("张老师", 30, student);
+		Students student = new Students("晓明", 10);
+		Teacher teacher = new Teacher("张老师", 30, student);
 		try {
-			Teacher t2 = (Teacher) t.clone();
+			Teacher t2 = (Teacher) teacher.clone();
 			t2.student.age = 21;
-			t2.student.name = "test";
+			t2.student.name = "张明，(晓明的名称被更改了)";
 
 			t2.age = 32;
 			t2.name = "李老师";
 
-			System.out.println("学生名称:" + t.student.name + "，年龄" + t.student.age);
+			System.out.println("学生名称:" + teacher.student.name + 
+					"，年龄" + teacher.student.age);
+			System.out.println("老师名称:" + teacher.name + 
+					"，年龄" + teacher.age);
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
