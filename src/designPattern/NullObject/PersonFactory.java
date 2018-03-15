@@ -1,4 +1,4 @@
-package designPattern.NullObject_pattern;
+package designPattern.NullObject;
 
 public class PersonFactory {
 	

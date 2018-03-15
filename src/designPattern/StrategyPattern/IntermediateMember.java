@@ -1,8 +1,8 @@
-package designPattern.Strategy_pattern;
+package designPattern.StrategyPattern;
 
 /**
- * ¾ßÌå²ßÂÔ½ÇÉ«£º°ü×°ÁËÏà¹ØµÄËã·¨ºÍĞĞÎª
- * ÖĞ¼¶»áÔ±
+ * å…·ä½“ç­–ç•¥è§’è‰²ï¼šåŒ…è£…äº†ç›¸å…³çš„ç®—æ³•å’Œè¡Œä¸º
+ * ä¸­çº§ä¼šå‘˜
  * @author Administrator
  * 2015-11-20 11:39:15
  *
@@ -11,7 +11,7 @@ public class IntermediateMember implements MemberStrategy {
 
 	@Override
 	public double calcPrice(double bookPrice) {
-		System.out.println("ÖĞ¼¶»áÔ±´ò9ÕÛ£¡");
+		System.out.println("ä¸­çº§ä¼šå‘˜æ‰“9æŠ˜ï¼");
 		return bookPrice*0.9;
 	}
 

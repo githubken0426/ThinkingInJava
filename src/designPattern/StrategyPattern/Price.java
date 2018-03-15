@@ -1,9 +1,9 @@
-package designPattern.Strategy_pattern;
+package designPattern.StrategyPattern;
 
 /**
- * »·¾³½ÇÉ«£º³ÖÓĞÒ»¸ö²ßÂÔÀàµÄÒıÓÃ£¬×îÖÕ¸ø¿Í»§¶Ëµ÷ÓÃ
+ * ç¯å¢ƒè§’è‰²ï¼šæŒæœ‰ä¸€ä¸ªç­–ç•¥ç±»çš„å¼•ç”¨ï¼Œæœ€ç»ˆç»™å®¢æˆ·ç«¯è°ƒç”¨
  * @author Administrator
- * 2015-11-23 ÉÏÎç08:46:15
+ * 2015-11-23 ä¸Šåˆ08:46:15
  *
  */
 public class Price {

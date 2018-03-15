@@ -1,4 +1,4 @@
-package designPattern.NullObject_pattern;
+package designPattern.NullObject;
 
 public class Person {
 
@@ -33,6 +33,6 @@ public class Person {
 	}
 	
 	public String toString(){
-		return "±àºÅ£º"+id+"£¬ĞÕÃû"+name;
+		return "No:"+id+",name"+name;
 	}
 }

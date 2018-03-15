@@ -1,8 +1,8 @@
-package designPattern.NullObject_pattern;
+package designPattern.NullObject;
 
 public class PersonMain {
 	public static void main(String[] args) {
-		Person person=PersonFactory.getPerson(-1,"ÀîËÄ");
+		Person person=PersonFactory.getPerson(-1,"æµ‹è¯•");
 		System.out.println(person);
 	}
 }

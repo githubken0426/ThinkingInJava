@@ -1,8 +1,8 @@
-package designPattern.Strategy_pattern;
+package designPattern.StrategyPattern;
 
 /**
- * 具体策略角色：包装了相关的算法和行为
- * 初级会员
+ * 鍏蜂綋绛栫暐瑙掕壊锛氬寘瑁呬簡鐩稿叧鐨勭畻娉曞拰琛屼负
+ * 鍒濈骇浼氬憳
  * @author Administrator
  * 2015-11-20 11:37:09
  *
@@ -11,7 +11,7 @@ public class PrimaryMember implements MemberStrategy{
 
 	@Override
 	public double calcPrice(double bookPrice) {
-		System.out.println("初级会员没有折扣!");
+		System.out.println("鍒濈骇浼氬憳娌℃湁鎶樻墸!");
 		return bookPrice;
 	}
 }
