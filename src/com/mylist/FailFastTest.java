@@ -1,4 +1,4 @@
-package resourceCode.test.arrayList;
+package com.mylist;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 /**
- * collection fail-fast»úÖÆ
+ * collection fail-fastï¿½ï¿½ï¿½ï¿½
  * 
- * @author ken 2017-5-12 ÏÂÎç02:31:20
+ * @author ken 2017-5-12 ï¿½ï¿½ï¿½ï¿½02:31:20
  */
 public class FailFastTest {
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class FailFastTest {
 			@Override
 			public void run() {
 				ListIterator<String> its=list.listIterator();
-				//µ±½øÐÐ¸ü¸Ä¼¯ºÏÔªËØ²Ù×÷Ê±ºò£¬´¥·¢fail-fast:java.util.ConcurrentModificationException
+				//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ôªï¿½Ø²ï¿½ï¿½ï¿½Ê±ï¿½ò£¬´ï¿½ï¿½ï¿½fail-fast:java.util.ConcurrentModificationException
 //				it.add("efo");
 				while(its.hasPrevious()){
 					System.out.println("ListIterator:"+its.previous());

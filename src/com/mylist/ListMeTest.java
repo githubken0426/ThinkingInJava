@@ -1,4 +1,4 @@
-package resourceCode.test.arrayList;
+package com.mylist;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,10 +9,10 @@ import resourceCode.util.ListMe;
 
 
 /**
- * listÔ´Âë²âÊÔ
+ * list
  * @author Administrator
  *
- * 2016-9-9 ÏÂÎç04:06:07
+ * 2016-9-9 å¹´04:06:07
  */
 public class ListMeTest {
 	public static void main(String[] args) {

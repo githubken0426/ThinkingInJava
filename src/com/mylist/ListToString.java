@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @date 2018年1月5日 上午10:02:02 
  * @param <E>
  */
-public class MyArrayList<E> extends ArrayList<E> {
+public class ListToString<E> extends ArrayList<E> {
 	private static final long serialVersionUID = 1L;
 
 	@Override

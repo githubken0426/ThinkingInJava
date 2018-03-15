@@ -1,4 +1,4 @@
-package resourceCode.test.arrayList;
+package com.mylist;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class ListCapacityTest {
 			public void run() {
 				Long start = System.currentTimeMillis();
 				ArrayList<Integer> list = new ArrayList<Integer>();
-				//可以看出设置ensureCapacity可以提高创建ArrayList效率
+				//鍙互鐪嬪嚭璁剧疆ensureCapacity鍙互鎻愰珮鍒涘缓ArrayList鏁堢巼
 				list.ensureCapacity(size);
 				for (int i = 0; i < size; i++)
 					list.add(i);
