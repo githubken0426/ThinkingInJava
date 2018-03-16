@@ -11,8 +11,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
-		MyMap<K, V>, Cloneable, Serializable {
+public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements MyMap<K, V>, Cloneable, Serializable {
 	/**
 	 * The default initial capacity - MUST be a power of two.
 	 */
@@ -20,8 +19,7 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 
 	/**
 	 * The maximum capacity, used if a higher value is implicitly specified by
-	 * either of the constructors with arguments. MUST be a power of two <=
-	 * 1<<30.
+	 * either of the constructors with arguments. MUST be a power of two <= 1<<30.
 	 */
 	static final int MAXIMUM_CAPACITY = 1 << 30;
 
@@ -55,17 +53,17 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	final float loadFactor;
 
 	/**
-	 * The number of times this HashMap has been structurally modified
-	 * Structural modifications are those that change the number of mappings in
-	 * the HashMap or otherwise modify its internal structure (e.g., rehash).
-	 * This field is used to make iterators on Collection-views of the HashMap
-	 * fail-fast. (See ConcurrentModificationException).
+	 * The number of times this HashMap has been structurally modified Structural
+	 * modifications are those that change the number of mappings in the HashMap or
+	 * otherwise modify its internal structure (e.g., rehash). This field is used to
+	 * make iterators on Collection-views of the HashMap fail-fast. (See
+	 * ConcurrentModificationException).
 	 */
 	transient volatile int modCount;
 
 	/**
-	 * Constructs an empty <tt>HashMap</tt> with the specified initial capacity
-	 * and load factor.
+	 * Constructs an empty <tt>HashMap</tt> with the specified initial capacity and
+	 * load factor.
 	 * 
 	 * @param initialCapacity
 	 *            the initial capacity
@@ -77,13 +75,11 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	 */
 	public MyHashMap(int initialCapacity, float loadFactor) {
 		if (initialCapacity < 0)
-			throw new IllegalArgumentException("Illegal initial capacity: "
-					+ initialCapacity);
+			throw new IllegalArgumentException("Illegal initial capacity: " + initialCapacity);
 		if (initialCapacity > MAXIMUM_CAPACITY)
 			initialCapacity = MAXIMUM_CAPACITY;
 		if (loadFactor <= 0 || Float.isNaN(loadFactor))
-			throw new IllegalArgumentException("Illegal load factor: "
-					+ loadFactor);
+			throw new IllegalArgumentException("Illegal load factor: " + loadFactor);
 
 		// Find a power of 2 >= initialCapacity
 		int capacity = 1;
@@ -97,8 +93,8 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Constructs an empty <tt>MyHashMap</tt> with the specified initial
-	 * capacity and the default load factor (0.75).
+	 * Constructs an empty <tt>MyHashMap</tt> with the specified initial capacity
+	 * and the default load factor (0.75).
 	 * 
 	 * @param initialCapacity
 	 *            the initial capacity.
@@ -110,8 +106,8 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Constructs an empty <tt>MyHashMap</tt> with the default initial capacity
-	 * (16) and the default load factor (0.75).
+	 * Constructs an empty <tt>MyHashMap</tt> with the default initial capacity (16)
+	 * and the default load factor (0.75).
 	 */
 	public MyHashMap() {
 		this.loadFactor = DEFAULT_LOAD_FACTOR;
@@ -121,10 +117,10 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Constructs a new <tt>MyHashMap</tt> with the same mappings as the
-	 * specified <tt>Map</tt>. The <tt>MyHashMap</tt> is created with default
-	 * load factor (0.75) and an initial capacity sufficient to hold the
-	 * mappings in the specified <tt>Map</tt>.
+	 * Constructs a new <tt>MyHashMap</tt> with the same mappings as the specified
+	 * <tt>Map</tt>. The <tt>MyHashMap</tt> is created with default load factor
+	 * (0.75) and an initial capacity sufficient to hold the mappings in the
+	 * specified <tt>Map</tt>.
 	 * 
 	 * @param m
 	 *            the map whose mappings are to be placed in this map
@@ -132,29 +128,27 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	 *             if the specified map is null
 	 */
 	public MyHashMap(MyMap<? extends K, ? extends V> m) {
-		this(Math.max((int) (m.size() / DEFAULT_LOAD_FACTOR) + 1,
-				DEFAULT_INITIAL_CAPACITY), DEFAULT_LOAD_FACTOR);
+		this(Math.max((int) (m.size() / DEFAULT_LOAD_FACTOR) + 1, DEFAULT_INITIAL_CAPACITY), DEFAULT_LOAD_FACTOR);
 		putAllForCreate(m);
 	}
 
 	// internal utilities
 
 	/**
-	 * Initialization hook for subclasses. This method is called in all
-	 * constructors and pseudo-constructors (clone, readObject) after MyHashMap
-	 * has been initialized but before any entries have been inserted. (In the
-	 * absence of this method, readObject would require explicit knowledge of
-	 * subclasses.)
+	 * Initialization hook for subclasses. This method is called in all constructors
+	 * and pseudo-constructors (clone, readObject) after MyHashMap has been
+	 * initialized but before any entries have been inserted. (In the absence of
+	 * this method, readObject would require explicit knowledge of subclasses.)
 	 */
 	void init() {
 	}
 
 	/**
 	 * Applies a supplemental hash function to a given hashCode, which defends
-	 * against poor quality hash functions. This is critical because MyHashMap
-	 * uses power-of-two length hash tables, that otherwise encounter collisions
-	 * for hashCodes that do not differ in lower bits. Note: Null keys always
-	 * map to hash 0, thus index 0.
+	 * against poor quality hash functions. This is critical because MyHashMap uses
+	 * power-of-two length hash tables, that otherwise encounter collisions for
+	 * hashCodes that do not differ in lower bits. Note: Null keys always map to
+	 * hash 0, thus index 0.
 	 */
 	static int hash(int h) {
 		// This function ensures that hashCodes that differ only by
@@ -190,20 +184,20 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Returns the value to which the specified key is mapped, or {@code null}
-	 * if this map contains no mapping for the key.
+	 * Returns the value to which the specified key is mapped, or {@code null} if
+	 * this map contains no mapping for the key.
 	 * 
 	 * <p>
-	 * More formally, if this map contains a mapping from a key {@code k} to a
-	 * value {@code v} such that {@code (key==null ? k==null : key.equals(k))},
-	 * then this method returns {@code v}; otherwise it returns {@code null}.
-	 * (There can be at most one such mapping.)
+	 * More formally, if this map contains a mapping from a key {@code k} to a value
+	 * {@code v} such that {@code (key==null ? k==null : key.equals(k))}, then this
+	 * method returns {@code v}; otherwise it returns {@code null}. (There can be at
+	 * most one such mapping.)
 	 * 
 	 * <p>
-	 * A return value of {@code null} does not <i>necessarily</i> indicate that
-	 * the map contains no mapping for the key; it's also possible that the map
-	 * explicitly maps the key to {@code null}. The {@link #containsKey
-	 * containsKey} operation may be used to distinguish these two cases.
+	 * A return value of {@code null} does not <i>necessarily</i> indicate that the
+	 * map contains no mapping for the key; it's also possible that the map
+	 * explicitly maps the key to {@code null}. The {@link #containsKey containsKey}
+	 * operation may be used to distinguish these two cases.
 	 * 
 	 * @see #put(Object, Object)
 	 */
@@ -220,10 +214,10 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Offloaded version of get() to look up null keys. Null keys map to index
-	 * 0. This null case is split out into separate methods for the sake of
-	 * performance in the two most commonly used operations (get and put), but
-	 * incorporated with conditionals in others.
+	 * Offloaded version of get() to look up null keys. Null keys map to index 0.
+	 * This null case is split out into separate methods for the sake of performance
+	 * in the two most commonly used operations (get and put), but incorporated with
+	 * conditionals in others.
 	 */
 	private V getForNullKey() {
 		for (Entry<K, V> e = table[0]; e != null; e = e.next) {
@@ -234,46 +228,42 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Returns <tt>true</tt> if this map contains a mapping for the specified
-	 * key.
+	 * Returns <tt>true</tt> if this map contains a mapping for the specified key.
 	 * 
 	 * @param key
 	 *            The key whose presence in this map is to be tested
-	 * @return <tt>true</tt> if this map contains a mapping for the specified
-	 *         key.
+	 * @return <tt>true</tt> if this map contains a mapping for the specified key.
 	 */
 	public boolean containsKey(Object key) {
 		return getEntry(key) != null;
 	}
 
 	/**
-	 * Returns the entry associated with the specified key in the MyHashMap.
-	 * Returns null if the MyHashMap contains no mapping for the key.
+	 * Returns the entry associated with the specified key in the MyHashMap. Returns
+	 * null if the MyHashMap contains no mapping for the key.
 	 */
 	final Entry<K, V> getEntry(Object key) {
 		int hash = (key == null) ? 0 : hash(key.hashCode());
 		for (Entry<K, V> e = table[indexFor(hash, table.length)]; e != null; e = e.next) {
 			Object k;
-			if (e.hash == hash
-					&& ((k = e.key) == key || (key != null && key.equals(k))))
+			if (e.hash == hash && ((k = e.key) == key || (key != null && key.equals(k))))
 				return e;
 		}
 		return null;
 	}
 
 	/**
-	 * Associates the specified value with the specified key in this map. If the
-	 * map previously contained a mapping for the key, the old value is
-	 * replaced.
+	 * Associates the specified value with the specified key in this map. If the map
+	 * previously contained a mapping for the key, the old value is replaced.
 	 * 
 	 * @param key
 	 *            key with which the specified value is to be associated
 	 * @param value
 	 *            value to be associated with the specified key
-	 * @return the previous value associated with <tt>key</tt>, or <tt>null</tt>
-	 *         if there was no mapping for <tt>key</tt>. (A <tt>null</tt> return
-	 *         can also indicate that the map previously associated
-	 *         <tt>null</tt> with <tt>key</tt>.)
+	 * @return the previous value associated with <tt>key</tt>, or <tt>null</tt> if
+	 *         there was no mapping for <tt>key</tt>. (A <tt>null</tt> return can
+	 *         also indicate that the map previously associated <tt>null</tt> with
+	 *         <tt>key</tt>.)
 	 */
 	public V put(K key, V value) {
 		if (key == null)
@@ -314,22 +304,21 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 
 	/**
 	 * This method is used instead of put by constructors and pseudoconstructors
-	 * (clone, readObject). It does not resize the table, check for
-	 * comodification, etc. It calls createEntry rather than addEntry.
+	 * (clone, readObject). It does not resize the table, check for comodification,
+	 * etc. It calls createEntry rather than addEntry.
 	 */
 	private void putForCreate(K key, V value) {
 		int hash = (key == null) ? 0 : hash(key.hashCode());
 		int i = indexFor(hash, table.length);
 
 		/**
-		 * Look for preexisting entry for key. This will never happen for clone
-		 * or deserialize. It will only happen for construction if the input Map
-		 * is a sorted map whose ordering is inconsistent w/ equals.
+		 * Look for preexisting entry for key. This will never happen for clone or
+		 * deserialize. It will only happen for construction if the input Map is a
+		 * sorted map whose ordering is inconsistent w/ equals.
 		 */
 		for (Entry<K, V> e = table[i]; e != null; e = e.next) {
 			Object k;
-			if (e.hash == hash
-					&& ((k = e.key) == key || (key != null && key.equals(k)))) {
+			if (e.hash == hash && ((k = e.key) == key || (key != null && key.equals(k)))) {
 				e.value = value;
 				return;
 			}
@@ -339,26 +328,25 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	private void putAllForCreate(MyMap<? extends K, ? extends V> m) {
-		for (Iterator<? extends MyMap.Entry<? extends K, ? extends V>> i = m
-				.entrySet().iterator(); i.hasNext();) {
+		for (Iterator<? extends MyMap.Entry<? extends K, ? extends V>> i = m.entrySet().iterator(); i.hasNext();) {
 			MyMap.Entry<? extends K, ? extends V> e = i.next();
 			putForCreate(e.getKey(), e.getValue());
 		}
 	}
 
 	/**
-	 * Rehashes the contents of this map into a new array with a larger
-	 * capacity. This method is called automatically when the number of keys in
-	 * this map reaches its threshold.
+	 * Rehashes the contents of this map into a new array with a larger capacity.
+	 * This method is called automatically when the number of keys in this map
+	 * reaches its threshold.
 	 * 
-	 * If current capacity is MAXIMUM_CAPACITY, this method does not resize the
-	 * map, but sets threshold to Integer.MAX_VALUE. This has the effect of
-	 * preventing future calls.
+	 * If current capacity is MAXIMUM_CAPACITY, this method does not resize the map,
+	 * but sets threshold to Integer.MAX_VALUE. This has the effect of preventing
+	 * future calls.
 	 * 
 	 * @param newCapacity
 	 *            the new capacity, MUST be a power of two; must be greater than
-	 *            current capacity unless current capacity is MAXIMUM_CAPACITY
-	 *            (in which case value is irrelevant).
+	 *            current capacity unless current capacity is MAXIMUM_CAPACITY (in
+	 *            which case value is irrelevant).
 	 */
 	void resize(int newCapacity) {
 		Entry[] oldTable = table;
@@ -396,9 +384,9 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Copies all of the mappings from the specified map to this map. These
-	 * mappings will replace any mappings that this map had for any of the keys
-	 * currently in the specified map.
+	 * Copies all of the mappings from the specified map to this map. These mappings
+	 * will replace any mappings that this map had for any of the keys currently in
+	 * the specified map.
 	 * 
 	 * @param m
 	 *            mappings to be stored in this map
@@ -411,13 +399,12 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 			return;
 
 		/*
-		 * Expand the map if the map if the number of mappings to be added is
-		 * greater than or equal to threshold. This is conservative; the obvious
-		 * condition is (m.size() + size) >= threshold, but this condition could
-		 * result in a map with twice the appropriate capacity, if the keys to
-		 * be added overlap with the keys already in this map. By using the
-		 * conservative calculation, we subject ourself to at most one extra
-		 * resize.
+		 * Expand the map if the map if the number of mappings to be added is greater
+		 * than or equal to threshold. This is conservative; the obvious condition is
+		 * (m.size() + size) >= threshold, but this condition could result in a map with
+		 * twice the appropriate capacity, if the keys to be added overlap with the keys
+		 * already in this map. By using the conservative calculation, we subject
+		 * ourself to at most one extra resize.
 		 */
 		if (numKeysToBeAdded > threshold) {
 			int targetCapacity = (int) (numKeysToBeAdded / loadFactor + 1);
@@ -430,8 +417,7 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 				resize(newCapacity);
 		}
 
-		for (Iterator<? extends Map.Entry<? extends K, ? extends V>> i = m
-				.entrySet().iterator(); i.hasNext();) {
+		for (Iterator<? extends Map.Entry<? extends K, ? extends V>> i = m.entrySet().iterator(); i.hasNext();) {
 			Map.Entry<? extends K, ? extends V> e = i.next();
 			put(e.getKey(), e.getValue());
 		}
@@ -442,10 +428,10 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	 * 
 	 * @param key
 	 *            key whose mapping is to be removed from the map
-	 * @return the previous value associated with <tt>key</tt>, or <tt>null</tt>
-	 *         if there was no mapping for <tt>key</tt>. (A <tt>null</tt> return
-	 *         can also indicate that the map previously associated
-	 *         <tt>null</tt> with <tt>key</tt>.)
+	 * @return the previous value associated with <tt>key</tt>, or <tt>null</tt> if
+	 *         there was no mapping for <tt>key</tt>. (A <tt>null</tt> return can
+	 *         also indicate that the map previously associated <tt>null</tt> with
+	 *         <tt>key</tt>.)
 	 */
 	public V remove(Object key) {
 		Entry<K, V> e = removeEntryForKey(key);
@@ -454,8 +440,7 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 
 	/**
 	 * Removes and returns the entry associated with the specified key in the
-	 * MyHashMap. Returns null if the MyHashMap contains no mapping for this
-	 * key.
+	 * MyHashMap. Returns null if the MyHashMap contains no mapping for this key.
 	 */
 	final Entry<K, V> removeEntryForKey(Object key) {
 		int hash = (key == null) ? 0 : hash(key.hashCode());
@@ -466,8 +451,7 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 		while (e != null) {
 			Entry<K, V> next = e.next;
 			Object k;
-			if (e.hash == hash
-					&& ((k = e.key) == key || (key != null && key.equals(k)))) {
+			if (e.hash == hash && ((k = e.key) == key || (key != null && key.equals(k)))) {
 				modCount++;
 				size--;
 				if (prev == e)
@@ -518,8 +502,8 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Removes all of the mappings from this map. The map will be empty after
-	 * this call returns.
+	 * Removes all of the mappings from this map. The map will be empty after this
+	 * call returns.
 	 */
 	public void clear() {
 		modCount++;
@@ -631,8 +615,7 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 		}
 
 		public final int hashCode() {
-			return (key == null ? 0 : key.hashCode())
-					^ (value == null ? 0 : value.hashCode());
+			return (key == null ? 0 : key.hashCode()) ^ (value == null ? 0 : value.hashCode());
 		}
 
 		public final String toString() {
@@ -640,9 +623,8 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 		}
 
 		/**
-		 * This method is invoked whenever the value in an entry is overwritten
-		 * by an invocation of put(k,v) for a key k that's already in the
-		 * MyHashMap.
+		 * This method is invoked whenever the value in an entry is overwritten by an
+		 * invocation of put(k,v) for a key k that's already in the MyHashMap.
 		 */
 		void recordAccess(MyHashMap<K, V> m) {
 		}
@@ -655,9 +637,9 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Adds a new entry with the specified key, value and hash code to the
-	 * specified bucket. It is the responsibility of this method to resize the
-	 * table if appropriate.
+	 * Adds a new entry with the specified key, value and hash code to the specified
+	 * bucket. It is the responsibility of this method to resize the table if
+	 * appropriate.
 	 * 
 	 * Subclass overrides this to alter the behavior of put method.
 	 */
@@ -669,12 +651,12 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Like addEntry except that this version is used when creating entries as
-	 * part of Map construction or "pseudo-construction" (cloning,
-	 * deserialization). This version needn't worry about resizing the table.
+	 * Like addEntry except that this version is used when creating entries as part
+	 * of Map construction or "pseudo-construction" (cloning, deserialization). This
+	 * version needn't worry about resizing the table.
 	 * 
-	 * Subclass overrides this to alter the behavior of MyHashMap(Map), clone,
-	 * and readObject.
+	 * Subclass overrides this to alter the behavior of MyHashMap(Map), clone, and
+	 * readObject.
 	 */
 	void createEntry(int hash, K key, V value, int bucketIndex) {
 		Entry<K, V> e = table[bucketIndex];
@@ -769,12 +751,12 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	 * Returns a {@link Set} view of the keys contained in this map. The set is
 	 * backed by the map, so changes to the map are reflected in the set, and
 	 * vice-versa. If the map is modified while an iteration over the set is in
-	 * progress (except through the iterator's own <tt>remove</tt> operation),
-	 * the results of the iteration are undefined. The set supports element
-	 * removal, which removes the corresponding mapping from the map, via the
+	 * progress (except through the iterator's own <tt>remove</tt> operation), the
+	 * results of the iteration are undefined. The set supports element removal,
+	 * which removes the corresponding mapping from the map, via the
 	 * <tt>Iterator.remove</tt>, <tt>Set.remove</tt>, <tt>removeAll</tt>,
-	 * <tt>retainAll</tt>, and <tt>clear</tt> operations. It does not support
-	 * the <tt>add</tt> or <tt>addAll</tt> operations.
+	 * <tt>retainAll</tt>, and <tt>clear</tt> operations. It does not support the
+	 * <tt>add</tt> or <tt>addAll</tt> operations.
 	 */
 	public Set<K> keySet() {
 		Set<K> ks = keySet;
@@ -804,16 +786,15 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Returns a {@link Collection} view of the values contained in this map.
-	 * The collection is backed by the map, so changes to the map are reflected
-	 * in the collection, and vice-versa. If the map is modified while an
-	 * iteration over the collection is in progress (except through the
-	 * iterator's own <tt>remove</tt> operation), the results of the iteration
-	 * are undefined. The collection supports element removal, which removes the
-	 * corresponding mapping from the map, via the <tt>Iterator.remove</tt>,
-	 * <tt>Collection.remove</tt>, <tt>removeAll</tt>, <tt>retainAll</tt> and
-	 * <tt>clear</tt> operations. It does not support the <tt>add</tt> or
-	 * <tt>addAll</tt> operations.
+	 * Returns a {@link Collection} view of the values contained in this map. The
+	 * collection is backed by the map, so changes to the map are reflected in the
+	 * collection, and vice-versa. If the map is modified while an iteration over
+	 * the collection is in progress (except through the iterator's own
+	 * <tt>remove</tt> operation), the results of the iteration are undefined. The
+	 * collection supports element removal, which removes the corresponding mapping
+	 * from the map, via the <tt>Iterator.remove</tt>, <tt>Collection.remove</tt>,
+	 * <tt>removeAll</tt>, <tt>retainAll</tt> and <tt>clear</tt> operations. It does
+	 * not support the <tt>add</tt> or <tt>addAll</tt> operations.
 	 */
 	public Collection<V> values() {
 		Collection<V> vs = values;
@@ -839,16 +820,16 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	}
 
 	/**
-	 * Returns a {@link Set} view of the mappings contained in this map. The set
-	 * is backed by the map, so changes to the map are reflected in the set, and
+	 * Returns a {@link Set} view of the mappings contained in this map. The set is
+	 * backed by the map, so changes to the map are reflected in the set, and
 	 * vice-versa. If the map is modified while an iteration over the set is in
 	 * progress (except through the iterator's own <tt>remove</tt> operation, or
 	 * through the <tt>setValue</tt> operation on a map entry returned by the
 	 * iterator) the results of the iteration are undefined. The set supports
-	 * element removal, which removes the corresponding mapping from the map,
-	 * via the <tt>Iterator.remove</tt>, <tt>Set.remove</tt>, <tt>removeAll</tt>
-	 * , <tt>retainAll</tt> and <tt>clear</tt> operations. It does not support
-	 * the <tt>add</tt> or <tt>addAll</tt> operations.
+	 * element removal, which removes the corresponding mapping from the map, via
+	 * the <tt>Iterator.remove</tt>, <tt>Set.remove</tt>, <tt>removeAll</tt> ,
+	 * <tt>retainAll</tt> and <tt>clear</tt> operations. It does not support the
+	 * <tt>add</tt> or <tt>addAll</tt> operations.
 	 * 
 	 * @return a set view of the mappings contained in this map
 	 */
@@ -893,15 +874,14 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	 * Save the state of the <tt>MyHashMap</tt> instance to a stream (i.e.,
 	 * serialize it).
 	 * 
-	 * @serialData The <i>capacity</i> of the MyHashMap (the length of the
-	 *             bucket array) is emitted (int), followed by the <i>size</i>
-	 *             (an int, the number of key-value mappings), followed by the
-	 *             key (Object) and value (Object) for each key-value mapping.
-	 *             The key-value mappings are emitted in no particular order.
+	 * @serialData The <i>capacity</i> of the MyHashMap (the length of the bucket
+	 *             array) is emitted (int), followed by the <i>size</i> (an int, the
+	 *             number of key-value mappings), followed by the key (Object) and
+	 *             value (Object) for each key-value mapping. The key-value mappings
+	 *             are emitted in no particular order.
 	 */
 	private void writeObject(java.io.ObjectOutputStream s) throws IOException {
-		Iterator<MyMap.Entry<K, V>> i = (size > 0) ? entrySet0().iterator()
-				: null;
+		Iterator<MyMap.Entry<K, V>> i = (size > 0) ? entrySet0().iterator() : null;
 
 		// Write out the threshold, loadfactor, and any hidden stuff
 		s.defaultWriteObject();
@@ -925,11 +905,10 @@ public class MyHashMap<K, V> extends MyAbstractMap<K, V> implements
 	private static final long serialVersionUID = 362498820763181265L;
 
 	/**
-	 * Reconstitute the <tt>MyHashMap</tt> instance from a stream (i.e.,
-	 * deserialize it).
+	 * Reconstitute the <tt>MyHashMap</tt> instance from a stream (i.e., deserialize
+	 * it).
 	 */
-	private void readObject(java.io.ObjectInputStream s) throws IOException,
-			ClassNotFoundException {
+	private void readObject(java.io.ObjectInputStream s) throws IOException, ClassNotFoundException {
 		// Read in the threshold, loadfactor, and any hidden stuff
 		s.defaultReadObject();
 
