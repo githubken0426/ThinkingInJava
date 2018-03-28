@@ -28,8 +28,8 @@ public class Singleton {
 	}
 
 	/**
-	 * 3.基于classloder机制避免了多线程的同步问题 不过，instance在类装载时就实例化,
-	 * 这时候初始化instance显然没有达到lazy loading的效果
+	 * 3.基于classloder机制避免了多线程的同步问题 不过，instance在类装载时就实例化, 这时候初始化instance显然没有达到lazy
+	 * loading的效果
 	 * 
 	 * @return 2017-5-12 上午11:27:57
 	 */
@@ -67,10 +67,11 @@ public class Singleton {
 		};
 		public abstract Singleton getInstance();
 	}
+
 	/**
 	 * 6.双重校验锁
-	 * @return
-	 * 2017-5-12 下午12:00:23
+	 * 
+	 * @return 2017-5-12 下午12:00:23
 	 */
 	public static Singleton singleInstance5() {
 		if (instance == null) {
