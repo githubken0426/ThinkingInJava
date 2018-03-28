@@ -5,14 +5,14 @@ import java.util.concurrent.TimeUnit;
 
 public class SuperCalculator {
 	/**
-	 * 此处进行了函数的回调
+	 * 姝ゅ杩涜浜嗗嚱鏁扮殑鍥炶皟
 	 * @param a
 	 * @param b
 	 * @param stu
 	 */
 	public void add(double a,double b,DoFillJob fill){
 		try {
-			System.out.println("计算器计算耗时10秒！");
+			System.out.println("璁＄畻鍣ㄨ绠楄�楁椂10绉掞紒");
 			TimeUnit.SECONDS.sleep(10);
 			fill.fillBank(a, b, a+b);
 		} catch (InterruptedException e) {

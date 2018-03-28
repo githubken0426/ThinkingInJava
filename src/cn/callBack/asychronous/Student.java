@@ -4,9 +4,9 @@ import cn.callBack.DoFillJob;
 import cn.callBack.SuperCalculator;
 
 /**
- * 异步回调
+ * 寮傛鍥炶皟
  * @author Administrator
- * 2016-5-4 上午09:47:03
+ * 2016-5-4 涓婂崍09:47:03
  *
  */
 class Student implements DoFillJob{
@@ -19,7 +19,7 @@ class Student implements DoFillJob{
 
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name+"调用回调函数,计算结果:"+a+"+"+b+"="+result);
+		System.out.println(name+"璋冪敤鍥炶皟鍑芥暟,璁＄畻缁撴灉:"+a+"+"+b+"="+result);
 	}
 	
 	public void callBack(final double a,final double b){
@@ -30,6 +30,6 @@ class Student implements DoFillJob{
 				new SuperCalculator().add(a,b,new Student(name));
 			}
 		}).start();
-		System.out.println(name+"问完问题后，就出去玩了！");
+		System.out.println(name+"闂畬闂鍚庯紝灏卞嚭鍘荤帺浜嗭紒");
 	}
 }
