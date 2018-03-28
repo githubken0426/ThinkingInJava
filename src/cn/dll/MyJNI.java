@@ -8,7 +8,7 @@ package cn.dll;
  */
 public class MyJNI {
 	static {
-//		System.out.println(System.getProperty("java.library.path"));
+		// System.out.println(System.getProperty("java.library.path"));
 		// 库的扩展名字可以不用写出来，究竟是DLL还是SO，由系统自己判定。前提：将dll拷贝到此类包下
 		System.loadLibrary("user32");
 	}
