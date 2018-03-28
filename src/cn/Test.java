@@ -10,7 +10,6 @@ public class Test {
 	}
 
 	private static int i = 100;
-
 	public static void main(String[] args) {
 		// Integer i01 = 59;
 		// int i02 = 59;
@@ -90,5 +89,4 @@ public class Test {
 	public static String test2(byte[] b){
 		return new String(b);
 	}
-	
 }
