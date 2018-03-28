@@ -4,7 +4,14 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import cn.rmi.client.impl.MyRmiService;
-
+/**
+ * Remote Method Invocation
+ * 远程方法调用
+ * @ClassName: MyRmiClient 
+ * @Description: 
+ * @author ken 
+ * @date 2018年3月28日 上午11:45:02
+ */
 public class MyRmiClient {
 
 	public static void main(String[] args) {
