@@ -1,11 +1,11 @@
-package cn.jrmi.main;
+package cn.rmi.jrmi.main;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import cn.jrmi.service.ITestRemote;
+import cn.rmi.jrmi.service.ITestRemote;
 
 public class TestMain {
 

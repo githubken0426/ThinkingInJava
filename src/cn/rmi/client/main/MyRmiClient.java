@@ -3,18 +3,18 @@ package cn.rmi.client.main;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import cn.rmi.client.inte.MyRmiInterface;
+import cn.rmi.client.impl.MyRmiService;
 
 public class MyRmiClient {
 
 	public static void main(String[] args) {
 		String host = (args.length < 1) ? null : args[0];
 		try {
-			// »ñµÃÔËÐÐrmiregistry·þÎñµÄÖ÷»úÉÏµÄ×¢ ²á±í
+			// èŽ·å¾—è¿è¡ŒrmiregistryæœåŠ¡çš„ä¸»æœºä¸Šçš„æ³¨ å†Œè¡¨
 			Registry registry = LocateRegistry.getRegistry(host);
-			// ²éÑ¯²¢»ñµÃÔ¶³Ì¶ÔÏóµÄ´æ¸ù
-			MyRmiInterface stub = (MyRmiInterface) registry.lookup("sayHello");
-			// ÏñÔÚÊ¹ÓÃ±¾µØ¶ÔÏó·½·¨ÄÇÑù£¬µ÷ÓÃÔ¶³Ì·½·¨
+			// æŸ¥è¯¢å¹¶èŽ·å¾—è¿œç¨‹å¯¹è±¡çš„å­˜æ ¹
+			MyRmiService stub = (MyRmiService) registry.lookup("sayHello");
+			// åƒåœ¨ä½¿ç”¨æœ¬åœ°å¯¹è±¡æ–¹æ³•é‚£æ ·ï¼Œè°ƒç”¨è¿œç¨‹æ–¹æ³•
 			System.out.println(stub.sayHello());
 		} catch (Exception e) {
 			System.out.println("Client exception :" + e.toString());

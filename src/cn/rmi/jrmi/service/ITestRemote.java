@@ -1,4 +1,4 @@
-package cn.jrmi.service;
+package cn.rmi.jrmi.service;
 
 import java.rmi.Remote;
 

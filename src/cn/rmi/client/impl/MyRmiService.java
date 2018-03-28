@@ -1,13 +1,13 @@
-package cn.rmi.client.inte;
+package cn.rmi.client.impl;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- * 远程方法调用:remote method invocation
+ * 杩滅▼璋冪敤:remote method invocation
  * @author Administrator
  *
  */
-public interface MyRmiInterface extends Remote {
+public interface MyRmiService extends Remote {
 	public String sayHello() throws RemoteException;
 }

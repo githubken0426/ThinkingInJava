@@ -3,9 +3,8 @@ package cn.rmi.client.impl;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import cn.rmi.client.inte.MyRmiInterface;
-
-public class MyRmiImpl extends UnicastRemoteObject implements MyRmiInterface {
+public class MyRmiImpl extends UnicastRemoteObject implements MyRmiService {
+	private static final long serialVersionUID = 1L;
 
 	public MyRmiImpl() throws RemoteException {
 		super();
@@ -13,7 +12,7 @@ public class MyRmiImpl extends UnicastRemoteObject implements MyRmiInterface {
 
 	@Override
 	public String sayHello() throws RemoteException {
-		return "Hello Word °¡!";
+		return "Hello Word !";
 	}
 
 }

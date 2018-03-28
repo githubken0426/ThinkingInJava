@@ -8,23 +8,21 @@ import java.rmi.registry.Registry;
 import cn.rmi.client.impl.MyRmiImpl;
 
 public class MyRmiServer {
-
 	public static void main(String[] args) {
 		try {
-			// ÊµÀı»¯Ô¶³Ì¶ÔÏó£¬Í¬Ê±µ¼³öÁË¸Ã¶ÔÏó
+			// å®ä¾‹åŒ–è¿œç¨‹å¯¹è±¡ï¼ŒåŒæ—¶å¯¼å‡ºäº†è¯¥å¯¹è±¡
 			MyRmiImpl server = new MyRmiImpl();
-			// »ñµÃ±¾µØRMI×¢²á±í¶ÔÏó
+			// è·å¾—æœ¬åœ°RMIæ³¨å†Œè¡¨å¯¹è±¡
 			Registry registry = LocateRegistry.getRegistry();
-			// ÔÚ×¢²á±íÖĞ°ó¶¨Ô¶³Ì¶ÔÏó
+			// åœ¨æ³¨å†Œè¡¨ä¸­ç»‘å®šè¿œç¨‹å¯¹è±¡
 			registry.bind("sayHello", server);
-			// Í¨¸æ·şÎñ¶ËÒÑ×¼±¸ºÃÁË
+			// é€šå‘ŠæœåŠ¡ç«¯å·²å‡†å¤‡å¥½äº†
 			System.out.println("System already!");
 		} catch (RemoteException e) {
-			System.out.println("ÔÚ½¨Á¢Ô¶³ÌÁ¬½ÓµÄÇé¿ö³öÏÖÁËÒì ³£" + e.getMessage());
+			System.out.println("åœ¨å»ºç«‹è¿œç¨‹è¿æ¥çš„æƒ…å†µå‡ºç°äº†å¼‚ å¸¸" + e.getMessage());
 			System.out.println(e.toString());
 		} catch (AlreadyBoundException e1) {
-			System.out.println("ÔÚÏò×¢²á±í ÖĞ°ó¶¨Ê±³öÏÖÁËÎÊÌâ£¬Ãû×ÖÒÑ±»°ó¶¨ÁË£¡/n" + e1.getMessage());
+			System.out.println("åœ¨å‘æ³¨å†Œè¡¨ ä¸­ç»‘å®šæ—¶å‡ºç°äº†é—®é¢˜ï¼Œåå­—å·²è¢«ç»‘å®šäº†ï¼/n" + e1.getMessage());
 		}
 	}
-
 }
