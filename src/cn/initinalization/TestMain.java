@@ -7,6 +7,6 @@ public class TestMain {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		Gun gun=new Rifle(16);
+		Gun gun = new Rifle(16);
 	}
 }

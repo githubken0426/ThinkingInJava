@@ -1,14 +1,13 @@
 package cn.initinalization;
 
 public class Rifle extends Gun {
-
-	static{
-		System.out.println("Rifle==¡·À´¸´Ç¹£¡");
+	static {
+		System.out.println("Static block! Rifle==ã€‹æ¥å¤æªï¼");
 	}
+
 	public Rifle(int bullet) {
-//		super();
+		// super();
 		super(bullet);
-		System.out.println("Rifle==¡·ÎÒÊÇÀ´¸´Ç¹£¬ÎÒÓĞ"+bullet+"·¢×Óµ¯£¡");
+		System.out.println("Rifle==ã€‹æˆ‘æ˜¯æ¥å¤æªï¼Œæˆ‘æœ‰" + bullet + "å‘å­å¼¹ï¼");
 	}
-
 }

@@ -2,14 +2,16 @@ package cn.initinalization;
 
 public class Gun {
 	public static int bullet;
-	static{
-		System.out.println("Gun==¡·ÎÒÓĞ"+bullet+"·¢×Óµ¯£¡");
+	static {
+		System.out.println("Static block! Gun==ã€‹æˆ‘æœ‰" + bullet + "å‘å­å¼¹ï¼");
 	}
-	public Gun(){
-		System.out.println("Ã»ÓĞ×Óµ¯");
+
+	public Gun() {
+		System.out.println("æ²¡æœ‰å­å¼¹");
 	}
-	public Gun(int bull){
-		bullet=bull;
-		System.out.println("Gun==¡·ÎÒÏÖÔÚÕæµÄÓĞ"+bullet+"·¢×Óµ¯£¡");
+
+	public Gun(int bull) {
+		bullet = bull;
+		System.out.println("Gun==ã€‹æˆ‘ç°åœ¨çœŸçš„æœ‰" + bullet + "å‘å­å¼¹ï¼");
 	}
 }
