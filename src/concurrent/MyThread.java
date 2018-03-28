@@ -1,4 +1,4 @@
-package cn.test;
+package concurrent;
 
 
 public class MyThread implements Runnable {

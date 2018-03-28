@@ -1,9 +1,9 @@
-package cn.test;
+package cn.stack;
 
 /**
- * ²âÊÔ¶ÑÕ»
+ * é“¾è¡¨æ ˆ
  * @author Administrator
- * 2016-9-27 ÉÏÎç11:14:55
+ * 2016-9-27 11:14:55
  *
  */
 public class LinkedStack<T> {

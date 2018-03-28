@@ -1,4 +1,4 @@
-package cn.test;
+package concurrent;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.ExecutorService;
@@ -20,7 +20,7 @@ public class MyThreadMain {
 						}
 					}
 				);
-				System.out.println("HandlerThreadFactory en£º"+ t.getUncaughtExceptionHandler());
+				System.out.println("HandlerThreadFactory enï¿½ï¿½"+ t.getUncaughtExceptionHandler());
 				return t;
 			}
 		});

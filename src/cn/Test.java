@@ -1,12 +1,6 @@
 package cn;
 
-import java.io.IOException;
-import java.net.ServerSocket;
 import java.nio.ByteBuffer;
-import java.util.UUID;
-
-import cn.serializable.externlizable.Users;
-import th.about.cast.Student;
 
 public class Test {
 	static int x = 10;
@@ -72,10 +66,10 @@ public class Test {
 		}
 	}
 	/**
-	 * byte[]תLong
+	 * byte[] Long
 	 * @param b
 	 * @return
-	 * 2017-5-12 ����01:26:28
+	 * 2017-5-12 01:26:28
 	 */
 	private static ByteBuffer buffer = ByteBuffer.allocate(8); 
 	public static Long bytesToLong(byte[] b){
@@ -88,10 +82,10 @@ public class Test {
         return buffer.array();    
     }   
 	/**
-	 * byte[]תString
+	 * byte[] String
 	 * @param b
 	 * @return
-	 * 2017-5-12 ����01:26:28
+	 * 2017-5-12 01:26:28
 	 */
 	public static String test2(byte[] b){
 		return new String(b);

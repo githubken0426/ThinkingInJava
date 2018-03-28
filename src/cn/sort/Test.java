@@ -1,16 +1,16 @@
-package cn.test;
+package cn.sort;
 
 import java.util.Arrays;
 
 public class Test {
 	private static int a[]=new int[] { 8, 12, 13, 3, 4, 7, 9, 10 };
 	public static void main(String[] args) {
-		System.out.println("ÅÅÐòÇ°£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½");
 		System.out.println(Arrays.toString(a));
 //		bubbleSort();
 		QuickSort.quickSort(a,0,a.length-1);
 		
-		System.out.println("ÅÅÐòºó£º");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(Arrays.toString(a));
 	}
 	
