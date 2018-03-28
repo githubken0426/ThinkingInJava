@@ -4,26 +4,25 @@ import cn.callBack.DoFillJob;
 import cn.callBack.SuperCalculator;
 
 /**
- * »Øµ÷(CallBack)»úÖÆ
- * @author Administrator
- * 2016-5-4 ÉÏÎç08:55:57
+ * å›è°ƒ(CallBack)æœºåˆ¶
+ * 
+ * @author Administrator 2016-5-4 ä¸Šåˆ08:55:57
  *
  */
- class Student implements DoFillJob{
+class Student implements DoFillJob {
 	private String name;
-	
-	public Student(String name){
-		this.name=name;
+
+	public Student(String name) {
+		this.name = name;
 	}
-	
+
 	@Override
-	public void fillBank(double a,double b,double result){
-		System.out.println(name+"»Øµ÷º¯Êı¼ÆËã½á¹û:"+a+"+"+b+"="+result);
+	public void fillBank(double a, double b, double result) {
+		System.out.println(name + "å›è°ƒå‡½æ•°è®¡ç®—ç»“æœ:" + a + "+" + b + "=" + result);
 	}
-	
-	public void callBack(double a,double b){
-		System.out.println(name+"ÎÊÍêÎÊÌâºó£¬µÈ´ı½á¹û£¡");
-		new SuperCalculator().add(a,b,this);
+
+	public void callBack(double a, double b) {
+		System.out.println(name + "é—®å®Œé—®é¢˜åï¼Œç­‰å¾…ç»“æœï¼");
+		new SuperCalculator().add(a, b, this);
 	}
-	
 }

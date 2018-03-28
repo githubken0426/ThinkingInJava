@@ -3,41 +3,37 @@ package cn.callBack.part_4;
 import java.util.concurrent.TimeUnit;
 
 public class TestMain {
-	public static void main(String[] args){
-		final Student stu=new Student("Ğ¡Ã÷");
-		final Seller seller=new Seller("°¢ÆÅ");
-		
-		new Thread(new Runnable(){
+	public static void main(String[] args) {
+		final Student stu = new Student("å°æ˜");
+		final Seller seller = new Seller("é˜¿å©†");
 
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					System.out.println("¿ªÊ¼Îª°¢ÆÅ¼ÆËã....");
+					System.out.println("å¼€å§‹ä¸ºé˜¿å©†è®¡ç®—....");
 					TimeUnit.SECONDS.sleep(10);
-					System.out.println("ºÄÊ±10Ãë");
+					System.out.println("è€—æ—¶10ç§’");
 					seller.callHelp(15693.00, 25863.0);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
 			}
-			
-		}).start();
-		
-		new Thread(new Runnable(){
 
+		}).start();
+
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					System.out.println("¿ªÊ¼ÎªĞ¡Ã÷¼ÆËã....");
+					System.out.println("å¼€å§‹ä¸ºå°æ˜è®¡ç®—....");
 					TimeUnit.SECONDS.sleep(20);
-					System.out.println("ºÄÊ±20Ãë");
-					stu.callHelp(565.00,3406.03);
+					System.out.println("è€—æ—¶20ç§’");
+					stu.callHelp(565.00, 3406.03);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		}).start();
-		
 	}
 }

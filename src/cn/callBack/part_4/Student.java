@@ -1,37 +1,41 @@
 package cn.callBack.part_4;
 
 /**
- * part2:Ê¹ÓÃ¼ÆËãÀà¼ÆËã
+ * part2:ä½¿ç”¨è®¡ç®—ç±»è®¡ç®—
+ * 
  * @author Administrator
  *
  */
-public class Student implements DoJob{
+public class Student implements DoJob {
 	private String name;
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Student(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name + "ÇóÖúĞ¡ºì¼ÆËã:" + a + " + " + b + " = " + result);
+		System.out.println(name + "æ±‚åŠ©å°çº¢è®¡ç®—:" + a + " + " + b + " = " + result);
 	}
-	
-	//¼ÆËã·½·¨
-	public void callHelp(double a, double b){
-		System.out.println(name+"µÈ´ı¼ÆËã½á¹û....");
-		SuperCalculator.calcADD(a, b,this);
+
+	// è®¡ç®—æ–¹æ³•
+	public void callHelp(double a, double b) {
+		System.out.println(name + "ç­‰å¾…è®¡ç®—ç»“æœ....");
+		SuperCalculator.calcADD(a, b, this);
 	}
+
 	/**
-	 * Ğ¡ºìÏ£ÍûÒÔºó²»½öÏòĞ¡ÃûÌá¹©¼ÆËã·şÎñ£¬
-	 * »¹Ï£ÍûÏò°àÀïµÄÆäËûĞ¡ÅóÓÑÃÇÌá¹©¼ÆËã·şÎñ£¬ÉõÖÁÒÔºóÄÜ¹»ÍØÕ¹ÆäËûÈËµÄÒµÎñ£¬
-	 * ÓÚÊÇËıÏòËùÓĞµÄ¹Ë¿ÍÔ¼¶¨ÁËÒ»¸ö°ì·¨£¬ÓÃÓÚÍ³Ò»µÄ´¦Àí¡£
-	 * Õâ¸öÍ³Ò»µÄ·½·¨£¬Ğ¡ºì×ö³ÉÁËÒ»¸ö½Ó¿Ú£¬Ìá¹©¸øÁË´ó¼Ò¡£
+	 * å°çº¢å¸Œæœ›ä»¥åä¸ä»…å‘å°åæä¾›è®¡ç®—æœåŠ¡ï¼Œ è¿˜å¸Œæœ›å‘ç­é‡Œçš„å…¶ä»–å°æœ‹å‹ä»¬æä¾›è®¡ç®—æœåŠ¡ï¼Œç”šè‡³ä»¥åèƒ½å¤Ÿæ‹“å±•å…¶ä»–äººçš„ä¸šåŠ¡ï¼Œ
+	 * äºæ˜¯å¥¹å‘æ‰€æœ‰çš„é¡¾å®¢çº¦å®šäº†ä¸€ä¸ªåŠæ³•ï¼Œç”¨äºç»Ÿä¸€çš„å¤„ç†ã€‚ è¿™ä¸ªç»Ÿä¸€çš„æ–¹æ³•ï¼Œå°çº¢åšæˆäº†ä¸€ä¸ªæ¥å£ï¼Œæä¾›ç»™äº†å¤§å®¶ã€‚
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Student stu=new Student("Ğ¡Ã÷");
-		stu.callHelp(165.00,306.03);
+		Student stu = new Student("å°æ˜");
+		stu.callHelp(165.00, 306.03);
 	}
 }

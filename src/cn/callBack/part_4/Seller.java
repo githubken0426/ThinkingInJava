@@ -13,17 +13,17 @@ public class Seller implements DoJob {
 
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name + "求助小红计算:" + a + " + " + b + " = " + result);
+		System.out.println(name + "姹傚姪灏忕孩璁＄畻:" + a + " + " + b + " = " + result);
 	}
-	
-	//计算方法
-	public void callHelp(double a,double b) {
-		System.out.println(name+"等待计算结果....");
+
+	// 璁＄畻鏂规硶
+	public void callHelp(double a, double b) {
+		System.out.println(name + "绛夊緟璁＄畻缁撴灉....");
 		SuperCalculator.calcADD(a, b, this);
 	}
 
 	public static void main(String[] args) {
-		Seller seller=new Seller("阿婆");
+		Seller seller = new Seller("闃垮﹩");
 		seller.callHelp(12589.2, 12300.0);
 	}
 }

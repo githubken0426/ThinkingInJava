@@ -1,6 +1,6 @@
 package cn.callBack.part_3;
 /**
- * part3:Ê¹ÓÃ¼ÆËãÀà¼ÆËã
+ * part3:ä½¿ç”¨è®¡ç®—ç±»è®¡ç®—
  * @author Administrator
  *
  */
@@ -12,24 +12,24 @@ public class Student {
 	public Student(String name) {
 		this.name = name;
 	}
-	//¼ÆËã·½·¨
+	//è®¡ç®—æ–¹æ³•
 	private void callHelp(double a, double b){
 		 SuperCalculator.calcADD(a, b,this);
 	}
-	//Ìî¿Õ·½·¨
+	//å¡«ç©ºæ–¹æ³•
 	public  void fillBank(double a, double b,double result) {
-		System.out.println(name + "Ê¹ÓÃ¼ÆËãÆ÷¼ÆËã½á¹û:" + a + "+" + b + "=" +result);
+		System.out.println(name + "ä½¿ç”¨è®¡ç®—å™¨è®¡ç®—ç»“æœ:" + a + "+" + b + "=" +result);
 	}
 	
 	/**
-	 * Ğ¡Ã÷Í¨¹ı×ÔÉíµÄcallHelp·½·¨µ÷ÓÃÁËĞ¡ºì(new SuperCalculator())µÄcalcADD·½·¨£¬
-	 * ÔÚµ÷ÓÃµÄÊ±ºò½«×ÔÉíµÄÒıÓÃ£¨this£©µ±×ö²ÎÊıÒ»²¢´«Èë£¬
-	 * Ğ¡ºìÔÚÊ¹ÓÃ¼ÆËãÆ÷µÃ³ö½á¹ûÖ®ºó£¬»Øµ÷ÁËĞ¡Ã÷µÄfillBlank·½·¨£¬½«½á¹ûÌîÔÚÁËºÚ°åÉÏµÄ¿Õ¸ñÀï
+	 * å°æ˜é€šè¿‡è‡ªèº«çš„callHelpæ–¹æ³•è°ƒç”¨äº†å°çº¢(new SuperCalculator())çš„calcADDæ–¹æ³•ï¼Œ
+	 * åœ¨è°ƒç”¨çš„æ—¶å€™å°†è‡ªèº«çš„å¼•ç”¨ï¼ˆthisï¼‰å½“åšå‚æ•°ä¸€å¹¶ä¼ å…¥ï¼Œ
+	 * å°çº¢åœ¨ä½¿ç”¨è®¡ç®—å™¨å¾—å‡ºç»“æœä¹‹åï¼Œå›è°ƒäº†å°æ˜çš„fillBlankæ–¹æ³•ï¼Œå°†ç»“æœå¡«åœ¨äº†é»‘æ¿ä¸Šçš„ç©ºæ ¼é‡Œ
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Student stu=new Student("Ğ¡Ã÷");
+		Student stu=new Student("mis zhang");
 		stu.callHelp(1625.00,4306.03);
 	}
 }

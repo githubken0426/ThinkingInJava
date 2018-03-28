@@ -7,6 +7,7 @@ import cn.callBack.part_4.SuperCalculator;
 
 public class Seller implements DoJob {
 	private String name;
+
 	public Seller(String name) {
 		this.name = name;
 	}
@@ -17,27 +18,29 @@ public class Seller implements DoJob {
 
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name + "ÇóÖúĞ¡ºì¼ÆËã:" + a + " + " + b + " = " + result);
+		System.out.println(name + "æ±‚åŠ©å°çº¢è®¡ç®—:" + a + " + " + b + " = " + result);
 	}
+
 	/**
-	 * ÊµÏÖÒì²½µ÷ÓÃ
+	 * å®ç°å¼‚æ­¥è°ƒç”¨
+	 * 
 	 * @param a
 	 * @param b
 	 */
-	public  void callHelp(final double a,final double b) {
-		new Thread(new Runnable(){
+	public void callHelp(final double a, final double b) {
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					System.out.println("Îª"+name+"¼ÆËãÖĞ..........");
+					System.out.println("ä¸º" + name + "è®¡ç®—ä¸­..........");
 					TimeUnit.SECONDS.sleep(10);
-					System.out.println("Îª"+name+"¼ÆËã10ÃëÖ®ºó...");
+					System.out.println("ä¸º" + name + "è®¡ç®—10ç§’ä¹‹å...");
 					SuperCalculator.calcADD(a, b, new Seller(name));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		}).start();
-		System.out.println(name+"ÎÊÍêÎÊÌâºó£¬¼ÌĞøÂô¶«Î÷£¡");
+		System.out.println(name + "é—®å®Œé—®é¢˜åï¼Œç»§ç»­å–ä¸œè¥¿ï¼");
 	}
 }

@@ -4,26 +4,31 @@ import java.util.concurrent.TimeUnit;
 
 import cn.callBack.part_4.DoJob;
 import cn.callBack.part_4.SuperCalculator;
+
 /**
- * part2:Ê¹ÓÃ¼ÆËãÀà¼ÆËã
+ * part2:ä½¿ç”¨è®¡ç®—ç±»è®¡ç®—
+ * 
  * @author Administrator
  */
 public class Student implements DoJob {
 	private String name;
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public Student(String name) {
 		this.name = name;
 	}
 
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name + "ÇóÖúĞ¡ºì¼ÆËã:" + a + " + " + b + " = " + result);
+		System.out.println(name + "æ±‚åŠ©å°çº¢è®¡ç®—:" + a + " + " + b + " = " + result);
 	}
+
 	/**
-	 * Òì²½µ÷ÓÃ
+	 * å¼‚æ­¥è°ƒç”¨
+	 * 
 	 * @param a
 	 * @param b
 	 */
@@ -32,15 +37,15 @@ public class Student implements DoJob {
 			@Override
 			public void run() {
 				try {
-					System.out.println("Îª"+name+"¼ÆËãÖĞ..........");
+					System.out.println("ä¸º" + name + "è®¡ç®—ä¸­..........");
 					TimeUnit.SECONDS.sleep(20);
-					System.out.println("Îª"+name+"¼ÆËã20ÃëÖ®ºó...");
+					System.out.println("ä¸º" + name + "è®¡ç®—20ç§’ä¹‹å...");
 					SuperCalculator.calcADD(a, b, new Student(name));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		}).start();
-		System.out.println(name+"ÎÊÍêÎÊÌâºó£¬¾Í³öÈ¥ÍæÁË£¡");
+		System.out.println(name + "é—®å®Œé—®é¢˜åï¼Œå°±å‡ºå»ç©äº†ï¼");
 	}
 }

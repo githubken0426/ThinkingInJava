@@ -1,6 +1,6 @@
 package cn.callBack.part_1;
 /**
- * part1£ºĞÄËã
+ * part1ï¼šå¿ƒç®—
  * @author Administrator
  *
  */
@@ -14,21 +14,21 @@ public class Student {
 	public Student(String name) {
 		this.name = name;
 	}
-	//¼ÆËã·½·¨
+	//è®¡ç®—æ–¹æ³•
 	private double calcADD(double a, double b) {
 		return a + b;
 	}
-	//Ìî¿Õ·½·¨
+	//å¡«ç©ºæ–¹æ³•
 	public void fillBank(double a, double b) {
-		System.out.println(name + "µÄ¼ÆËã½á¹û:" + a + "+" + b + "=" + calcADD(a,b));
+		System.out.println(name + "çš„è®¡ç®—ç»“æœ:" + a + "+" + b + "=" + calcADD(a,b));
 	}
 	
 	/**
-	 * ¸Ã¹ı³ÌÍêÈ«ÓÉStudentÀàµÄÊµÀı¶ÔÏóµ¥¶ÀÍê³É£¬²¢Î´Éæ¼°»Øµ÷»úÖÆ
+	 * è¯¥è¿‡ç¨‹å®Œå…¨ç”±Studentç±»çš„å®ä¾‹å¯¹è±¡å•ç‹¬å®Œæˆï¼Œå¹¶æœªæ¶‰åŠå›è°ƒæœºåˆ¶
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Student stu=new Student("Ğ¡Ã÷");
+		Student stu=new Student("å°æ˜");
 		stu.fillBank(15.00,36.03);
 	}
 }

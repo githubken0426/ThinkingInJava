@@ -1,7 +1,7 @@
 package cn.callBack.part_2;
 
 /**
- * part2:Ê¹ÓÃ¼ÆËãÀà¼ÆËã
+ * part2:ä½¿ç”¨è®¡ç®—ç±»è®¡ç®—
  * @author Administrator
  *
  */
@@ -16,22 +16,22 @@ public class Student {
 		this.name = name;
 	}
 
-	//¼ÆËã·½·¨
+	//è®¡ç®—æ–¹æ³•
 	private double useCalculator(double a, double b){
 		return Calculator.calcADD(a, b);
 	}
-	//Ìî¿Õ·½·¨
+	//å¡«ç©ºæ–¹æ³•
 	public  void fillBank(double a, double b) {
-		System.out.println(name + "Ê¹ÓÃ¼ÆËãÆ÷¼ÆËã½á¹û:" + a + "+" + b + "=" + useCalculator(a,b));
+		System.out.println(name + "ä½¿ç”¨è®¡ç®—å™¨è®¡ç®—ç»“æœ:" + a + "+" + b + "=" + useCalculator(a,b));
 	}
 	
 	/**
-	 * ¸Ã¹ı³ÌÖĞÈÔÎ´Éæ¼°µ½»Øµ÷»úÖÆ£¬
-	 * µ«ÊÇ²¿·ÖĞ¡Ã÷µÄ²¿·Ö¹¤×÷ÒÑ¾­ÊµÏÖÁË×ªÒÆ£¬ÓÉ¼ÆËãÆ÷À´Ğ­ÖúÊµÏÖ
+	 * è¯¥è¿‡ç¨‹ä¸­ä»æœªæ¶‰åŠåˆ°å›è°ƒæœºåˆ¶ï¼Œ
+	 * ä½†æ˜¯éƒ¨åˆ†å°æ˜çš„éƒ¨åˆ†å·¥ä½œå·²ç»å®ç°äº†è½¬ç§»ï¼Œç”±è®¡ç®—å™¨æ¥ååŠ©å®ç°
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Student stu=new Student("Ğ¡Ã÷");
+		Student stu=new Student("å°æ˜");
 		stu.fillBank(165.00,306.03);
 	}
 }

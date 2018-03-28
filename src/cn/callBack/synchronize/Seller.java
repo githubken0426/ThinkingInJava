@@ -5,17 +5,18 @@ import cn.callBack.SuperCalculator;
 
 public class Seller implements DoFillJob {
 	private String name;
-	public Seller(String name){
-		this.name=name;
+
+	public Seller(String name) {
+		this.name = name;
 	}
-	
+
 	@Override
 	public void fillBank(double a, double b, double result) {
-		System.out.println(name+"»Øµ÷º¯Êı¼ÆËã½á¹û:"+a+"+"+b+"="+result);
+		System.out.println(name + "å›è°ƒå‡½æ•°è®¡ç®—ç»“æœ:" + a + "+" + b + "=" + result);
 	}
-	
-	public void callBack(double a, double b){
-		System.out.println(name+"ÎÊÍêÎÊÌâºó£¬µÈ´ı½á¹û£¡");
-		new SuperCalculator().add(a,b,this);
+
+	public void callBack(double a, double b) {
+		System.out.println(name + "é—®å®Œé—®é¢˜åï¼Œç­‰å¾…ç»“æœï¼");
+		new SuperCalculator().add(a, b, this);
 	}
 }

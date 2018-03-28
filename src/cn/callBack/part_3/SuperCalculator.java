@@ -1,12 +1,13 @@
 package cn.callBack.part_3;
 
 /**
- * ¼ÆËãÀà
+ * è®¡ç®—å™¨
+ * 
  * @author Administrator
  *
  */
 public class SuperCalculator {
-	public static void calcADD(double a, double b,Student xiaoming) {
-		xiaoming.fillBank(a, b,a+b);
+	public static void calcADD(double a, double b, Student stu) {
+		stu.fillBank(a, b, a + b);
 	}
 }
