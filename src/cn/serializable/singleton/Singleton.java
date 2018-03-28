@@ -3,9 +3,9 @@ package cn.serializable.singleton;
 import java.io.Serializable;
 
 /**
- * ĞòÁĞ»¯ÆÆ»µµ¥ÀıÄ£Ê½
+ * åºåˆ—åŒ–ç ´åå•ä¾‹æ¨¡å¼
  * @author Administrator
- * 2016-3-4 ÏÂÎç02:02:16
+ * 2016-3-4 ä¸‹åˆ02:02:16
  *
  */
 public class Singleton implements Serializable {

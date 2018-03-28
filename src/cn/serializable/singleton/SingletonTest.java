@@ -9,11 +9,11 @@ import java.io.ObjectOutputStream;
 
 public class SingletonTest {
 	/**
-	 * Í¨¹ı¶ÔSingletonµÄĞòÁĞ»¯Óë·´ĞòÁĞ»¯µÃµ½µÄ¶ÔÏóÊÇÒ»¸öĞÂµÄ¶ÔÏó£¬Õâ¾ÍÆÆ»µÁËSingletonµÄµ¥ÀıĞÔ
-	 * ĞòÁĞ»¯»áÍ¨¹ı·´Éäµ÷ÓÃÎŞ²ÎÊıµÄ¹¹Ôì·½·¨´´½¨Ò»¸öĞÂµÄ¶ÔÏó
+	 * é€šè¿‡å¯¹Singletonçš„åºåˆ—åŒ–ä¸ååºåˆ—åŒ–å¾—åˆ°çš„å¯¹è±¡æ˜¯ä¸€ä¸ªæ–°çš„å¯¹è±¡ï¼Œè¿™å°±ç ´åäº†Singletonçš„å•ä¾‹æ€§
+	 * åºåˆ—åŒ–ä¼šé€šè¿‡åå°„è°ƒç”¨æ— å‚æ•°çš„æ„é€ æ–¹æ³•åˆ›å»ºä¸€ä¸ªæ–°çš„å¯¹è±¡
 	private Object readOrdinaryObject(boolean unshared)
         throws IOException{
-        //´Ë´¦Ê¡ÂÔ²¿·Ö´úÂë
+        //æ­¤å¤„çœç•¥éƒ¨åˆ†ä»£ç 
         Object obj;
         try {
             obj = desc.isInstantiable() ? desc.newInstance() : null;
@@ -22,7 +22,7 @@ public class SingletonTest {
                 desc.forClass().getName(),
                 "unable to create instance").initCause(ex);
         }
-        //´Ë´¦Ê¡ÂÔ²¿·Ö´úÂë
+        //æ­¤å¤„çœç•¥éƒ¨åˆ†ä»£ç 
         if (obj != null &&
             handles.lookupException(passHandle) == null &&
             desc.hasReadResolveMethod()){
