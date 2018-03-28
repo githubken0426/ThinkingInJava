@@ -7,34 +7,32 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class TransientDemoMain {
-	
-	public static void main(String[] args) throws IOException,ClassNotFoundException {
-		
-		Students stu=new Students();
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		Students stu = new Students();
 		stu.setAge(25);
-		stu.setName("student ÕÅÈı");
+		stu.setName("student å¼ ä¸‰");
 		Users user = new Users();
 		user.setId(1);
-		Users.setUserName("ÕÅ×Ü");
+		Users.setUserName("å¼ æ€»");
 		user.setPassword("123465");
 		user.setStudent(stu);
 
-		System.out.println("ĞòÁĞ»¯Ç°ĞÕÃû£º" + Users.getUserName());
-		System.out.println("ĞòÁĞ»¯Ç°ÃÜÂë£º" + user.getPassword());
+		System.out.println("åºåˆ—åŒ–å‰å§“åï¼š" + Users.getUserName());
+		System.out.println("åºåˆ—åŒ–å‰å¯†ç ï¼š" + user.getPassword());
 
 		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("E:/user.txt"));
 		os.writeObject(user);
 		os.flush();
 		os.close();
 
-		Users.setUserName("ÎÒÊÇÀî×Ü£º¾²Ì¬±äÁ¿¸ü¸ÄºóµÄÖµ");//¸Ä±ä¾²Ì¬±äÁ¿µÄÖµ
+		Users.setUserName("æˆ‘æ˜¯ææ€»ï¼šé™æ€å˜é‡æ›´æ”¹åçš„å€¼");// æ”¹å˜é™æ€å˜é‡çš„å€¼
 		ObjectInputStream is = new ObjectInputStream(new FileInputStream("E:/user.txt"));
-		Users user2 = (Users) is.readObject(); // ´ÓÁ÷ÖĞ¶ÁÈ¡UserµÄÊı¾İ
+		Users user2 = (Users) is.readObject(); // ä»æµä¸­è¯»å–Userçš„æ•°æ®
 		is.close();
 		System.out.println("\nread after Serializable: ");
 		System.out.println("username: " + Users.getUserName());
 		System.err.println("password: " + user2.getPassword());
-		
+
 		System.out.println(user2.getStudent().getName());
 	}
 }
