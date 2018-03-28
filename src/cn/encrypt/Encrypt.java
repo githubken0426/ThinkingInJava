@@ -3,7 +3,6 @@ package cn.encrypt;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
-
 /**
  * @Project:
  * @Title: Encrypt.java
@@ -14,18 +13,18 @@ import javax.crypto.SecretKey;
  * @version 1.0
  */
 public class Encrypt {
-	
-	static byte[] key ="192.168.".getBytes();
+	static byte[] key = "192.168.".getBytes();
 
 	/**
 	 * 将字符串加密 不可恢复
-	 * @param msg 需要加密的字符串
+	 * 
+	 * @param msg
+	 *            需要加密的字符串
 	 * @return 返回加密后的字符串
 	 */
 	public static String computeDigest(String msg) {
 		try {
-			java.security.MessageDigest alg = java.security.MessageDigest
-					.getInstance("SHA-1");
+			java.security.MessageDigest alg = java.security.MessageDigest.getInstance("SHA-1");
 			alg.reset();
 			alg.update(msg.getBytes());
 			byte[] hash = alg.digest();
@@ -46,6 +45,7 @@ public class Encrypt {
 
 	/**
 	 * 可逆的加密算法
+	 * 
 	 * @param str
 	 * @return
 	 * @throws Exception
@@ -67,6 +67,7 @@ public class Encrypt {
 
 	/**
 	 * 针对encode方法的解密
+	 * 
 	 * @param str
 	 * @return
 	 * @throws Exception
@@ -116,28 +117,28 @@ public class Encrypt {
 	public static byte[] hex2byte(String h) {
 		byte[] ret = new byte[h.length() / 2];
 		for (int i = 0; i < ret.length; i++) {
-			ret[i] = Integer.decode("#" + h.substring(2 * i, 2 * i + 2))
-					.byteValue();
+			ret[i] = Integer.decode("#" + h.substring(2 * i, 2 * i + 2)).byteValue();
 		}
 		return ret;
 	}
 
 	/**
 	 * 解密token返回user_id
+	 * 
 	 * @param token
-	 * @return
-	 * 2016-12-19 下午02:06:42
+	 * @return 2016-12-19 下午02:06:42
 	 */
-	public static String getUserId(String token){
+	public static String getUserId(String token) {
 		return decode(token).split("_")[0];
 	}
+
 	/**
 	 * 解密token返回device_token
+	 * 
 	 * @param token
-	 * @return
-	 * 2016-12-19 下午02:06:59
+	 * @return 2016-12-19 下午02:06:59
 	 */
-	public static String getDeviceToken(String token){
+	public static String getDeviceToken(String token) {
 		return decode(token).split("_")[2];
 	}
 }
