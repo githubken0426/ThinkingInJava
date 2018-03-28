@@ -1,12 +1,12 @@
-package cn.sort;
+package cn.singleton;
 
 public enum SingletonEnum {
 	
 	INSTANCE{
 		@Override
-		public Singleton getInstance(){
-			System.out.println("创建了单例模式！");
-			return new Singleton();
+		public Singleton2 getInstance(){
+			System.out.println("instance");
+			return new Singleton2();
 		}
 
 		@Override
@@ -21,7 +21,7 @@ public enum SingletonEnum {
 		}
 
 		@Override
-		public Singleton getInstance() {
+		public Singleton2 getInstance() {
 			return null;
 		}  
     },  
@@ -32,7 +32,7 @@ public enum SingletonEnum {
 		}
 
 		@Override
-		public Singleton getInstance() {
+		public Singleton2 getInstance() {
 			return null;
 		}  
     },  
@@ -43,11 +43,11 @@ public enum SingletonEnum {
 		}
 
 		@Override
-		public Singleton getInstance() {
+		public Singleton2 getInstance() {
 			return null;
 		}   
     };  
 	public abstract String sayHi();
-	public abstract Singleton getInstance();
+	public abstract Singleton2 getInstance();
 }
 
