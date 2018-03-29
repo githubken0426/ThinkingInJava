@@ -3,61 +3,59 @@ package importNew.finalpool;
 public class IntegerAndInt {
 	public static void main(String[] args) {
 		// testNumber(129);
-//		testNumber();
-		int i=IntegerResourceCode.valueOf(100);
+		// testNumber();
+		int i = IntegerResourceCode.valueOf(100);
 		System.out.println(i);
-		Character c=129;
-		Character c2=c;
-		System.out.println(c==c2);//true£¬´Ë´¦ÊÇ¶ÔÏóµÄÒıÓÃ
-		Character c3=128;
-		Character c4=128;
-		System.out.println(c3==c4);//false£¬²Î¿¼³£Á¿³Ø
-		Byte b1= -128;
-		Byte b2=-128;
-		System.out.println(b1==b2);
-
+		Character c = 129;
+		Character c2 = c;
+		System.out.println(c == c2);// trueï¼Œæ­¤å¤„æ˜¯å¯¹è±¡çš„å¼•ç”¨
+		Character c3 = 128;
+		Character c4 = 128;
+		System.out.println(c3 == c4);// falseï¼Œå‚è€ƒå¸¸é‡æ± 
+		Byte b1 = -128;
+		Byte b2 = -128;
+		System.out.println(b1 == b2);
 	}
 
 	public static void testNumber(int number) {
 		System.out.println(number);
 		int i = number;
-		// ×Ô¶¯×°Ïä£¬Integer i2=Integer.valueOf(127);
+		// è‡ªåŠ¨è£…ç®±ï¼ŒInteger i2=Integer.valueOf(127);
 		Integer i2 = number;
 		Integer i3 = new Integer(number);
-		// ture ,ÔÚ½øĞĞ±È½ÏÊ±£¬i2»á×Ô¶¯²ğÏäÎªint
+		// ture ,åœ¨è¿›è¡Œæ¯”è¾ƒæ—¶ï¼Œi2ä¼šè‡ªåŠ¨æ‹†ç®±ä¸ºint
 		System.out.println(i == i2);
-		// ture ,ÔÚ½øĞĞ±È½ÏÊ±£¬i3»á×Ô¶¯²ğÏäÎªint
+		// ture ,åœ¨è¿›è¡Œæ¯”è¾ƒæ—¶ï¼Œi3ä¼šè‡ªåŠ¨æ‹†ç®±ä¸ºint
 		System.out.println(i == i3);
-		// false ,Á½¸ö¶ÔÏó±È½Ï£¬Ò»¸ö´æÔÚÓÚ³£Á¿³Ø£¬Ò»¸ö´æÔÚÓÚ¶ÑÖĞ¡£
+		// false ,ä¸¤ä¸ªå¯¹è±¡æ¯”è¾ƒï¼Œä¸€ä¸ªå­˜åœ¨äºå¸¸é‡æ± ï¼Œä¸€ä¸ªå­˜åœ¨äºå †ä¸­ã€‚
 		System.out.println(i2 == i3);
 	}
 
 	/**
-	 * µ±´óÓë127Ê±,»áÓĞ²»Í¬µÄ½á¹û
+	 * å½“å¤§ä¸127æ—¶,ä¼šæœ‰ä¸åŒçš„ç»“æœ
 	 * 
-	 * 2017-4-1 ÏÂÎç01:26:12
+	 * 2017-4-1 ä¸‹åˆ01:26:12
 	 */
 	public static void testNumber() {
 		Integer i2 = -128;
 		Integer o = -128;
-		// ture ,127´æÔÚÓÚ³£Á¿³ØÖĞ£¬ÊÇÍ¬Ò»¸öÖµ
-		System.out.println("-128<number<127Ö®¼äµÄÕûÊı¾ù´æÔÚÓÚ³£Á¿³ØÖĞ:" + (i2 == o));
+		// ture ,127å­˜åœ¨äºå¸¸é‡æ± ä¸­ï¼Œæ˜¯åŒä¸€ä¸ªå€¼
+		System.out.println("-128<number<127ä¹‹é—´çš„æ•´æ•°å‡å­˜åœ¨äºå¸¸é‡æ± ä¸­:" + (i2 == o));
 
 		Integer n2 = -129;
 		Integer m = -129;
-		// false ,128²»´æÔÚ³£Á¿³ØÖĞ£¬n2ºÍm´ú±í²»Í¬µÄ¶ÔÏó£¬ÆäÖµ·Ö±ğ´æ´¢ÔÚ¶ÑÖĞ²»Í¬Î»ÖÃ¡£
-		System.out.println("-128<number<127Ö®ÍâµÄÕûÊı²»´æÔÚ³£Á¿³ØÖĞ,´ú±í²»Í¬µÄ¶ÔÏó:" + (n2 == m));
+		// false ,128ä¸å­˜åœ¨å¸¸é‡æ± ä¸­ï¼Œn2å’Œmä»£è¡¨ä¸åŒçš„å¯¹è±¡ï¼Œå…¶å€¼åˆ†åˆ«å­˜å‚¨åœ¨å †ä¸­ä¸åŒä½ç½®ã€‚
+		System.out.println("-128<number<127ä¹‹å¤–çš„æ•´æ•°ä¸å­˜åœ¨å¸¸é‡æ± ä¸­,ä»£è¡¨ä¸åŒçš„å¯¹è±¡:" + (n2 == m));
 	}
 
 	/**
-	 * Ô´Âë·ÖÎö
+	 * æºç åˆ†æ
 	 * 
-	 * @author ken 2017-4-1 ÏÂÎç01:25:53
+	 * @author ken 2017-4-1 ä¸‹åˆ01:25:53
 	 */
 	static class IntegerResourceCode {
 		/**
-		 * A cache of instances used by {@link Integer#valueOf(int)} and
-		 * auto-boxing
+		 * A cache of instances used by {@link Integer#valueOf(int)} and auto-boxing
 		 */
 		private static final Integer[] SMALL_VALUES = new Integer[256];
 		static {
@@ -68,7 +66,7 @@ public class IntegerAndInt {
 
 		public static Integer valueOf(int i) {
 			assert IntegerCache.high >= 127;
-			Integer cache[]=IntegerCache.cache;
+			Integer cache[] = IntegerCache.cache;
 			System.out.println(cache);
 			if (i >= IntegerCache.low && i <= IntegerCache.high)
 				return IntegerCache.cache[i + (-IntegerCache.low)];
@@ -83,10 +81,10 @@ public class IntegerAndInt {
 				// high value may be configured by property
 				int h = 127;
 				String integerCacheHighPropValue = "100";
-				// Ô´String integerCacheHighPropValue
+				// æºString integerCacheHighPropValue
 				// =sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
 				if (integerCacheHighPropValue != null) {
-					// Ô´int i = parseInt(integerCacheHighPropValue);
+					// æºint i = parseInt(integerCacheHighPropValue);
 					int i = Integer.valueOf(integerCacheHighPropValue);
 					i = Math.max(i, 127);
 					// Maximum array size is Integer.MAX_VALUE
@@ -98,7 +96,9 @@ public class IntegerAndInt {
 				for (int k = 0; k < cache.length; k++)
 					cache[k] = new Integer(j++);
 			}
-			private IntegerCache() {}
+
+			private IntegerCache() {
+			}
 		}
 	}
 }
