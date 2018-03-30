@@ -1,7 +1,7 @@
-package cn.stack;
+package jvm.stack;
 
 /**
- * 链表栈
+ * 链表栈(1.存储结构)
  * @author Administrator
  * 2016-9-27 11:14:55
  *
