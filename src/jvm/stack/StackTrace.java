@@ -7,7 +7,7 @@ package jvm.stack;
  * @author ken 
  * @date 2018年3月30日 上午11:33:09
  */
-public class WhoCalled {
+public class StackTrace {
 	/**
 	 * getStackTrace()方法返回一个由栈轨迹中的元素组成的数组
 	 * 每个元素表示栈中的一帧
