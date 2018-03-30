@@ -1,4 +1,6 @@
-package importNew.finalpool;
+package jvm.constantPool;
+
+import java.util.Properties;
 
 public class IntegerAndInt {
 	public static void main(String[] args) {
@@ -53,6 +55,7 @@ public class IntegerAndInt {
 	 * 
 	 * @author ken 2017-4-1 下午01:25:53
 	 */
+	private static String integerCacheHighPropValue;
 	static class IntegerResourceCode {
 		/**
 		 * A cache of instances used by {@link Integer#valueOf(int)} and auto-boxing
@@ -65,9 +68,11 @@ public class IntegerAndInt {
 		}
 
 		public static Integer valueOf(int i) {
-			assert IntegerCache.high >= 127;
+			assert IntegerCache.high >= 127;//1.7版本多了断言代码
+			
 			Integer cache[] = IntegerCache.cache;
 			System.out.println(cache);
+			
 			if (i >= IntegerCache.low && i <= IntegerCache.high)
 				return IntegerCache.cache[i + (-IntegerCache.low)];
 			return new Integer(i);
@@ -80,7 +85,7 @@ public class IntegerAndInt {
 			static {
 				// high value may be configured by property
 				int h = 127;
-				String integerCacheHighPropValue = "100";
+				integerCacheHighPropValue = "100";
 				// 源String integerCacheHighPropValue
 				// =sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
 				if (integerCacheHighPropValue != null) {
@@ -100,5 +105,20 @@ public class IntegerAndInt {
 			private IntegerCache() {
 			}
 		}
+		/**
+		 * getAndRemoveCacheProperties方法，用于获取或移除JDK对Integer设置的缓存属性，
+		 * 同时也是调整jvm：AutoBoxCacheMax选项，调整“自动装箱池”的大小 
+		 * @throws 
+		 * @date 2018年3月30日 上午10:37:28
+		 */
+		static void getAndRemoveCacheProperties() {
+	        if (!sun.misc.VM.isBooted()) {
+	            Properties props = System.getProperties();
+	            integerCacheHighPropValue =
+	                (String)props.remove("java.lang.Integer.IntegerCache.high");
+	            if (integerCacheHighPropValue != null)
+	                System.setProperties(props);  // remove from system props
+	        }
+	    }
 	}
 }
