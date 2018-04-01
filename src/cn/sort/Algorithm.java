@@ -27,7 +27,6 @@ public class Algorithm {
 	 * 最大或最小的数字被交换到了最后一位,然后再从头开始进行两两比较交换,直到倒数第二位时结束；
 	 */
 	public static void bubbleSort() {
-		System.out.println();
 		System.out.println("排序后1:");
 		int temp = 0;
 		for (int i = 0; i < a.length - 1; i++) {
@@ -42,6 +41,7 @@ public class Algorithm {
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + ",");
 		}
+		
 		System.out.println();
 		System.out.println("排序后2:");
 		for (int i = a.length - 1; i > 0; i--) {
