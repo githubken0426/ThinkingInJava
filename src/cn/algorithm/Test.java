@@ -1,54 +1,43 @@
 package cn.algorithm;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
+import com.sun.tools.javac.code.Attribute.Array;
+
+/**
+ * 随机因子:
+ * 种子数只是随机算法的起源数字，和生成的随机数字的区间无关。
+ * @author ken
+ *
+ */
 public class Test {
-	private static int a[]=new int[] { 8, 12, 13, 3, 4, 7, 9, 10 };
+	private static List<Integer> array=new ArrayList<Integer>();
+	static{
+		for(int i=20;i>0;i--){
+			Random random=new Random(i);
+			int result=random.nextInt(i);
+			if(!array.contains(result))
+				array.add(result);
+		}
+	}
+	
 	public static void main(String[] args) {
-		System.out.println("Before sort");
-		System.out.println(Arrays.toString(a));
-//		bubbleSort();
-		QuickSort.quickSort(a,0,a.length-1);
+		Integer a[]=new Integer[array.size()];
+		Integer result[]=array.toArray(a);
+		testSort(result);
+		System.out.println("排序后");
+		testSort(ExchangeSort.Bubble.bubbleSort_2(result));
 		
-		System.out.println("After sort");
-		System.out.println(Arrays.toString(a));
+		/*System.out.println(Arrays.toString(array));
+		ChangeSort.QuickSort.quickSort(array,0,array.length-1);*/
 	}
 	
-	private static void bubbleSort(){
-		for(int i=0;i<a.length-1;i++){
-			for(int j=0;j<a.length-1-i;j++){
-				int temp=0;
-				if(a[j]>a[j+1]){
-					temp = a[j];
-					a[j]= a[j+1];
-					a[j+1]=temp;
-				}
-			}
-		}
-	}
-	
-	static class QuickSort{
-		public static int getMiddle(int [] array,int low,int high){
-			int temp=array[low];
-			while(low<high){
-				while(low<high && array[high]>=temp){
-					high--;
-				}
-				array[low] = array[high];
-				while(low<high && array[low]<=temp){
-					low++;
-				}
-				array[high] = array[low];
-			}
-			array[low]=temp;
-			return low;
-		}
-		public static void quickSort(int [] array,int low,int high){
-			if(low<high){
-				int temp=getMiddle(array,low,high);
-				quickSort(array,low,temp-1);
-				quickSort(array,temp+1,high);
-			}
+	public static void testSort(Integer[] array){
+		for (int item : array) {
+			System.out.print(item);
+			System.out.print(",");
 		}
 	}
 }
