@@ -53,19 +53,19 @@ public class ExchangeSort {
 	 * 然后再按此方法对这两部分数据分别进行快速排序， 整个排序过程可以递归进行，以此达到整个数据变成有序序列；
 	 */
 	static class QuickSort {
-		public static int getMiddle(int[] list, int low, int high) {
-			int temp = list[low];// 数组第一位作为中轴
+		public static int getMiddle(int[] array, int low, int high) {
+			int temp = array[low];// 数组第一位作为中轴
 			while (low < high) {
-				while (low < high && list[high] >= temp) {
+				while (low < high && array[high] >= temp) {
 					high--;
 				}
-				list[low] = list[high];// 比中轴小的移到低端
-				while (low < high && list[low] <= temp) {
+				array[low] = array[high];// 比中轴小的移到低端
+				while (low < high && array[low] <= temp) {
 					low++;
 				}
-				list[high] = list[low];// 比中轴大的移到高端
+				array[high] = array[low];// 比中轴大的移到高端
 			}
-			list[low] = temp;// 中轴记录到尾
+			array[low] = temp;// 中轴记录到尾
 			return low;
 		}
 
@@ -74,6 +74,43 @@ public class ExchangeSort {
 				int middle = getMiddle(a, low, high);
 				quickSort(a, low, middle - 1);
 				quickSort(a, middle + 1, high);
+			}
+		}
+		
+		/**
+		 * 第二种写法
+		 * @param a
+		 * @param low
+		 * @param high
+		 * @throws 
+		 * @date 2018年4月2日 上午8:41:36
+		 */
+		public void quickSort2(int[] a, int low, int high) {
+			if (low > high)
+				return;
+			int baseNum = a[low];// 选基准值
+			int midNum;// 记录中间值
+			do {
+				while ((a[low] < baseNum) && low < high) {
+					low++;
+				}
+				while ((a[high] > baseNum) && high > low) {
+					high--;
+				}
+				if (low <= high) {
+					midNum = a[low];
+					a[low] = a[high];
+					a[high] = midNum;
+					low++;
+					high--;
+				}
+			} while (low <= high);
+			
+			if (low < high) {
+				quickSort2(a, low, high);
+			}
+			if (high > low) {
+				quickSort2(a, low, high);
 			}
 		}
 	}
