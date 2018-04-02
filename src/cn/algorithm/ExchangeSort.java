@@ -48,12 +48,13 @@ public class ExchangeSort {
 
 	/**
 	 * 交换排序 二：
+	 * 要求时间最快时。选择第一个数为p，小于p的数放在左边，大于p的数放在右边。递归的将p左边和右边的数都按照第一步进行，直到不能递归
 	 * 快速排序 
 	 * 算法思想 通过一趟排序将要排序的数据分割成独立的两部分， 其中一部分的所有数据都比另外一部分的所有数据都要小，
 	 * 然后再按此方法对这两部分数据分别进行快速排序， 整个排序过程可以递归进行，以此达到整个数据变成有序序列；
 	 */
 	static class QuickSort {
-		public static int getMiddle(int[] array, int low, int high) {
+		public static int getMiddle(Integer[] array, int low, int high) {
 			int temp = array[low];// 数组第一位作为中轴
 			while (low < high) {
 				while (low < high && array[high] >= temp) {
@@ -69,12 +70,12 @@ public class ExchangeSort {
 			return low;
 		}
 
-		public static void quickSort(int[] a, int low, int high) {
-			if (low < high) {
-				int middle = getMiddle(a, low, high);
-				quickSort(a, low, middle - 1);
-				quickSort(a, middle + 1, high);
-			}
+		public static void quickSort(Integer[] a, int low, int high) {
+			if (low > high)
+				return;
+			int middle = getMiddle(a, low, high);
+			quickSort(a, low, middle - 1);
+			quickSort(a, middle + 1, high);
 		}
 		
 		/**
@@ -85,32 +86,34 @@ public class ExchangeSort {
 		 * @throws 
 		 * @date 2018年4月2日 上午8:41:36
 		 */
-		public void quickSort2(int[] a, int low, int high) {
-			if (low > high)
+		public static void quickSort2(Integer[] a, int low, int high) {
+			if (low >= high)
 				return;
 			int baseNum = a[low];// 选基准值
 			int midNum;// 记录中间值
+			int i=low;
+			int j=high;
 			do {
-				while ((a[low] < baseNum) && low < high) {
-					low++;
+				while ((a[i] < baseNum) && i < high) {
+					i++;
 				}
-				while ((a[high] > baseNum) && high > low) {
-					high--;
+				while ((a[j] > baseNum) && j > low) {
+					j--;
 				}
-				if (low <= high) {
-					midNum = a[low];
-					a[low] = a[high];
-					a[high] = midNum;
-					low++;
-					high--;
+				if (i <= j) {
+					midNum = a[i];
+					a[i] = a[j];
+					a[j] = midNum;
+					i++;
+					j--;
 				}
-			} while (low <= high);
+			} while (i <= j);
 			
-			if (low < high) {
-				quickSort2(a, low, high);
+			if (low < j) {
+				quickSort2(a, low, j);
 			}
-			if (high > low) {
-				quickSort2(a, low, high);
+			if (high > i) {
+				quickSort2(a, i, high);
 			}
 		}
 	}

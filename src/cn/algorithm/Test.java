@@ -26,12 +26,13 @@ public class Test {
 	public static void main(String[] args) {
 		Integer a[]=new Integer[array.size()];
 		Integer result[]=array.toArray(a);
+		System.out.println("排序前");
 		testSort(result);
+		System.out.println();
 		System.out.println("排序后");
-		testSort(ExchangeSort.Bubble.bubbleSort_2(result));
-		
-		/*System.out.println(Arrays.toString(array));
-		ChangeSort.QuickSort.quickSort(array,0,array.length-1);*/
+		//testSort(ExchangeSort.Bubble.bubbleSort_2(result));
+		ExchangeSort.QuickSort.quickSort2(result,0,result.length-1);
+		testSort(result);
 	}
 	
 	public static void testSort(Integer[] array){
