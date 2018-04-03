@@ -1,7 +1,5 @@
 package designPattern.headfirst.chapter_09Iterator.anExample;
 
-import java.util.List;
-
 /**
  * 餐厅菜单
  * @ClassName: DinnerMenu 
