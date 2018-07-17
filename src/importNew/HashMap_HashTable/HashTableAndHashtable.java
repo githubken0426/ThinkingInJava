@@ -5,30 +5,30 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * HashMapºÍHashtableÇø±ğ
+ * HashMapå’ŒHashtableåŒºåˆ«
  * 
- * 1£ºHashMap²»ÊÇsynchronizedµÄ£¬Ïß³Ì²»°²È«¡£
- * 	  HashtableÊÇsynchronizedµÄ£¬Ïß³Ì°²È«µÄ,¶à¸öÏß³Ì¿ÉÒÔ¹²ÏíÒ»¸öHashtable¡£
+ * 1ï¼šHashMapä¸æ˜¯synchronizedçš„ï¼Œçº¿ç¨‹ä¸å®‰å…¨ã€‚
+ * 	  Hashtableæ˜¯synchronizedçš„ï¼Œçº¿ç¨‹å®‰å…¨çš„,å¤šä¸ªçº¿ç¨‹å¯ä»¥å…±äº«ä¸€ä¸ªHashtableã€‚
  * 
- * 2: HashMap¿ÉÒÔ´ænullµÄkey¡¢value.Hashtable²»¿ÉÒÔ¡£
+ * 2: HashMapå¯ä»¥å­˜nullçš„keyã€value.Hashtableä¸å¯ä»¥ã€‚
  * 
- * 3£ºÁíÒ»¸öÇø±ğÊÇHashMapµÄµü´úÆ÷(Iterator)ÊÇfail-fastµü´úÆ÷£¬¶øHashtableµÄEnumeratorµü´úÆ÷²»ÊÇfail-fastµÄ¡£
- *    ËùÒÔµ±ÓĞÆäËüÏß³Ì¸Ä±äÁËHashMapµÄ½á¹¹£¨Ôö¼Ó»òÕßÒÆ³ıÔªËØ£©£¬½«»áÅ×³öConcurrentModificationException£¬
- *    µ«µü´úÆ÷±¾ÉíµÄremove()·½·¨ÒÆ³ıÔªËØÔò²»»áÅ×³öConcurrentModificationExceptionÒì³£¡£
- *    µ«Õâ²¢²»ÊÇÒ»¸öÒ»¶¨·¢ÉúµÄĞĞÎª£¬Òª¿´JVM¡£ÕâÌõÍ¬ÑùÒ²ÊÇEnumerationºÍIteratorµÄÇø±ğ¡£
+ * 3ï¼šå¦ä¸€ä¸ªåŒºåˆ«æ˜¯HashMapçš„è¿­ä»£å™¨(Iterator)æ˜¯fail-fastè¿­ä»£å™¨ï¼Œè€ŒHashtableçš„Enumeratorè¿­ä»£å™¨ä¸æ˜¯fail-fastçš„ã€‚
+ *    æ‰€ä»¥å½“æœ‰å…¶å®ƒçº¿ç¨‹æ”¹å˜äº†HashMapçš„ç»“æ„ï¼ˆå¢åŠ æˆ–è€…ç§»é™¤å…ƒç´ ï¼‰ï¼Œå°†ä¼šæŠ›å‡ºConcurrentModificationExceptionï¼Œ
+ *    ä½†è¿­ä»£å™¨æœ¬èº«çš„remove()æ–¹æ³•ç§»é™¤å…ƒç´ åˆ™ä¸ä¼šæŠ›å‡ºConcurrentModificationExceptionå¼‚å¸¸ã€‚
+ *    ä½†è¿™å¹¶ä¸æ˜¯ä¸€ä¸ªä¸€å®šå‘ç”Ÿçš„è¡Œä¸ºï¼Œè¦çœ‹JVMã€‚è¿™æ¡åŒæ ·ä¹Ÿæ˜¯Enumerationå’ŒIteratorçš„åŒºåˆ«ã€‚
  *    
- *  4£ºÓÉÓÚHashtableÊÇÏß³Ì°²È«µÄ£¬µ¥Ïß³ÌÏÂĞ§ÂÊ»á±ÈHashMapÂı
+ *  4ï¼šç”±äºHashtableæ˜¯çº¿ç¨‹å®‰å…¨çš„ï¼Œå•çº¿ç¨‹ä¸‹æ•ˆç‡ä¼šæ¯”HashMapæ…¢
  *  
- *  5£ºHashMap²»ÄÜ±£Ö¤Ëæ×ÅÊ±¼äµÄÍÆÒÆMapÖĞµÄÔªËØ´ÎĞòÊÇ²»±äµÄ¡£
+ *  5ï¼šHashMapä¸èƒ½ä¿è¯éšç€æ—¶é—´çš„æ¨ç§»Mapä¸­çš„å…ƒç´ æ¬¡åºæ˜¯ä¸å˜çš„ã€‚
  * 
  * @author Administrator
- * 2016-3-1 ÏÂÎç04:13:14
+ * 2016-3-1 ä¸‹åˆ04:13:14
  *
  */
 public class HashTableAndHashtable {
 	public static  void putMap(final Map<Object,Integer> map, final int id){
 		for( int i=0;i<=id;i++){
-			final int a=i;//ÄÚ²¿ÀàÖ»ÄÜÓÃfinalĞŞÊÎ
+			final int a=i;//å†…éƒ¨ç±»åªèƒ½ç”¨finalä¿®é¥°
 			new Thread("Thread_"+i){
 				public void run(){
 					Thread.yield();
@@ -40,12 +40,12 @@ public class HashTableAndHashtable {
 	
 	public static void main(String[] args) throws InterruptedException {
 		/**
-		 * Collections.synchronizedMap()·½·¨¿ÉÒÔÊ¹HashMapÍ¬²½
+		 * Collections.synchronizedMap()æ–¹æ³•å¯ä»¥ä½¿HashMapåŒæ­¥
 		 */
 //		Map<Object,String> map=new HashMap<Object,String>();
 //		Map<Object,String> m=Collections.synchronizedMap(map);
 //		/**
-//		 * ConcurrentHashMapÊ¹HashMapÍ¬²½
+//		 * ConcurrentHashMapä½¿HashMapåŒæ­¥
 //		 */
 //		Map<Object,Integer> currentMap=new ConcurrentHashMap<Object,Integer>();
 //		putMap(currentMap, 5);
@@ -53,7 +53,7 @@ public class HashTableAndHashtable {
 //		System.out.println(currentMap);
 //		
 //		/**
-//		 * Ïß³Ì°²È«
+//		 * çº¿ç¨‹å®‰å…¨
 //		 */
 //		Map<Object,Integer> table=new Hashtable<Object,Integer>();
 //		putMap(table, 5);
