@@ -13,11 +13,11 @@ public class TransientDemoMain {
 		stu.setName("student 张三");
 		Users user = new Users();
 		user.setId(1);
-		Users.setUserName("张总");
+		user.setUserName("张总");
 		user.setPassword("123465");
 		user.setStudent(stu);
 
-		System.out.println("序列化前姓名：" + Users.getUserName());
+		System.out.println("序列化前姓名：" + user.getUserName());
 		System.out.println("序列化前密码：" + user.getPassword());
 
 		ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("E:/user.txt"));
@@ -30,9 +30,8 @@ public class TransientDemoMain {
 		Users user2 = (Users) is.readObject(); // 从流中读取User的数据
 		is.close();
 		System.out.println("\nread after Serializable: ");
-		System.out.println("username: " + Users.getUserName());
+		System.out.println("username: " + user2.getUserName());
 		System.err.println("password: " + user2.getPassword());
-
-		System.out.println(user2.getStudent().getName());
+		System.out.println("序列化后的studnet对象:"+user2.getStudent().getName());
 	}
 }
