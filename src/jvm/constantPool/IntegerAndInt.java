@@ -4,9 +4,10 @@ import java.util.Properties;
 
 public class IntegerAndInt {
 	public static void main(String[] args) {
-		// testNumber(129);
-		// testNumber();
-		int i = IntegerResourceCode.valueOf(100);
+		testNumber(129);
+		System.out.println();
+		testNumber();
+		/*int i = IntegerResourceCode.valueOf(100);
 		System.out.println(i);
 		Character c = 129;
 		Character c2 = c;
@@ -16,21 +17,22 @@ public class IntegerAndInt {
 		System.out.println(c3 == c4);// false，参考常量池
 		Byte b1 = -128;
 		Byte b2 = -128;
-		System.out.println(b1 == b2);
+		System.out.println(b1 == b2);*/
 	}
 
 	public static void testNumber(int number) {
-		System.out.println(number);
+		System.out.println("参数："+number);
 		int i = number;
 		// 自动装箱，Integer i2=Integer.valueOf(127);
 		Integer i2 = number;
-		Integer i3 = new Integer(number);
 		// ture ,在进行比较时，i2会自动拆箱为int
-		System.out.println(i == i2);
+		System.out.println("int i = Integer i2="+number+":"+(i == i2));
+		
+		Integer i3 = new Integer(number);
 		// ture ,在进行比较时，i3会自动拆箱为int
-		System.out.println(i == i3);
+		System.out.println("int i = new Integer i3="+number+":"+(i == i3));
 		// false ,两个对象比较，一个存在于常量池，一个存在于堆中。
-		System.out.println(i2 == i3);
+		System.out.println("Integer i2 = new Integer i3="+number+":"+(i2 == i3));
 	}
 
 	/**
@@ -44,8 +46,8 @@ public class IntegerAndInt {
 		// ture ,127存在于常量池中，是同一个值
 		System.out.println("-128<number<127之间的整数均存在于常量池中:" + (i2 == o));
 
-		Integer n2 = -129;
-		Integer m = -129;
+		Integer n2 = 128;
+		Integer m = 128;
 		// false ,128不存在常量池中，n2和m代表不同的对象，其值分别存储在堆中不同位置。
 		System.out.println("-128<number<127之外的整数不存在常量池中,代表不同的对象:" + (n2 == m));
 	}
