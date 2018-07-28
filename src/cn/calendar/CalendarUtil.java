@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class CalendarUtil {
-
+	
 	public static void test() {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd H:mm ss");
 		Calendar calendar = Calendar.getInstance();
