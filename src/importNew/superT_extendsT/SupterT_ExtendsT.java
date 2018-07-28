@@ -6,19 +6,19 @@ import java.util.List;
 public class SupterT_ExtendsT {
 
 	/**
-	 * <? extends T>±íÊ¾ÀàĞÍµÄÉÏ½ç,±íÊ¾°üÀ¨TÔÚÄÚµÄÈÎºÎTµÄ×ÓÀà,¾ßÓĞÈÎºÎ´ÓT¼Ì³ĞÀàĞÍµÄÁĞ±í
+	 * <? extends T>è¡¨ç¤ºç±»å‹çš„ä¸Šç•Œ,è¡¨ç¤ºåŒ…æ‹¬Tåœ¨å†…çš„ä»»ä½•Tçš„å­ç±»,å…·æœ‰ä»»ä½•ä»Tç»§æ‰¿ç±»å‹çš„åˆ—è¡¨
 	 * 
-	 * ¶ÁÈ¡£º
-	 * Äã¿ÉÒÔ¶ÁÈ¡µ½Number£¬ÒòÎªÒÔÉÏµÄÁĞ±íÒªÃ´°üº¬NumberÔªËØ£¬ÒªÃ´°üº¬NumberµÄÀàÔªËØ¡£
-	 * Äã²»ÄÜ±£Ö¤¶ÁÈ¡µ½Integer£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòµÄÊÇList<Double>¡£
-	 * Äã²»ÄÜ±£Ö¤¶ÁÈ¡µ½Double£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòµÄÊÇList<Integer>¡£
+	 * è¯»å–ï¼š
+	 * ä½ å¯ä»¥è¯»å–åˆ°Numberï¼Œå› ä¸ºä»¥ä¸Šçš„åˆ—è¡¨è¦ä¹ˆåŒ…å«Numberå…ƒç´ ï¼Œè¦ä¹ˆåŒ…å«Numberçš„ç±»å…ƒç´ ã€‚
+	 * ä½ ä¸èƒ½ä¿è¯è¯»å–åˆ°Integerï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘çš„æ˜¯List<Double>ã€‚
+	 * ä½ ä¸èƒ½ä¿è¯è¯»å–åˆ°Doubleï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘çš„æ˜¯List<Integer>ã€‚
 	 * 
-	 * Ğ´Èë£º
-	 * Äã²»ÄÜ²åÈëÒ»¸öIntegerÔªËØ£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòList<Double>¡£
-	 * Äã²»ÄÜ²åÈëÒ»¸öDoubleÔªËØ£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòList<Integer>¡£
-	 * Äã²»ÄÜ²åÈëÒ»¸öNumberÔªËØ£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòList<Integer>¡£
-	 * Äã²»ÄÜÍùList<? extends T>ÖĞ²åÈëÈÎºÎÀàĞÍµÄ¶ÔÏó(null¶ÔÏó³ıÍâ)£¬ÒòÎªÄã²»ÄÜ±£Ö¤ÁĞ±íÊµ¼ÊÖ¸ÏòµÄÀàĞÍÊÇÊ²Ã´£¬
-	 * Äã²¢²»ÄÜ±£Ö¤ÁĞ±íÖĞÊµ¼Ê´æ´¢Ê²Ã´ÀàĞÍµÄ¶ÔÏó¡£Î¨Ò»¿ÉÒÔ±£Ö¤µÄÊÇ£¬Äã¿ÉÒÔ´ÓÖĞ¶ÁÈ¡µ½T»òÕßTµÄ×ÓÀà
+	 * å†™å…¥ï¼š
+	 * ä½ ä¸èƒ½æ’å…¥ä¸€ä¸ªIntegerå…ƒç´ ï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘List<Double>ã€‚
+	 * ä½ ä¸èƒ½æ’å…¥ä¸€ä¸ªDoubleå…ƒç´ ï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘List<Integer>ã€‚
+	 * ä½ ä¸èƒ½æ’å…¥ä¸€ä¸ªNumberå…ƒç´ ï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘List<Integer>ã€‚
+	 * ä½ ä¸èƒ½å¾€List<? extends T>ä¸­æ’å…¥ä»»ä½•ç±»å‹çš„å¯¹è±¡(nullå¯¹è±¡é™¤å¤–)ï¼Œå› ä¸ºä½ ä¸èƒ½ä¿è¯åˆ—è¡¨å®é™…æŒ‡å‘çš„ç±»å‹æ˜¯ä»€ä¹ˆï¼Œ
+	 * ä½ å¹¶ä¸èƒ½ä¿è¯åˆ—è¡¨ä¸­å®é™…å­˜å‚¨ä»€ä¹ˆç±»å‹çš„å¯¹è±¡ã€‚å”¯ä¸€å¯ä»¥ä¿è¯çš„æ˜¯ï¼Œä½ å¯ä»¥ä»ä¸­è¯»å–åˆ°Tæˆ–è€…Tçš„å­ç±»
 	 * 
 	 */
 	public static void _extendsT(){
@@ -37,18 +37,18 @@ public class SupterT_ExtendsT {
 		System.out.println("Object:"+obj);
 	}
 	/**
-	 * <? super T> ±íÊ¾ÀàĞÍÏÂ½ç(Java CoreÖĞ½Ğ³¬ÀàĞÍÏŞ¶¨),±íÊ¾°üÀ¨TÔÚÄÚµÄÈÎºÎTµÄ¸¸Àà£¬¾ßÓĞÈÎºÎTµÄ³¬ÀàĞÍµÄÁĞ±í
+	 * <? super T> è¡¨ç¤ºç±»å‹ä¸‹ç•Œ(Java Coreä¸­å«è¶…ç±»å‹é™å®š),è¡¨ç¤ºåŒ…æ‹¬Tåœ¨å†…çš„ä»»ä½•Tçš„çˆ¶ç±»ï¼Œå…·æœ‰ä»»ä½•Tçš„è¶…ç±»å‹çš„åˆ—è¡¨
 	 * 
-	 * ¶ÁÈ¡£º
-	 * Äã²»ÄÜ±£Ö¤¶ÁÈ¡µ½Integer£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòList<Number>»òÕßList<Object>¡£
-	 * Äã²»ÄÜ±£Ö¤¶ÁÈ¡µ½Number£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòList<Object>¡£
-	 * Î¨Ò»¿ÉÒÔ±£Ö¤µÄÊÇ£¬Äã¿ÉÒÔ¶ÁÈ¡µ½Object»òÕßObject×ÓÀàµÄ¶ÔÏó(Äã²¢²»ÖªµÀ¾ßÌåµÄ×ÓÀàÊÇÊ²Ã´)
+	 * è¯»å–ï¼š
+	 * ä½ ä¸èƒ½ä¿è¯è¯»å–åˆ°Integerï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘List<Number>æˆ–è€…List<Object>ã€‚
+	 * ä½ ä¸èƒ½ä¿è¯è¯»å–åˆ°Numberï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘List<Object>ã€‚
+	 * å”¯ä¸€å¯ä»¥ä¿è¯çš„æ˜¯ï¼Œä½ å¯ä»¥è¯»å–åˆ°Objectæˆ–è€…Objectå­ç±»çš„å¯¹è±¡(ä½ å¹¶ä¸çŸ¥é“å…·ä½“çš„å­ç±»æ˜¯ä»€ä¹ˆ)
 	 * 
-	 * Ğ´Èë£º
-	 * Äã¿ÉÒÔ²åÈëInteger¶ÔÏó£¬ÒòÎªÉÏÊöÉùÃ÷µÄÁĞ±í¶¼Ö§³ÖInteger¡£
-	 * Äã¿ÉÒÔ²åÈëIntegerµÄ×ÓÀàµÄ¶ÔÏó£¬ÒòÎªIntegerµÄ×ÓÀàÍ¬Ê±Ò²ÊÇInteger£¬Ô­ÒòÍ¬ÉÏ¡£
-	 * Äã²»ÄÜ²åÈëNumber¶ÔÏó£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòArrayList<Integer>¡£
-	 * Äã²»ÄÜ²åÈëObject¶ÔÏó£¬ÒòÎªlist¿ÉÄÜÖ¸ÏòArrayList<Integer>
+	 * å†™å…¥ï¼š
+	 * ä½ å¯ä»¥æ’å…¥Integerå¯¹è±¡ï¼Œå› ä¸ºä¸Šè¿°å£°æ˜çš„åˆ—è¡¨éƒ½æ”¯æŒIntegerã€‚
+	 * ä½ å¯ä»¥æ’å…¥Integerçš„å­ç±»çš„å¯¹è±¡ï¼Œå› ä¸ºIntegerçš„å­ç±»åŒæ—¶ä¹Ÿæ˜¯Integerï¼ŒåŸå› åŒä¸Šã€‚
+	 * ä½ ä¸èƒ½æ’å…¥Numberå¯¹è±¡ï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘ArrayList<Integer>ã€‚
+	 * ä½ ä¸èƒ½æ’å…¥Objectå¯¹è±¡ï¼Œå› ä¸ºlistå¯èƒ½æŒ‡å‘ArrayList<Integer>
 	 */
 	public static void _superT(){
 		List<? super Integer> list=new ArrayList<Integer>();
@@ -61,12 +61,12 @@ public class SupterT_ExtendsT {
 //		list.add(1.23);
 //		list.add(new Object());
 		Number num=new Integer(10);
-//		list.add(num);//ËäÈ»numÖ¸ÏòInteger,µ«ÊÇ±¾ÖÊ»¹ÊÇNumber¶ÔÏó¡£ÎŞ·¨²åÈë
+//		list.add(num);//è™½ç„¶numæŒ‡å‘Integer,ä½†æ˜¯æœ¬è´¨è¿˜æ˜¯Numberå¯¹è±¡ã€‚æ— æ³•æ’å…¥
 		Integer i=(Integer) list.get(1);
 		System.out.println("Integer:"+i);
 		Object obj=list.get(0);
 		System.out.println("Object:"+obj);
-		System.out.println(list.contains(i));//contains()·½·¨
+		System.out.println(list.contains(i));//contains()æ–¹æ³•
 		if(i instanceof Number){
 			System.out.println("i instanceof Number:"+(i instanceof Number));
 		}

@@ -13,16 +13,16 @@ public class SupterT_ExtendsT2 {
 
 	/**
 	 * @param args
-	 * 2016-10-19 ÏÂÎç04:54:35
+	 * 2016-10-19 ä¸‹åˆ04:54:35
 	 */
 	public static void main(String[] args) {
-		//ÏÂ±ß½ç£¬°üº¬TÔÚÄÚµÄÈÎºÎTµÄ×ÓÀà
+		//ä¸‹è¾¹ç•Œï¼ŒåŒ…å«Tåœ¨å†…çš„ä»»ä½•Tçš„å­ç±»
 		List<? extends SuperClass> ecl=new ArrayList<SuperClass>();
 		ecl=new ArrayList<ChildInterface>();
 		ecl=new ArrayList<ChildClass>();
 		
 		
-		//ÉÏ±ß½ç£¬TÔÚÄÚµÄÈÎºÎTµÄ¸¸Àà
+		//ä¸Šè¾¹ç•Œï¼ŒTåœ¨å†…çš„ä»»ä½•Tçš„çˆ¶ç±»
 		List<? super ChildInterface> esu=new ArrayList<ChildInterface>();
 		esu=new ArrayList<Object>();
 		esu=new ArrayList<SuperInterface>();
