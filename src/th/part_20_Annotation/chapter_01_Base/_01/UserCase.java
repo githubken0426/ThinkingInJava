@@ -6,14 +6,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * ×¢½âÔªËØÖ»ÄÜÊÇ»ù±¾Êı¾İÀàĞÍ£¬°üº¬£º
- * String Class enum annotation(Ç¶Ì××¢½â) 
- * ÒÔ¼°ÒÔÉÏÀàĞÍµÄÊı×é¡£
+ * æ³¨è§£å…ƒç´ åªèƒ½æ˜¯åŸºæœ¬æ•°æ®ç±»å‹ï¼ŒåŒ…å«ï¼š
+ * String Class enum annotation(åµŒå¥—æ³¨è§£) 
+ * ä»¥åŠä»¥ä¸Šç±»å‹çš„æ•°ç»„ã€‚
  * @author Administrator
- * 2015-12-31 ÉÏÎç09:10:50
+ * 2015-12-31 ä¸Šåˆ09:10:50
  *
  */
-//ElementType¿ÉÒÔÓÃ¶ººÅ·Ö¸ôµÄĞÎÊ½Ö¸¶¨¶à¸öÖµ£¬Ò²¿ÉÒÔ½«@TargetÊ¡ÂÔ£¬´ú±íÖ¸È«²¿Öµ¡£
+//ElementTypeå¯ä»¥ç”¨é€—å·åˆ†éš”çš„å½¢å¼æŒ‡å®šå¤šä¸ªå€¼ï¼Œä¹Ÿå¯ä»¥å°†@Targetçœç•¥ï¼Œä»£è¡¨æŒ‡å…¨éƒ¨å€¼ã€‚
 @Target(value={ElementType.METHOD,ElementType.TYPE,ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UserCase {

@@ -8,27 +8,27 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @Target	±íÊ¾¸Ã×¢½â¿ÉÒÔÓÃÓÚÊ²Ã´µØ·½¡£¿ÉÄÜµÄElementType²ÎÊý°üÀ¨£º
+ * @Target	è¡¨ç¤ºè¯¥æ³¨è§£å¯ä»¥ç”¨äºŽä»€ä¹ˆåœ°æ–¹ã€‚å¯èƒ½çš„ElementTypeå‚æ•°åŒ…æ‹¬ï¼š
  * 
- * CONSTRUCTOR:¹¹ÔìÆ÷µÄÉùÃ÷
- * FIELD:ÓòÉùÃ÷£¨°üÀ¨enumÊµÀý£©
- * LOCAL_VARIABLE:¾Ö²¿±äÁ¿ÉùÃ÷
- * METHOD:·½·¨ÉùÃ÷
- * PACKAGE:°üÉùÃ÷,´Ë´¦×¢½â±ØÐëÔÚpackage-info.javaÎÄ¼þÀï
- * PATAMETER:²ÎÊýÉùÃ÷
- * TYPE:Àà¡¢½Ó¿Ú£¨°üÀ¨×¢½âÀàÐÍ£©»òenumÉùÃ÷
+ * CONSTRUCTOR:æž„é€ å™¨çš„å£°æ˜Ž
+ * FIELD:åŸŸå£°æ˜Žï¼ˆåŒ…æ‹¬enumå®žä¾‹ï¼‰
+ * LOCAL_VARIABLE:å±€éƒ¨å˜é‡å£°æ˜Ž
+ * METHOD:æ–¹æ³•å£°æ˜Ž
+ * PACKAGE:åŒ…å£°æ˜Ž,æ­¤å¤„æ³¨è§£å¿…é¡»åœ¨package-info.javaæ–‡ä»¶é‡Œ
+ * PATAMETER:å‚æ•°å£°æ˜Ž
+ * TYPE:ç±»ã€æŽ¥å£ï¼ˆåŒ…æ‹¬æ³¨è§£ç±»åž‹ï¼‰æˆ–enumå£°æ˜Ž
  * 
- * @Retention	±íÊ¾ÐèÒªÔÚÊ²Ã´¼¶±ð±£´æ¸Ã×¢½âÐÅÏ¢¡£¿ÉÑ¡µÄRetentionPolicy²ÎÊý°üÀ¨£º
- * SOURCE:×¢½â½«±»±àÒëÆ÷¶ªÆú
- * CLASS:×¢½âÔÚclassÎÄ¼þÖÐ¿ÉÓÃ£¬µ«»á±»JVM¶ªÆú
- * RUNTIME:VM½«ÔÚÔËÐÐÆÚÒ²±£Áô×¢½â£¬Òò´Ë¿ÉÒÔÍ¨¹ý·´Éä»úÖÆ¶ÁÈ¡×¢½âµÄÐÅÏ¢
+ * @Retention	è¡¨ç¤ºéœ€è¦åœ¨ä»€ä¹ˆçº§åˆ«ä¿å­˜è¯¥æ³¨è§£ä¿¡æ¯ã€‚å¯é€‰çš„RetentionPolicyå‚æ•°åŒ…æ‹¬ï¼š
+ * SOURCE:æ³¨è§£å°†è¢«ç¼–è¯‘å™¨ä¸¢å¼ƒ
+ * CLASS:æ³¨è§£åœ¨classæ–‡ä»¶ä¸­å¯ç”¨ï¼Œä½†ä¼šè¢«JVMä¸¢å¼ƒ
+ * RUNTIME:VMå°†åœ¨è¿è¡ŒæœŸä¹Ÿä¿ç•™æ³¨è§£ï¼Œå› æ­¤å¯ä»¥é€šè¿‡åå°„æœºåˆ¶è¯»å–æ³¨è§£çš„ä¿¡æ¯
  * 
- * @Documented	½«´Ë×¢½â°üº¬ÔÚJavadocÖÐ
+ * @Documented	å°†æ­¤æ³¨è§£åŒ…å«åœ¨Javadocä¸­
  * 
- * @Inherited	ÔÊÐí×ÓÀà¼Ì³Ð¸¸ÀàÖÐµÄ×¢½â
+ * @Inherited	å…è®¸å­ç±»ç»§æ‰¿çˆ¶ç±»ä¸­çš„æ³¨è§£
  * 
  * @author Administrator
- * 2016-3-31 ÉÏÎç11:30:34
+ * 2016-3-31 ä¸Šåˆ11:30:34
  *
  */
 @Documented

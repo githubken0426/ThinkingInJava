@@ -6,13 +6,32 @@
  *  
  * @author   
 */
+
 @PackageAnnotation
+package th.part_20_Annotation.packageinfo;
 
-package th.part_20_Annotation;
-import th.part_20_Annotation.packageinfo.PackageAnnotation;
+class PackageInfo {
+	public void common() {
+		System.out.println("sa");
+	}
+}
 
-class PackageInfo{  
-    public void common(){  
-        System.out.println("sa");  
-    }  
-}  
+class PackageInfoGeneric<T extends Throwable> {
+	private T obj;
+
+	public void set(T obj) {
+		this.obj = obj;
+	}
+
+	public void common() {
+		System.out.println(obj + "sa");
+	}
+}
+
+interface PackageInfoInterface {
+	public void test();
+}
+
+class PackageConstants {
+	public static final String ERROE_CODE = "100001";
+}

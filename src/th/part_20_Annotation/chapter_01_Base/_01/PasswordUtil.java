@@ -6,8 +6,8 @@ public class PasswordUtil {
 		return password.matches("\\w*\\d\\w*");
 	}
 	/**
-	 * description Ö¸¶¨ÁËÄ¬ÈÏÖµ£¬ËùÒÔ¿ÉÒÔÊ¡ÂÔ
-	 * id Ã»ÓĞÄ¬ÈÏÖµ£¬±ØĞë¸³Öµ£¬²»ÄÜÊ¡ÂÔ
+	 * description æŒ‡å®šäº†é»˜è®¤å€¼ï¼Œæ‰€ä»¥å¯ä»¥çœç•¥
+	 * id æ²¡æœ‰é»˜è®¤å€¼ï¼Œå¿…é¡»èµ‹å€¼ï¼Œä¸èƒ½çœç•¥
 	 * @param password
 	 * @return
 	 */
