@@ -1,6 +1,8 @@
 package th.part_12_exception.chapter_01;
 
 public class MyException2 extends Exception{
+	private static final long serialVersionUID = 1L;
+	
 	private int x;
 	public MyException2(){}
 	
