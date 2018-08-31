@@ -6,75 +6,74 @@ import th.part_12_exception.chapter_09.ClassExceptions.PopFoul;
 import th.part_12_exception.chapter_09.ClassExceptions.RaineOutException;
 import th.part_12_exception.chapter_09.ClassExceptions.Strike;
 
-
 public class StormyInning extends Inning implements Sorm {
-	
-	public StormyInning() throws RaineOutException,BaseBallException {}
-	
-	public StormyInning(String str) throws Foul,BaseBallException {}
-	
-	/**
-	 * ±àÒë³ö´í£¬·½·¨Ã»ÓĞÅ×³öÈÎºÎÒì³££¬ÔÚ´ËÅ×³öÒì³£±¨´í
-	 */
-	//public void walk()throws PopFoul{}
-	
-	/**
-	 * »ùÀà·½·¨ºÍ½Ó¿Ú·½·¨ÖØÃû£¬²»ÄÜÌí¼Ó»ùÀà·½·¨ÖĞµÄÒì³£
-	 * ³ı·Ç»ùÀàºÍ½Ó¿ÚÒì³£¶¼Ìí¼Ó
-	 */
-	//public void event()throws RaineOutException{}
-	
-	@Override
-	public void event(){}
-	
-	/**
-	 * »ùÀàÖĞÃ»ÓĞ´Ë·½·¨£¬Ôò½Ó¿ÚÖĞ·½·¨Òì³£is ok  
-	 */
-	@Override
-	public void rainHard()throws RaineOutException {
-		
+
+	public StormyInning() throws RaineOutException, BaseBallException {
 	}
+
+	public StormyInning(String str) throws Foul, BaseBallException {
+	}
+
 	/**
-	 * StrikeºÍFoul¶¼¼Ì³ĞBaseBallExceptionÒì³££¬
-	 * PopFoul¼Ì³ĞÓÚFoul
-	 * atBat()¸¸ÀàÖĞthrows Foul,Strike,
+	 * ç¼–è¯‘å‡ºé”™ï¼Œæ–¹æ³•æ²¡æœ‰æŠ›å‡ºä»»ä½•å¼‚å¸¸ï¼Œåœ¨æ­¤æŠ›å‡ºå¼‚å¸¸æŠ¥é”™
 	 */
-	
+	// public void walk()throws PopFoul{}
+
+	/**
+	 * åŸºç±»æ–¹æ³•å’Œæ¥å£æ–¹æ³•é‡åï¼Œä¸èƒ½æ·»åŠ åŸºç±»æ–¹æ³•ä¸­çš„å¼‚å¸¸ é™¤éåŸºç±»å’Œæ¥å£å¼‚å¸¸éƒ½æ·»åŠ 
+	 */
+	// public void event()throws RaineOutException{}
+
+	@Override
+	public void event() {
+	}
+
+	/**
+	 * åŸºç±»ä¸­æ²¡æœ‰æ­¤æ–¹æ³•ï¼Œåˆ™æ¥å£ä¸­æ–¹æ³•å¼‚å¸¸is ok
+	 */
+	@Override
+	public void rainHard() throws RaineOutException {
+
+	}
+
+	/**
+	 * Strikeå’ŒFouléƒ½ç»§æ‰¿BaseBallExceptionå¼‚å¸¸ï¼Œ PopFoulç»§æ‰¿äºFoul atBat()çˆ¶ç±»ä¸­throws
+	 * Foul,Strike,
+	 */
+
 	@Override
 	public void atBat() {
-	
+
 	}
-	
-	
-	
+
 	public static void main(String[] args) {
 		try {
-			StormyInning si= new StormyInning();
+			StormyInning si = new StormyInning();
 			si.atBat();
 		} catch (PopFoul e) {
 			System.out.println("PopFoul");
 			e.printStackTrace();
-		}catch (RaineOutException e) {
+		} catch (RaineOutException e) {
 			System.out.println("RaineOutException");
 			e.printStackTrace();
 		} catch (BaseBallException e) {
 			System.out.println("BaseBallException");
 			e.printStackTrace();
 		}
-		
+
 		try {
-			Inning in=new StormyInning();
+			Inning in = new StormyInning();
 			in.atBat();
 		} catch (Strike e) {
 			System.out.println("Strike");
 			e.printStackTrace();
-		}catch (Foul e) {
+		} catch (Foul e) {
 			System.out.println("Foul");
 			e.printStackTrace();
-		}catch (RaineOutException e) {
+		} catch (RaineOutException e) {
 			System.out.println("RaineOutException");
 			e.printStackTrace();
-		}catch (BaseBallException e) {
+		} catch (BaseBallException e) {
 			System.out.println("BaseBallException");
 			e.printStackTrace();
 		}

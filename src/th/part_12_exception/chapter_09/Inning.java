@@ -2,7 +2,6 @@ package th.part_12_exception.chapter_09;
 
 import th.part_12_exception.chapter_09.ClassExceptions.BaseBallException;
 import th.part_12_exception.chapter_09.ClassExceptions.Foul;
-import th.part_12_exception.chapter_09.ClassExceptions.PopFoul;
 import th.part_12_exception.chapter_09.ClassExceptions.Strike;
 
 public abstract class Inning {
@@ -13,6 +12,6 @@ public abstract class Inning {
 	
 	public  abstract  void atBat()throws Foul,Strike;
 	
-	//没有抛出任何异常,此处也可以throws PopFoul
+	//娌℃湁鎶涘嚭浠讳綍寮傚父,姝ゅ涔熷彲浠hrows PopFoul
 	public void walk(){}
 }
