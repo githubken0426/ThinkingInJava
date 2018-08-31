@@ -1,8 +1,5 @@
 package th.part_12_exception.chapter_06._02Rethorw;
 
-import th.part_12_exception.chapter_06.OneException;
-import th.part_12_exception.chapter_06.TwoException;
-
 public class ReThrowNew {
 	public static void f()throws OneException{
 		throw new OneException("throw from f()");
