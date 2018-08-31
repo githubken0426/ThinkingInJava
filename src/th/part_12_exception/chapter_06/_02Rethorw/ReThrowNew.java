@@ -5,6 +5,7 @@ public class ReThrowNew {
 		throw new OneException("throw from f()");
 	}
 	/**
+	 * 捕获异常后再次抛出，效果类似于fillInStackTrace(),原来的异常点将丢失。
 	 * 最后那个异常只是知道main，对f()一无所知
 	 * Exception都是new在堆上的对象。垃圾回收器会自动清理
 	 * @param args
