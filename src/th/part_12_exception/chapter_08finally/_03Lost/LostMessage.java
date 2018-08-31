@@ -10,7 +10,6 @@ public class LostMessage {
 	}
 
 	public static void main(String[] args) {
-
 		try {
 			try {
 				LostMessage.f();
