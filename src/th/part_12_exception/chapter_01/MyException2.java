@@ -18,7 +18,9 @@ public class MyException2 extends Exception{
 	public int value(){
 		return x;
 	}
-	
+	/**
+	 * 重写Throwable的getMessage()方法
+	 */
 	public String getMessage(){
 		return "Detail Message:"+super.getMessage();
 	}
