@@ -62,6 +62,19 @@ public class DynamicFields {
 		return fields[getFieldNumber(id)][1];
 	}
 
+	/**
+	 * public synchronized Throwable initCause(Throwable cause) {
+        if (this.cause != this)
+            throw new IllegalStateException("Can't overwrite cause");
+        if (cause == this)
+            throw new IllegalArgumentException("Self-causation not permitted");
+        this.cause = cause;
+        return this;
+    }
+    	通过源码发现：cause不能被重写，不能是自己的cause
+    	其他类型的cause应该使用initCause()
+	 * @date 2018年8月31日 下午3:37:02
+	 */
 	public Object setField(String id, Object value) throws DynamicFieldException {
 		if (value == null) {
 			DynamicFieldException df = new DynamicFieldException();
