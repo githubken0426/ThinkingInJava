@@ -1,4 +1,4 @@
-package th.part_12_exception.chapter_08finally;
+package th.part_12_exception.chapter_08finally._03Lost;
 
 public class LostMessage {
 	private static void f() throws VeryImportantException {
