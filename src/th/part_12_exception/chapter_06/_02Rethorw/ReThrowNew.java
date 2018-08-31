@@ -1,12 +1,15 @@
-package th.part_12_exception.chapter_06;
+package th.part_12_exception.chapter_06._02Rethorw;
+
+import th.part_12_exception.chapter_06.OneException;
+import th.part_12_exception.chapter_06.TwoException;
 
 public class ReThrowNew {
 	public static void f()throws OneException{
 		throw new OneException("throw from f()");
 	}
 	/**
-	 * ×îºóÄÇ¸öÒì³£Ö»ÊÇÖªµÀmain£¬¶Ôf()Ò»ÎŞËùÖª
-	 * Exception¶¼ÊÇnewÔÚ¶ÑÉÏµÄ¶ÔÏó¡£À¬»ø»ØÊÕÆ÷»á×Ô¶¯ÇåÀí
+	 * æœ€åé‚£ä¸ªå¼‚å¸¸åªæ˜¯çŸ¥é“mainï¼Œå¯¹f()ä¸€æ— æ‰€çŸ¥
+	 * Exceptionéƒ½æ˜¯newåœ¨å †ä¸Šçš„å¯¹è±¡ã€‚åƒåœ¾å›æ”¶å™¨ä¼šè‡ªåŠ¨æ¸…ç†
 	 * @param args
 	 */
 	public static void main(String[] args) {

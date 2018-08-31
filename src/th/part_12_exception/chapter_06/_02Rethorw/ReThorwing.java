@@ -1,4 +1,4 @@
-package th.part_12_exception.chapter_06;
+package th.part_12_exception.chapter_06._02Rethorw;
 
 public class ReThorwing {
 	public static void f() throws Exception {
