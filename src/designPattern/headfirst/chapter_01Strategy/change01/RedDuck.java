@@ -1,27 +1,27 @@
 package designPattern.headfirst.chapter_01Strategy.change01;
 
 /**
- * ËäÈ»ÊµÏÖÁË¹¦ÄÜ£¬µ«ÊÇ´óÁ¿ÖØ¸´´úÂë
- * ÎŞ·¨¸´ÓÃ¡£(Èç¹ûÓĞÒ»Íò¸öÑ¼×ÓÄØ£¿)
+ * è™½ç„¶å®ç°äº†åŠŸèƒ½ï¼Œä½†æ˜¯å¤§é‡é‡å¤ä»£ç 
+ * æ— æ³•å¤ç”¨ã€‚(å¦‚æœæœ‰ä¸€ä¸‡ä¸ªé¸­å­å‘¢ï¼Ÿ)
  * 
  * @author ken
- * 2017-6-9 ÏÂÎç01:49:57
+ * 2017-6-9 ä¸‹åˆ01:49:57
  */
 public class RedDuck extends Duck implements Flyable,Quackable {
 
 	@Override
 	public void display() {
-		System.out.println("ºìÉ«Ñ¼×Ó");
+		System.out.println("çº¢è‰²é¸­å­");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println("ºìÉ« fly");
+		System.out.println("çº¢è‰² fly");
 	}
 
 	@Override
 	public void quack() {
-		System.out.println("ºìÉ« quack");
+		System.out.println("çº¢è‰² quack");
 	}
 	
 }
