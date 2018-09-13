@@ -13,7 +13,7 @@ import designPattern.headfirst.chapter_04Factory.factoryMethod.Pizza;
  */
 public class SimplePizzaFactory {
 	public Pizza createPizza(String type) {
-		if(!StringUtils.isNotBlank(type))
+		if(StringUtils.isBlank(type))
 			throw new UnsupportedOperationException();
 		if(type.equals("cheese"))
 			return new NYStyleCheesePizza();
