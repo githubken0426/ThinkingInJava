@@ -14,7 +14,12 @@ public abstract class PizzaStore {
 	 * @date 2017年6月27日 下午5:46:02
 	 */
 	protected abstract Pizza createPizza(String type);
-	
+	/**
+	 * 传入字符串的方法容易造成错误。
+	 * 可以考虑使用enum、静态常量等
+	 * @param type
+	 * @date 2018年9月13日 下午3:56:16
+	 */
 	public final Pizza orderPizza(String type){
 		Pizza pizza=createPizza(type);
 		pizza.prepare();
