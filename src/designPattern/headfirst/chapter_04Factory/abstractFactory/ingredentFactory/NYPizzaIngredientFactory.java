@@ -5,6 +5,7 @@ import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.Dough
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.Sauce;
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.ny.NYCheese;
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.ny.NYDough;
+import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.ny.NYSauce;
 /**
  * 纽约原料工厂
  * @author ken
@@ -28,7 +29,7 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 	@Override
 	public Sauce createSauce() {
 		System.out.println("添加纽约风味酱");
-		return new Sauce();
+		return new NYSauce();
 	}
 
 }
