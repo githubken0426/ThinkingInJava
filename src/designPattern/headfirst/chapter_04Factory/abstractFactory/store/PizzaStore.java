@@ -1,6 +1,6 @@
 package designPattern.headfirst.chapter_04Factory.abstractFactory.store;
 
-import designPattern.headfirst.chapter_04Factory.abstractFactory.Pizza;
+import designPattern.headfirst.chapter_04Factory.abstractFactory.pizza.Pizza;
 
 public abstract class PizzaStore {
 	/**

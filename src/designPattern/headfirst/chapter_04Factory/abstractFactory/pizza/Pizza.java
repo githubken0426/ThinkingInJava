@@ -1,4 +1,4 @@
-package designPattern.headfirst.chapter_04Factory.abstractFactory;
+package designPattern.headfirst.chapter_04Factory.abstractFactory.pizza;
 
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.Cheese;
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredent.Dough;

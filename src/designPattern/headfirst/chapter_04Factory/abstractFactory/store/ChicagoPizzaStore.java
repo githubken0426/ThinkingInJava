@@ -1,10 +1,10 @@
 package designPattern.headfirst.chapter_04Factory.abstractFactory.store;
 
-import designPattern.headfirst.chapter_04Factory.abstractFactory.CheesePizza;
-import designPattern.headfirst.chapter_04Factory.abstractFactory.Pizza;
-import designPattern.headfirst.chapter_04Factory.abstractFactory.VeggiePizza;
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredentFactory.ChicagoPizzaIngredientFactory;
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredentFactory.PizzaIngredientFactory;
+import designPattern.headfirst.chapter_04Factory.abstractFactory.pizza.CheesePizza;
+import designPattern.headfirst.chapter_04Factory.abstractFactory.pizza.Pizza;
+import designPattern.headfirst.chapter_04Factory.abstractFactory.pizza.VeggiePizza;
 
 /**
  * 芝加哥披萨店

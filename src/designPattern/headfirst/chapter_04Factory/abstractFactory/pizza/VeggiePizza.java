@@ -1,16 +1,17 @@
-package designPattern.headfirst.chapter_04Factory.abstractFactory;
+package designPattern.headfirst.chapter_04Factory.abstractFactory.pizza;
 
 import designPattern.headfirst.chapter_04Factory.abstractFactory.ingredentFactory.PizzaIngredientFactory;
+
 /**
- * 奶酪披萨
+ * 素食披萨
  * @author ken
  * 
- * @date 2017年7月10日 下午3:37:04
+ * @date 2017年7月10日 下午3:36:31
  */
-public class CheesePizza extends Pizza {
+public class VeggiePizza extends Pizza {
+
 	private PizzaIngredientFactory factory;
-	
-	public CheesePizza(PizzaIngredientFactory factory){
+	public VeggiePizza(PizzaIngredientFactory factory){
 		this.factory=factory;
 	}
 	
