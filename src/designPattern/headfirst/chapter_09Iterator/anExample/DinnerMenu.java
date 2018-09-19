@@ -2,29 +2,28 @@ package designPattern.headfirst.chapter_09Iterator.anExample;
 
 /**
  * 餐厅菜单
- * @ClassName: DinnerMenu 
- * @Description: 
- * @author ken 
+ * 
+ * @ClassName: DinnerMenu
+ * @Description:
+ * @author ken
  * @date 2017年9月4日 下午5:55:54
  */
 public class DinnerMenu {
-	static final int MAX_ITEMS=6;
+	static final int MAX_ITEMS = 6;
 	int numberOfItems;
-	MenuItem [] menuItems;
-	
+	MenuItem[] menuItems;
+
 	public DinnerMenu() {
-		menuItems =new MenuItem[MAX_ITEMS];
-		
+		menuItems = new MenuItem[MAX_ITEMS];
+
 	}
-	
-	public void addItem(String name,String description,boolean vegetarian,double price) {
-		MenuItem item=new MenuItem(name,description,vegetarian,price);
-		if(numberOfItems>MAX_ITEMS)
+
+	public void addItem(String name, String description, boolean vegetarian, double price) {
+		if (numberOfItems > MAX_ITEMS)
 			throw new UnsupportedOperationException();
-		else {
-			menuItems[numberOfItems]=item;
-			numberOfItems+=1;
-		}
+		MenuItem item = new MenuItem(name, description, vegetarian, price);
+		menuItems[numberOfItems] = item;
+		numberOfItems += 1;
 	}
 
 	public MenuItem[] getMenuItems() {
