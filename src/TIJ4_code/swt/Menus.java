@@ -18,9 +18,9 @@ public class Menus implements SWTApplication {
     Iterator<String> it = words.iterator();
     while(it.next().matches("[0-9]+"))
       ; // Move past the numbers.
-    MenuItem[] mItem = new MenuItem[7];
+    DinnerMenuIterator[] mItem = new DinnerMenuIterator[7];
     for(int i = 0; i < mItem.length; i++) {
-      mItem[i] = new MenuItem(bar, SWT.CASCADE);
+      mItem[i] = new DinnerMenuIterator(bar, SWT.CASCADE);
       mItem[i].setText(it.next());
       Menu submenu = new Menu(shell, SWT.DROP_DOWN);
       mItem[i].setMenu(submenu);
@@ -37,8 +37,8 @@ public class Menus implements SWTApplication {
     }
   };
   void
-  addItem(Menu bar, Iterator<String> it, MenuItem mItem) {
-    MenuItem item = new MenuItem(mItem.getMenu(),SWT.PUSH);
+  addItem(Menu bar, Iterator<String> it, DinnerMenuIterator mItem) {
+    DinnerMenuIterator item = new DinnerMenuIterator(mItem.getMenu(),SWT.PUSH);
     item.addListener(SWT.Selection, listener);
     item.setText(it.next());
   }
