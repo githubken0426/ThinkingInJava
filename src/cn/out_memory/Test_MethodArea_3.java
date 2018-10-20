@@ -7,12 +7,12 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * ·½·¨Çø
- * Ò²¾ÍÊÇ Non-heap£¬ÊÇÓÃÀ´´æ´¢ Object Class Data¡¢³£Á¿¡¢¾²Ì¬±äÁ¿¡¢JIT ±àÒëºóµÄ´úÂëµÈ¡£
- * Èç¹û¸ÃÇøÓòÒç³ö£¬ÔòËµÃ÷Ä³ÖÖÊý¾Ý´´½¨µÄÊµÔÚÊÇÌ«¶àÁË¡£Ä£ÄâµÄ»°£¬¿ÉÒÔ²»¶Ï´´½¨ÐÂµÄ class£¬Ö±µ½Òç³öÎªÖ¹
- * 
+
+ * æ–¹æ³•åŒº
+ * ä¹Ÿå°±æ˜¯ Non-heapï¼Œæ˜¯ç”¨æ¥å­˜å‚¨ Object Class Dataã€å¸¸é‡ã€é™æ€å˜é‡ã€JIT ç¼–è¯‘åŽçš„ä»£ç ç­‰ã€‚
+ * å¦‚æžœè¯¥åŒºåŸŸæº¢å‡ºï¼Œåˆ™è¯´æ˜ŽæŸç§æ•°æ®åˆ›å»ºçš„å®žåœ¨æ˜¯å¤ªå¤šäº†ã€‚æ¨¡æ‹Ÿçš„è¯ï¼Œå¯ä»¥ä¸æ–­åˆ›å»ºæ–°çš„ classï¼Œç›´åˆ°æº¢å‡ºä¸ºæ­¢
  * @author ken
- * 2016-12-9 ÉÏÎç11:53:07
+ * 2016-12-9 ä¸Šåˆ11:53:07
  */
 public class Test_MethodArea_3 {
 	 static class MethodAreaOomObject {
