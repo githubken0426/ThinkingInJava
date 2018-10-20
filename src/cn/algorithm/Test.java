@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.sun.tools.javac.code.Attribute.Array;
-
 /**
  * 随机因子:
  * 种子数只是随机算法的起源数字，和生成的随机数字的区间无关。
