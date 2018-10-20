@@ -41,6 +41,7 @@ class Teacher implements Cloneable {
 
 }
 /**
+ * shadow copy
  * java中clone的含义：
  * 假设x是一个非空对象,应该有:
  * 1)x.clone()!=x 为true,就是说他们不是同一个对象.
@@ -53,7 +54,7 @@ class Teacher implements Cloneable {
  * @author ken 
  * @date 2018年3月15日 下午5:25:32
  */
-public class ObjectCopyForCloneable {
+public class ShadowCopyForCloneable {
 	public static void main(String[] args) {
 		Students student = new Students("晓明", 10);
 		Teacher teacher = new Teacher("张老师", 30, student);
@@ -64,11 +65,9 @@ public class ObjectCopyForCloneable {
 
 			t2.age = 32;
 			t2.name = "李老师";
-
-			System.out.println("学生名称:" + teacher.student.name + 
-					"，年龄" + teacher.student.age);
-			System.out.println("老师名称:" + teacher.name + 
-					"，年龄" + teacher.age);
+			// t2 浅copy了teacher对象，teacher只有student引用，所以student变化引用的也变化
+			System.out.println("学生名称:" + teacher.student.name + "，年龄" + teacher.student.age);
+			System.out.println("老师名称:" + teacher.name + "，年龄" + teacher.age);
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
