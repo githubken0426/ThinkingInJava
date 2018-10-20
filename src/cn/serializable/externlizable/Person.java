@@ -78,10 +78,12 @@ public class Person implements Externalizable {
 		Person p=new Person(1,"李四",23);
 		ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(path));
 		out.writeObject(p);
+		out.close();
 		
 		FileInputStream file=new FileInputStream(path);
 		ObjectInputStream in=new ObjectInputStream(file);
 		Person person=(Person) in.readObject();
+		in.close();
 		
 		System.out.println(person.getId());
 		System.out.println(person.getName());

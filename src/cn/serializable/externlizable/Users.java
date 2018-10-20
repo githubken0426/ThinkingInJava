@@ -18,7 +18,7 @@ public class Users implements Externalizable{
 	private String name;
 	/**
 	 * 实现了Exeternalizble变量无论是否被transient修饰，
-	 * 如果writeExternal()方法冲序列化了此变量，变量还是会被序列化
+	 * 如果writeExternal()方法中序列化了此变量，变量还是会被序列化
 	 */
 	private transient String password;
 	private Students student;
