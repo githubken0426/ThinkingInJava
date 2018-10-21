@@ -4,12 +4,12 @@ public class RealSubject implements Subject {
 
 	@Override
 	public void rent() {
-		System.out.println("I want to rent my house");
+		System.out.println("RealSubject:I want to rent my house");
 	}
 
 	@Override
 	public void cons(String str) {
-		System.out.println(str);
+		System.out.println("RealSubject:"+str);
 	}
 
 }

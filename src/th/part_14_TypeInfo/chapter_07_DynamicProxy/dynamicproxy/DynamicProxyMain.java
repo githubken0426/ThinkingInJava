@@ -37,7 +37,7 @@ public class DynamicProxyMain {
 
 		Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(),
 				realSubject.getClass().getInterfaces(), handler);
-		System.out.println("&&" + subject.getClass().getName());
+		System.out.println("Main:" + subject.getClass().getName());
 		subject.rent();
 		subject.cons("rent yet!");
 	}

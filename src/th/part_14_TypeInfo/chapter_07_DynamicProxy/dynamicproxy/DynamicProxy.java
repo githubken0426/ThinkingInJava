@@ -18,8 +18,7 @@ public class DynamicProxy implements InvocationHandler {
 
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("**befor rent house");
-		System.out.println("method:" + method);
+		System.out.println("**befor rent house,method:" + method);
 		/**
 		 * 当代理对象调用真实对象的方法时， 会自动的跳转到代理对象关联的handler对象的invoke方法来进行调用
 		 */
