@@ -28,6 +28,6 @@ public class Book {
 	}
 	
 	public String toString() {
-		return "Book " + getClass();
+		return "Book: " + getClass();
 	}
 }
