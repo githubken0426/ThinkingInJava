@@ -1,9 +1,9 @@
 package th.part_14_TypeInfo.chapter_07_DynamicProxy;
 
 /**
- * 代理
- * @author Administrator
- * 2015年9月14日
+ * 绨″柈浠ｇ悊
+ * @author ken
+ *
  */
 public class SimpleProxyMain {
 	public static void consumer(InterfaceProxy proxied){

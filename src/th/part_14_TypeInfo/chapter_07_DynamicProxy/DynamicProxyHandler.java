@@ -3,10 +3,10 @@ package th.part_14_TypeInfo.chapter_07_DynamicProxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 /**
- * 14.7 ¶¯Ì¬´úÀí
- * ĞèÒªÊµÏÖInvocationHandler½Ó¿Ú
+ * 14.7 åŠ¨æ€ä»£ç†
+ * éœ€è¦å®ç°InvocationHandleræ¥å£
  * @author ken
- * 2016-12-6 ÉÏÎç09:15:16
+ * 2016-12-6 ä¸Šåˆ09:15:16
  */
 public class DynamicProxyHandler implements InvocationHandler {
 	private InterfaceProxy obj;
@@ -15,16 +15,16 @@ public class DynamicProxyHandler implements InvocationHandler {
 	}
 
 	/**
-	 * ´Ë·½·¨²»ÓÃÏÔÊ¾µ÷ÓÃ
+	 * æ­¤æ–¹æ³•ä¸ç”¨æ˜¾ç¤ºè°ƒç”¨
 	 */
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
-		System.out.println("proxy£º" + proxy.getClass());
+		System.out.println("proxyï¼š" + proxy.getClass());
 		System.out.println("Method:" + method.getName() + ",args:" + args);
 		if (args != null) {
 			for (Object object : args) {
-				System.out.println("´«ÈëµÄ²ÎÊıÖµ:" + object);
+				System.out.println("ä¼ å…¥çš„å‚æ•°å€¼:" + object);
 			}
 		}
 		return method.invoke(obj, args);

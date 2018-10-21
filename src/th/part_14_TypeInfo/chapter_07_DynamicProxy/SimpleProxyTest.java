@@ -5,12 +5,12 @@ package th.part_14_TypeInfo.chapter_07_DynamicProxy;
  * 2015-9-11:上午
  */
 public class SimpleProxyTest {
-	//Ŀ�����ͳһ�Ľӿ�
+	
 	public interface InterfaceProxy {
 		void doSomething();
 		void somethingElse(String str);
 	}
-	//�򵥵Ľӿ�ʵ��
+	
 	public class RealObject implements InterfaceProxy {
 		@Override public void doSomething() {
 			System.out.println("doSomething...");
@@ -19,7 +19,7 @@ public class SimpleProxyTest {
 			System.out.println("somethingElse:"+str);
 		}
 	}
-	//����ӿ�ʵ��
+	
 	public class SimpleProxy implements InterfaceProxy {
 		private InterfaceProxy proxied;
 		public SimpleProxy(InterfaceProxy proxied){
@@ -38,12 +38,7 @@ public class SimpleProxyTest {
 		proxied.somethingElse(" bonobo");
 	}
 	
-	/**
-	 * ��Ϊconsumer()��������InterfaceProxy�ӿڣ�
-	 * simpleProxy��RealObject()��ʵ����InterfaceProxy�ӿڣ����Ի�ִ�д˲�����
-	 * @param args
-	 * 2016-12-6 ����11:29:32
-	 */
+	
 	public static void main(String[] args) {
 		SimpleProxyTest test=new SimpleProxyTest();
 		consumer(test.new RealObject());

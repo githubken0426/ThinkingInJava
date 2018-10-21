@@ -9,23 +9,23 @@ public class DynamicProxyHandlerMain {
 	}
 	/**
 	 * Proxy.newProxyInstance(ClassLoader loader, Class<?>[]
-	 * interfaces,InvocationHandler h) ¿ÉÒÔ´´½¨¶¯Ì¬´úÀí¶ÔÏó£¬
-	 * Èı¸ö²ÎÊı£º 
-	 * 1.ClassLoader Àà¼ÓÔØÆ÷£¬
-	 * 2.¸Ã´úÀíÀàÊµÏÖµÄ½Ó¿ÚÁĞ±í(²»ÊÇÀà»ò³éÏóÀà) 
-	 * 3.InvocationHandler½Ó¿ÚµÄÒ»¸öÊµÏÖ
+	 * interfaces,InvocationHandler h) å¯ä»¥åˆ›å»ºåŠ¨æ€ä»£ç†å¯¹è±¡ï¼Œ
+	 * ä¸‰ä¸ªå‚æ•°ï¼š 
+	 * 1.ClassLoader ç±»åŠ è½½å™¨ï¼Œ
+	 * 2.è¯¥ä»£ç†ç±»å®ç°çš„æ¥å£åˆ—è¡¨(ä¸æ˜¯ç±»æˆ–æŠ½è±¡ç±») 
+	 * 3.InvocationHandleræ¥å£çš„ä¸€ä¸ªå®ç°
 	 * 
 	 * @param args
-	 * 2015Äê9ÔÂ14ÈÕ
+	 * 2015å¹´9æœˆ14æ—¥
 	 */
 	public static void main(String[] args) {
 		InterfaceProxy realObject = new RealObject();
-		// consumer(realObject);//´Ë´¦µ÷ÓÃ»¹ÊÇÆÕÍ¨µÄ´úÀí
+		// consumer(realObject);//æ­¤å¤„è°ƒç”¨è¿˜æ˜¯æ™®é€šçš„ä»£ç†
 		Class<?>[] classes = realObject.getClass().getInterfaces();
 		InterfaceProxy objectProxy = (InterfaceProxy) Proxy.newProxyInstance(
 				InterfaceProxy.class.getClassLoader(),
 //				new Class[] { InterfaceProxy.class },
-				classes,//ÍÆ¼öÊ¹ÓÃ·´Éä»ñÈ¡½Ó¿ÚÁĞ±í
+				classes,//æ¨èä½¿ç”¨åå°„è·å–æ¥å£åˆ—è¡¨
 				new DynamicProxyHandler(realObject));
 		consumer(objectProxy);
 	}
