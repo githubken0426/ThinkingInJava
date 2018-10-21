@@ -3,30 +3,28 @@ package th.part_14_TypeInfo.chapter_07_DynamicProxy.dynamicproxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class DynamicProxy implements InvocationHandler{
-	//ÕæÊµµÄ´úÀí¶ÔÏó
+public class DynamicProxy implements InvocationHandler {
+	// çœŸå®çš„ä»£ç†å¯¹è±¡
 	private Object obj;
-	
+
 	/**
-	 * ¹¹Ôì·½·¨Îª´úÀí¶ÔÏó¸³Öµ
+	 * æ„é€ æ–¹æ³•ä¸ºä»£ç†å¯¹è±¡èµ‹å€¼
+	 * 
 	 * @param obj
 	 */
-	public DynamicProxy(Object obj){
-		this.obj=obj;
+	public DynamicProxy(Object obj) {
+		this.obj = obj;
 	}
-	
+
 	@Override
-	public Object invoke(Object proxy, Method method, Object[] args)
-			throws Throwable {
+	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		System.out.println("**befor rent house");
-		System.out.println("method:"+method);
+		System.out.println("method:" + method);
 		/**
-		 * µ±´úÀí¶ÔÏóµ÷ÓÃÕæÊµ¶ÔÏóµÄ·½·¨Ê±£¬
-		 * »á×Ô¶¯µÄÌø×ªµ½´úÀí¶ÔÏó¹ØÁªµÄhandler¶ÔÏóµÄinvoke·½·¨À´½øĞĞµ÷ÓÃ
+		 * å½“ä»£ç†å¯¹è±¡è°ƒç”¨çœŸå®å¯¹è±¡çš„æ–¹æ³•æ—¶ï¼Œ ä¼šè‡ªåŠ¨çš„è·³è½¬åˆ°ä»£ç†å¯¹è±¡å…³è”çš„handlerå¯¹è±¡çš„invokeæ–¹æ³•æ¥è¿›è¡Œè°ƒç”¨
 		 */
 		method.invoke(obj, args);
 		System.out.println("**after rent house");
 		return null;
 	}
-
 }

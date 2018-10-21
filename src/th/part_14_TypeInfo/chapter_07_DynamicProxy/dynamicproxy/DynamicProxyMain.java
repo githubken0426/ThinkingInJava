@@ -2,44 +2,43 @@ package th.part_14_TypeInfo.chapter_07_DynamicProxy.dynamicproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+
 /**
- * ¶¯Ì¬´úÀí²âÊÔ
- * @author Administrator
- * 2015Äê9ÔÂ14ÈÕ
+ * åŠ¨æ€ä»£ç†æµ‹è¯•
+ * 
+ * @author Administrator 2015å¹´9æœˆ14æ—¥
  */
 public class DynamicProxyMain {
 
 	public static void main(String[] args) {
-		//ÕæÊµ´úÀí¶ÔÏó
-		Subject realSubject=new RealSubject();
-		//´«ÈëÕæÊµµÄ¶ÔÏó
-		InvocationHandler handler=new DynamicProxy(realSubject);
-		
+		// çœŸå®ä»£ç†å¯¹è±¡
+		Subject realSubject = new RealSubject();
+		// ä¼ å…¥çœŸå®çš„å¯¹è±¡
+		InvocationHandler handler = new DynamicProxy(realSubject);
+
 		/**
-         * Í¨¹ıProxyµÄnewProxyInstance·½·¨À´´´½¨ÎÒÃÇµÄ´úÀí¶ÔÏó£¬ÎÒÃÇÀ´¿´¿´ÆäÈı¸ö²ÎÊı
-         * 
-         * µÚÒ»¸ö²ÎÊı handler.getClass().getClassLoader() £¬
-         * ÎÒÃÇÕâÀïÊ¹ÓÃhandlerÕâ¸öÀàµÄClassLoader¶ÔÏóÀ´¼ÓÔØÎÒÃÇµÄ´úÀí¶ÔÏó
-         * 
-         * µÚ¶ş¸ö²ÎÊırealSubject.getClass().getInterfaces()£¬
-         * ÎÒÃÇÕâÀïÎª´úÀí¶ÔÏóÌá¹©µÄ½Ó¿ÚÊÇÕæÊµ¶ÔÏóËùÊµĞĞµÄ½Ó¿Ú£¬±íÊ¾ÎÒÒª´úÀíµÄÊÇ¸ÃÕæÊµ¶ÔÏó£¬
-         * ÕâÑùÎÒ¾ÍÄÜµ÷ÓÃÕâ×é½Ó¿ÚÖĞµÄ·½·¨ÁË
-         * 
-         * µÚÈı¸ö²ÎÊıhandler£¬ ÎÒÃÇÕâÀï½«Õâ¸ö´úÀí¶ÔÏó¹ØÁªµ½ÁËÉÏ·½µÄ InvocationHandler Õâ¸ö¶ÔÏóÉÏ
-         */
-		/**
-		 * ¿ÉÄÜÎÒÒÔÎª·µ»ØµÄÕâ¸ö´úÀí¶ÔÏó»áÊÇSubjectÀàĞÍµÄ¶ÔÏó£¬»òÕßÊÇInvocationHandlerµÄ¶ÔÏó£¬
-		 * ½á¹ûÈ´²»ÊÇ£¬Ê×ÏÈÎÒÃÇ½âÊÍÒ»ÏÂÎªÊ²Ã´ÎÒÃÇÕâÀï¿ÉÒÔ½«Æä×ª»¯ÎªSubjectÀàĞÍµÄ¶ÔÏó£¿
-		 * Ô­Òò¾ÍÊÇÔÚnewProxyInstanceÕâ¸ö·½·¨µÄµÚ¶ş¸ö²ÎÊıÉÏ£¬ÎÒÃÇ¸øÕâ¸ö´úÀí¶ÔÏóÌá¹©ÁËÒ»×éÊ²Ã´½Ó¿Ú£¬
-		 * ÄÇÃ´ÎÒÕâ¸ö´úÀí¶ÔÏó¾Í»áÊµÏÖÁËÕâ×é½Ó¿Ú£¬Õâ¸öÊ±ºòÎÒÃÇµ±È»¿ÉÒÔ½«Õâ¸ö´úÀí¶ÔÏóÇ¿ÖÆÀàĞÍ×ª»¯Îª
-		 * Õâ×é½Ó¿ÚÖĞµÄÈÎÒâÒ»¸ö£¬ÒòÎªÕâÀïµÄ½Ó¿ÚÊÇSubjectÀàĞÍ£¬ËùÒÔ¾Í¿ÉÒÔ½«Æä×ª»¯ÎªSubjectÀàĞÍÁË¡£
+		 * é€šè¿‡Proxyçš„newProxyInstanceæ–¹æ³•æ¥åˆ›å»ºæˆ‘ä»¬çš„ä»£ç†å¯¹è±¡ï¼Œæˆ‘ä»¬æ¥çœ‹çœ‹å…¶ä¸‰ä¸ªå‚æ•°
+		 * 
+		 * ç¬¬ä¸€ä¸ªå‚æ•° handler.getClass().getClassLoader() ï¼Œ
+		 * æˆ‘ä»¬è¿™é‡Œä½¿ç”¨handlerè¿™ä¸ªç±»çš„ClassLoaderå¯¹è±¡æ¥åŠ è½½æˆ‘ä»¬çš„ä»£ç†å¯¹è±¡
+		 * 
+		 * ç¬¬äºŒä¸ªå‚æ•°realSubject.getClass().getInterfaces()ï¼Œ
+		 * æˆ‘ä»¬è¿™é‡Œä¸ºä»£ç†å¯¹è±¡æä¾›çš„æ¥å£æ˜¯çœŸå®å¯¹è±¡æ‰€å®è¡Œçš„æ¥å£ï¼Œè¡¨ç¤ºæˆ‘è¦ä»£ç†çš„æ˜¯è¯¥çœŸå®å¯¹è±¡ï¼Œ è¿™æ ·æˆ‘å°±èƒ½è°ƒç”¨è¿™ç»„æ¥å£ä¸­çš„æ–¹æ³•äº†
+		 * 
+		 * ç¬¬ä¸‰ä¸ªå‚æ•°handlerï¼Œ æˆ‘ä»¬è¿™é‡Œå°†è¿™ä¸ªä»£ç†å¯¹è±¡å…³è”åˆ°äº†ä¸Šæ–¹çš„ InvocationHandler è¿™ä¸ªå¯¹è±¡ä¸Š
 		 */
-	
-		Subject subject=(Subject) Proxy.newProxyInstance
-				(handler.getClass().getClassLoader(), realSubject.getClass().getInterfaces(), handler);
-		System.out.println("&&"+subject.getClass().getName());
+		/**
+		 * å¯èƒ½æˆ‘ä»¥ä¸ºè¿”å›çš„è¿™ä¸ªä»£ç†å¯¹è±¡ä¼šæ˜¯Subjectç±»å‹çš„å¯¹è±¡ï¼Œæˆ–è€…æ˜¯InvocationHandlerçš„å¯¹è±¡ï¼Œ
+		 * ç»“æœå´ä¸æ˜¯ï¼Œé¦–å…ˆæˆ‘ä»¬è§£é‡Šä¸€ä¸‹ä¸ºä»€ä¹ˆæˆ‘ä»¬è¿™é‡Œå¯ä»¥å°†å…¶è½¬åŒ–ä¸ºSubjectç±»å‹çš„å¯¹è±¡ï¼Ÿ
+		 * åŸå› å°±æ˜¯åœ¨newProxyInstanceè¿™ä¸ªæ–¹æ³•çš„ç¬¬äºŒä¸ªå‚æ•°ä¸Šï¼Œæˆ‘ä»¬ç»™è¿™ä¸ªä»£ç†å¯¹è±¡æä¾›äº†ä¸€ç»„ä»€ä¹ˆæ¥å£ï¼Œ
+		 * é‚£ä¹ˆæˆ‘è¿™ä¸ªä»£ç†å¯¹è±¡å°±ä¼šå®ç°äº†è¿™ç»„æ¥å£ï¼Œè¿™ä¸ªæ—¶å€™æˆ‘ä»¬å½“ç„¶å¯ä»¥å°†è¿™ä¸ªä»£ç†å¯¹è±¡å¼ºåˆ¶ç±»å‹è½¬åŒ–ä¸º
+		 * è¿™ç»„æ¥å£ä¸­çš„ä»»æ„ä¸€ä¸ªï¼Œå› ä¸ºè¿™é‡Œçš„æ¥å£æ˜¯Subjectç±»å‹ï¼Œæ‰€ä»¥å°±å¯ä»¥å°†å…¶è½¬åŒ–ä¸ºSubjectç±»å‹äº†ã€‚
+		 */
+
+		Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(),
+				realSubject.getClass().getInterfaces(), handler);
+		System.out.println("&&" + subject.getClass().getName());
 		subject.rent();
 		subject.cons("rent yet!");
 	}
-
 }
