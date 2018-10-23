@@ -35,7 +35,7 @@ public class WeatherData extends Observable {
 		 * 此处并没有调用notifyObservers()传递数据对象
 		 * 这表示我们使用的是pull(拉)
 		 */
-//		notifyObservers();
+		//notifyObservers();
 		/**
 		 * 推送数据push(推)
 		 */
