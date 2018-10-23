@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * servlet 3.0 支持异步
+ * servlet 3.0
  * 
  * @author ken
- * 2017-5-5 下午01:50:22
+ * 2017-5-5 01:50:22
  */
 @WebServlet(asyncSupported = true, urlPatterns = "/asyncServlet")
 public class AsynchronizedServlet extends HttpServlet {

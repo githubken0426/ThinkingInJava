@@ -19,7 +19,6 @@ import javax.servlet.ServletResponse;
             1.接收用户发送的请求
             2.调用其他的java程序来处理请求
             3.根据处理结果，返回给用户一个页面
-            
  * 
  * 1.客户端通过发送请求给Tomcat，Tomcat发送客户端的请求页面给客户端。
  * 2.用户对请求页面进行相关操作后将页面提交给Tomcat,Tomcat将其封装成一个HttpRequest对象，
@@ -45,7 +44,6 @@ import javax.servlet.ServletResponse;
  * 在多个Servlet中对某个外部对象(例如文件)的修改时务必加锁（Synchronized，或者ReentrantLock），互斥访问。
  * 属性的线程安全：ServletContext、HttpSession是线程安全的；
  * ServletRequest是非线程安全的。
- * 
  * 
  * @author ken
  * 2017-3-10 上午08:56:20
