@@ -1,5 +1,5 @@
 package designPattern.headfirst.chapter_03Decorator.theIO;
 
-public class tEST {
+public class IOTest {
 
 }
