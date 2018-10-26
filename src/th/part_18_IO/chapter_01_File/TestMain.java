@@ -8,7 +8,8 @@ import th.part_18_IO.Constant;
 
 public class TestMain {
 	public static void main(String[] args) {
-		MyFile file = new MyFile(Constant.IO_ROOT_PATH_18 + "ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01");
+		MyFile file = new MyFile(
+				Constant.IO_ROOT_PATH_18 + "ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_01");
 		String[] files = file.list(new MyFiler());
 		for (String f : files) {
 			System.out.println(f);
@@ -27,7 +28,7 @@ class MyFiler implements FilenameFilter {
 
 class MyFile extends File {
 	private static final long serialVersionUID = 1L;
-	
+
 	public MyFile(String uri) {
 		super(uri);
 	}
@@ -45,6 +46,8 @@ class MyFile extends File {
 		}
 		String str[] = new String[array.size()];
 		String result[] = (String[]) array.toArray(str);
+		// toArray()返回Object类型
+		// Object result1[] = (Object[]) array.toArray();
 		return result;
 	}
 
