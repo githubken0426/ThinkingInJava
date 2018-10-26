@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import th.part_18_IO.Constant;
@@ -16,6 +17,28 @@ import th.part_18_IO.Constant;
  *
  */
 public class Directory {
+	
+	/**
+	 * 测试
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String path = Constant.IO_ROOT_PATH_18 + "ThinkingInJava\\src\\th\\part_18_IO\\chapter_01_File\\_02";
+		if (args.length == 0) {
+			System.out.print(walk(path));
+		} else {
+			for (String str : args) {
+				System.out.println(walk(str));
+			}
+		}
+		System.out.println();
+		File [] files=local(path,".*\\.java");
+		for (File file : files) {
+			System.out.println(file.getName());
+		}
+	}
+	
 	/**
 	 * listFiles()方法是返回某个目录下所有文件和目录的绝对路径，返回的是File数组
 	 * list()方法是返回某个目录下的所有文件和目录的文件名，返回的是String数组
@@ -27,12 +50,17 @@ public class Directory {
 	 *             2017年7月18日 下午4:41:18
 	 */
 	public static File[] local(File dir, final String regex) {
+		
 		return dir.listFiles(new FilenameFilter() {
 			private Pattern pattern = Pattern.compile(regex);
-
+			
 			@Override
 			public boolean accept(File dir, String name) {
-				return pattern.matcher(new File(name).getName()).matches();
+				File f = new File(name);
+				String fName = f.getName();
+				Matcher matcher = pattern.matcher(fName);
+				boolean result=matcher.matches();
+				return result;
 			}
 		});
 	}
@@ -103,20 +131,5 @@ public class Directory {
 
 	public static ThreeInfo walk(String start) {
 		return recurseDirs(new File(start), ".*");
-	}
-
-	/**
-	 * 测试
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		if (args.length == 0) {
-			System.out.print(walk(Constant.IO_ROOT_PATH_18+"ThinkingInJava\\src\\th\\part_18_IO"));
-		} else {
-			for (String str : args) {
-				System.out.println(walk(str));
-			}
-		}
 	}
 }
