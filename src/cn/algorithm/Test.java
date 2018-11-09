@@ -12,11 +12,11 @@ import java.util.Random;
  */
 public class Test {
 	private static List<Integer> array=new ArrayList<Integer>();
-	static{
-		for(int i=20;i>0;i--){
-			Random random=new Random(i);
-			int result=random.nextInt(i);
-			if(!array.contains(result))
+	static {
+		for (int i = 20; i > 0; i--) {
+			Random random = new Random(i);
+			int result = random.nextInt(i);
+			if (!array.contains(result))
 				array.add(result);
 		}
 	}
@@ -26,11 +26,10 @@ public class Test {
 		Integer result[]=array.toArray(a);
 		System.out.println("排序前");
 		testSort(result);
-		System.out.println();
-		System.out.println("排序后");
-		//testSort(ExchangeSort.Bubble.bubbleSort_2(result));
-		ExchangeSort.QuickSort.quickSort2(result,0,result.length-1);
-		testSort(result);
+		System.out.println("\n排序后");
+		testSort(ExchangeSort.Bubble.bubbleSort_2(result));
+		//ExchangeSort.QuickSort.quickSort2(result,0,result.length-1);
+		//testSort(result);
 	}
 	
 	public static void testSort(Integer[] array){
