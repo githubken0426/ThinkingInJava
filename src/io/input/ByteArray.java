@@ -1,5 +1,7 @@
 package io.input;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
@@ -25,16 +27,15 @@ public class ByteArray {
 	 */
 	public static void printInfo() throws IOException {
 		byte byteArray [] = IoUtil.traditionConvert();
-		InputStream input=new ByteArrayInputStream(byteArray);
+		InputStream input=new BufferedInputStream(new ByteArrayInputStream(byteArray));
 		
-		ByteArrayOutputStream out = new ByteArrayOutputStream(byteArray.length);
+		OutputStream out =new BufferedOutputStream(new ByteArrayOutputStream(byteArray.length));
 		byte[] buffer = new byte[1024];
 		int postion = 0;
 		while ((postion = input.read(buffer)) != -1) 
 			out.write(buffer, 0, postion);
 		
-		byte[] data = out.toByteArray(); // 取内存中保存的数据
-		System.out.println(new String(data, "utf-8"));
+		System.out.println(new String(buffer, "utf-8"));
 	}
 	/**
 	 * FileOutputStream写入到文件
@@ -42,7 +43,7 @@ public class ByteArray {
 	 */
 	public static void writeFile() throws IOException {
 		byte byteArray [] = IoUtil.nioConvert();
-		OutputStream fileOut=new FileOutputStream(IoUtil.OUT_PATH);
+		OutputStream fileOut=new BufferedOutputStream(new FileOutputStream(IoUtil.OUT_PATH));
 		fileOut.write(byteArray,0,byteArray.length);
 		fileOut.flush();
 		fileOut.close();

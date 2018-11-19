@@ -1,5 +1,6 @@
 package io;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,12 +12,16 @@ public class IoUtil {
 	public static final String OUT_PATH = "C:\\Users\\ken\\Desktop\\Java_IO.docx";
 	/**
 	 * 传统转换
+	 * FileInputStream是字节流，BufferedInputStream是字节缓冲流，
+	 * 使用BufferedInputStream读资源比FileInputStream读取资源的效率高
+	 * （BufferedInputStream的read方法会读取尽可能多的字节），
+	 * 且FileInputStream对象的read方法会出现阻塞；
 	 * @return
 	 * @throws IOException
 	 */
 	public static byte[] traditionConvert() throws IOException {
 		File file = new File(INPUT_PATH);
-		InputStream input = new FileInputStream(file);
+		InputStream input = new BufferedInputStream(new FileInputStream(file));
 		byte[] byteArray = new byte[(int) file.length()];
 		input.read(byteArray);
 		input.close();
