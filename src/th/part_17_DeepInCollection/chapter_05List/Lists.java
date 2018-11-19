@@ -34,7 +34,7 @@ public class Lists {
 		System.out.println("list.isEmpty():"+b);
 		iterator=list.iterator();
 		listIteratro=list.listIterator();
-		//´ÓµÚÈıÎ»ÔªËØ±ãÀû
+		//ä»ç¬¬ä¸‰ä½å…ƒç´ ä¾¿åˆ©
 		listIteratro=list.listIterator(3);
 		i=list.lastIndexOf("1");
 		list.remove(1);
@@ -62,8 +62,8 @@ public class Lists {
 		ListIterator<String> it=list.listIterator();
 		it.add("47");
 		it.next();
-		it.remove();//ÒÆ³ıµ±Ç°ÓÎ±êÖ¸ÏòµÄÔªËØ
-		it.next(); //remove()²Ù×÷ºó£¬±ØĞëÒÆ¶¯ÓÎ±êµ½ÏÂÒ»¸öÔªËØ
+		it.remove();//ç§»é™¤å½“å‰æ¸¸æ ‡æŒ‡å‘çš„å…ƒç´ 
+		it.next(); //remove()æ“ä½œåï¼Œå¿…é¡»ç§»åŠ¨æ¸¸æ ‡åˆ°ä¸‹ä¸€ä¸ªå…ƒç´ 
 		it.set("47");
 	}
 	
@@ -86,9 +86,8 @@ public class Lists {
 	}
 	
 	/**
-	 * ²âÊÔLinkedList
+	 * æµ‹è¯•LinkedList
 	 */
-	
 	public static void testLinkedList(){
 		LinkedList<String> list=new LinkedList<String>();
 		list.addAll(Countries.names(3));
