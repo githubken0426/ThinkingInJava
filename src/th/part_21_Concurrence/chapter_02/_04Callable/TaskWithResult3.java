@@ -11,13 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * Ê¹ÓÃFutureTask
+ * ä½¿ç”¨FutureTask
  * 
  * @author ken
  * @param <V>
- * 2017-3-21 ÏÂÎç02:31:47
+ * 2017-3-21 ä¸‹åˆ02:31:47
  */
-
 public class TaskWithResult3<V> implements Callable<V> {
 	private String id;
 	public TaskWithResult3() {}
@@ -31,13 +30,13 @@ public class TaskWithResult3<V> implements Callable<V> {
 		return (V) (Thread.currentThread() + ":" + id);
 	}
 	/**
-	 * CompletionService±¾Éí×Ô´øÒ»¸öÏß³Ì°²È«µÄÏßĞÔ±í£¬ÎŞĞèÓÃ»§¶îÍâ´´½¨¡£
-	 * ËüÌá¹©ÁË2ÖÖ·½·¨´ÓÏßĞÔ±íÖĞÈ¡³ö½á¹û£¬
-	 * poll()ÊÇ·Ç×èÈûµÄ£¬ÈôÄ¿Ç°ÎŞ½á¹û£¬·µ»ØÒ»¸önull£¬Ïß³Ì¼ÌĞøÔËĞĞ²»×èÈû¡£
-	 * take()ÊÇ×èÈûµÄ£¬Èôµ±Ç°ÎŞ½á¹û£¬ÔòÏß³Ì×èÈû£¬Ö±µ½²úÉúÒ»¸ö½á¹û£¬
-	 * ±»È¡³öºó·µ»Ø£¬Ïß³Ì²Å¼ÌĞøÔËĞĞ¡£
+	 * CompletionServiceæœ¬èº«è‡ªå¸¦ä¸€ä¸ªçº¿ç¨‹å®‰å…¨çš„çº¿æ€§è¡¨ï¼Œæ— éœ€ç”¨æˆ·é¢å¤–åˆ›å»ºã€‚
+	 * å®ƒæä¾›äº†2ç§æ–¹æ³•ä»çº¿æ€§è¡¨ä¸­å–å‡ºç»“æœï¼Œ
+	 * poll()æ˜¯éé˜»å¡çš„ï¼Œè‹¥ç›®å‰æ— ç»“æœï¼Œè¿”å›ä¸€ä¸ªnullï¼Œçº¿ç¨‹ç»§ç»­è¿è¡Œä¸é˜»å¡ã€‚
+	 * take()æ˜¯é˜»å¡çš„ï¼Œè‹¥å½“å‰æ— ç»“æœï¼Œåˆ™çº¿ç¨‹é˜»å¡ï¼Œç›´åˆ°äº§ç”Ÿä¸€ä¸ªç»“æœï¼Œ
+	 * è¢«å–å‡ºåè¿”å›ï¼Œçº¿ç¨‹æ‰ç»§ç»­è¿è¡Œã€‚
 	 * @param exe
-	 * 2017-3-21 ÏÂÎç03:35:41
+	 * 2017-3-21 ä¸‹åˆ03:35:41
 	 */
 	static void completionService(ExecutorService exe){
 		try {
@@ -48,7 +47,7 @@ public class TaskWithResult3<V> implements Callable<V> {
 				cs.submit(new TaskWithResult3<String>(i+""));
 				Future<String> future = cs.poll();
 				if(future ==null)
-					System.out.println("ÈÎÎñÉĞÎ´Íê³É£¡");
+					System.out.println("ä»»åŠ¡å°šæœªå®Œæˆï¼");
 				else
 					System.out.println("future.get():"+future.get());
 				TimeUnit.SECONDS.sleep(3);

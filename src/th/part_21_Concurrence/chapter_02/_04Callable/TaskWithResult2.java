@@ -10,11 +10,11 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Ê¹ÓÃFutureTask
+ * ä½¿ç”¨FutureTask
  * 
  * @author ken
  * @param <V>
- * 2017-3-21 ÏÂÎç02:31:47
+ * 2017-3-21 ä¸‹åˆ02:31:47
  */
 public class TaskWithResult2<V> implements Callable<V> {
 	private String id;
@@ -26,20 +26,19 @@ public class TaskWithResult2<V> implements Callable<V> {
 	@Override
 	public V call() throws Exception {
 		for (int i = 1; i <= 3; i++) {
-			System.out.println("task sleep "+i + "Ãë");
+			System.out.println("task sleep "+i + "ï¿½ï¿½");
 			TimeUnit.SECONDS.sleep(1);
 		}
 		return (V) (Thread.currentThread() + ":" + id);
 	}
 	/**
-	 *  
-	 * ¿ÉÒÔÓÃisDone()·½·¨¼ì²éFutureÊÇ·ñÒÑ¾­Íê³É; 
-	 * Ò²¿ÉÖ±½Óµ÷ÓÃget()£¬get()»á±»×èÈûÖ±µ½ÈÎÎñ·µ»Ø½á¹û
+	 * å¯ä»¥ç”¨isDone()æ–¹æ³•æ£€æŸ¥Futureæ˜¯å¦å·²ç»å®Œæˆ; 
+	 * ä¹Ÿå¯ç›´æ¥è°ƒç”¨get()ï¼Œget()ä¼šè¢«é˜»å¡ç›´åˆ°ä»»åŠ¡è¿”å›ç»“æœ
 	 * 
 	 * @param exe
 	 * @throws InterruptedException
 	 * @throws ExecutionException
-	 * 2017-3-21 ÏÂÎç01:57:49
+	 * 2017-3-21 ä¸‹åˆ01:57:49
 	 */
 	static void futureTask(ExecutorService exe){
 		try {
@@ -47,7 +46,7 @@ public class TaskWithResult2<V> implements Callable<V> {
 //			public interface RunnableFuture extends Runnable,Future
 			
 			FutureTask<String> future = new FutureTask<String>(
-					new TaskWithResult2<String>("ÎÒÊÇÖµ"));
+					new TaskWithResult2<String>("ï¿½ï¿½ï¿½ï¿½Öµ"));
 			exe.submit(future);
 //			TimeUnit.SECONDS.sleep(4);
 			System.out.println("future.isDone()="+future.isDone());
@@ -64,17 +63,17 @@ public class TaskWithResult2<V> implements Callable<V> {
 	}
 	
 	/**
-	 * CompletionService±¾Éí×Ô´øÒ»¸öÏß³Ì°²È«µÄÏßĞÔ±í£¬ÎŞĞèÓÃ»§¶îÍâ´´½¨¡£
-	 * ËüÌá¹©ÁË2ÖÖ·½·¨´ÓÏßĞÔ±íÖĞÈ¡³ö½á¹û£¬
-	 * poll()ÊÇ·Ç×èÈûµÄ£¬ÈôÄ¿Ç°ÎŞ½á¹û£¬·µ»ØÒ»¸önull£¬Ïß³Ì¼ÌĞøÔËĞĞ²»×èÈû¡£
-	 * take()ÊÇ×èÈûµÄ£¬Èôµ±Ç°ÎŞ½á¹û£¬ÔòÏß³Ì×èÈû£¬Ö±µ½²úÉúÒ»¸ö½á¹û£¬±»È¡³ö·µ»Ø£¬Ïß³Ì²Å¼ÌĞøÔËĞĞ¡£
+	 * CompletionServiceæœ¬èº«è‡ªå¸¦ä¸€ä¸ªçº¿ç¨‹å®‰å…¨çš„çº¿æ€§è¡¨ï¼Œæ— éœ€ç”¨æˆ·é¢å¤–åˆ›å»ºã€‚
+	 * å®ƒæä¾›äº†2ç§æ–¹æ³•ä»çº¿æ€§è¡¨ä¸­å–å‡ºç»“æœï¼Œ
+	 * poll()æ˜¯éé˜»å¡çš„ï¼Œè‹¥ç›®å‰æ— ç»“æœï¼Œè¿”å›ä¸€ä¸ªnullï¼Œçº¿ç¨‹ç»§ç»­è¿è¡Œä¸é˜»å¡ã€‚
+	 * take()æ˜¯é˜»å¡çš„ï¼Œè‹¥å½“å‰æ— ç»“æœï¼Œåˆ™çº¿ç¨‹é˜»å¡ï¼Œç›´åˆ°äº§ç”Ÿä¸€ä¸ªç»“æœï¼Œè¢«å–å‡ºè¿”å›ï¼Œçº¿ç¨‹æ‰ç»§ç»­è¿è¡Œã€‚
 	 * @param exe
-	 * 2017-3-21 ÏÂÎç03:35:41
+	 * 2017-3-21 ä¸‹åˆ03:35:41
 	 */
 	static void completionService(ExecutorService exe){
 		try {
 			CompletionService<String> cs = new ExecutorCompletionService<String>(exe);
-			cs.submit(new TaskWithResult2<String>("ÎÒÊÇÖµ"));
+			cs.submit(new TaskWithResult2<String>("æˆ‘æ˜¯å€¼"));
 //			System.out.println(cs.take().isDone());
 			
 			System.out.println("future.get():"+cs.take().get());

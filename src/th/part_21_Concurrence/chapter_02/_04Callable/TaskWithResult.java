@@ -15,7 +15,7 @@ public class TaskWithResult<V> implements Callable<V> {
 		this.id=id;
 	}
 	
-	//ºÍrun()·½·¨Çø±ğÊÇ£ºcall·½·¨¿ÉÒÔÅ×³öÒì³£
+	//å’Œrun()æ–¹æ³•åŒºåˆ«æ˜¯ï¼šcallæ–¹æ³•å¯ä»¥æŠ›å‡ºå¼‚å¸¸
 	@SuppressWarnings("unchecked")
 	@Override
 	public V call() throws Exception {
@@ -23,12 +23,11 @@ public class TaskWithResult<V> implements Callable<V> {
 	}
 
 	/**
-	 * submit()·½·¨²úÉúFuture¶ÔÏó,ÊÇÒì²½¼ÆËã
+	 * submit()æ–¹æ³•äº§ç”ŸFutureå¯¹è±¡,æ˜¯å¼‚æ­¥è®¡ç®—
 	 * 
-	 * ¼ÙÉèÓĞÒ»¸öºÜºÄÊ±µÄ·µ»ØÖµĞèÒª¼ÆËã£¬²¢ÇÒÕâ¸ö·µ»ØÖµ²»ÊÇÁ¢¿ÌĞèÒªµÄ»°£¬
-	 * ÄÇÃ´¾Í¿ÉÒÔÓÃÒ»¸öÏß³ÌÈ¥¼ÆËã·µ»ØÖµ£¬¶øµ±Ç°Ïß³ÌÔÚÊ¹ÓÃÕâ¸ö·µ»ØÖµÖ®Ç°¿ÉÒÔ×öÆäËüµÄ²Ù×÷£¬
-	 * µÈµ½ĞèÒªÕâ¸ö·µ»ØÖµÊ±£¬ÔÙÍ¨¹ıFutureµÃµ½.
-	 * 
+	 * å‡è®¾æœ‰ä¸€ä¸ªå¾ˆè€—æ—¶çš„è¿”å›å€¼éœ€è¦è®¡ç®—ï¼Œå¹¶ä¸”è¿™ä¸ªè¿”å›å€¼ä¸æ˜¯ç«‹åˆ»éœ€è¦çš„è¯ï¼Œ
+	 * é‚£ä¹ˆå°±å¯ä»¥ç”¨ä¸€ä¸ªçº¿ç¨‹å»è®¡ç®—è¿”å›å€¼ï¼Œè€Œå½“å‰çº¿ç¨‹åœ¨ä½¿ç”¨è¿™ä¸ªè¿”å›å€¼ä¹‹å‰å¯ä»¥åšå…¶å®ƒçš„æ“ä½œï¼Œ
+	 * ç­‰åˆ°éœ€è¦è¿™ä¸ªè¿”å›å€¼æ—¶ï¼Œå†é€šè¿‡Futureå¾—åˆ°.
 	 * @param args
 	 * @throws InterruptedException
 	 * @throws ExecutionException
@@ -38,7 +37,7 @@ public class TaskWithResult<V> implements Callable<V> {
 		List<Future<String>> list=new ArrayList<Future<String>>();
 		List<Future<?>> list2=new ArrayList<Future<?>>();
 		for(int i=0;i<5;i++){
-			//submit²ÎÊıÒ²¿ÉÒÔÎªrunnableÀàĞÍ£¬µ«ÊÇÆä·µ»ØÖµÒ»Ö±Îªnull
+			//submitå‚æ•°ä¹Ÿå¯ä»¥ä¸ºrunnableç±»å‹ï¼Œä½†æ˜¯å…¶è¿”å›å€¼ä¸€ç›´ä¸ºnull
 			Future<?> fl=exe.submit(new Runnable(){
 				@Override
 				public void run() {
@@ -56,7 +55,7 @@ public class TaskWithResult<V> implements Callable<V> {
 		}
 		
 		for(Future<?> fs:list2){
-			System.out.println("·µ»ØÖµ£º"+fs.get());
+			System.out.println("è¿”å›å€¼:"+fs.get());
 		}
 	}
 }
