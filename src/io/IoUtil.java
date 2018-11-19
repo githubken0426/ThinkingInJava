@@ -12,10 +12,9 @@ public class IoUtil {
 	public static final String OUT_PATH = "C:\\Users\\ken\\Desktop\\Java_IO.docx";
 	/**
 	 * 传统转换
-	 * FileInputStream是字节流，BufferedInputStream是字节缓冲流，
-	 * 使用BufferedInputStream读资源比FileInputStream读取资源的效率高
-	 * （BufferedInputStream的read方法会读取尽可能多的字节），
-	 * 且FileInputStream对象的read方法会出现阻塞；
+	 * FileInputStream是字节流，FileInputStream对象的read方法会出现阻塞；
+	 * BufferedInputStream是字节缓冲流，有一个默认的缓存区,也可以自己定义大小,读取的时候先从缓存区读取数据,
+	 * 如果缓存区没有数据了,那么需要从输入源读取数据到缓存区。
 	 * @return
 	 * @throws IOException
 	 */
