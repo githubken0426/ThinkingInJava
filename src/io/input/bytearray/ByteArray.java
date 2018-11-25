@@ -1,4 +1,4 @@
-package io.input;
+package io.input.bytearray;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
