@@ -1,8 +1,8 @@
-package io.input;
+package io.input.piped;
 
 public class Piped {
 	/**
-	 * PipedInputStream类与PipedOutputStream类用于在应用程序中创建管道通信.
+	 * PipedInputStream类与PipedOutputStream类用于不同线程之间的相互通信.
 	 * 一个PipedInputStream实例对象必须和一个PipedOutputStream实例对象进行连接而产生一个通信管道.
 	 * PipedOutputStream可以向管道中写入数据,PipedIntputStream可以读取PipedOutputStream向管道中写入的数据.
 	 * 
