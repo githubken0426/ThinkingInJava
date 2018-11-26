@@ -9,14 +9,14 @@ import java.util.Arrays;
  * 
  */
 public class Algorithm {
-	private static int a[] = new int[] { 8, 12, 13, 3, 4, 7, 9, 10 };
+	private static int a[] = new int[] { 8, 12, 13, 3, 4, 7, 9, 10,1 };
 	public static void main(String[] args) {
 		System.out.println("=======排序前==========");
 		System.out.println(Arrays.toString(a));
-		insertSort();
+		//insertSort();
 		// shellSort();
 		// bubbleSort();
-		// QuickSort.quickSort(a, 0, a.length-1);
+		ExchangeSort.QuickSort.quickSort(a, 0, a.length-1);
 		System.out.println();
 		System.out.println("=======排序后==========");
 		System.out.println(Arrays.toString(a));
