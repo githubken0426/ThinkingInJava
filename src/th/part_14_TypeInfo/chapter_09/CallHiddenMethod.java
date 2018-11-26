@@ -5,15 +5,15 @@ import java.lang.reflect.Method;
 import th.part_14_TypeInfo.chapter_09._01hidden.B;
 
 /**
- * Í¨¹ı·´Éä»úÖÆ»ñÈ¡Ë½ÓĞ·½·¨
+ * é€šè¿‡åå°„æœºåˆ¶è·å–ç§æœ‰æ–¹æ³•
  * @author Administrator
- * 2015Äê9ÔÂ16ÈÕ
+ * 2015å¹´9æœˆ16æ—¥
  */
 public class CallHiddenMethod {
 	
 	public static void getHiddenMethod(Object obj,String methodName,String parm,int age) throws Exception{
 		/**
-		 * ·´Éä´«²ÎÊı
+		 * åå°„ä¼ å‚æ•°
 		 */
 		Method methods =obj.getClass().getDeclaredMethod(methodName,new Class[]{String.class,int.class});
 		methods.setAccessible(true);
