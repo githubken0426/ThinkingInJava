@@ -45,20 +45,6 @@ public class ExchangeSort {
 	}
 
 	/**
-	 * 第一步：首先我们从数组的left位置取出该数（20）作为基准（base）参照物。
-	 * 第二步：从数组的right位置向前找，一直找到比（base）小的数，
-                如果找到，将此数赋给left位置（也就是将10赋给20），
-                此时数组为：10，40，50，10，60，
-            left和right指针分别为前后的10。
-     * 第三步：从数组的left位置向后找，一直找到比（base）大的数，
-                 如果找到，将此数赋给right的位置（也就是40赋给10），
-                 此时数组为：10，40，50，40，60，
-             left和right指针分别为前后的40。
-	 * 第四步：重复“第二,第三“步骤，直到left和right指针重合，
-             最后将（base）插入到40的位置，
-             此时数组值为： 10，20，50，40，60，至此完成一次排序。
-	 * 第五步：此时20已经潜入到数组的内部，20的左侧一组数都比20小，20的右侧作为一组数都比20大，
-            以20为切入点对左右两边数按照"第一，第二，第三，第四"步骤进行，最终快排大功告成。
 	 * 交换排序 二：要求时间最快时。 
 	 * 选择第一个数为a，小于a的数放在左边，大于a的数放在右边,递归的将a左边和右边的数都按照第一步进行，直到不能递归.
 	 * 
@@ -66,60 +52,47 @@ public class ExchangeSort {
 	 * 然后再按此方法对这两部分数据分别进行快速排序, 整个排序过程可以递归进行，以此达到整个数据变成有序序列；
 	 */
 	public static class QuickSort {
-		public static void quickSort(int[] a, int low, int high) {
-			int start = low;
-			int end = high;
-			int key = a[low];
+		public static int[] quickSort(int[] array, int left, int right) {
+			int start = left;
+			int end = right;
+			// 第一步：首先我们从数组的left位置取出基准数。
+			int key = array[left];
 			while (end > start) {
-				// 从后往前比较
-				while (end > start && a[end] >= key) // 如果没有比关键值小的，比较下一个，直到有比关键值小的交换位置，然后又从前往后比较
+				/**
+				 * 第二步：从数组的right位置向前找，一直找到比（key）小的数，如果找到，将此数赋给left位置（也就是将10赋给20）.
+				 * 此时数组为：10，40，50，10，60，left和right指针分别为前后的10。
+				 */
+				while (end > start && array[end] >= key)
 					end--;
-				if (a[end] <= key) {
-					int temp = a[end];
-					a[end] = a[start];
-					a[start] = temp;
+				if (array[end] <= key) {
+					int temp = array[end];
+					array[end] = array[start];
+					array[start] = temp;
 				}
-				// 从前往后比较
-				while (end > start && a[start] <= key)// 如果没有比关键值大的，比较下一个，直到有比关键值大的交换位置
+				/**
+				 * 第三步：从数组的left位置向后找，一直找到比（key）大的数， 如果找到，将此数赋给right的位置（也就是40赋给right侧10）,
+				 * 此时数组为：10，40，50，10，60，left和right指针分别为前后的40。
+				 */
+				while (end > start && array[start] <= key)
 					start++;
-				if (a[start] >= key) {
-					int temp = a[start];
-					a[start] = a[end];
-					a[end] = temp;
+				if (array[start] >= key) {
+					int temp = array[start];
+					array[start] = array[end];
+					array[end] = temp;
 				}
-				// 此时第一次循环比较结束，关键值的位置已经确定了。左边的值都比关键值小，右边的值都比关键值大，但是两边的顺序还有可能是不一样的，进行下面的递归调用
+				/**
+				 * 第四步：重复“第二,第三“步骤，直到left和right指针重合，最后将（base）插入到40的位置， 此时数组值为：
+				 * 10，20，50，40，60，至此完成一次排序。 第五步：此时20已经潜入到数组的内部，20的左侧一组数都比20小，20的右侧作为一组数都比20大，
+				 * 以20为切入点对左右两边数按照"第一，第二，第三，第四"步骤进行，最终快排大功告成。
+				 */
 			}
-			// 递归
-			if (start > low)
-				quickSort(a, low, start - 1);// 左边序列。第一个索引位置到关键值索引-1
-			if (end < high)
-				quickSort(a, end + 1, high);// 右边序列。从关键值索引+1到最后一个
+			// 左边序列。第一个索引位置到关键值索引-1
+			if (start > left)
+				quickSort(array, left, start - 1);
+			// 右边序列。从关键值索引+1到最后一个
+			if (end < right)
+				quickSort(array, end + 1, right);
+			return array;
 		}
-
-		public static int getMiddle(int[] array, int low, int high) {
-			int temp = array[low];// 数组第一位作为中轴
-			while (low < high) {
-				while (low < high && array[high] >= temp) {
-					high--;
-				}
-				array[low] = array[high];// 比中轴小的移到低端
-				while (low < high && array[low] <= temp) {
-					low++;
-				}
-				array[high] = array[low];// 比中轴大的移到高端
-			}
-			array[low] = temp;// 中轴记录到尾
-			return low;
-		}
-
-		public static void quickSort0(int[] a, int low, int high) {
-			if (low > high)
-				return;
-			int middle = getMiddle(a, low, high);
-			quickSort0(a, low, middle - 1);
-			quickSort0(a, middle + 1, high);
-		}
-
 	}
-
 }
