@@ -11,44 +11,36 @@ import java.util.concurrent.TimeUnit;
 /**
  * ThreadPoolExecutor extends AbstractExecutorService 
  * AbstractExecutorService implements ExecutorService 
- * ExecutorsÀàµÄµ×²ãÊµÏÖ±ãÊÇThreadPoolExecutor
+ * Executorsç±»çš„åº•å±‚å®ç°ä¾¿æ˜¯ThreadPoolExecutor
  * 
- * ExecutorServiceµÄsubmit()ºÍexecute()·½·¨Çø±ğ£º
- * submit()ÓĞ·µ»ØÖµ£¬½ÓÊÕCallable<T>,Runnable,TµÈ²ÎÊı,Í¨³£ºÍFutureÒ»ÆğÊ¹ÓÃ
- * execute()Ã»ÓĞ·µ»ØÖµ£¬Ö»½ÓÊÕRunnable
- * 
- * @author Administrator 2016-4-28 ÉÏÎç10:52:44
+ * ExecutorServiceçš„submit()å’Œexecute()æ–¹æ³•åŒºåˆ«ï¼š
+ * submit()æœ‰è¿”å›å€¼ï¼Œæ¥æ”¶Callable<T>,Runnable,Tç­‰å‚æ•°,é€šå¸¸å’ŒFutureä¸€èµ·ä½¿ç”¨
+ * execute()æ²¡æœ‰è¿”å›å€¼ï¼Œåªæ¥æ”¶Runnable
+ * @author Administrator 2016-4-28 ä¸Šåˆ10:52:44
  * 
  */
 public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 
 	/**
-	 * 1.corePoolSize:ºËĞÄÏß³ÌÊı,Ïß³Ì³ØÎ¬»¤Ïß³ÌµÄ×îÉÙÊıÁ¿
+	 * 1.corePoolSize:æ ¸å¿ƒçº¿ç¨‹æ•°,çº¿ç¨‹æ± ç»´æŠ¤çº¿ç¨‹çš„æœ€å°‘æ•°é‡
+	 * 2.maximumPoolSize:çº¿ç¨‹æ± ç»´æŠ¤çº¿ç¨‹çš„æœ€å¤§æ•°é‡
+	 * 3.keepAliveTime:å½“çº¿ç¨‹ç©ºé—²æ—¶é—´è¾¾åˆ°keepAliveTimeï¼Œ
+	 * è¯¥çº¿ç¨‹ä¼šé€€å‡ºï¼Œç›´åˆ°çº¿ç¨‹æ•°é‡ç­‰äºcorePoolSizeã€‚
+	 * æ ¸å¿ƒçº¿ç¨‹åœ¨allowCoreThreadTimeoutè¢«è®¾ç½®ä¸ºtrueæ—¶ä¼šè¶…æ—¶é€€å‡ºï¼Œé»˜è®¤æƒ…å†µä¸‹ä¸ä¼šé€€å‡º
+	 * 4.unit:çº¿ç¨‹æ± ç»´æŠ¤çº¿ç¨‹æ‰€å…è®¸çš„ç©ºé—²æ—¶é—´çš„å•ä½
+	 * 5.workQueue:çº¿ç¨‹æ± æ‰€ä½¿ç”¨çš„ç¼“å†²é˜Ÿåˆ— 
+	 * 6.handlerï¼šçº¿ç¨‹æ± å¯¹æ‹’ç»ä»»åŠ¡çš„å¤„ç†ç­–ç•¥
+	 * 1.1 å¦‚æœæ­¤æ—¶çº¿ç¨‹æ± ä¸­çš„æ•°é‡å°äºcorePoolSizeï¼Œ
+	 * å³ä½¿çº¿ç¨‹æ± ä¸­çš„çº¿ç¨‹éƒ½å¤„äºç©ºé—²çŠ¶æ€ï¼Œä¹Ÿè¦åˆ›å»ºæ–°çš„çº¿ç¨‹æ¥å¤„ç†è¢«æ·»åŠ çš„ä»»åŠ¡
 	 * 
-	 * 2.maximumPoolSize:Ïß³Ì³ØÎ¬»¤Ïß³ÌµÄ×î´óÊıÁ¿
+	 * 1.2 å¦‚æœæ­¤æ—¶çº¿ç¨‹æ± ä¸­çš„æ•°é‡ç­‰äº corePoolSizeï¼Œ
+	 * ä½†æ˜¯ç¼“å†²é˜Ÿåˆ— workQueueæœªæ»¡ï¼Œé‚£ä¹ˆä»»åŠ¡è¢«æ”¾å…¥ç¼“å†²é˜Ÿåˆ—.
+	 * 1.3 å¦‚æœæ­¤æ—¶çº¿ç¨‹æ± ä¸­çš„æ•°é‡å¤§äºcorePoolSizeï¼Œç¼“å†²é˜Ÿåˆ—workQueueæ»¡ï¼Œ
+	 * å¹¶ä¸”çº¿ç¨‹æ± ä¸­çš„æ•°é‡å°äºmaximumPoolSizeï¼Œå»ºæ–°çš„çº¿ç¨‹æ¥å¤„ç†è¢«æ·»åŠ çš„ä»»åŠ¡.
 	 * 
-	 * 3.keepAliveTime:µ±Ïß³Ì¿ÕÏĞÊ±¼ä´ïµ½keepAliveTime£¬
-	 * ¸ÃÏß³Ì»áÍË³ö£¬Ö±µ½Ïß³ÌÊıÁ¿µÈÓÚcorePoolSize¡£
-	 * ºËĞÄÏß³ÌÔÚallowCoreThreadTimeout±»ÉèÖÃÎªtrueÊ±»á³¬Ê±ÍË³ö£¬Ä¬ÈÏÇé¿öÏÂ²»»áÍË³ö
-	 * 
-	 * 4.unit:Ïß³Ì³ØÎ¬»¤Ïß³ÌËùÔÊĞíµÄ¿ÕÏĞÊ±¼äµÄµ¥Î»
-	 * 
-	 * 5.workQueue:Ïß³Ì³ØËùÊ¹ÓÃµÄ»º³å¶ÓÁĞ 
-	 * 
-	 * 6.handler£ºÏß³Ì³Ø¶Ô¾Ü¾øÈÎÎñµÄ´¦Àí²ßÂÔ
-	 * 
-	 * 1.1 Èç¹û´ËÊ±Ïß³Ì³ØÖĞµÄÊıÁ¿Ğ¡ÓÚcorePoolSize£¬
-	 * ¼´Ê¹Ïß³Ì³ØÖĞµÄÏß³Ì¶¼´¦ÓÚ¿ÕÏĞ×´Ì¬£¬Ò²Òª´´½¨ĞÂµÄÏß³ÌÀ´´¦Àí±»Ìí¼ÓµÄÈÎÎñ
-	 * 
-	 * 1.2 Èç¹û´ËÊ±Ïß³Ì³ØÖĞµÄÊıÁ¿µÈÓÚ corePoolSize£¬
-	 * µ«ÊÇ»º³å¶ÓÁĞ workQueueÎ´Âú£¬ÄÇÃ´ÈÎÎñ±»·ÅÈë»º³å¶ÓÁĞ.
-	 * 
-	 * 1.3 Èç¹û´ËÊ±Ïß³Ì³ØÖĞµÄÊıÁ¿´óÓÚcorePoolSize£¬»º³å¶ÓÁĞworkQueueÂú£¬
-	 * ²¢ÇÒÏß³Ì³ØÖĞµÄÊıÁ¿Ğ¡ÓÚmaximumPoolSize£¬½¨ĞÂµÄÏß³ÌÀ´´¦Àí±»Ìí¼ÓµÄÈÎÎñ.
-	 * 
-	 * 1.4 Èç¹û´ËÊ±Ïß³Ì³ØÖĞµÄÊıÁ¿´óÓÚcorePoolSize£¬»º³å¶ÓÁĞworkQueueÂú£¬
-	 * ²¢ÇÒÏß³Ì³ØÖĞµÄÊıÁ¿µÈÓÚmaximumPoolSize£¬ÔòÒÑ³¬³öÏß³Ì³ØµÄ´¦ÀíÄÜÁ¦£¬
-	 * Ïß³Ì³Ø»á¾Ü¾ø´¦ÀíÈÎÎñ¶øÅ×³öÒì³£,¿ÉÒÔÍ¨¹ıhandlerËùÖ¸¶¨µÄ²ßÂÔÀ´´¦Àí´ËÒì³£
+	 * 1.4 å¦‚æœæ­¤æ—¶çº¿ç¨‹æ± ä¸­çš„æ•°é‡å¤§äºcorePoolSizeï¼Œç¼“å†²é˜Ÿåˆ—workQueueæ»¡ï¼Œ
+	 * å¹¶ä¸”çº¿ç¨‹æ± ä¸­çš„æ•°é‡ç­‰äºmaximumPoolSizeï¼Œåˆ™å·²è¶…å‡ºçº¿ç¨‹æ± çš„å¤„ç†èƒ½åŠ›ï¼Œ
+	 * çº¿ç¨‹æ± ä¼šæ‹’ç»å¤„ç†ä»»åŠ¡è€ŒæŠ›å‡ºå¼‚å¸¸,å¯ä»¥é€šè¿‡handleræ‰€æŒ‡å®šçš„ç­–ç•¥æ¥å¤„ç†æ­¤å¼‚å¸¸
 	 * 
 	 */
 //	ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, 
@@ -58,9 +50,9 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 //					RejectedExecutionHandler handler) 
 	
 	/**
-	 * ÓÃSynchronousQueue¡£¿ÉÄÜ¶ÔÓÚ¸ÃBlockingQueueÓĞĞ©Ä°Éú£¬¼òµ¥Ëµ£º¸ÃQUEUEÖĞ£¬
-	 * Ã¿¸ö²åÈë²Ù×÷±ØĞëµÈ´ıÁíÒ»¸öÏß³ÌµÄ¶ÔÓ¦ÒÆ³ı²Ù×÷¡£
-	 * ±ÈÈç£¬ÎÒÏÈÌí¼ÓÒ»¸öÔªËØ£¬½ÓÏÂÀ´Èç¹û¼ÌĞøÏë³¢ÊÔÌí¼ÓÔò»á×èÈû£¬Ö±µ½ÁíÒ»¸öÏß³ÌÈ¡×ßÒ»¸öÔªËØ
+	 * ç”¨SynchronousQueueã€‚å¯èƒ½å¯¹äºè¯¥BlockingQueueæœ‰äº›é™Œç”Ÿï¼Œç®€å•è¯´ï¼šè¯¥QUEUEä¸­ï¼Œ
+	 * æ¯ä¸ªæ’å…¥æ“ä½œå¿…é¡»ç­‰å¾…å¦ä¸€ä¸ªçº¿ç¨‹çš„å¯¹åº”ç§»é™¤æ“ä½œã€‚
+	 * æ¯”å¦‚ï¼Œæˆ‘å…ˆæ·»åŠ ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ä¸‹æ¥å¦‚æœç»§ç»­æƒ³å°è¯•æ·»åŠ åˆ™ä¼šé˜»å¡ï¼Œç›´åˆ°å¦ä¸€ä¸ªçº¿ç¨‹å–èµ°ä¸€ä¸ªå…ƒç´ 
 	 */
 	public MyThreadPoolExecutor() {
 		super(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS,
@@ -81,11 +73,11 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 	}
 	
 	/**
-	 * 1£º
-	 * ´´½¨Ò»¸ö¿É»º´æµÄÏß³Ì³Ø¡£Èç¹ûÏß³ÌÓĞ¿ÉÓÃµÄÔòÖØÓÃ£¬·ñÔò£¬´´½¨Ò»¸öĞÂÏß³Ì²¢Ìí¼Óµ½³ØÖĞ¡£
-	 * ÖÕÖ¹²¢´Ó»º´æÖĞÒÆ³ıÄÇĞ©ÒÑÓĞ 60 ÃëÖÓÎ´±»Ê¹ÓÃµÄÏß³Ì
+	 * 1ï¼š
+	 * åˆ›å»ºä¸€ä¸ªå¯ç¼“å­˜çš„çº¿ç¨‹æ± ã€‚å¦‚æœçº¿ç¨‹æœ‰å¯ç”¨çš„åˆ™é‡ç”¨ï¼Œå¦åˆ™ï¼Œåˆ›å»ºä¸€ä¸ªæ–°çº¿ç¨‹å¹¶æ·»åŠ åˆ°æ± ä¸­ã€‚
+	 * ç»ˆæ­¢å¹¶ä»ç¼“å­˜ä¸­ç§»é™¤é‚£äº›å·²æœ‰ 60 ç§’é’Ÿæœªè¢«ä½¿ç”¨çš„çº¿ç¨‹
 	 * @return
-	 * 2017-3-21 ÏÂÎç05:00:01
+	 * 2017-3-21 ä¸‹åˆ05:00:01
 	 */
 	public static ExecutorService newCahchedPoolThread() {
 		return new MyThreadPoolExecutor(0, Integer.MAX_VALUE, 60L,
@@ -94,11 +86,11 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 	}
 
 	/**
-	 *  2£º
-	 *  ²úÉúÖ»ÓĞÒ»¸öÏß³Ì¿ÉÓÃÀ´Ö´ĞĞÈÎÎñ£¬
-	 *  ÈôÈÎÎñ¶àÓÚÒ»¸ö£¬ÈÎÎñ»á±»·ÅÔÚÒ»¸öLinkedBlockingQueueÀïË³ĞòÖ´ĞĞ
+	 *  2ï¼š
+	 *  äº§ç”Ÿåªæœ‰ä¸€ä¸ªçº¿ç¨‹å¯ç”¨æ¥æ‰§è¡Œä»»åŠ¡ï¼Œ
+	 *  è‹¥ä»»åŠ¡å¤šäºä¸€ä¸ªï¼Œä»»åŠ¡ä¼šè¢«æ”¾åœ¨ä¸€ä¸ªLinkedBlockingQueueé‡Œé¡ºåºæ‰§è¡Œ
 	 * @return
-	 * 2017-3-21 ÏÂÎç05:01:32
+	 * 2017-3-21 ä¸‹åˆ05:01:32
 	 */
 	public static ExecutorService newSingleThreadExecutor() {
 		return new MyThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS,
@@ -106,12 +98,12 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 	}
 
 	/**
-	 *  3£º
-	 *  ²úÉúÒ»¸ö´óĞ¡ÎªnThreadsµÄÏß³Ì³Ø£¬
-	 *  ÈôÈÎÎñÊıÁ¿´óÓÚnThreads£¬ÈÎÎñ»á±»·ÅÔÚÒ»¸öLinkedBlockingQueueÀïË³ĞòÖ´ĞĞ
+	 *  3ï¼š
+	 *  äº§ç”Ÿä¸€ä¸ªå¤§å°ä¸ºnThreadsçš„çº¿ç¨‹æ± ï¼Œ
+	 *  è‹¥ä»»åŠ¡æ•°é‡å¤§äºnThreadsï¼Œä»»åŠ¡ä¼šè¢«æ”¾åœ¨ä¸€ä¸ªLinkedBlockingQueueé‡Œé¡ºåºæ‰§è¡Œ
 	 * @param nThreads
 	 * @return
-	 * 2017-3-21 ÏÂÎç05:00:33
+	 * 2017-3-21 ä¸‹åˆ05:00:33
 	 */
 	public static ExecutorService newFixedThreadPool(int nThreads) {
 		return new ThreadPoolExecutor(nThreads, nThreads, 0L,
@@ -119,7 +111,7 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 	}
 	
 	/**
-	 * ²âÊÔº¯Êı
+	 * æµ‹è¯•å‡½æ•°
 	 * 
 	 * @param args
 	 * @throws InterruptedException
@@ -127,7 +119,7 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
 	public static void main(String[] args){
 //		ExecutorService exe = MyThreadPoolExecutor.newCahchedPoolThread();
 		/**
-		 * Executors.callable(Runnable task)·½·¨£º½«RunnableµÄÈÎÎñ×ª»¯³ÉCallableµÄÈÎÎñ
+		 * Executors.callable(Runnable task)æ–¹æ³•ï¼šå°†Runnableçš„ä»»åŠ¡è½¬åŒ–æˆCallableçš„ä»»åŠ¡
 		 */
 		/*try {
 			Callable<Object> cll = Executors.callable(new Runnable() {

@@ -3,10 +3,10 @@ package concurrent.share._04executor;
 import java.util.concurrent.ThreadFactory;
 
 /**
- * ºóÌ¨Ïß³Ì¹¤¾ßÀà
- * Ò²¿ÉÒÔ´´½¨ÓÅÏÈ¼¶£¬Ïß³ÌÃû³ÆµÈÊôĞÔµÄ¹¤¾ßÀà
+ * åå°çº¿ç¨‹å·¥å…·ç±»
+ * ä¹Ÿå¯ä»¥åˆ›å»ºä¼˜å…ˆçº§ï¼Œçº¿ç¨‹åç§°ç­‰å±æ€§çš„å·¥å…·ç±»
  * @author Administrator
- * 2016-1-19 ÏÂÎç04:38:04
+ * 2016-1-19 ä¸‹åˆ04:38:04
  *
  */
 public class DeamonThreadFactory implements ThreadFactory{

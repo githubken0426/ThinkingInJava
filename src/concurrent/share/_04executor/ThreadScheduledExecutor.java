@@ -11,12 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 
- * ScheduledExecutorService,ÊÇ»ùÓÚÏß³Ì³ØÉè¼ÆµÄ¶¨Ê±ÈÎÎñÀà, 
- * Ã¿¸öµ÷¶ÈÈÎÎñ¶¼»á·ÖÅäµ½Ïß³Ì³ØÖĞµÄÒ»¸öÏß³ÌÈ¥Ö´ĞĞ,
- * ĞèÒª×¢Òâ,Ö»ÓĞµ±µ÷¶ÈÈÎÎñÀ´µÄÊ±ºò,ScheduledExecutorService²Å»áÕæÕıÆô¶¯Ò»¸öÏß³Ì,
- * ÆäÓàÊ±¼äScheduledExecutorService¶¼ÊÇ³öÓÚÂÖÑ¯ÈÎÎñµÄ×´Ì¬
+ * ScheduledExecutorService,æ˜¯åŸºäºçº¿ç¨‹æ± è®¾è®¡çš„å®šæ—¶ä»»åŠ¡ç±», 
+ * æ¯ä¸ªè°ƒåº¦ä»»åŠ¡éƒ½ä¼šåˆ†é…åˆ°çº¿ç¨‹æ± ä¸­çš„ä¸€ä¸ªçº¿ç¨‹å»æ‰§è¡Œ,
+ * éœ€è¦æ³¨æ„,åªæœ‰å½“è°ƒåº¦ä»»åŠ¡æ¥çš„æ—¶å€™,ScheduledExecutorServiceæ‰ä¼šçœŸæ­£å¯åŠ¨ä¸€ä¸ªçº¿ç¨‹,
+ * å…¶ä½™æ—¶é—´ScheduledExecutorServiceéƒ½æ˜¯å‡ºäºè½®è¯¢ä»»åŠ¡çš„çŠ¶æ€
  * 
- * @return 2017-3-21 ÏÂÎç05:05:47
+ * @return 2017-3-21 ä¸‹åˆ05:05:47
  */
 
 public class ThreadScheduledExecutor {
@@ -31,13 +31,13 @@ public class ThreadScheduledExecutor {
 
 		 testFixedDelay(scheduled);
 		// testSchedule(scheduled);
-		System.out.println("ÏÖÔÚÊ±¼ä" + format.format(new Date()));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½" + format.format(new Date()));
 //		testSchedule(scheduled, 3);
 	}
 
 	/**
-	 * ½«ÔÚinitialDelay(2Ãë)+period(3Ãë)ºóÖ´ĞĞ£¬ ´Ëºó½«ÒÔperiod(3Ãë)À´Ö´ĞĞ£¬ÒÀ´ËÀàÍÆ
-	 * Èç¹ûsleepÊ±¼ä´óÓÚperiod£¬½«ÔÚsleepÊ±¼äºóÖ´ĞĞ
+	 * å°†åœ¨initialDelay(2ç§’)+period(3ç§’)åæ‰§è¡Œï¼Œ æ­¤åå°†ä»¥period(3ç§’)æ¥æ‰§è¡Œï¼Œä¾æ­¤ç±»æ¨
+	 * å¦‚æœsleepæ—¶é—´å¤§äºperiodï¼Œå°†åœ¨sleepæ—¶é—´åæ‰§è¡Œ
 	 */
 	public static void testAtFixedRate(ScheduledExecutorService scheduled) {
 		scheduled.scheduleAtFixedRate(new Runnable() {
@@ -54,7 +54,7 @@ public class ThreadScheduledExecutor {
 
 	public static void testAtFixedRateWithException(
 			ScheduledExecutorService scheduled) {
-		// ¿ªÊ¼Ö´ĞĞºó¾Í´¥·¢Òì³£,ÖÜÆÚ½«²»»áÔËĞĞ
+		// ï¿½ï¿½Ê¼Ö´ï¿½Ğºï¿½Í´ï¿½ï¿½ï¿½ï¿½ì³£,ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		scheduled.scheduleAtFixedRate(new Runnable() {
 			public void run() {
 				System.out
@@ -63,7 +63,7 @@ public class ThreadScheduledExecutor {
 			}
 		}, 2, 3, TimeUnit.SECONDS);
 
-		// ËäÈ»Å×³öÁËÔËĞĞÒì³£,µ±±»À¹½ØÁË,ÖÜÆÚ¼ÌĞøÔËĞĞ
+		// ï¿½ï¿½È»ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		scheduled.scheduleAtFixedRate(new Runnable() {
 			public void run() {
 				System.out.println(format.format(new Date()));
@@ -77,9 +77,9 @@ public class ThreadScheduledExecutor {
 	}
 
 	/**
-	 * ½«ÔÚinitialDelay(2Ãë)ºóÖ´ĞĞ£¬ ´Ëºó½«ÒÔperiod(3Ãë)+sleep(1Ãë)À´Ö´ĞĞ£¬ÒÀ´ËÀàÍÆ
+	 * ï¿½ï¿½ï¿½ï¿½initialDelay(2ï¿½ï¿½)ï¿½ï¿½Ö´ï¿½Ğ£ï¿½ ï¿½Ëºï¿½ï¿½ï¿½period(3ï¿½ï¿½)+sleep(1ï¿½ï¿½)ï¿½ï¿½Ö´ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param scheduled
-	 * 2017-3-22 ÉÏÎç11:55:42
+	 * 2017-3-22 ï¿½ï¿½ï¿½ï¿½11:55:42
 	 */
 	public static void testFixedDelay(ScheduledExecutorService scheduled) {
 		scheduled.scheduleWithFixedDelay(new Runnable() {
@@ -96,10 +96,10 @@ public class ThreadScheduledExecutor {
 	}
 
 	/**
-	 * ´´½¨²¢Ö´ĞĞÔÚ¸ø¶¨ÑÓ³ÙºóÆôÓÃµÄÒ»´ÎĞÔÈÎÎñ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½Ó³Ùºï¿½ï¿½ï¿½ï¿½Ãµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param scheduled
-	 * 			ScheduledExecutorServiced¶ÔÏó
-	 * 2017-3-22 ÉÏÎç11:55:13
+	 * 			ScheduledExecutorServicedï¿½ï¿½ï¿½ï¿½
+	 * 2017-3-22 ï¿½ï¿½ï¿½ï¿½11:55:13
 	 */
 	public static void testSchedule(ScheduledExecutorService scheduled) {
 		scheduled.schedule(new Runnable() {
@@ -110,12 +110,12 @@ public class ThreadScheduledExecutor {
 		}, 3, TimeUnit.SECONDS);
 	}
 	/**
-	 * ·µ»ØScheduleFuture½Ó¿Ú£¬ScheduleFuture¼Ì³ĞÓÚFuture½Ó¿Ú
+	 * ï¿½ï¿½ï¿½ï¿½ScheduleFutureï¿½Ó¿Ú£ï¿½ScheduleFutureï¿½Ì³ï¿½ï¿½ï¿½Futureï¿½Ó¿ï¿½
 	 * @param <T>
 	 * @param scheduled
-	 * 			ScheduledExecutorServiced¶ÔÏó
+	 * 			ScheduledExecutorServicedï¿½ï¿½ï¿½ï¿½
 	 * @param min
-	 * 2017-3-22 ÉÏÎç11:52:58
+	 * 2017-3-22 ï¿½ï¿½ï¿½ï¿½11:52:58
 	 */
 	public static <T> void testSchedule(ScheduledExecutorService scheduled,
 			long min) {
@@ -129,7 +129,7 @@ public class ThreadScheduledExecutor {
 
 			}, min, TimeUnit.SECONDS);
 
-			System.out.println("Ïß³ÌÊ±¼ä£º" + futrue.get());
+			System.out.println("ï¿½ß³ï¿½Ê±ï¿½ä£º" + futrue.get());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

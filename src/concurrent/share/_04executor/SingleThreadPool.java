@@ -5,11 +5,11 @@ import java.util.concurrent.Executors;
 
 import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
 /**
- * newSingleThreadExecutor()ÀàËÆnewFixedThreadPool(1)
- * Èç¹ûÏònewSingleThreadExecutor()Ìá½»¶à¸öÈÎÎñ£¬¶à¸öÈÎÎñ½«»áÅÅ¶Ó£¬
- * ÔÚËùÓĞÏß³Ì³ØÖĞ£¬ÏÖÓĞÏß³ÌÓĞ¿ÉÄÜµÄÇé¿öÏÂ£¬¶¼»á±»¸´ÓÃ
+ * newSingleThreadExecutor()ç±»ä¼¼newFixedThreadPool(1)
+ * å¦‚æœå‘newSingleThreadExecutor()æäº¤å¤šä¸ªä»»åŠ¡ï¼Œå¤šä¸ªä»»åŠ¡å°†ä¼šæ’é˜Ÿï¼Œ
+ * åœ¨æ‰€æœ‰çº¿ç¨‹æ± ä¸­ï¼Œç°æœ‰çº¿ç¨‹æœ‰å¯èƒ½çš„æƒ…å†µä¸‹ï¼Œéƒ½ä¼šè¢«å¤ç”¨
  * @author Administrator
- * 2016-1-18 ÏÂÎç04:17:42
+ * 2016-1-18 ä¸‹åˆ04:17:42
  *
  */
 public class SingleThreadPool {

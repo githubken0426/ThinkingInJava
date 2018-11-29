@@ -6,10 +6,10 @@ import java.util.concurrent.Executors;
 import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
 
 /**
- * newFixedThreadPoolÖ¸¶¨Ïß³ÌÊıÁ¿
- * ÔÚËùÓĞÏß³Ì³ØÖĞ£¬ÏÖÓĞÏß³ÌÓĞ¿ÉÄÜµÄÇé¿öÏÂ£¬¶¼»á±»¸´ÓÃ
+ * newFixedThreadPoolæŒ‡å®šçº¿ç¨‹æ•°é‡
+ * åœ¨æ‰€æœ‰çº¿ç¨‹æ± ä¸­ï¼Œç°æœ‰çº¿ç¨‹æœ‰å¯èƒ½çš„æƒ…å†µä¸‹ï¼Œéƒ½ä¼šè¢«å¤ç”¨
  * @author Administrator
- * 2016-1-18 ÏÂÎç04:04:48
+ * 2016-1-18 ä¸‹åˆ04:04:48
  *
  */
 public class FixedThreadPool {

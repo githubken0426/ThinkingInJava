@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 
 public class IoUtil {
-	public static final String INPUT_PATH = "D:\\Git_workspace\\Git_ThingiInJava\\ThinkingInJava\\src\\io\\Java_IO.docx";
+	public static final String INPUT_PATH = "D:\\WorkSpace\\Eclipse_workspace\\ThinkingInJava\\src\\io\\Java_IO.docx";
 	public static final String OUT_PATH = "C:\\Users\\ken\\Desktop\\Java_IO.docx";
 	/**
 	 * 传统转换

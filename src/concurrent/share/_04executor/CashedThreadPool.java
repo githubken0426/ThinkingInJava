@@ -6,13 +6,12 @@ import java.util.concurrent.Executors;
 import th.part_21_Concurrence.chapter_02._01Runnable.LiftOff;
 
 /**
- * newCachedThreadPool()½«»áÎªÃ¿¸öÈÎÎñ´´½¨Ïß³Ì
- * ËüÍ¨³£»á´´½¨ËùĞèÒªµÄÏß³ÌÊı£¬»ØÊÕ¾ÉÏß³ÌÊ±»áÍ£Ö¹´´½¨ĞÂÏß³Ì
- * Òò´ËËüÊÇExecutorµÄÊ×Ñ¡
- * ÔÚËùÓĞÏß³Ì³ØÖĞ£¬ÏÖÓĞÏß³ÌÓĞ¿ÉÄÜµÄÇé¿öÏÂ£¬¶¼»á±»¸´ÓÃ
+ * newCachedThreadPool()å°†ä¼šä¸ºæ¯ä¸ªä»»åŠ¡åˆ›å»ºçº¿ç¨‹
+ * å®ƒé€šå¸¸ä¼šåˆ›å»ºæ‰€éœ€è¦çš„çº¿ç¨‹æ•°ï¼Œå›æ”¶æ—§çº¿ç¨‹æ—¶ä¼šåœæ­¢åˆ›å»ºæ–°çº¿ç¨‹
+ * å› æ­¤å®ƒæ˜¯Executorçš„é¦–é€‰
+ * åœ¨æ‰€æœ‰çº¿ç¨‹æ± ä¸­ï¼Œç°æœ‰çº¿ç¨‹æœ‰å¯èƒ½çš„æƒ…å†µä¸‹ï¼Œéƒ½ä¼šè¢«å¤ç”¨ã€‚
  * @author Administrator
- * 2016-1-18 ÏÂÎç04:21:37
- *
+ * 2016-1-18 ä¸‹åˆ04:21:37
  */
 public class CashedThreadPool {
 	public static void main(String[] args) {
