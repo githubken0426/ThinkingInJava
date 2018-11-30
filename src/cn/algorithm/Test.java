@@ -1,9 +1,5 @@
 package cn.algorithm;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 /**
  * 随机因子: 种子数只是随机算法的起源数字，和生成的随机数字的区间无关。
  * 
@@ -18,12 +14,19 @@ public class Test {
 		}
 	}
 
+	static int F(int n) {
+		if (n == 0)// 递归边界
+			return 1;
+		return n * F(n - 1);// 递归公式
+	}
+
 	public static void main(String[] args) {
 		Integer result[] = { 20, 40, 11, 50, 10, 60, 5 };
 		System.out.println("排序前");
 		testSort(result);
 		System.out.println("\n排序后");
-		testSort(quickSort(result, 0, result.length - 1));
+		//testSort(quickSort(result, 0, result.length - 1));
+		System.out.println(F(3));
 	}
 
 	public static Integer[] quickSort(Integer[] array, int left, int right) {
@@ -56,8 +59,7 @@ public class Test {
 			}
 			/**
 			 * 第四步：重复“第二,第三“步骤，直到left和right指针重合，最后将（base）插入到40的位置， 此时数组值为：
-			 * 10，20，50，40，60，至此完成一次排序。 
-			 * 第五步：此时20已经潜入到数组的内部，20的左侧一组数都比20小，20的右侧作为一组数都比20大，
+			 * 10，20，50，40，60，至此完成一次排序。 第五步：此时20已经潜入到数组的内部，20的左侧一组数都比20小，20的右侧作为一组数都比20大，
 			 * 以20为切入点对左右两边数按照"第一，第二，第三，第四"步骤进行，最终快排大功告成。
 			 */
 		}
