@@ -7,7 +7,7 @@ import th.part_14_TypeInfo.chapter_09._01hidden.HiddenC;
 public class HiddenImplementation {
 	private static void callHiddenMethod(Object obj,String methodName)throws Exception{
 		Method m=obj.getClass().getDeclaredMethod(methodName);
-		//¿ªÆô·½·¨·ÃÎÊÈ¨ÏŞ
+		//å¼€å¯æ–¹æ³•è®¿é—®æƒé™
 		m.setAccessible(true);
 		m.invoke(obj);
 	}
@@ -17,7 +17,7 @@ public class HiddenImplementation {
 		a.g();
 		System.out.println(a.getClass().getCanonicalName());
 		/**
-		 * ±àÒë´íÎó£¬CÊÇ°ü¼¶±ğµÄ£¬·ÃÎÊ²»µ½
+		 * ç¼–è¯‘é”™è¯¯ï¼ŒCæ˜¯åŒ…çº§åˆ«çš„ï¼Œè®¿é—®ä¸åˆ°
 		 */
 //		InteA a2=new C();
 //		if(a instanceof C)
