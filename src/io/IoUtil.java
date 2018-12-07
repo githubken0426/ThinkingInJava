@@ -8,9 +8,9 @@ import java.io.InputStream;
 import java.nio.file.Files;
 
 public class IoUtil {
-	public static final String TEST_INPUT_PATH = "D:\\WorkSpace\\Eclipse_workspace\\ThinkingInJava\\src\\io\\Test_File.docx";
-	public static final String INPUT_PATH = "D:\\WorkSpace\\Eclipse_workspace\\ThinkingInJava\\src\\io\\Java_IO.docx";
-	public static final String OUT_PATH = "C:\\Users\\ken\\Desktop\\Java_IO.docx";
+	public static final String TEST_INPUT_PATH = "F:\\My_git\\ThinkingInJava\\src\\io\\Test_File.docx";
+	public static final String INPUT_PATH = "F:\\My_git\\ThinkingInJava\\src\\io\\input\\sequence\\Sequence.java";
+	public static final String OUT_PATH = "C:\\Users\\Administrator\\Desktop\\Java_Out.txt";
 	/**
 	 * 传统转换
 	 * FileInputStream是字节流，FileInputStream对象的read方法会出现阻塞；
