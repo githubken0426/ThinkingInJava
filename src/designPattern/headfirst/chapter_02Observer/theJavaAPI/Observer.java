@@ -2,10 +2,23 @@ package designPattern.headfirst.chapter_02Observer.theJavaAPI;
 
 /**
  * jdk 1.6 源码
- * 观察者
- * @author ken
- * 2017-6-13 pm 03:10:21
+ * A class can implement the <code>Observer</code> interface when it
+ * wants to be informed of changes in observable objects.
+ *
+ * @author  Chris Warth
+ * @see     java.util.Observable
+ * @since   JDK1.0
  */
 public interface Observer {
-	void update(Observable o, Object arg);
+    /**
+     * This method is called whenever the observed object is changed. An
+     * application calls an <tt>Observable</tt> object's
+     * <code>notifyObservers</code> method to have all the object's
+     * observers notified of the change.
+     *
+     * @param   o     the observable object.
+     * @param   arg   an argument passed to the <code>notifyObservers</code>
+     *                 method.
+     */
+    void update(Observable o, Object arg);
 }
