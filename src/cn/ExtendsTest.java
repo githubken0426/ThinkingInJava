@@ -34,7 +34,7 @@ public class ExtendsTest {
 		
 		 // 根据价格过滤
 	    proList.stream()
-	           .fliter((p) -> p)
+	           .filter((p) -> p)
 	           .limit(2)
 	           .forEach(System.out::println);
 	}
