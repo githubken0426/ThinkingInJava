@@ -3,7 +3,7 @@ package designPattern.headfirst.chapter_02Observer.theJavaAPI;
 import java.util.Vector;
 
 /**
- * jdk 1.6 源码 主题
+ * jdk 1.8 源码 主题
  * 
  * @author ken 2017-6-13 pm 03:10:21
  */
@@ -23,10 +23,8 @@ public class Observable {
 	 * which notifications will be delivered to multiple observers is not
 	 * specified. See the class comment.
 	 * 
-	 * @param o
-	 *            an observer to be added.
-	 * @throws NullPointerException
-	 *             if the parameter o is null.
+	 * @param o an observer to be added.
+	 * @throws NullPointerException if the parameter o is null.
 	 */
 	public synchronized void addObserver(Observer o) {
 		if (o == null)
@@ -38,10 +36,9 @@ public class Observable {
 
 	/**
 	 * Deletes an observer from the set of observers of this object. Passing
-	 * <CODE>null</CODE> to this method will have no effect.
+	 * <CODE>null</CODE> to this method will have no effect(影响).
 	 * 
-	 * @param o
-	 *            the observer to be deleted.
+	 * @param o the observer to be deleted.
 	 */
 	public synchronized void deleteObserver(Observer o) {
 		obs.removeElement(o);

@@ -1,7 +1,7 @@
 package designPattern.headfirst.chapter_02Observer.theJavaAPI;
 
 /**
- * jdk 1.6 源码
+ * jdk 1.8 源码
  * A class can implement the <code>Observer</code> interface when it
  * wants to be informed of changes in observable objects.
  *

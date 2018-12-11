@@ -22,11 +22,12 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println(arg.getClass().getCanonicalName());
-		if(o instanceof WeatherData){
-			this.temprature=((WeatherData)arg).getTemprature();
-			this.humidity=((WeatherData)arg).getHumidity();
-			this.pressure=((WeatherData)arg).getPressure();
+		if(arg!=null)
+			System.out.println(arg.getClass().getCanonicalName());
+		if (o instanceof WeatherData) {
+			this.temprature = ((WeatherData) o).getTemprature();
+			this.humidity = ((WeatherData) o).getHumidity();
+			this.pressure = ((WeatherData) o).getPressure();
 			display();
 		}
 	}
