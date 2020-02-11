@@ -7,9 +7,9 @@ import java.util.TreeSet;
 
 import TIJ4_code.net.mindview.util.OSExecute;
 /**
- * values的神秘之处
+ * values
  * @author Administrator
- * 2015-12-8 下午05:24:45
+ * 2015-12-8 05:24:45
  *
  */
 public class Reflection {
@@ -29,7 +29,7 @@ public class Reflection {
 		return methods;
 	}
 	
-	static String fileName="E:\\Eclipse_WS\\ThinkingInJava\\build\\classes\\th\\part_19_ENUM\\chapter_04_Values\\Explor.class";
+	static String fileName="C:\\WorkSpace\\ThinkingInJava\\build\\classes\\th\\part_19_ENUM\\chapter_04_Values\\Explore.class";
 	public static void main(String[] args) {
 		/*Set<String> exploreMethods=analyze(Explor.class);
 		Set<String> enumMethods=analyze(Enum.class);
