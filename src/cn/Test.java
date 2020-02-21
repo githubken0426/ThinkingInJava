@@ -11,6 +11,7 @@ public class Test {
 
 	private static int i = 100;
 	public static void main(String[] args) {
+		testInteger();
 		// Integer i01 = 59;
 		// int i02 = 59;
 		// Integer i03 = Integer.valueOf(59);
@@ -23,7 +24,7 @@ public class Test {
 		// System.out.println(i01== i03);
 		// System.out.println(i03== i04);
 		// System.out.println(i02== i04);
-		Long l=233l;
+		/*Long l=233l;
 		byte[] bytesLong = longToBytes(l);  
 		System.out.println(bytesToLong(bytesLong));
 		
@@ -43,8 +44,7 @@ public class Test {
 		System.out.println(y);
 		double x = (.1 + .1 + .1);
 		System.out.println(x);
-		System.out.println(x == .3);
-
+		System.out.println(x == .3);*/
 	}
 
 	static {
@@ -88,5 +88,12 @@ public class Test {
 	 */
 	public static String test2(byte[] b){
 		return new String(b);
+	}
+
+	public static void testInteger(){
+		Integer i_1 = new Integer(1);
+		Integer i_2 = new Integer(1);
+		String str="";
+		System.out.println(i_1 == i_2);
 	}
 }
